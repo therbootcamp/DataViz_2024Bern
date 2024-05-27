@@ -1,0 +1,1198 @@
+---
+title: "Animate"
+author: "Visualizing and communicating data with R<br>
+  <a href='https://therbootcamp.github.io'>
+    <font style='font-size:1.4em'>The R Bootcamp @ GSERM</font>
+  </a>
+  <br>
+  <a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+    <i class='fas fa-clock' style='font-size:1.4em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:1.4em;' ></i>
+  </a>&#8239;
+  <a href='therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: 1.4em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/27090302'>
+    <i class='fab fa-linkedin' style='font-size: 1.4em;'></i>
+  </a>"
+date: "June 2022"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          https://therbootcamp.github.io
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+      The R Bootcamp | June 2022
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+```
+
+```{r, echo = FALSE ,message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo = TRUE, eval = TRUE, 
+                      message = FALSE, warning = FALSE, fig.align = 'center', dpi = 200)
+library(tidyverse)
+library(ggthemes)
+library(sf)
+require(tidygraph)
+require(ggraph)
+require(gganimate)
+require(plotly)
+basel = read_csv('1_Data/taxation.csv')
+basel_map = sf::read_sf('1_Data/quarters')
+
+```
+
+
+
+.pull-left3[
+
+# Animations with <mono>gganimate</mono>
+
+<ul>
+  <li class="m1"><span><mono>gganimate</mono> provides functions to <high>animate any <mono>ggplot</mono></high>.</span></li>
+  <li class="m2"><span>Animations are useful to <high>highlight change</high> in data.</span></li>
+</ul>
+
+]
+
+
+.pull-right6[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- basel_map %>% 
+  left_join(basel,by = c("TYPE" = "quarter"))
+
+p = quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  ggtitle(label = "Inequality in Basel", 
+          subtitle = "Average income in Basel's quarters in {closest_state}") +
+  labs(caption = "Source: Open Data Basel Stadt") +
+  transition_states(year, 
+    transition_length = 10,
+    state_length = 0)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Transitions
+
+<ul>
+  <li class="m1"><span><mono>gganimate</mono>'s workhorses are several <high>transition function</high>.</span></li>
+  <ul class="level">
+    <li><span><mono>transition_states()</mono> iterates through distinct values</span> </li>
+    <li><span><mono>transition_time()</mono>  iterates through continuous values </span></li>
+    <li><span><mono>transition_reveal()</mono>  iterates through in a cumulative fashion</span></li>
+    <li><span><mono>transition_filter()</mono>  iterates through logicals</span></li>
+    <li><span><mono>transition_layers()</mono>  iterates through plot layers</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+
+quarters_map <- basel_map %>% 
+  left_join(basel,by = c("TYPE" = "quarter"))
+
+p = quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  transition_states(year)
+
+animate(p, 100)
+
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>*_states</mono>
+
+<ul>
+  <li class="m1"><span><mono>transition_states()</mono> iterates through distinct states.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income', 
+                       option = "E") +
+  
+  # add transitions
+  transition_states(year)
+```
+
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income', 
+                       option = "E") +
+  
+  # add transitions
+  transition_states(year)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Labels
+
+<ul>
+  <li class="m1"><span><high>Annotation can be parameterized</high> using <mono>{closest_state}</mono> to reflect the changes in state.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# map code
+quarters_map %>% 
+  ggplot(...) +
+  
+  # add transitions
+  transition_states(year) +
+
+  # add labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... in {closest_state}") +
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income', 
+                       option = "E") +
+  
+  # add transitions
+  transition_states(year) +
+
+  ggtitle(label = "Inequality in Basel", 
+          subtitle = "Average income in Basel's quarters in {closest_state}")
+
+animate(p, 100)
+
+```
+
+]
+
+---
+
+.pull-left45[
+
+# `*_reveal`
+
+<ul>
+  <li class="m1"><span><mono>transition_reveal()</mono> iterates through states in a cumulative fashion.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+
+  # transition reveal
+  transition_reveal(year)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>%
+  
+  # sort by income and factor quarter
+  arrange(year, income_median) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  
+  # original code
+  ggplot(aes(x = year, y = income_median, col = quarter)) +
+  geom_line() + geom_point() +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size=7)) + 
+  scale_color_viridis_d() +
+  transition_reveal(year)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Labels
+
+<ul>
+  <li class="m1"><span><high>Annotation can be parameterized</high> using <mono>{frame_along}</mono> to reflect the changes in state.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # add transitions
+  transition_reveal(year) +
+
+  # add labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... in {frame_along}") +
+  labs(x = "Year", y = "Income median")
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>%
+  
+  # sort by income and factor quarter
+  arrange(year, income_median) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  
+  # original code
+  ggplot(aes(x = year, y = income_median, col = quarter)) +
+  geom_line() + geom_point() +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size=7)) + 
+  scale_color_viridis_d() +
+  ggtitle(label = "Inequality in Basel", 
+          subtitle = "Income development by quarter from 2001 to {frame_along}") +
+  labs(x = "Year", y = "Median income") +
+  transition_reveal(year)
+
+animate(p, 100)
+```
+
+]
+
+
+---
+
+.pull-left45[
+
+# Types
+
+<ul>
+  <li class="m1"><span><mono>transition_*</mono> functions are sensitive to the <high>type of the transiton variable</high>.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+basel %>% 
+  
+  # change to integer
+  mutate(year = as.integer(year)) +
+  
+  # plot
+  ggplot(...) +
+  
+  # add transitions
+  transition_reveal(year) +
+
+  # add labels
+  ...
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>%
+  
+  # sort by income and factor quarter
+  arrange(year, income_median) %>% 
+  mutate(quarter = as_factor(quarter),
+         year = as.integer(year)) %>% 
+  
+  # original code
+  ggplot(aes(x = year, y = income_median, col = quarter)) +
+  geom_line() + geom_point() +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size=7)) + 
+  scale_color_viridis_d() +
+  ggtitle(label = "Inequality in Basel", 
+          subtitle = "Income development by quarter from 2001 to {frame_along}") +
+  labs(x = "Year", y = "Median income") +
+  transition_reveal(year)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Length
+
+<ul>
+  <li class="m1"><span>The <high>length of the transitions</high> can be manipulated using the <mono>transition_length</mono> and <state_length> arguments.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 1: Default
+  transition_states(year, 
+    transition_length = 1) +
+  
+  # labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... to {closest_state}")
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 1) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal()
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Length
+
+<ul>
+  <li class="m1"><span>The <high>length of the transitions</high> can be manipulated using the <mono>transition_length</mono> and <state_length> arguments.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... to {closest_state}")
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal()
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Length
+
+<ul>
+  <li class="m1"><span>The <high>length of the transitions</high> can be manipulated using the <mono>transition_length</mono> and <state_length> arguments.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10,
+    state_length = 0) +
+  
+  # labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... to {closest_state}")
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10,
+    state_length = 0) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal()
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Length
+
+<ul>
+  <li class="m1"><span>The <high>length of the transitions</high> can be manipulated using the <mono>transition_length</mono> and <state_length> arguments.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10,
+    state_length = 0) +
+  
+  # labels
+  ggtitle(label = "Inequality in Basel", 
+    subtitle = "... to {closest_state}")
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter, label = quarter)) +
+  #geom_point(show.legend = F, size=4) + 
+  geom_label(show.legend = FALSE) +
+  transition_states(year, transition_length = 10,
+    state_length = 0) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  coord_cartesian(clip = "off")
+
+animate(p, 100)
+```
+
+]
+
+
+---
+
+.pull-left45[
+
+# Shadows
+
+<ul>
+  <li class="m1"><span>There are several <mono>shadow_*</mono> to help <high>emphasize changes</high> across states/time.</span></li>
+  <ul class="level">
+    <li><span><mono>shadow_mark()</mono> shows past and/or future states</span></li>
+    <li><span><mono>shadow_wake()</mono> shows wake of data</span></li>
+    <li><span><mono>shadow_trail()</mono> shows past data</span></li>
+  </ul>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_mark(alpha = .1)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_mark(alpha = .1)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Shadows
+
+<ul>
+  <li class="m1"><span>There are several <mono>shadow_*</mono> to help <high>emphasize changes</high> across states/time.</span></li>
+  <ul class="level">
+    <li><span><mono>shadow_mark()</mono> shows past and/or future states</span></li>
+    <li><span><mono>shadow_wake()</mono> shows wake of data</span></li>
+    <li><span><mono>shadow_trail()</mono> shows past data</span></li>
+  </ul>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_mark(alpha = .1,
+    past = TRUE, future = TRUE)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_mark(alpha = .1, past = TRUE, future = TRUE)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Shadows
+
+<ul>
+  <li class="m1"><span>There are several <mono>shadow_*</mono> to help <high>emphasize changes</high> across states/time.</span></li>
+  <ul class="level">
+    <li><span><mono>shadow_mark()</mono> shows past and/or future states</span></li>
+    <li><span><mono>shadow_wake()</mono> shows wake of data</span></li>
+    <li><span><mono>shadow_trail()</mono> shows past data</span></li>
+  </ul>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_wake(wake_length = .1)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_wake(wake_length = .1)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# Shadows
+
+<ul>
+  <li class="m1"><span>There are several <mono>shadow_*</mono> to help <high>emphasize changes</high> across states/time.</span></li>
+  <ul class="level">
+    <li><span><mono>shadow_mark()</mono> shows past and/or future states</span></li>
+    <li><span><mono>shadow_wake()</mono> shows wake of data</span></li>
+    <li><span><mono>shadow_trail()</mono> shows past data</span></li>
+  </ul>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_wake(wake_length = .3)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_wake(wake_length = .3)
+
+animate(p, 100)
+
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>animate()</mono>
+
+<ul>
+  <li class="m1"><span><mono>animate()</mono> can be used to fine-tune the animation.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+anim <- basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_wake(wake_length = .3)
+
+# fine-tune
+animate(anim, nframes = 3)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_wake(wake_length = .3)
+
+animate(p,3)
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>anim_save()</mono>
+
+<ul>
+  <li class="m1"><span><mono>anim_save()</mono> can be used to <high>save the animation</high> as <mono>.gif</mono> files.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# plot code
+anim <- basel %>% 
+  ggplot(...) +
+  
+  # transition length 10
+  transition_states(year, 
+    transition_length = 10) +
+  
+  # shadow
+  shadow_wake(wake_length = .3)
+
+# fine-tune
+anim_save(filename = "anim.gif",
+          animation = anim)
+```
+
+]
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+p = basel %>% 
+  arrange(desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, y = income_mean, col = quarter)) +
+  geom_point(show.legend = F, size=4) + 
+  transition_states(year, transition_length = 10) +
+  ggtitle(label = "The rich get richer", 
+          subtitle = "Basel's wealth-income relationship in {closest_state}") +
+  labs(x = "Wealth", y = "Income") +
+  scale_color_viridis_d()  +
+  theme_minimal() +
+  shadow_wake(wake_length = .3)
+
+animate(p, 100)
+```
+
+]
+
+---
+
+.pull-left3[
+
+# Inteactive plots with <mono>plotly</mono>
+
+<ul>
+  <li class="m1"><span><mono>plotly</mono> is a <high>framework for interactive visualizations</high> based on JavaScript.</span></li>
+  <li class="m2"><span>Offers a basic translator or ggplot .</span></li>
+</ul>
+
+]
+
+
+.pull-right6[
+
+<br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+p = quarters_map %>% 
+  #rename(Income = income_mean) +
+  ggplot(aes(label = TYPE)) +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  ggtitle(label = "Inequality in Basel\nin 2017") +
+  theme(axis.line=element_blank())
+
+
+p = ggplotly(p, width = 600, height=600)
+p
+```
+
+]
+
+
+---
+
+.pull-left45[
+
+# <mono>ggplotly</mono>
+
+<ul>
+  <li class="m1"><span><mono>ggplotly</mono> <high>translates a ggplot</high> plot object into plotly.</span></li>
+</ul>
+
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot(...) 
+  
+# turn into plotly
+p = ggplotly(p)
+
+# show
+p
+
+```
+
+
+]
+
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+p = quarters_map %>% 
+  #rename(Income = income_mean) +
+  ggplot(aes(label = TYPE)) +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  ggtitle(label = "Inequality in Basel\nin 2017") +
+  theme(axis.line=element_blank())
+
+
+p = ggplotly(p, width = 500, height=500)
+p
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>ggplotly</mono>
+
+<ul>
+  <li class="m1"><span><mono>ggplotly</mono> <high>translates a ggplot</high> plot object into plotly.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot(...) 
+  
+# turn into plotly
+p = ggplotly(p)
+
+# show
+p
+
+```
+
+
+]
+
+
+.pull-right45[
+
+<br><br><br><br>
+
+```{r, echo = F}
+options(width=50)
+```
+
+```{r, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+names(p)
+names(p$x)
+names(p$x$data[[1]])
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>ggplotly</mono>
+
+<ul>
+  <li class="m1"><span><mono>ggplotly</mono> <high>translates a ggplot</high> plot object into plotly.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot(...) 
+  
+# turn into plotly
+p = ggplotly(p)
+
+# change labels
+p$x$data = lapply(p$x$data, function(x){ 
+  x$text = str_replace(x$text, "TYPE", "Quarter"); x})
+p$x$data = lapply(p$x$data, function(x){ 
+  x$text = str_replace(x$text, "income_mean", "Income"); x})
+
+# show plot
+p
+
+```
+
+]
+
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+p = quarters_map %>% 
+  #rename(Income = income_mean) +
+  ggplot(aes(label = TYPE)) +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  ggtitle(label = "Inequality in Basel\nin 2017") +
+  theme(axis.line=element_blank())
+
+
+p = ggplotly(p, width = 500, height=500)
+
+# change labels
+p$x$data = lapply(p$x$data, function(x){ 
+  x$text = str_replace(
+    x$text, "TYPE", "Quarter"); x})
+p$x$data = lapply(p$x$data, function(x){ 
+  x$text = str_replace(
+    x$text, "income_mean", "Income"); x})
+
+p
+```
+
+]
+
+---
+
+.pull-left45[
+
+# <mono>tooltip</mono>
+
+<ul>
+  <li class="m1"><span><mono>tooltip</mono> permits the selection <high>self-created hover information</high>.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# map code
+p = quarters_map %>% 
+  ggplot(aes(
+    text = paste0(
+      "Quarter: ", quarter, 
+      "<br>Income: ", income_mean)
+  )) 
+  
+# turn into plotly
+p = ggplotly(p, tooltip = "text")
+
+# show plot
+p
+
+```
+
+]
+
+
+.pull-right45[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+p = quarters_map %>% 
+  #rename(Income = income_mean) +
+  ggplot(aes(text = paste0("Quarter: ", TYPE, "<br>Income: ", income_mean))) +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_viridis_c(name = 'Income',option = "E") +
+  ggtitle(label = "Inequality in Basel\nin 2017") +
+  theme(axis.line=element_blank())
+
+
+p = ggplotly(p, width = 500, height=500, tooltip = "text")
+
+p
+```
+
+]
+
+
+
+---
+
+class: middle, center
+
+<h1><font style="font-size:12px">click to download</font><br><a href="https://www.dropbox.com/s/eoabrgz52rj87cu/Animate.Rmd?dl=1">Practical</a></h1>
+
+
+

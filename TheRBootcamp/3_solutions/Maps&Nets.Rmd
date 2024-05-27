@@ -1,0 +1,249 @@
+---
+title: "Maps & Nets"
+output:
+editor_options:
+  chunk_output_type: console
+---
+
+In this practical, you will create a map of Basel showing the distribution of wealth.   
+
+# 0 - Preliminaries
+
+1. If you haven't done so already, load the `tidyverse` and the `taxation.csv` data. 
+
+```{r}
+library(tidyverse)
+basel <- read_csv('1_data/taxation.csv')
+```
+
+2. Load the `sf` package. 
+
+```{r}
+library(sf)
+```
+
+# 1 - Loading shapefiles
+
+1. Use `read_sf` to read in all of the shape files contained in the `quarters` folder and save the result as `basel_map`. The function will automatically read all files contained in the folder.
+
+```{r}
+basel_map <- read_sf("1_data/quarters")
+```
+
+2. Print `basel_map` in the console and try to make sense of its contents. 
+
+# 2 - Plotting a map
+
+1. Now, put Basel's quarters on the map. Pipe the `basel_map` object into an otherwise empty `ggplot()` function and add `geom_sf()`. 
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf()
+```
+
+2. Since we are not really interested in coordinates, remove the background by adding `theme_void()`.  
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf() + 
+  theme_void()
+```
+
+3. If you like, you could already start styling the map, e.g., by coloring the borders and areas. To do this, set, for instance, `col = "white"` and `fill = "blue"`. But the question is where? Try first making these settings inside `ggplot(aes())`. 
+
+```{r}
+basel_map %>% 
+  ggplot(aes(col = "white", fill = "blue")) + 
+  geom_sf() + 
+  theme_void()
+```
+
+4. That didn't work. The problem is that anything inside of `aes()` is interpreted as a variable, not as constant. Now make these settings inside of `geom_sf()` without using the `aes()` helper function. That's how we usually set aesthetics to constants: inside of the geom, outside of `aes()`.
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf(col = "white", fill = "blue") + 
+  theme_void()
+```
+
+# 3 - Adding variables
+
+1. You know already how to create a map. Now, we shall see how we can add variables, such as income and wealth and represent them in our map. To add the variables in our `basel` object, simply `join` it to the `basel_map` object by matching `"TYPE"` and `"quarter"`. This is possible because `basel_map` is also a `tibble`. Save the result back to `basel_map`.
+
+```{r}
+basel_map <- basel_map %>% 
+  left_join(basel,
+            by = c("TYPE" = "quarter"))
+```
+
+2. Now that our taxation data has been added to `basel_map`, you can start representing the data in the map. How about instead of `fill = "blue"` you fill the areas according to `wealth_mean`. Since `wealth_mean` is a variable, place it into `aes()`. You can do this either inside `ggplot()` or `geom_sf()`. Note that if you forget to delete `fill = "blue"` nothing will happen, as setting `fill` to a constant will overwrite the settings made in `aes()`.    
+
+```{r}
+basel_map %>% 
+  ggplot(aes(fill = wealth_mean)) + 
+  geom_sf(col = "white") + 
+  theme_void()
+```
+
+# 4 - Styling
+
+1. Add appropriate labels using `labs()`. 
+
+2. Fix the legend title by adding, e.g., `scale_fill_continuous(name = 'Wealth')`.
+
+# 5 - Network
+
+1. The first step to creating a network involves obtaining relational data. In this example, you will analyze the relatedness in the development of wealth between quarters. Use the code below to create a matrix of correlations that reflect the pairwise relatednes in wealth development. 
+
+```{r}
+edges <- basel %>% 
+  select(year, quarter, wealth_mean) %>% 
+  pivot_wider(names_from = quarter, values_from = wealth_mean) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  filter(weight < 1, weight > .5)
+```
+
+2. Next, use the `as_tbl_graph()` function from the `tidygraph` package to create a network of the relational data. Set the argument `directed` to `FALSE`, since the correlations do no reflect a directed relatedness between the quarters. 
+
+```{r}
+network <- as_tbl_graph(edges, directed = FALSE)
+```
+
+3. Use now the `ggraph()` function from the `ggraph` package to start a blank network plot. The function needs no arguments.
+
+```{r}
+network %>% 
+  ggraph()
+```
+
+4. Add nodes and edges using the functions `geom_node_point()` and `geom_edge_hive()`. First add the edges so that the edges don't overlay the nodes. You should now have a network in front of you.  
+
+```{r}
+network %>% 
+  ggraph() +
+  geom_edge_hive() +
+  geom_node_point() 
+```
+
+5. Add `aes(width = weight)` and `show.legend = FALSE` to the edges function so that the edges are scaled according to the relatedness between quarters, without showing a legend, which in this case is not stricly necessary.  
+
+```{r}
+network %>% 
+  ggraph() +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_point()
+```
+
+6. To further adjust the appearance of edges, add `scale_edge_width(range=c(.2, 1))` so that the edges are small enough to discriminate them.  
+
+```{r}
+network %>% 
+  ggraph() +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_point() +
+  scale_edge_width(range=c(.2, 1))
+```
+
+7. Add labels for the nodes by using `geom_node_label()` instead of `geom_node_point`. Within the function add a mapping with `label = name`. Note that `name` is a feature of the `network` object, so R knows where to look and what to do. 
+
+```{r}
+network %>% 
+  ggraph() +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name)) +
+  scale_edge_width(range=c(.2, 1))
+```
+
+8. Finally, add `theme_graph()` to fix the background and finish off the base network plot.
+
+```{r}
+network %>% 
+  ggraph() +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name)) +
+  scale_edge_width(range=c(.2, 1)) +
+  theme_graph()
+```
+
+# 6 - Adding network features and styling
+
+1. Now, it's time to add some more advances features. First, color the labels according to groups identified using the `group_louvain()` function. To achieve this, add a variable called community to the `network` object and format it to a factor using `as_factor()` within a single `mutate` statement. Then set the color aesthetic in the `geom_node_label()` function to `community` and omit the legend using `show.legend = FALSE`.    
+
+```{r}
+network %>% 
+  mutate(community = group_louvain(weights = weight) %>% as_factor()) %>% 
+  ggraph() +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name, col = community), show.legend = FALSE) +
+  scale_edge_width(range=c(.2, 1)) +
+  theme_graph()
+```
+
+2. Next, add ellipses by inserting the code below right before edges and nodes are added to the plot.  
+
+```{r}
+network %>% 
+  mutate(community = group_louvain(weights = weight) %>% as_factor()) %>% 
+  ggraph() +
+  stat_ellipse(aes(x = x , y = y, fill = community), 
+             level = .8, geom = "polygon", alpha = .1, 
+             show.legend = FALSE) +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name, col = community), show.legend = FALSE) +
+  scale_edge_width(range=c(.2, 1)) +
+  theme_graph()
+```
+
+3. Adjust the styling by changing both `color` and `fill` (for the ellipses) to colors from the `viridis` color set. To do this, use `scale_color_manual(values=viridis::viridis(3)[1:2])` and `scale_fill_manual(values=viridis::viridis(3)[1:2])` and ad them at the end.
+
+```{r}
+network %>% 
+  mutate(community = group_louvain(weights = weight) %>% as_factor()) %>% 
+  ggraph() +
+  stat_ellipse(aes(x = x , y = y, fill = community), 
+             level = .8, geom = "polygon", alpha = .1, 
+             show.legend = FALSE) +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name, col = community), show.legend = FALSE) +
+  scale_edge_width(range=c(.2, 1)) +
+  theme_graph() +
+  scale_color_manual(values=viridis::viridis(3)[1:2]) +
+  scale_fill_manual(values=viridis::viridis(3)[1:2])
+```
+
+4. Finally, use `annotate()` to add labels for each of the clusters. See code below.  
+
+```{r}
+network %>% 
+  mutate(community = group_louvain(weights = weight) %>% as_factor()) %>% 
+  ggraph() +
+  stat_ellipse(aes(x = x , y = y, fill = community), 
+             level = .8, geom = "polygon", alpha = .1, 
+             show.legend = FALSE) +
+  geom_edge_hive(aes(width = weight), show.legend = FALSE) +
+  geom_node_label(aes(label = name, col = community), show.legend = FALSE) +
+  scale_edge_width(range=c(.2, 1)) +
+  theme_graph() +
+  scale_color_manual(values=viridis::viridis(3)[1:2]) +
+  scale_fill_manual(values=viridis::viridis(3)[1:2]) +
+  annotate("text", x = c(-1, 1), y = c(1,.8), 
+         label = c("Group 1","Group 2"), size=7)
+```
+
+# 6 - Project work
+
+1. Try to use what you have learned in this section to either create a map or network based on your data. Do this even if your project visualization is neither a map or a network. If you are creating a map, but you are lacking the shapefiles visit https://www.diva-gis.org/datadown. 
+
+
+
+
+

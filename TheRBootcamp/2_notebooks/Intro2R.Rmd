@@ -1,0 +1,119 @@
+---
+title: "Intro 2 R exercises"
+output:
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE,
+                      eval = FALSE)
+```
+In this practical, you will read in the `taxation.csv` data set and analyze it descriptively using the `dplyr` package.
+
+# 0 - Preliminaries
+
+1. Run the code line below to load the `tidyverse`. To do this, you can either place the cursor on the line and then hit Cmd-Enter (Mac) or Ctrl-Enter (Windows). Alternatively you can click on the green arrow in the top-right corner of the code chunk. If you have not previously installed the `tidyverse`, run `install.packages("tidyverse")` first and then the line below. 
+
+```{r }
+library(tidyverse)
+```
+
+2. Use the code below to read in the `taxation.csv` data set and store it as an object called `basel`. The messages printed in the console tell you how R has inferred the types of each of the columns. Should be all good.
+
+```{r }
+basel <- read_csv('../1_data/taxation.csv')
+```
+
+3. Take a look at `basel` by sending it to console. Note how the `tibble` shows types for each of the columns. Also note how some cases and variables are abbreviated. 
+
+```{r }
+basel
+```
+
+# 1 - Summarize
+
+1. Let's analyze the data. Complete the code below to compute the average Gini coefficient for income (`income_gini`) for Basel across all years. Simply replace `XX` with the appropriate variable name.
+
+```{r }
+basel %>% 
+  summarize(avg_gini_income = mean(XX))
+```
+
+2. Now add another statement within `summarize` to also calculate the average Gini for wealth. What do you make of the results? Think back to the distributions and corresponding Gini values from the intro presentation. 
+
+```{r }
+basel %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX))
+```
+
+# 2 - Filter
+
+1. Now look at the average Gini coefficients for just one quarter: `"Bettingen"`. 
+
+```{r }
+basel %>% 
+  filter(quarter == XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX))
+```
+
+2. Now try `"Gundeldingen"` instead. How do the results compare?  
+
+```{r }
+basel %>% 
+  filter(quarter == XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX))
+```
+
+# 3 - Grouping
+
+1. Wouldn't it be great if one did not have to select each quarter one by one using filter? The `group_by` and`summarize` idiom saves you from exactly that. Complete the code below to calculate the average Gini coefficients for every `quarter`.  
+
+```{r }
+basel %>% 
+  group_by(XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX))
+```
+
+2. R has printed only 10 of the 21 quarters due to a default setting for the `tibble` print. Overwrite this setting by telling R exactly how many rows you would like to see. 
+
+```{r }
+basel %>% 
+  group_by(XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX)) %>% 
+  print(n = XX)
+```
+
+3. Looks like there are some differences between the quarters. How about arranging the results such that the quarters are sorted according to `avg_gini_income`. Which quarter has the highest Gini coefficient, which the lowest? How different are the two?
+
+```{r }
+basel %>% 
+  group_by(XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX)) %>% 
+  arrange(XX) %>% 
+  print(n = XX)
+```
+
+# 4 - Pivoting
+
+1. Finally, transpose the output of the previous chunk to obtain the results in the long format. The first argument specifies the vector of to be transposed columns. The next two specify the column names of the two variables in the long format carrying the previous column names and column values, respectively.  
+
+```{r }
+basel %>% 
+  group_by(XX) %>% 
+  summarize(avg_gini_income = mean(XX),
+            avg_gini_wealth = mean(XX)) %>% 
+  pivot_longer(XX, names_to = "XX", values_to = "XX")
+```
+
+# 5 - Project work
+
+1. Try to use what you have learned in this section to read in and process the data for your data visualization project. 
+
+

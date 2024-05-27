@@ -1,0 +1,42 @@
+---
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: lumen
+    includes:
+      in_header: fake_head.Rhtml
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 8, fig.height = 8)
+
+library(tidyverse)
+library(lubridate)
+
+```
+
+
+
+# Heading 1
+
+This is a text block.
+
+## Heading 2
+
+This is a text block.
+
+#### Heading 4
+
+This is a text block.
+
+
+
+
+
+
+
+
+
+
+

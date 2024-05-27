@@ -1,0 +1,382 @@
+<html>
+  <head>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+
+    <div align="center">
+      <div id="header" align=left style="display:inline-block">
+        <h1>Visualizing and Communicating Data with R</h1>
+        <span style="white-space: nowrap">
+          <a href='https://therbootcamp.github.io'><i class='fas fa-home'></i></a>
+          <a href='https://therbootcamp.github.io/DataViz_2024Bern/'><i class='fas fa-clock'></i></a>
+          <a href='mailto:therbootcamp@gmail.com'><i class='fas fa-envelope'></i></a>
+          <a href='https://www.linkedin.com/company/basel-r-bootcamp/'><i class='fab fa-linkedin'></i></a>
+          <a href='https://therbootcamp.github.io'>
+            <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp @ Bern</font>
+          </a>
+        </span>
+        <br>
+        <span style="white-space: nowrap">
+          <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:2rem; vertical-align:baseline'/>
+          <font style='font-size:2rem;font-style:normal;padding-left:8px'>June 2024</font>
+        <span>
+    </div>
+
+    <br><br>
+
+    <div align="center" style="max-width:940px">
+
+      <h2>MATERIALS</h2>
+      <table width=50% cellspacing=0 cellpadding=0 class="downloads">
+        <col width=33%>
+        <col width=33%>
+        <tr>
+          <td align=center>
+            <h4>Project<font style="font-size:8px;color:black"><br>incl. solutions</font></h4>
+            <a href="">
+            <span class="fa-stack fa-3x active">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+          </td>
+          <td align=center>
+            <h4>Installation<font style="font-size:8px"><br>nothing</font></h4>
+            <a href="installation.html">
+            <span class="fa-stack fa-3x active">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <br><br>
+
+      <h2>PROGRAM<br><font style="font-size:8px;color:black"></font></h2>
+      <table width=100% cellspacing=0 cellpadding=0 class="my-table">
+      <col width="7%">
+      <col width="31%">
+      <col width="31%">
+      <col width="31%">
+      <tr>
+         <td class="time">0900</td>
+         <td class="td-special-blue">
+           <a href="_sessions/welcome/Welcome.html" style="display:block;height:100%;width:100%">
+             <div style="display:table;height:100%;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:75%"><e>Welcome</e></div>
+              <div style="display:table-cell;vertical-align:top"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+            </div>
+           </a>
+         </td>
+         
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Styling</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+         
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Quarto</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      </tr>
+      
+      
+      <tr>
+         <td class="time">0930</td>
+         <td class="td-grey" rowspan=2>
+           <a href="_sessions/Intro2R/intro2R.html" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Principles</div>
+            </div>
+           </a>
+           <a href="_sessions/Intro2R/intro2R.html" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+         </td>
+         
+      </tr>
+      
+      <tr><td></td><td></td><td></td><td></td></tr>  
+
+      <tr>
+         <td class="time">1030</td>
+         <td class="td-special-grey" rowspan=1>Break</td>
+         <td class="td-special-grey" rowspan=1>Break</td>
+         <td class="td-special-grey" rowspan=1>Break</td>
+      </tr>
+      
+      <tr>
+         
+         <td class="time">1100</td>
+         <td class="td-grey">
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+        
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Visualization problem</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Quarto II</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%;margin-top:0px">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      
+      </tr>
+      
+      <tr>
+         
+         <td class="time">1130</td>
+         <td class="td-grey" rowspan=2>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Intro 2 R</div>
+            </div>
+              <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%;margin-top:0px">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+         </td>
+
+      </tr>
+      
+      <tr><td></td><td></td><td></td><td></td></tr>  
+
+      <tr>
+         <td class="time">1230</td>
+         <td class="td-special-grey" rowspan=1>Lunch</td>
+         <td class="td-special-grey" rowspan=1>Lunch</td>
+         <td class="td-special-grey" rowspan=1>Lunch</td>
+      </tr>
+
+      <tr>
+         
+         <td class="time">1400</td>
+         <td class="td-grey" rowspan=2>
+           <a href="_sessions/principles/principles.html" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Intro 2 R</div>
+            </div>
+           </a>
+           <a href="https://www.dropbox.com/s/mx2x5bak5gie7sb/Maps%26Nets.Rmd?dl=1" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+        
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Maps & Nets</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%;margin-top:0px">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      
+         <td class="td-grey" rowspan=7>
+           <a href="_sessions/maps-nets/maps-nets.html" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Report competition</div>
+            </div>
+           </a>
+           <a href="https://www.dropbox.com/s/mx2x5bak5gie7sb/Maps%26Nets.Rmd?dl=1" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      </tr>
+      
+      <tr><td></td><td></td><td></td></tr> 
+
+      <tr>
+         <td class="time">1445</td>
+         <td class="td-special-grey" rowspan=1>Break</td>
+         </td><td></td><td></td>
+      </tr>
+      
+      <tr>
+         <td class="time">1515</td>
+                  <td class="td-grey" rowspan=4>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">ggplot</div>
+            </div>
+                      </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%;margin-top:0px">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+         <td class="td-special-grey" rowspan=1>Break</td>
+      </tr>
+      
+      <tr>
+         
+         <td class="time">1545</td>
+
+        
+         <td class="td-grey" rowspan=3>
+           <a href="" style="display:block;height:40px;width:100%">
+             <div style="display:table;height:40px;width:100%">
+              <div style="display:table-cell;vertical-align:top;width:100%">Animation</div>
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%;margin-top:0px">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><img src="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/src/img/slide.png"></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Slides</el></div>
+
+            </div>
+           </a>
+           <a href="" style="display:block;height:28px;width:100%">
+             <div style="display:table;height:28px;width:100%">
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:10%"><i class="fas fa-dumbbell" style="font-size:16px;opacity:.3"></i></div>
+              <div style="display:table-cell;text-align:left;vertical-align:top;width:90%"><el>Practical</el></div>
+            </div>
+           </a>
+         </td>
+      
+      </tr>
+      
+      <tr><td></td><td></td><td></td><td></td></tr> 
+      <tr><td></td><td></td><td></td><td></td></tr> 
+      
+      <tr>
+         <td class="time">1700</td>
+         <td class="td-red" rowspan=1>end</td>
+         <td class="td-red" rowspan=1>end</td>
+         <td class="td-red" rowspan=1>end</td>
+      </tr>      
+  
+
+      </table>
+
+      <br><br>
+
+      <h2>References</h2>
+      <table width=50% cellspacing=0 cellpadding=0 class="literature">
+        <col width=33%>
+        <col width=33%>
+        <col width=33%>
+        <tr>
+          <td align=center style="vertical-align:top">
+            <a href="https://r4ds.had.co.nz/">
+              <img class="literature-img" src="https://d33wubrfki0l68.cloudfront.net/b88ef926a004b0fce72b2526b0b5c4413666a4cb/24a30/cover.png">
+            </a>
+          </td>
+          <td align=center style="vertical-align:top">
+            <a href="https://www.storytellingwithdata.com/">
+              <img class="literature-img" src="https://images.squarespace-cdn.com/content/v1/55b6a6dce4b089e11621d3ed/1561579666357-MHVY29MSQCOU7SU551JQ/SWD+cover.jpeg">
+            </a>
+          </td>
+          <td align=center style="vertical-align:top">
+            <a href="https://socviz.co/">
+              <img class="literature-img" src="https://pup-assets.imgix.net/onix/images/9780691181615.jpg">
+            </a>
+          </td>
+        </tr>
+      </table>
+
+ 
+    </div>
+  </body>
+</html>

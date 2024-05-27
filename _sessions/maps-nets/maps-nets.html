@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>maps &amp; nets</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ GSERM                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# maps &amp; nets
+### Visualizing and communicating data with R<br>
+<a href='https://therbootcamp.github.io'>
+<font style='font-size:1.4em'>The R Bootcamp @ GSERM</font> </a> <br>
+<a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+<i class='fas fa-clock' style='font-size:1.4em;'></i> </a> 
+<a href='https://therbootcamp.github.io'>
+<i class='fas fa-home' style='font-size:1.4em;' ></i> </a> 
+<a href='therbootcamp@gmail.com'>
+<i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a> 
+<a href='https://www.linkedin.com/company/27090302'>
+<i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### June 2022
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          https://therbootcamp.github.io
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+      The R Bootcamp | June 2022
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+
+
+.pull-left3[
+
+# Maps with &lt;mono&gt;ggplot&lt;/mono&gt;/&lt;mono&gt;sf&lt;/mono&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Maps require geometric shapes stored in &lt;high&gt;shapefiles&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The &lt;high&gt;simple features&lt;/high&gt; (&lt;mono&gt;sf&lt;/mono&gt;) framework makes processing and visualizing maps with the &lt;mono&gt;tidyverse&lt;mono&gt; easy.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Shapefiles
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Geospatial vector data format for &lt;high&gt;geographic information system&lt;/high&gt; (GIS) software.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Necessary files:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;.shp&lt;/mono&gt; | actual shapefile&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;.shx&lt;/mono&gt; | shape index format&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;.dbf&lt;/mono&gt; | attribute format&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Optional files:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;.prj&lt;/mono&gt; | projection description&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;.cpg&lt;/mono&gt; | code page specification&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+&lt;p align="center"&gt;
+&lt;img src="image/files.png" height="420px"&gt;
+&lt;/p&gt;
+]
+
+
+---
+
+# &lt;mono&gt;sf&lt;/mono&gt;
+
+
+
+
+
+
+```r
+read_sf('1_Data/quarters') 
+```
+
+```
+Simple feature collection with 21 features and 5 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: 2609000 ymin: 1263000 xmax: 2619000 ymax: 1272000
+Projected CRS: CH1903+ / LV95
+# A tibble: 21 × 6
+   OBJID OBJECTID TXT   ZTXT  TYPE                                                          geometry
+   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                                                    &lt;POLYGON [m]&gt;
+ 1 17136        1 7     07    Bruderholz   ((2612556 1264548, 2612561 1264514, 2612565 1264482, 261…
+ 2 17139        2 6     06    Gundeldingen ((2610887 1266551, 2610896 1266546, 2610918 1266533, 261…
+ 3 17142        3 5     05    St. Alban    ((2612942 1267023, 2613000 1267019, 2613027 1267020, 261…
+ 4 17145        4 4     04    Breite       ((2613684 1266891, 2613686 1266889, 2613689 1266887, 261…
+ 5 17148        5 8     08    Bachletten   ((2610561 1266791, 2610571 1266781, 2610595 1266757, 261…
+ 6 17151        6 2     02    Vorstädte    ((2610928 1268323, 2610934 1268293, 2610947 1268297, 261…
+ 7 17154        7 1     01    Altstadt Gr… ((2611366 1267578, 2611375 1267568, 2611376 1267569, 261…
+ 8 17157        8 3     03    Am Ring      ((2610705 1267923, 2610680 1267844, 2610647 1267740, 261…
+ 9 17160        9 9     09    Gotthelf     ((2609245 1266802, 2609236 1266801, 2609366 1267143, 260…
+10 17163       10 10    10    Iselin       ((2610234 1267656, 2610284 1267389, 2610234 1267403, 261…
+# … with 11 more rows
+```
+
+
+---
+
+# &lt;mono&gt;geom_sf&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Since &lt;mono&gt;read_sf&lt;/mono&gt; creates a &lt;mono&gt;tibble&lt;/tibble&gt;, it can be plugged &lt;high&gt;straight into &lt;mono&gt;ggplot&lt;/mono&gt;&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The dedicated geom &lt;mono&gt;geom_sf&lt;/mono&gt; plots the geometric polygons.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# read shapefiles
+quarters_map &lt;- read_sf('1_Data/quarters')
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  geom_sf()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# &lt;mono&gt;geom_sf&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Since &lt;mono&gt;read_sf&lt;/mono&gt; creates a &lt;mono&gt;tibble&lt;/tibble&gt;, it can be plugged &lt;high&gt;straight into &lt;mono&gt;ggplot&lt;/mono&gt;&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The dedicated geom &lt;mono&gt;geom_sf&lt;/mono&gt; plots the geometric polygons.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# read shapefiles
+quarters_map &lt;- read_sf('1_Data/quarters')
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  geom_sf() + 
+  
+  # remove background
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Wrangling
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Since &lt;mono&gt;read_sf&lt;/mono&gt; creates a &lt;mono&gt;tibble&lt;/tibble&gt;, one can easily &lt;high&gt;join additional data&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# join basel tax data
+quarters_map &lt;- quarters_map %&gt;% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  geom_sf() + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Add color
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Colors are set using &lt;mono&gt;aes()&lt;/mono&gt; just like in a regular &lt;mono&gt;ggplot&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# join basel tax data
+quarters_map &lt;- quarters_map %&gt;% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  
+  # fill color by income
+  geom_sf(aes(fill = income_mean)) + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Styling
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Styling can be adjusted just like in any other &lt;mono&gt;ggplot&lt;mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# join basel tax data
+quarters_map &lt;- quarters_map %&gt;% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  
+  # add white outlines
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Styling
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Styling can be adjusted just like in any other &lt;mono&gt;ggplot&lt;mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# join basel tax data
+quarters_map &lt;- quarters_map %&gt;% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  
+  # change legend title
+  scale_fill_continuous(name = 'Income') 
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Styling
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Styling can be adjusted just like in any other &lt;mono&gt;ggplot&lt;mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# join basel tax data
+quarters_map &lt;- quarters_map %&gt;% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %&gt;% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') +
+  
+  # add annotion
+  labs(title = "Inequality in Basel",
+     subtitle = "Average income in Basel...",
+     caption = "ource: Open Data Basel...")
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# &lt;mono&gt;geom_label()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Annotation with labels or images requires specification of a location such as the &lt;high&gt;polygon's centroid&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# start with joint object
+quarters_map %&gt;% 
+  
+  # determine centroids
+  mutate(ctr = st_centroid(geometry),
+    lon = sapply(ctr, function(x) x[1]),
+    lat = sapply(ctr, function(x) x[2])) %&gt;% 
+
+  # plot quarters
+  ggplot(...) +
+    
+  # add labels
+  geom_label_repel(aes(x = lon, 
+                       y = lat, 
+                       label = TYPE), 
+                   size = 2.5)
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# &lt;mono&gt;geom_image()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Styling can be adjusted just like in any other &lt;mono&gt;ggplot&lt;mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# join basel tax data
+quarters_map %&gt;% 
+  
+  # determine centroids
+  mutate(ctr = st_centroid(geometry),
+    lon = sapply(ctr, function(x) x[1]),
+    lat = sapply(ctr, function(x) x[2])) %&gt;% 
+
+  # plot quarters
+  ggplot(...) +
+    
+  # add images
+  geom_image(aes(x = lon, y = lat, 
+                 image = image), 
+             size=.05)
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+.pull-left3[
+
+# Networks with &lt;mono&gt;tidygraph&lt;/mono&gt; &amp; &lt;mono&gt;ggraph&lt;/mono&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Networks (graphs) show relationships (edges) between units (nodes).&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;tidygraph&lt;/highm&gt; helps with creating tidy network objects, &lt;highm&gt;ggraph&lt;/highm&gt; helps with visualizing networks within the &lt;mono&gt;ggplot&lt;/mono&gt; framework.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Edge list
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;A network is typically created from either an &lt;high&gt;edge list&lt;/high&gt; or an adjacency matrix.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# determine correlations
+basel %&gt;% 
+  select(year, quarter, income_median) %&gt;% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %&gt;% 
+  select(-1) %&gt;% 
+  cor() %&gt;% 
+  as.table() %&gt;% 
+  as_tibble(.name_repair = "unique") %&gt;% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %&gt;% 
+  
+  # limit to strong edges
+  filter(weight &lt; 1, weight &gt; .5)
+```
+
+]
+
+.pull-right45[
+
+
+```
+# A tibble: 184 × 3
+   from                to                  weight
+   &lt;chr&gt;               &lt;chr&gt;                &lt;dbl&gt;
+ 1 Am Ring             Altstadt Grossbasel  0.523
+ 2 Bachletten          Altstadt Grossbasel  0.558
+ 3 Am Ring             Vorstädte            0.881
+ 4 St. Alban           Vorstädte            0.806
+ 5 Gundeldingen        Vorstädte            0.721
+ 6 Bruderholz          Vorstädte            0.605
+ 7 Bachletten          Vorstädte            0.770
+ 8 Gotthelf            Vorstädte            0.872
+ 9 Altstadt Kleinbasel Vorstädte            0.560
+10 Wettstein           Vorstädte            0.917
+# … with 174 more rows
+```
+
+]
+
+---
+
+# &lt;mono&gt;tidygraph&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;tidygraph&lt;/mono&gt; generates a &lt;high&gt;network object&lt;/high&gt; the edge list.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# determine correlations
+network &lt;- basel %&gt;% 
+  select(year, quarter, income_median) %&gt;% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %&gt;% 
+  select(-1) %&gt;% 
+  cor() %&gt;% 
+  as.table() %&gt;% 
+  as_tibble(.name_repair = "unique") %&gt;% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %&gt;% 
+  filter(weight &lt; 1, weight &gt; .5) %&gt;% 
+  
+  # format to graph
+  as_tbl_graph(edges, directed = FALSE)
+```
+
+
+]
+
+.pull-right45[
+
+
+```
+# A tbl_graph: 21 nodes and 184 edges
+#
+# An undirected multigraph with 1 component
+#
+# Node Data: 21 × 1 (active)
+  name        
+  &lt;chr&gt;       
+1 Am Ring     
+2 Bachletten  
+3 St. Alban   
+4 Gundeldingen
+5 Bruderholz  
+6 Gotthelf    
+# … with 15 more rows
+#
+# Edge Data: 184 × 3
+   from    to weight
+  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;
+1     1    13  0.523
+2     2    13  0.558
+3     1    14  0.881
+# … with 181 more rows
+```
+
+]
+
+---
+
+# &lt;mono&gt;ggraph&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ggraph&lt;/mono&gt; provides syntax to plot networks within the &lt;highm&gt;ggplot framwork&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# start network plot
+network %&gt;% 
+  ggraph() 
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-29-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Adding nodes &amp; edges
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_node_point()&lt;/mono&gt; adds points to represent the nodes of the network.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li class="m2"&gt;&lt;mono&gt;geom_edge_link()&lt;/mono&gt; adds (straight) lines to represent the edges of the network.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# start network plot
+network %&gt;% 
+  ggraph() + 
+  
+  # add nodes and edges
+  geom_edge_link() +
+  geom_node_point()
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-31-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Adding labels
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_node_label()&lt;/mono&gt; adds node labels.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# start network plot
+network %&gt;% 
+  ggraph() + 
+  geom_edge_link() +
+  geom_node_point() +
+
+  # add labels
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE) 
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-33-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Styling networks
+
+.pull-left5[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;theme_graph()&lt;/mono&gt; removes unnecessary background details.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;scale_edge_width()&lt;/mono&gt; and similar functions can be used to adapt edges or nodes.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# start network plot
+network %&gt;% 
+  ggraph() + 
+  geom_edge_hive() + # style change
+  geom_node_point() +
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE) +
+  
+  # add styling
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off")
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-35-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Adding clusters
+
+.pull-left5[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;group_louvain()&lt;/mono&gt; and similar functions can be used to determine node groups (clusters).&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# add clusters
+network %&gt;% 
+  mutate(community = 
+           group_louvain(weight) %&gt;% 
+           as.factor()) %&gt;%
+  
+  # network plot
+  ggraph() + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off")
+  scale_color_manual(values=viridis(3)[1:2])
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-37-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Adding ellipses
+
+.pull-left5[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;stat_ellipse()&lt;/mono&gt; can be used to add ellipses covering points in the data (similar &lt;mono&gt;stat_*&lt;/mono&gt; functions exist for other visual elements.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# add clusters
+network %&gt;% 
+  ...
+  
+  # network plot
+  ggraph() + 
+  
+  # ellipses
+  stat_ellipse(aes(x = x , y = y, 
+                   group = community, 
+                   fill = community), 
+               level = .8, geom = "polygon", 
+               alpha = .1, show.legend = FALSE) + 
+  
+  # rest of plot
+  scale_fill_manual(values=viridis(3)[1:2]) +
+  ...
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-39-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+---
+
+# Adding annotation
+
+.pull-left5[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;annotate()&lt;/mono&gt; can be used to &lt;high&gt;add any type of plot elements&lt;/high&gt; (layers) using vector specification.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# add clusters
+network %&gt;% 
+  ...
+  
+  # network plot
+  ggraph() + 
+  ...
+  
+  # annotation
+  annotate("text", 
+           x = c(-2.5, 2), y = c(.8,1), 
+           label = c("Group 1","Group 2"), 
+           size=7)
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-41-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Adding labels
+
+.pull-left5[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Labels can be added as usual using &lt;mono&gt;labs()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+
+```r
+# add clusters
+network %&gt;% 
+  ... 
+  
+  # network plot
+  ggraph() + 
+  ...
+  
+  # labels
+  labs(title = "Network...",
+       subtitle = "reveals...")
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="maps-nets_files/figure-html/unnamed-chunk-43-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;font style="font-size:12px"&gt;click to download&lt;/font&gt;&lt;br&gt;&lt;a href="https://www.dropbox.com/s/mx2x5bak5gie7sb/Maps%26Nets.Rmd?dl=1"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

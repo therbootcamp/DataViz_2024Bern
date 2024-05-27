@@ -1,0 +1,62 @@
+---
+title: ""
+output: html_document
+---
+```{r, echo = FALSE ,message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment=NA, echo = TRUE, eval = TRUE, 
+                      message = FALSE, warning = FALSE, fig.align = 'center', dpi = 200)
+library(tidyverse)
+library(ggthemes)
+
+basel = read_csv('1_Data/taxation.csv')
+
+```
+
+Text before figure.
+
+
+```{r fig1, echo = F}
+
+
+my_plot = basel %>%
+  
+  # sort by income and factor quarter
+  arrange(year, income_median) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  
+  # original code
+  ggplot(aes(x = year, y = income_median, col = quarter)) +
+  geom_line() + geom_point() +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size=7)) + 
+  scale_color_viridis_d() 
+
+my_plot <- 
+my_plot  +
+  labs(x = "Year", y = "Median income")
+
+
+```
+
+````markdown
+`r ''````{r, fig.cap = "Figure 1. Inequality development by quarter from 2001 to 2017."}
+ggplot(...)
+```
+````
+
+
+```{r, echo=F, fig.cap = "Figure 1. Inequality development by quarter from 2001 to 2017."}
+
+my_plot
+
+```
+
+
+Text after figure.
+
+
+
+

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>ggplot</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ GSERM                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# ggplot
+### Visualizing and communicating data with R<br>
+<a href='https://therbootcamp.github.io'>
+<font style='font-size:1.4em'>The R Bootcamp @ GSERM</font> </a> <br>
+<a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+<i class='fas fa-clock' style='font-size:1.4em;'></i> </a> 
+<a href='https://therbootcamp.github.io'>
+<i class='fas fa-home' style='font-size:1.4em;' ></i> </a> 
+<a href='therbootcamp@gmail.com'>
+<i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a> 
+<a href='https://www.linkedin.com/company/27090302'>
+<i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### June 2022
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          https://therbootcamp.github.io
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+      The R Bootcamp | June 2022
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+
+
+
+
+
+
+.pull-left3[
+
+# Tidyverse
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The tidyverse is ...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A collection of user-friendly &lt;high&gt;packages&lt;/high&gt; for analyzing &lt;high&gt;tidy data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;An &lt;high&gt;ecosystem&lt;/high&gt; for analytics and data science with common design principles&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;A &lt;high&gt;dialect&lt;/high&gt; of the R language&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right65[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/tidyverse_ggplot.png" height = "520px"&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Modular graphics in &lt;mono&gt;ggplot2&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;data&lt;/highm&gt;: the data set&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;mapping&lt;/highm&gt;: the plot's structure&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;What do the axes represent?&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;What do size, shapes, colors, etc. represent?&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;geoms&lt;/highm&gt;: geometric shapes illustrating data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;facets&lt;/highm&gt;: Stratify plot according to variable&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;highm&gt;labs&lt;/highm&gt;: Plot annotation&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;highm&gt;themes&lt;/highm&gt;: Aesthetic details&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;highm&gt;scales&lt;/highm&gt;: Scaling of dimensions&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Prepare dataset
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;Calculate &lt;mono&gt;mean + median&lt;/mono&gt; income for each year&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+# averages per year
+basel_avg &lt;- basel %&gt;% 
+  group_by(year) %&gt;% 
+  summarize(
+    income_mean = mean(income_mean),
+    income_median = mean(income_median))
+```
+
+]
+
+
+.pull-right45[
+
+
+```r
+basel_avg
+```
+
+```
+# A tibble: 17 × 3
+    year income_mean income_median
+   &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;
+ 1  2001      63027.        49516.
+ 2  2002      63555.        50066.
+ 3  2003      63083.        49717.
+ 4  2004      62298.        49467.
+ 5  2005      63133.        49192.
+ 6  2006      64148.        49102.
+ 7  2007      66594         50164.
+ 8  2008      66463.        48068.
+ 9  2009      66614.        48818.
+10  2010      67185.        49028.
+11  2011      66050.        49213.
+12  2012      66987.        49433.
+13  2013      68748.        49878.
+14  2014      70499.        50440.
+15  2015      71115.        50426.
+16  2016      73272.        50653.
+17  2017      72388.        50840.
+```
+
+]
+
+---
+
+# `ggplot()`
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;All plots start with &lt;mono&gt;ggplot()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Two arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;data&lt;/mono&gt; | The data set (&lt;mono&gt;tibble&lt;/mono&gt;)&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mapping&lt;/mono&gt; | The plot structure. Defined using &lt;mono&gt;aes()&lt;/mono&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+
+
+```r
+ggplot(data = basel_avg)
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# `aes()`
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;aes()&lt;/mono&gt; helps define the structure of the &lt;highm&gt;mapping&lt;/highm&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Key arguments:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;x, y&lt;/mono&gt; | Defines axes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;color,fill&lt;/mono&gt; | Defines colors&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;alpha&lt;/mono&gt; | Defines opacity&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;size&lt;/mono&gt; | Defines sizes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;shape&lt;/mono&gt; | Defines shapes (e.g., circles or squares)&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean))
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# &lt;mono&gt;+&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;mono&gt;+&lt;/mono&gt; operator "adds" &lt;high&gt;additional elements&lt;/high&gt; to the plot.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Not to be confused with the pipe &lt;mono&gt;%&gt;%&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Show as points
+  geom_point() 
+```
+
+]
+
+
+.pull-right45[
+
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_*()&lt;/mono&gt; functions define which geometric objects are used to illustrate the data.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;A few examples &lt;mono&gt;geoms&lt;/mono&gt;:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_point()&lt;/mono&gt; | for points&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_line()&lt;/mono&gt; | for lines&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_smooth()&lt;/mono&gt; | for smooth curves&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_bar()&lt;/mono&gt; | for bars&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_boxplot()&lt;/mono&gt; | for box-plots &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_violin()&lt;/mono&gt; | for violin-plots &lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_*()&lt;/mono&gt; functions define which geometric objects are used to illustrate the data.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Show as lines
+  geom_line() 
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_*()&lt;/mono&gt; functions define which geometric objects are used to illustrate the data.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Show as smoothed curve
+  geom_smooth() 
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_*()&lt;/mono&gt; functions define which geometric objects are used to illustrate the data.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Show as points and lines
+  geom_point() +
+  geom_line() 
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;geom_*()&lt;/mono&gt; functions define which geometric objects are used to illustrate the data.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Add bars (not necessarily recommended)
+  geom_bar(stat = "identity") +
+  
+  # Show as points and lines
+  geom_point() +
+  geom_line() 
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Colors
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;R understands a large number of &lt;high&gt;color names&lt;/high&gt; (see &lt;mono&gt;colors()&lt;/mono&gt; for the whole set).&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additionally colors can be specified using &lt;high&gt;hex codes&lt;/high&gt; or the &lt;mono&gt;rgb()&lt;/mono&gt; function.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  
+  # Add bars (not necessarily recommended)
+  geom_bar(stat = "identity", 
+           col = "lightblue",
+           fill = "lightblue") +
+  
+  # Show as points and lines
+  geom_point(col = "#4682B4") +
+  geom_line(col = "#4682B4") 
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Most &lt;mono&gt;geom_*()&lt;/mono&gt; functions allow the independent specification of &lt;highm&gt;data&lt;/highm&gt; and &lt;highm&gt;mapping&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Can be used to add geoms for other cases or variables in the data.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+ggplot(data = basel_avg,
+       mapping = aes(x = year, 
+                     y = income_mean)) +
+  geom_point() +
+  geom_line() +
+  
+  # Add points and lines for median
+  geom_point(aes(y = income_median)) +
+  geom_line(aes(y = income_median))
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Wrangling
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Oftentimes, creating the desired plot requires appropriate data wrangling.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;ggplot&lt;/mono&gt; works best with &lt;high&gt;long data formats&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+```r
+# pivot to long format
+basel_avg_long &lt;- basel_avg %&gt;% 
+  pivot_longer(-year, 
+               names_to = "statistic", 
+               values_to = "income")
+```
+
+
+]
+
+.pull-right45[
+
+
+```r
+basel_avg_long
+```
+
+```
+# A tibble: 34 × 3
+    year statistic     income
+   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+ 1  2001 income_mean   63027.
+ 2  2001 income_median 49516.
+ 3  2002 income_mean   63555.
+ 4  2002 income_median 50066.
+ 5  2003 income_mean   63083.
+ 6  2003 income_median 49717.
+ 7  2004 income_mean   62298.
+ 8  2004 income_median 49467.
+ 9  2005 income_mean   63133.
+10  2005 income_median 49192.
+# … with 24 more rows
+```
+
+]
+
+---
+
+# &lt;mono&gt;aes()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;aes()&lt;/mono&gt; helps define the structure of the &lt;highm&gt;mapping&lt;/highm&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+
+&lt;br&gt;
+
+```r
+# use basel_avg_long
+ggplot(data = basel_avg_long,
+       mapping = aes(
+         x = year, 
+         y = income,
+                     
+         # add color dimension
+         col = statistic)) +
+  geom_point() +
+  geom_line() 
+```
+
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# &lt;mono&gt;aes()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;aes()&lt;/mono&gt; helps define the structure of the &lt;highm&gt;mapping&lt;/highm&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+
+&lt;br&gt;
+
+```r
+# use basel_avg_long
+ggplot(data = basel_avg_long,
+       mapping = aes(
+         x = year, 
+         y = income,
+                     
+         # add shape dimension
+         shape = statistic)) +
+  geom_point() +
+  geom_line() 
+```
+
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# &lt;mono&gt;aes()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;aes()&lt;/mono&gt; helps define the structure of the &lt;highm&gt;mapping&lt;/highm&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+
+&lt;br&gt;
+
+```r
+# use basel_avg_long
+ggplot(data = basel_avg_long,
+       mapping = aes(
+         x = year, 
+         y = income,
+                     
+         # add many dimensions
+         # (not recommended)
+         col = statistic,
+         shape = statistic,
+         size = statistic,
+         alpha = statistic)) +
+  geom_point() +
+  geom_line() 
+```
+
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-30-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# &lt;mono&gt;aes()&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;aes()&lt;/mono&gt; helps define the structure of the &lt;highm&gt;mapping&lt;/highm&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+
+&lt;br&gt;
+
+```r
+# use basel_avg_long
+ggplot(data = basel_avg_long,
+       mapping = aes(
+         x = year, 
+         y = income,
+         # add many dimensions
+         col = statistic) +
+  geom_point() +
+  geom_line() 
+```
+
+
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-32-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+---
+
+# `facet_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Facetting creates the &lt;high&gt;same plot for groups&lt;/high&gt; defined by another variable.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Key functions:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;facet_wrap()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;facet_grid()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+basel_long &lt;- basel %&gt;% 
+  pivot_longer(c(income_mean, income_median),
+               names_to = 'statistic',
+               values_to = 'income')
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-34-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+.pull-left45[
+
+# `facet_*()`
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Facetting creates the &lt;high&gt;same plot for groups&lt;/high&gt; defined by another variable.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# use basel_long
+ggplot(data = basel_long,
+       mapping = aes(
+         x = year, 
+         y = income,
+         col = statistic)) +
+  geom_point() +
+  geom_line() +
+  
+  # facet by quarter
+  facet_wrap(~quarter)
+```
+
+]
+
+.pull-right45[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-36-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# patchwork
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; provides a simple syntax to combine plots.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; syntax:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;+&lt;/mono&gt; | combine horizontally&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;/&lt;/mono&gt; | combine vertically&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;|&lt;/mono&gt; | spacer&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;()&lt;/mono&gt; | grouper&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&amp;&lt;/mono&gt; | apply to all&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;plot_layout&lt;/mono&gt; | control layout&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+
+&lt;br&gt;
+
+
+```r
+# two quarter-specific plots
+breite
+clara
+```
+
+]
+
+.pull-right45[
+
+
+```r
+breite/clara
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-39-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# patchwork
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; provides a simple syntax to combine plots.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; syntax:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;+&lt;/mono&gt; | combine horizontally&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;/&lt;/mono&gt; | combine vertically&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;|&lt;/mono&gt; | spacer&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;()&lt;/mono&gt; | grouper&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&amp;&lt;/mono&gt; | apply to all&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;plot_layout&lt;/mono&gt; | control layout&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# two quarter-specific plots
+breite
+clara
+```
+
+]
+
+.pull-right45[
+
+
+```r
+breite+clara
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-41-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# patchwork
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; provides a simple syntax to combine plots.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; syntax:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;+&lt;/mono&gt; | combine horizontally&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;/&lt;/mono&gt; | combine vertically&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;|&lt;/mono&gt; | spacer&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;()&lt;/mono&gt; | grouper&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&amp;&lt;/mono&gt; | apply to all&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;plot_layout&lt;/mono&gt; | control layout&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# two quarter-specific plots
+breite
+clara
+```
+
+]
+
+.pull-right45[
+
+
+```r
+breite+clara+plot_layout(guides="collect")
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-43-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+.pull-left45[
+
+# patchwork
+
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; provides a simple syntax to combine plots.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;patchwork&lt;/mono&gt; syntax:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;+&lt;/mono&gt; | combine horizontally&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;/&lt;/mono&gt; | combine vertically&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;|&lt;/mono&gt; | spacer&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;()&lt;/mono&gt; | grouper&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&amp;&lt;/mono&gt; | apply to all&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;plot_layout&lt;/mono&gt; | control layout&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# two quarter-specific plots
+breite
+clara
+```
+
+]
+
+.pull-right45[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+```r
+all/(breite+clara)+
+  plot_layout(guides="collect")
+```
+
+&lt;img src="ggplot_files/figure-html/unnamed-chunk-45-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href=""&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

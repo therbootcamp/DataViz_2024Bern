@@ -1,0 +1,130 @@
+---
+title: "Maps & Nets"
+output:
+editor_options:
+  chunk_output_type: console
+---
+
+In this practical, you will in different ways animate a plot showing the link between wealth and income in Basel in the year 2017.   
+
+# 0 - Preliminaries
+
+1. If you haven't done so already, load the `tidyverse` and the `taxation.csv` data. 
+
+```{r}
+library(tidyverse)
+basel <- read_csv('1_data/taxation.csv')
+```
+
+2. Load the `gganimate` and `plotly` packages. 
+
+```{r}
+library(gganimate)
+library(plotly)
+```
+
+# 1 - Base plot
+
+1. Use the code below to generate the base plot for this practical. It shows the relationship between wealth and income for every year, with points colored according to the wealth in 2017.  
+
+```{r}
+plot <- basel %>% 
+  arrange(year, desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, 
+             y = income_mean, 
+             col = quarter)) +
+  geom_point(show.legend = F, 
+             size=4) + 
+  labs(x = "Wealth", 
+       y = "Income") +
+  theme_minimal() +
+  scale_color_viridis_d() 
+```
+
+# 2 - Animate
+
+1. To animate the base plot, that is, to show the data for each year in an iterative fashion, simply add `transition_states(year)` to the plot. This will start a process during which first all individual images are created and then the images are joined in a single .gif file, which will be displayed in the Plots tab. Know that this may take a few seconds to a minute.
+
+```{r}
+plot + 
+  transition_states(year)
+```
+
+2. Add `ggtitle(label = "XX", subtitle = "XX")` to add a title and subtitle to the plot. In either title or subtitle, add `{closest_state}` directly inside the character string, so that the changing states will be shown. 
+
+```{r}
+plot + 
+  transition_states(year) +
+  ggtitle(label = "Do the rich get richer in Basel?", 
+          subtitle = "Wealth and income in {closest_state}")
+```
+
+3. Change the speed and focus of the animation by setting `transition_length = 10` and `state_length = 0`. As a result, you should get a smoother, more fluid animation. 
+
+```{r}
+plot + 
+  transition_states(year, transition_length = 10, state_length = 0) +
+  ggtitle(label = "Do the rich get richer in Basel?", 
+          subtitle = "Wealth and income in {closest_state}")
+```
+
+4. Add `shadow_wake()` to add wakes to your animation and set `wake_length = .3`. 
+
+```{r}
+plot + 
+  transition_states(year, transition_length = 10, state_length = 0) +
+  ggtitle(label = "Do the rich get richer in Basel?", 
+          subtitle = "Wealth and income in {closest_state}") +
+  shadow_wake(wake_length = .3)
+```
+
+5. Use `anim_save()`, to save your animation as a .gif to your harddrive. To do this, first store the animation in an object. Make sure to add the extension `.gif` to your filename. If you don't specify a folder, you should find your animation inside of your project folder.   
+
+```{r}
+anim <- plot + 
+  transition_states(year, transition_length = 10, state_length = 0) +
+  ggtitle(label = "Do the rich get richer in Basel?", 
+          subtitle = "Wealth and income in {closest_state}") +
+  shadow_wake(wake_length = .3)
+
+anim_save(filename = "basel_anim.gif", animation = anim)
+```
+
+# 3 - Plotly
+
+1. Use `ggplotly`, to turn the base plot into a `plotly` package and then run it. Inspect the plot and observe whether the hover information includes all relevant information.  
+
+```{r}
+p <- ggplotly(plot)
+p
+```
+
+2. Adjust the base plot to include `text = paste0("Quarter: ", quarter,"<br>Year: ", year,"<br>Income: ", income_mean))` in the `aes()` function. Save the plot again as `plot`. 
+
+```{r}
+plot <- basel %>% 
+  arrange(year, desc(wealth_mean)) %>% 
+  mutate(quarter = as_factor(quarter)) %>% 
+  ggplot(aes(x = wealth_mean, 
+             y = income_mean, 
+             col = quarter,
+             text = paste0("Quarter: ", quarter,"<br>Year: ", year,"<br>Income: ", income_mean)))) +
+  geom_point(show.legend = F, 
+             size=4) + 
+  labs(x = "Wealth", 
+       y = "Income") +
+  theme_minimal() +
+  scale_color_viridis_d() 
+```
+
+3. Use the updated plot in `ggplotly`, set `tooltip = "text"`, and verify that the hover information now only shows the `text` feature. 
+
+```{r}
+p <- ggplotly(plot, tooltip = "text)
+p
+```
+
+# 4 - Project work
+
+1. Try to use what you have learned in this section to either create an animated or interactive version of your plot. 

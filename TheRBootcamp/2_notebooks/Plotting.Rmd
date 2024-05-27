@@ -1,0 +1,168 @@
+---
+title: "Plotting exercises"
+output:
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE,
+                      eval = FALSE)
+```
+
+In this practical, you will visualize the development of wealth in Basel across time.   
+
+# 0 - Preliminaries
+
+1. If you haven't done so already, load the `tidyverse` and the `taxation.csv` data. 
+
+```{r}
+library(tidyverse)
+basel <- read_csv('1_data/taxation.csv')
+```
+
+
+# 1 - Summarize
+
+1. Begin by aggregating the mean, median, and Gini of wealth across the different quarters to obtain average estimates for each individual `year`. Save the result as `avg_wealth`. 
+
+```{r}
+avg_wealth <- basel %>% 
+  group_by(XX) %>% 
+  summarize(avg_wealth_mean = mean(XX),
+            avg_wealth_median = mean(XX),
+            avg_wealth_gini = mean(XX))
+```
+
+# 2 - Plot
+
+1. Start a ggplot using `ggplot()` by piping the `avg_wealth` data set into the function's `data` argument. 
+
+```{r}
+avg_wealth %>% 
+  ggplot()
+```
+
+2. Running the previous chunk should have created a blank canvas in your bottom right RStudio panel. Now set up the structure of the plot using the `mapping` argument and the `aes()` helper function. Place `year` on the x-axis and `avg_wealth_mean` on the y-axis. 
+
+```{r}
+avg_wealth %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX))
+```
+
+3. The updated plot should now contain axis labels, tick marks and labels, and grid lines. It's time to add some geometric shapes to show the data. Add `geom_point()`. 
+
+```{r}
+avg_wealth %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX
+```
+
+4. The figure should show 17 points describing a clear upward trend: Baselers have become quit a bit more wealthy. Would an additional `geom_line()` help emphasize the trend? 
+
+```{r}
+avg_wealth %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX
+```
+
+5. Maybe `geom_smooth()` would be an even better choice? Try adding it instead of `geom_line()`. You can set `se = FALSE` inside `geom_smooth()`, to omit the confidence interval. 
+
+# 3 - Adding a variable
+
+1. To illustrate the development of the medians in the same plot, add `geom_point()` and either `geom_line()` or `geom_smooth()` for `avg_wealth_median`. Inside these additional geoms specify that they should show `avg_wealth_median` on the y-axis using the `aes()`. Note that for geoms the first argument usually is `mapping`, which is why we can omit its name.  
+
+```{r}
+avg_wealth %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX + 
+  XX(aes(y = XX)) + XX(aes(y = XX))
+```
+
+2. Looks like not every Baseler got a lot richer. Increases in medians are much more moderate and there is quite a gap between means and medians. What does that imply for the development of the Gini?
+
+# 4 - Facets
+
+1. Let's try to bring the Gini into the picture. Since the Gini is on a completely different scale, the best way to do this is facets. Before we can go there, however, you need to transpose `avg_wealth` to the long format. Let the new variables be called `"variable"` and `"value"`. Save the result as `avg_wealth_long`.
+
+```{r}
+avg_wealth_long <- avg_wealth %>% 
+  pivot_longer(c(XX, XX, XX),
+               names_to = XX,
+               values_to = XX)
+```
+
+2. Use `avg_wealth_long` and `facet_wrap()` to create a plot that illustrates the development for all three variables with points and lines. To do this, `value` must go on the y-axis and `variable` must be used as the faceting variable. 
+
+```{r}
+XX %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX + 
+  facet_wrap(~ XX)
+```
+
+3. Not ideal, right? The problem is that, per default, `ggplot` tries to use the same scales for the different facets. Set `scales = "free"` inside the `facet_wrap` function. Depending on your screen layout you may also want to set `ncol = 1` to have the facets sit on top of each other.
+
+```{r}
+XX %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX + 
+  facet_wrap(~ XX, XX = XX, XX = XX)
+```
+
+4. For Baselers everything has been going up: The mean wealth, the median wealth, and the Gini. Development in the Gini seems mild, however, note that it sits almost at the maximum of the scale. The Gini can maximally be 1 and that only if one person has all of the wealth and everyone else nothing. Part of the reason for the mild development, thus, likely is that extreme changes in the distribution of wealth are necessary for the Gini rise by noticeable amounts. 
+
+# 5 - Multiple plots
+
+1. Ok, let's try to compose the plot of the three wealth metrics in a way that gives the Gini more attention. Specifically, use the `patchwork` package to create a plot with rows where the development of the Gini takes up the entire upper row, while the other two metrics share the lower row. To do this, first create three different plots, one for each of the three panels.
+
+```{r}
+gini_plot <- XX %>% 
+  filter(variable == "XX") %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX
+
+mean_plot <- XX %>% 
+  filter(variable == "XX") %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX
+
+median_plot <- XX %>% 
+  filter(variable == "XX") %>% 
+  ggplot(mapping = aes(x = XX, 
+                       y = XX)) +
+  XX + XX 
+```
+
+2. Now, use `patchwork` syntax to compose the plot.  
+
+```{r}
+XX / (XX + XX)
+```
+
+3. Finally, add `plot_annotation(tag_levels = "A")` so that the labels are lettered according to the alphabet. 
+
+```{r}
+XX / (XX + XX) + XX
+```
+
+# 6 - Project work
+
+1. Try to use what you have learned in this section to visually explore your project data and possibly create a basic version of your data visualization. 
+
+
+
+
+
+
+
+

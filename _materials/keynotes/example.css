@@ -1,0 +1,18 @@
+table td {
+  vertical-align: top;
+}
+
+h3, h4 {
+  font-weight: 500;
+  color: #555555;
+}
+
+a, a:hover{
+  color: #007D8C;
+}
+
+body{
+  background-image: url(watermark.svg);
+  background-repeat: repeat-y;
+  background-size: contain;
+}

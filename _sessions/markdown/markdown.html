@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Markdown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ GSERM                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Markdown
+### Visualizing and communicating data with R<br>
+<a href='https://therbootcamp.github.io'>
+<font style='font-size:1.4em'>The R Bootcamp @ GSERM</font> </a> <br>
+<a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+<i class='fas fa-clock' style='font-size:1.4em;'></i> </a> 
+<a href='https://therbootcamp.github.io'>
+<i class='fas fa-home' style='font-size:1.4em;' ></i> </a> 
+<a href='therbootcamp@gmail.com'>
+<i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a> 
+<a href='https://www.linkedin.com/company/27090302'>
+<i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### June 2022
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          https://therbootcamp.github.io
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+      The R Bootcamp | June 2022
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+# What is Markdown?
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Developed by John Gruber and Aaron Swartz in 2004.&lt;br&gt;&lt;br&gt;
+  "&lt;high&gt;easy-to-read&lt;/high&gt; and &lt;high&gt;easy-to-write&lt;/high&gt; plain text format, [...] convert it to structurally valid XHTML (or HTML)"&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Simple &lt;high&gt;syntax for formatting&lt;/high&gt; documents.&lt;/span&gt;&lt;/li&gt;  
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;highlight text with bold and italic&lt;/span&gt;&lt;/li&gt;   
+    &lt;li&gt;&lt;span&gt;lists&lt;/span&gt;&lt;/li&gt;  
+    &lt;li&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;span&gt;hyperlinks&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;images&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown.png" width=400px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://de.wikipedia.org/wiki/Markdown"&gt;wikipedia.org&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# What is R Markdown?
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Uses Markdown for &lt;high&gt;formatting dynamic reports&lt;/high&gt; that include ...&lt;/span&gt;&lt;/li&gt;&lt;br&gt; 
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;R code chunks&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;R inline Code&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Visualizations&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Statistical outputs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Tables&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;etc.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/hex.png" height=300&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://rmarkdown.rstudio.com/docs/"&gt;rmarkdown.rstudio.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# R Markdown elements
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown scripts consist of several &lt;high&gt;elements&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Element&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;YAML&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;in't &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage&lt;br&gt;
+  &lt;high&gt;general document settings&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Setup chunk&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  control &lt;high&gt;chunks&lt;/high&gt; settings&lt;br&gt;
+  load &lt;high&gt;packages&lt;/high&gt;&lt;br&gt;
+  load &lt;high&gt;data&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Markdown&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;header&lt;/high&gt;&lt;br&gt;
+  &lt;high&gt;text&lt;/high&gt; highlighting
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Code chunk&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  R &lt;high&gt;Code&lt;/high&gt;&lt;br&gt;
+  R &lt;high&gt;Outputs&lt;high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_templ.png" height=400px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Pipeline
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
+    &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;PowerPoint&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;To this end, &lt;high&gt;several translation steps&lt;/high&gt; are necessary.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/pipeline.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# HTML Pipeline
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML is a &lt;high&gt;universal framework&lt;/high&gt; for documents, presentations, and dashboards&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;HTML &lt;high&gt;export to PDF&lt;/high&gt; is often straightforward.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/pipeline2.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# HTML
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;yper&lt;b&gt;T&lt;/b&gt;ext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The format of the &lt;high&gt;World Wide Web&lt;/high&gt;s.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Affords flexible styling through &lt;high&gt;CSS&lt;/high&gt; (Cascading Style Sheets).&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_templ_html.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Render
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML gets &lt;high&gt;interpreted&lt;/high&gt; in RStudio (or browsers) so that a well-formatted document emerges.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Rstudio&lt;/high&gt; also shows rendered documents (rather than the raw html). &lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Headers
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Headers on different &lt;high&gt;levels&lt;/high&gt; can be set using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 1
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 2
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;...&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  ...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;##### txt&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 5
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_2.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Headers
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Headers on different &lt;high&gt;levels&lt;/high&gt; can be set using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 1
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 2
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;...&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  ...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;##### txt&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  level 5
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_3.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Highlighting
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  bold
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic and bold 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_5.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Highlighting
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  bold
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic and bold 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_4.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Highlighting
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  bold
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  italic and bold 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_6.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Inline code
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Numbers or labels&lt;/high&gt; in text can be parameterized using inline code.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Inline code can include &lt;high&gt;any&lt;/high&gt; type/length of code.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_7.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;A &lt;high&gt;code &lt;mono&gt;chunk&lt;/mono&gt;&lt;/high&gt; can contain any R code.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The behavior of code chunks can be controlled using &lt;high&gt;chunk arguments&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_8_0.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Show/hide &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Run/not-run &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_8.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Show/hide &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Run/not-run &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_9.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Show/hide &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Run/not-run &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_10.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Setup chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_11.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Setup chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_13.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Setup chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_14.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Setup chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_15.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Relative path
+
+.pull-left35[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;When rendered, markdown documents do not use the current &lt;high&gt;working directory&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Paths need to be defined &lt;high&gt;relative to the position of the .Rmd file&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+```R
+# load data
+read_csv("../1_data/data.csv")
+
+```
+
+]
+
+.pull-right55[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/folder.png" height=280px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# Scale graphs
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_1.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Scale graphs
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_2.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Scale graphs
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_3.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Scale graphs
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_4.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Scale graphs
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_5.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# Captions
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Captions can be added with  &lt;highm&gt;fig.cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The caption text can be defined  &lt;high&gt;within the chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_6.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# Links, footnotes
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include links and footnotes.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lsqb;Name&amp;rsqb;(URL)&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Link&lt;/high&gt;. Name is displayed in the text, the URL is not displayed.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;^&amp;lsqb;Text&amp;rsqb;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Footnotes&lt;/high&gt; are included after the end of the text.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;***&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Includes a &lt;high&gt;horizontal&lt;/high&gt; separation line.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/links.png" height = 540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Quotes
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Quotes&lt;/high&gt; are generated directly in Markdown.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&gt; block quote&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Text will be displayed as a &lt;high&gt;Quote&lt;/high&gt;.&lt;high&gt;&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/quote.png" height = 540px&gt;
+&lt;/p&gt;
+
+
+]
+
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_1.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_2.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_3.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_4.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_5.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_6.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left3[
+
+# HTML
+
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;ypertext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage enables the layout of text and content with &lt;high&gt;HTML-Tags&lt;high&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Tag&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt,...&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Heading&lt;/high&gt; level 1, 2,...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lt;br&amp;gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   New &lt;high&gt;line&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lt;b&amp;gt;, &amp;lt;i&amp;gt;, &amp;lt;u&amp;gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Bold, italics, underline.&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lt;div&amp;gt;, &amp;lt;p&amp;gt;&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Container&lt;/high&gt;, text section.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;lt;table&amp;gt;&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Tables&lt;/high&gt;, columns.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/html_1.png" height=540px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left3[
+
+# CSS
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;C&lt;/b&gt;ascading &lt;b&gt;S&lt;/b&gt;tyle &lt;b&gt;S&lt;/b&gt;heets allow you to set additional &lt;high&gt;aesthetic characteristics&lt;/high&gt; of &lt;high&gt;HTML&lt;/high&gt; in an external file.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/css_1.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;font style="font-size:12px"&gt;click to open&lt;/font&gt;&lt;br&gt;&lt;a href="https://therbootcamp.github.io/DataViz_2022GSERM/_sessions/markdown/markdown_report.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

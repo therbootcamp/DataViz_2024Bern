@@ -1,0 +1,1189 @@
+---
+title: "maps & nets"
+author: "Visualizing and communicating data with R<br>
+  <a href='https://therbootcamp.github.io'>
+    <font style='font-size:1.4em'>The R Bootcamp @ GSERM</font>
+  </a>
+  <br>
+  <a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+    <i class='fas fa-clock' style='font-size:1.4em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:1.4em;' ></i>
+  </a>&#8239;
+  <a href='therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: 1.4em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/27090302'>
+    <i class='fab fa-linkedin' style='font-size: 1.4em;'></i>
+  </a>"
+date: "June 2022"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          https://therbootcamp.github.io
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+      The R Bootcamp | June 2022
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+```
+
+```{r, echo = FALSE ,message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo = TRUE, eval = TRUE, 
+                      message = FALSE, warning = FALSE, fig.align = 'center', dpi = 200)
+library(tidyverse)
+library(ggthemes)
+library(sf)
+require(tidygraph)
+require(ggraph)
+basel = read_csv('1_Data/taxation.csv')
+basel_map = sf::read_sf('1_Data/quarters')
+
+```
+
+
+
+.pull-left3[
+
+# Maps with <mono>ggplot</mono>/<mono>sf</mono>
+
+<ul>
+  <li class="m1"><span>Maps require geometric shapes stored in <high>shapefiles</high>.</span></li><br>
+  <li class="m2"><span>The <high>simple features</high> (<mono>sf</mono>) framework makes processing and visualizing maps with the <mono>tidyverse<mono> easy.</span></li>
+</ul>
+
+]
+
+
+.pull-right6[
+
+<br><br>
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+basel_map %>% 
+  left_join(basel %>% filter(year == 2017), by = c("TYPE" = "quarter")) %>% 
+  ggplot() + 
+  geom_sf(mapping=aes(fill = income_mean), col = 'white') + 
+ theme_void() + 
+  labs(title = "Inequality in Basel",
+       subtitle = "Average income in Basel's quarters in 2017",
+       caption = "Source: Open Data Basel Stadt") + 
+  scale_fill_continuous(name = 'Income') 
+```
+
+]
+
+---
+
+# Shapefiles
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Geospatial vector data format for <high>geographic information system</high> (GIS) software.</span></li><br>
+  <li class="m2"><span>Necessary files:</span></li>
+  <ul class="level">
+    <li><span><mono>.shp</mono> | actual shapefile</span></li>
+    <li><span><mono>.shx</mono> | shape index format</span></li>
+    <li><span><mono>.dbf</mono> | attribute format</span></li>
+  </ul><br>
+  <li class="m3"><span>Optional files:</span></li>
+  <ul class="level">
+    <li><span><mono>.prj</mono> | projection description</span></li>
+    <li><span><mono>.cpg</mono> | code page specification</span></li>
+  </ul>
+</ul>
+
+]
+
+
+.pull-right45[
+<p align="center">
+<img src="image/files.png" height="420px">
+</p>
+]
+
+
+---
+
+# <mono>sf</mono>
+
+
+```{r, echo = F, message=F}
+require(tibble)
+options(tibble.width = 100, tibble.max_extra_cols = 6, tibble.print_max = 10)
+```
+
+
+```{r, echo = TRUE, fig.width = 5, fig.height = 4, dpi=250}
+read_sf('1_Data/quarters') 
+```
+
+
+---
+
+# <mono>geom_sf</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Since <mono>read_sf</mono> creates a <mono>tibble</tibble>, it can be plugged <high>straight into <mono>ggplot</mono></high>.</span></li><br>
+  <li class="m2"><span>The dedicated geom <mono>geom_sf</mono> plots the geometric polygons.</span></li>
+</ul>
+
+<br>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# read shapefiles
+quarters_map <- read_sf('1_Data/quarters')
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf()
+   
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+# read shapefiles
+quarters_map <- read_sf('1_Data/quarters')
+
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf()
+```
+
+]
+
+
+---
+
+# <mono>geom_sf</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Since <mono>read_sf</mono> creates a <mono>tibble</tibble>, it can be plugged <high>straight into <mono>ggplot</mono></high>.</span></li><br>
+  <li class="m2"><span>The dedicated geom <mono>geom_sf</mono> plots the geometric polygons.</span></li>
+</ul>
+
+<br>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# read shapefiles
+quarters_map <- read_sf('1_Data/quarters')
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf() + 
+  
+  # remove background
+  theme_void()
+   
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters')
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf() + 
+  theme_void()
+```
+
+]
+
+
+---
+
+# Wrangling
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Since <mono>read_sf</mono> creates a <mono>tibble</tibble>, one can easily <high>join additional data</high>.</span></li>
+</ul>
+
+<br>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map <- quarters_map %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf() + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf() + 
+  theme_void()
+```
+
+]
+
+---
+
+# Add color
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Colors are set using <mono>aes()</mono> just like in a regular <mono>ggplot</mono>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map <- quarters_map %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  
+  # fill color by income
+  geom_sf(aes(fill = income_mean)) + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean)) + 
+  theme_void()
+```
+
+]
+
+---
+
+# Styling
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Styling can be adjusted just like in any other <mono>ggplot<mono>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map <- quarters_map %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  
+  # add white outlines
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void()
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void()
+```
+
+]
+
+
+---
+
+# Styling
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Styling can be adjusted just like in any other <mono>ggplot<mono>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map <- quarters_map %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  
+  # change legend title
+  scale_fill_continuous(name = 'Income') 
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') 
+```
+
+]
+
+---
+
+# Styling
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Styling can be adjusted just like in any other <mono>ggplot<mono>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map <- quarters_map %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+# plot quarters
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') +
+  
+  # add annotion
+  labs(title = "Inequality in Basel",
+     subtitle = "Average income in Basel...",
+     caption = "ource: Open Data Basel...")
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter"))
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+              col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') +
+  labs(title = "Inequality in Basel",
+     subtitle = "Average income in Basel's quarters in 2017",
+     caption = "Source: Open Data Basel Stadt")
+```
+
+]
+
+
+---
+
+# <mono>geom_label()</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Annotation with labels or images requires specification of a location such as the <high>polygon's centroid</high>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# start with joint object
+quarters_map %>% 
+  
+  # determine centroids
+  mutate(ctr = st_centroid(geometry),
+    lon = sapply(ctr, function(x) x[1]),
+    lat = sapply(ctr, function(x) x[2])) %>% 
+
+  # plot quarters
+  ggplot(...) +
+    
+  # add labels
+  geom_label_repel(aes(x = lon, 
+                       y = lat, 
+                       label = TYPE), 
+                   size = 2.5)
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+require(ggrepel)
+
+quarters_map %>% 
+  
+  # determine centroids
+  mutate(ctr = st_centroid(geometry),
+        lon = sapply(ctr, function(x) x[1]),
+        lat = sapply(ctr, function(x) x[2])) %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') +
+  labs(title = "Inequality in Basel",
+       subtitle = "Average income in Basel's quarters in 2017",
+       caption = "Source: Open Data Basel Stadt") +
+  geom_label_repel(aes(x = lon, y = lat, label = TYPE), size=2.5)
+```
+
+]
+
+
+---
+
+# <mono>geom_image()</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Styling can be adjusted just like in any other <mono>ggplot<mono>.</span></li>
+</ul>
+
+```{r, eval = F, fig.width = 5, fig.height = 4, dpi=250}
+# join basel tax data
+quarters_map %>% 
+  
+  # determine centroids
+  mutate(ctr = st_centroid(geometry),
+    lon = sapply(ctr, function(x) x[1]),
+    lat = sapply(ctr, function(x) x[2])) %>% 
+
+  # plot quarters
+  ggplot(...) +
+    
+  # add images
+  geom_image(aes(x = lon, y = lat, 
+                 image = image), 
+             size=.05)
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4, dpi=250, fig.align='center'}
+require(ggimage)
+quarters_map <- read_sf('1_Data/quarters') %>% 
+  left_join(filter(basel, year == 2017), 
+            by = c("TYPE" = "quarter")) %>% 
+  mutate(centroid_lon = sapply(st_centroid(geometry), function(x) x[1]),
+         centroid_lat = sapply(st_centroid(geometry), function(x) x[2]),
+         image = case_when(
+           income_mean >= 40000 & income_mean < 60000 ~ "1_Data/coins/40k.png",
+           income_mean >= 60000 & income_mean < 80000 ~ "1_Data/coins/60k.png",
+           income_mean >= 80000 & income_mean < 100000 ~ "1_Data/coins/80k.png",
+           income_mean >= 100000 & income_mean < 120000 ~ "1_Data/coins/100k.png",
+           income_mean > 120000 ~ "1_Data/coins/120k.png",
+         ),
+         centroid_lat_offset = case_when(
+           income_mean < 50000 ~ centroid_lat + 140,
+           income_mean >= 50000 & income_mean < 65000 ~ centroid_lat + 160,
+           income_mean >= 65000 & income_mean < 80000 ~ centroid_lat + 180,
+           income_mean >= 80000 & income_mean < 100000 ~ centroid_lat + 200,
+           income_mean > 100000 ~ centroid_lat + 220,
+         ))
+
+quarters_map %>% 
+  ggplot() +
+  geom_sf(aes(fill = income_mean),
+          col = "white") + 
+  theme_void() + 
+  scale_fill_continuous(name = 'Income') +
+  labs(title = "Inequality in Basel",
+       subtitle = "Average income in Basel's quarters in 2017",
+       caption = "Source: Open Data Basel Stadt") +
+  geom_image(aes(x=centroid_lon, y = centroid_lat_offset, image = image), 
+             size=.05)
+```
+
+]
+
+---
+
+.pull-left3[
+
+# Networks with <mono>tidygraph</mono> & <mono>ggraph</mono>
+
+<ul>
+  <li class="m1"><span>Networks (graphs) show relationships (edges) between units (nodes).</span></li><br>
+  <li class="m2"><span><highm>tidygraph</highm> helps with creating tidy network objects, <highm>ggraph</highm> helps with visualizing networks within the <mono>ggplot</mono> framework.</span></li>
+</ul>
+
+]
+
+
+.pull-right6[
+
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+library(ggraph)
+library(tidygraph)
+library(ggrepel)
+library(viridis)
+
+
+edges = basel %>% 
+  select(year, quarter, income_median) %>% 
+  pivot_wider(names_from = quarter, values_from = income_median) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  filter(weight<1, weight > .5)
+
+
+graph = as_tbl_graph(edges, directed = FALSE)
+
+graph %>% 
+  mutate(community = as.factor(group_louvain(weights = weight))) %>%
+  ggraph()  +
+  stat_ellipse(aes(x = x , y = y, group = community, fill = community), 
+               level = .8, geom = "polygon", alpha = .1, show.legend = FALSE) + 
+  geom_edge_hive(aes(width=weight), show.legend = FALSE) + 
+  geom_node_point() + 
+  geom_node_label(aes(label = name, col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_color_manual(values=viridis::viridis(3)[1:2]) + 
+  scale_fill_manual(values=viridis::viridis(3)[1:2]) + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off") +
+  annotate("text", x = c(-2.5, 2), y = c(.8,1), 
+           label = c("Group 1","Group 2"), size=4) + 
+  labs(title="Network of income development",
+       subtitle="revealing two groups with coupled income development")
+
+
+# graph %>% 
+#   mutate(community = as.factor(group_louvain(weights = weight))) %>%
+#   ggraph() + 
+#   geom_edge_hive(aes(width=weight), show.legend = FALSE) + 
+#   geom_node_point() + 
+#   geom_node_label(aes(label = name, col = community), 
+#                   show.legend = FALSE, size=3) +
+#   theme_graph() + 
+#   scale_color_manual(values=viridis::viridis(3)[1:2]) + 
+#   scale_edge_width(range=c(.2, 1)) +
+#   coord_cartesian(clip = "off") + 
+#   labs(title="Network of income development",
+#        subtitle="showing correlations between yearly income changes")
+
+```
+
+]
+
+---
+
+# Edge list
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>A network is typically created from either an <high>edge list</high> or an adjacency matrix.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# determine correlations
+basel %>% 
+  select(year, quarter, income_median) %>% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  
+  # limit to strong edges
+  filter(weight < 1, weight > .5)
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+basel %>% 
+  select(year, quarter, income_median) %>% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  
+  # limit to strong edges
+  filter(weight < 1, weight > .5)
+```
+
+]
+
+---
+
+# <mono>tidygraph</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><mono>tidygraph</mono> generates a <high>network object</high> the edge list.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# determine correlations
+network <- basel %>% 
+  select(year, quarter, income_median) %>% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  filter(weight < 1, weight > .5) %>% 
+  
+  # format to graph
+  as_tbl_graph(edges, directed = FALSE)
+
+```
+
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+network = basel %>% 
+  select(year, quarter, income_median) %>% 
+  pivot_wider(names_from = quarter, 
+              values_from = income_median) %>% 
+  select(-1) %>% 
+  cor() %>% 
+  as.table() %>% 
+  as_tibble(.name_repair = "unique") %>% 
+  rename(from = `...1`,
+         to = `...2`,
+         weight = n) %>% 
+  filter(weight < 1, weight > .5) %>% 
+  
+  # format to graph
+  as_tbl_graph(edges, directed = FALSE)
+network
+```
+
+]
+
+---
+
+# <mono>ggraph</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><mono>ggraph</mono> provides syntax to plot networks within the <highm>ggplot framwork</high>.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# start network plot
+network %>% 
+  ggraph() 
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  ggraph()
+```
+
+]
+
+---
+
+# Adding nodes & edges
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><mono>geom_node_point()</mono> adds points to represent the nodes of the network.</span></li><br>
+    <li class="m2"><mono>geom_edge_link()</mono> adds (straight) lines to represent the edges of the network.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# start network plot
+network %>% 
+  ggraph() + 
+  
+  # add nodes and edges
+  geom_edge_link() +
+  geom_node_point()
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  ggraph() + 
+  geom_edge_link() +
+  geom_node_point()
+  
+```
+
+]
+
+---
+
+# Adding labels
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><mono>geom_node_label()</mono> adds node labels.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# start network plot
+network %>% 
+  ggraph() + 
+  geom_edge_link() +
+  geom_node_point() +
+
+  # add labels
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE) 
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  ggraph() + 
+  geom_edge_link() +
+  geom_node_point() +
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE) 
+  
+```
+
+]
+
+
+---
+
+# Styling networks
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span><mono>theme_graph()</mono> removes unnecessary background details.</span></li><br>
+  <li class="m2"><span><mono>scale_edge_width()</mono> and similar functions can be used to adapt edges or nodes.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# start network plot
+network %>% 
+  ggraph() + 
+  geom_edge_hive() + # style change
+  geom_node_point() +
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE) +
+  
+  # add styling
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off")
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  ggraph() + 
+  geom_edge_hive() + # style change
+  geom_node_point() +
+  geom_node_label(aes(label = name), 
+                  show.legend = FALSE)  +
+  
+  # add styling
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off")
+  
+```
+
+]
+
+---
+
+# Adding clusters
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span><mono>group_louvain()</mono> and similar functions can be used to determine node groups (clusters).</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# add clusters
+network %>% 
+  mutate(community = 
+           group_louvain(weight) %>% 
+           as.factor()) %>%
+  
+  # network plot
+  ggraph() + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off")
+  scale_color_manual(values=viridis(3)[1:2])
+
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  mutate(community = 
+           group_louvain(weight) %>% 
+           as.factor()) %>%
+  
+  # network plot
+  ggraph() + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off") +
+  scale_color_manual(values=viridis(3)[1:2])
+  
+```
+
+]
+
+---
+
+# Adding ellipses
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span><mono>stat_ellipse()</mono> can be used to add ellipses covering points in the data (similar <mono>stat_*</mono> functions exist for other visual elements.</span></li>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# add clusters
+network %>% 
+  ...
+  
+  # network plot
+  ggraph() + 
+  
+  # ellipses
+  stat_ellipse(aes(x = x , y = y, 
+                   group = community, 
+                   fill = community), 
+               level = .8, geom = "polygon", 
+               alpha = .1, show.legend = FALSE) + 
+  
+  # rest of plot
+  scale_fill_manual(values=viridis(3)[1:2]) +
+  ...
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  mutate(community = 
+           group_louvain(weight) %>% 
+           as.factor()) %>%
+  
+  # network plot
+  ggraph() + 
+    stat_ellipse(aes(x = x , y = y, 
+                   group = community, fill = community), 
+               level = .8, geom = "polygon", 
+               alpha = .1, show.legend = FALSE) + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off") +
+  scale_color_manual(values=viridis(3)[1:2]) +
+  scale_fill_manual(values=viridis(3)[1:2])
+  
+```
+
+]
+---
+
+# Adding annotation
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span><mono>annotate()</mono> can be used to <high>add any type of plot elements</high> (layers) using vector specification.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# add clusters
+network %>% 
+  ...
+  
+  # network plot
+  ggraph() + 
+  ...
+  
+  # annotation
+  annotate("text", 
+           x = c(-2.5, 2), y = c(.8,1), 
+           label = c("Group 1","Group 2"), 
+           size=7)
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  mutate(community = 
+           group_louvain(weight) %>% 
+           as.factor()) %>%
+  
+  # network plot
+  ggraph() + 
+    stat_ellipse(aes(x = x , y = y, 
+                   group = community, fill = community), 
+               level = .8, geom = "polygon", 
+               alpha = .1, show.legend = FALSE) + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off") +
+  scale_color_manual(values=viridis(3)[1:2]) +
+  scale_fill_manual(values=viridis(3)[1:2]) +
+  annotate("text", x = c(-2.5, 2), y = c(.8,1), 
+           label = c("Group 1","Group 2"), size=5)
+  
+```
+
+]
+
+---
+
+# Adding labels
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span>Labels can be added as usual using <mono>labs()</mono>.</span></li><br>
+</ul>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, dpi=250}
+# add clusters
+network %>% 
+  ... 
+  
+  # network plot
+  ggraph() + 
+  ...
+  
+  # labels
+  labs(title = "Network...",
+       subtitle = "reveals...")
+
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 5, dpi=250, fig.align='center'}
+# start network plot
+network %>% 
+  mutate(community = 
+           group_louvain(weight) %>% 
+           as.factor()) %>%
+  
+  # network plot
+  ggraph() + 
+    stat_ellipse(aes(x = x , y = y, 
+                   group = community, fill = community), 
+               level = .8, geom = "polygon", 
+               alpha = .1, show.legend = FALSE) + 
+  geom_edge_hive() +
+  geom_node_point() +
+  geom_node_label(aes(label = name,
+                      col = community), 
+                  show.legend = FALSE) +
+  theme_graph() + 
+  scale_edge_width(range=c(.2, 1)) +
+  coord_cartesian(clip = "off") +
+  scale_color_manual(values=viridis(3)[1:2]) +
+  scale_fill_manual(values=viridis(3)[1:2]) +
+  annotate("text", x = c(-2.5, 2), y = c(.8,1), 
+           label = c("Group 1","Group 2"), size=5) +
+  labs(title = "Network of income development",
+       subtitle = "revealing two groups with coupled income development")
+  
+```
+
+]
+
+
+---
+
+class: middle, center
+
+<h1><font style="font-size:12px">click to download</font><br><a href="https://www.dropbox.com/s/mx2x5bak5gie7sb/Maps%26Nets.Rmd?dl=1">Practical</a></h1>
+
+
+
+

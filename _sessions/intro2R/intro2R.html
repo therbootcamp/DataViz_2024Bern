@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Intro 2 R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ GSERM                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Intro 2 R
+]
+.author[
+### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1.4em'>The R Bootcamp @ GSERM</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2022GSERM/'> <i class='fas fa-clock' style='font-size:1.4em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1.4em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+]
+.date[
+### June 2022
+]
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          https://therbootcamp.github.io
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+      The R Bootcamp | June 2022
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+&lt;!---
+.pull-left45[
+
+# What is "Wrangling"?
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transform&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Change column names&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Create new variables&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Organize&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Sort rows&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Join data sets&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Transpose data&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Aggregate&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Build groups&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Calculate statistics&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/wrangling_eng.png" height = "530px"&gt;
+&lt;/p&gt;
+
+]
+
+---&gt;
+
+# The R ecosphere
+
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/recosphere.png" height="300px"&gt;
+&lt;/p&gt;
+
+---
+
+# Base R primer
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+  &lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/2560px-R_logo.svg.png" height="340px"&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# Object &lt;mono&gt;&lt;-&lt;/mono&gt; function
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/assignment_eng.png"&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# &lt;mono&gt;&lt;-&lt;/mono&gt; creates objects
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+```r
+# an object named score
+score &lt;- c(8, 4, 6, 3, 7, 3)
+
+# print the object (aka show its contents)
+print(score)
+```
+
+```
+## [1] 8 4 6 3 7 3
+```
+
+```r
+# print the object (aka show its contents)
+score
+```
+
+```
+## [1] 8 4 6 3 7 3
+```
+
+]
+
+---
+
+# &lt;mono&gt;&lt;-&lt;/mono&gt; creates objects
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+```r
+# an object named score
+score &lt;- c(8, 4, 6, 3, 7, 3)
+
+# mean of score
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+
+]
+
+
+---
+
+# Functions 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Everything that happens is a function call&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+&lt;p align="center"&gt;&lt;img src="image/input_output.png" height="400"&gt;&lt;/p&gt;
+]
+
+---
+
+# Functions 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Everything that happens is a function call&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+
+```r
+# an object named score
+score &lt;- c(8, 4, 6, 3, 7, 3)
+
+# print the object (aka show its contents)
+score
+```
+
+```
+## [1] 8 4 6 3 7 3
+```
+
+```r
+# mean of score
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+]
+
+
+---
+
+# Arguments 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Functions have (default) arguments&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+```r
+# no argument
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+```r
+# one (necessary) argument
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# one (necessary) argument with name
+mean(x = score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# NA added to vector score
+mean(x = c(score, NA))
+```
+
+```
+## [1] NA
+```
+]
+
+
+---
+
+# Arguments 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Functions have (default) arguments&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+```r
+# no argument
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+```r
+# one (necessary) argument
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# one (necessary) argument with name
+mean(x = score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# change default in additional argument
+mean(x = c(score, NA), na.rm = TRUE)
+```
+
+```
+## [1] 5.167
+```
+]
+
+---
+
+# Classes 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Beware object/argument classes&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions "live" in packages&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+&lt;img src="image/types.png"&gt;&lt;br&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Packages 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Assignments&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Object &lt;mono&gt;&lt;-&lt;/mono&gt; function&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates objects&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Functions&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Everything that happens is a function call&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Beware object/argument classes&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Functions "live" in packages&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;high&gt;Install&lt;/high&gt; package &lt;high&gt;once&lt;/high&gt; using `install.packages()`
+
+
+```r
+install.packages("tidyverse")
+```
+&lt;br2&gt;
+&lt;high&gt;Load&lt;/high&gt; existing package &lt;high&gt;every time&lt;/high&gt; using `library()`
+
+
+```r
+library(tidyverse)
+```
+
+&lt;p align="left"&gt;&lt;img src="image/tidyverse_load.png" height="180"&gt;&lt;/p&gt;
+]
+
+
+---
+
+# The R ecosphere
+
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/recosphere.png" height="300px"&gt;
+&lt;/p&gt;
+
+
+---
+
+.pull-left3[
+
+# Tidyverse
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The tidyverse is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A collection of user-friendly &lt;high&gt;packages&lt;/high&gt; for analyzing &lt;high&gt;tidy data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;An &lt;high&gt;ecosystem&lt;/high&gt; for analytics and data science with common design principles&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;A &lt;high&gt;dialect&lt;/high&gt; of the R language&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right65[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/tidyverse.png" height = "520px"&gt;
+&lt;/p&gt;
+]
+
+
+---
+
+
+.pull-left3[
+
+# Tidyverse
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The tidyverse is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A collection of user-friendly &lt;high&gt;packages&lt;/high&gt; for analyzing &lt;high&gt;tidy data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;An &lt;high&gt;ecosystem&lt;/high&gt; for analytics and data science with common design principles&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;A &lt;high&gt;dialect&lt;/high&gt; of the R language&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right65[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/tidyverse_wrangling.png" height = "520px"&gt;
+&lt;/p&gt;
+]
+
+---
+
+# &lt;mono&gt;%&gt;%&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;high&gt;novel pipe operator&lt;/high&gt; from the &lt;a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html"&gt;&lt;mono&gt;magrittr&lt;/mono&gt;&lt;/a&gt; package makes chaining commands easy.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="image/magrittr_hex.png" height = "280px"&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+
+
+```r
+# Numeric vector
+score &lt;- c(8, 4, 6, 3, 7, 3)
+score
+```
+
+```
+## [1] 8 4 6 3 7 3
+```
+
+```r
+# Mean: Base-R-style
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# Mean: dplyr-style
+score %&gt;%  
+  mean()  
+```
+
+```
+## [1] 5.167
+```
+
+
+]
+
+
+
+---
+
+# &lt;mono&gt;%&gt;%&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;high&gt;novel pipe operator&lt;/high&gt; from the &lt;a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html"&gt;&lt;mono&gt;magrittr&lt;/mono&gt;&lt;/a&gt; package makes chaining commands easy.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="image/magrittr_hex.png" height = "280px"&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/pipe_en.png" height = "400px"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# &lt;mono&gt;readr&lt;/mono&gt;
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Benefits over &lt;mono&gt;read.csv&lt;/mono&gt;:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Better type inference&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Avoids &lt;mono&gt;factors&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Produces &lt;highm&gt;tibble&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px&gt;
+&lt;/p&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/data.png" height=400&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# &lt;mono&gt;readr&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Benefits over &lt;mono&gt;read.csv&lt;/mono&gt;:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Better type inference&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Avoids &lt;mono&gt;factors&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Produces &lt;highm&gt;tibble&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+
+```r
+# Read in taxation
+basel &lt;- read_csv("1_Data/taxation.csv")
+
+basel
+```
+
+```
+## # A tibble: 357 × 10
+##    year quarter    quarter_no     N
+##   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+## 1  2001 Altstadt …          1  1673
+## 2  2001 Vorstädte           2  3204
+## 3  2001 Am Ring             3  6579
+## 4  2001 Breite              4  5433
+## 5  2001 St. Alban           5  6179
+## # … with 352 more rows, and 6 more
+## #   variables: income_mean &lt;dbl&gt;,
+## #   income_median &lt;dbl&gt;,
+## #   income_gini &lt;dbl&gt;,
+## #   wealth_mean &lt;dbl&gt;,
+## #   wealth_median &lt;dbl&gt;,
+## #   wealth_gini &lt;dbl&gt;
+```
+
+]
+
+
+---
+
+# &lt;mono&gt;tibble&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Benefits over &lt;mono&gt;data.frame&lt;/mono&gt;:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Better print&lt;/high&gt;: More informative and cleaner&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;More consistent subsetting&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/tibble.png" height=240px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+
+```r
+# Read in taxation
+basel &lt;- read_csv("1_Data/taxation.csv")
+
+basel
+```
+
+```
+## # A tibble: 357 × 10
+##    year quarter    quarter_no     N
+##   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+## 1  2001 Altstadt …          1  1673
+## 2  2001 Vorstädte           2  3204
+## 3  2001 Am Ring             3  6579
+## 4  2001 Breite              4  5433
+## 5  2001 St. Alban           5  6179
+## # … with 352 more rows, and 6 more
+## #   variables: income_mean &lt;dbl&gt;,
+## #   income_median &lt;dbl&gt;,
+## #   income_gini &lt;dbl&gt;,
+## #   wealth_mean &lt;dbl&gt;,
+## #   wealth_median &lt;dbl&gt;,
+## #   wealth_gini &lt;dbl&gt;
+```
+
+]
+
+---
+
+.pull-left45[
+
+# &lt;mono&gt;dplyr&lt;/mono&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Benefits over Base R:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;No more brackets&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Data masking&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Tidy selection&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Intuitively named functions&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png" height=240px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;table cellspacing="0" cellpadding="0" class="clean_table" width="100%"&gt;
+&lt;col width="42%"&gt;
+&lt;col width="58%"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;Key verbs&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Purpose&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-top:20px"&gt;&lt;i&gt;Transformation&lt;/i&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;rename()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Rename column names&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;mutate()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Create/change columns&lt;/td&gt;
+&lt;/tr&gt;
+&lt;td style="padding-top:20px"&gt;&lt;i&gt;Organization&lt;/i&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;arrange()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Sort&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;select()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Select variables&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;slice()&lt;/mono&gt;, &lt;mono&gt;filter()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Select rows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;left_join()&lt;/mono&gt;, &lt;mono&gt;inner_join()&lt;/mono&gt;, etc.&lt;/td&gt;
+&lt;td&gt;Join data sets&lt;/td&gt;
+&lt;/tr&gt;
+&lt;td style="padding-top:20px"&gt;&lt;i&gt;Aggregation&lt;/i&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;summarize()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Calculate statistics&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;mono&gt;group()&lt;/mono&gt;&lt;/td&gt;
+&lt;td&gt;Summarize group-wise&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+]
+
+---
+
+
+
+
+# `select()`
+
+.pull-left4[
+
+
+```r
+# Select two columns
+TIBBLE %&gt;% 
+  select(VAR1, VAR2)
+
+# Select everything but 
+TIBBLE %&gt;% 
+  select(-VAR1)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Select columns
+  select(year, quarter, income_mean)
+```
+
+```
+## # A tibble: 357 × 3
+##    year quarter         income_mean
+##   &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;
+## 1  2001 Altstadt Gross…       87776
+## 2  2001 Vorstädte             84109
+## 3  2001 Am Ring               62582
+## 4  2001 Breite                52039
+## 5  2001 St. Alban             89956
+## 6  2001 Gundeldingen          51229
+## 7  2001 Bruderholz            96124
+## 8  2001 Bachletten            70348
+## # … with 349 more rows
+```
+
+]
+
+
+&lt;!---
+
+# `slice()`
+
+.pull-left4[
+
+
+```r
+# Slice using :
+TIBBLE %&gt;%
+  slice(INDEX_START:INDEX_STOP)
+
+# Slice using vector  
+TIBBLE %&gt;%
+  slice(c(INDEX1, INDEX2, ...))
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+    select(year, quarter, income_mean) %&gt;%
+
+  # Select rows 20 to 30
+  slice(20:30)
+```
+
+```
+## # A tibble: 11 × 3
+##    year quarter         income_mean
+##   &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;
+## 1  2001 Riehen                84857
+## 2  2001 Bettingen             83803
+## 3  2002 Altstadt Gross…       89525
+## 4  2002 Vorstädte             86350
+## 5  2002 Am Ring               64797
+## 6  2002 Breite                52483
+## 7  2002 St. Alban             85906
+## 8  2002 Gundeldingen          52035
+## # … with 3 more rows
+```
+
+
+]
+
+---&gt;
+
+---
+
+# `filter()`
+
+.pull-left4[
+
+
+```r
+# Filter using logical comparisons
+TIBBLE %&gt;%
+  filter(VAR1 == VAL1,
+         VAR2 &gt; VAL2,
+         VAR3 &lt; VAL3,
+         VAR4 == VAL4 | VAR5 &lt; VAL5)
+```
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+    select(year, quarter, income_mean) %&gt;%
+
+  # Select rows rows where year is 2017
+  filter(year == 2017)
+```
+
+```
+## # A tibble: 21 × 3
+##    year quarter         income_mean
+##   &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;
+## 1  2017 Altstadt Gross…       97111
+## 2  2017 Vorstädte            103714
+## 3  2017 Am Ring               78761
+## 4  2017 Breite                56888
+## 5  2017 St. Alban            102457
+## 6  2017 Gundeldingen          56544
+## 7  2017 Bruderholz           105973
+## 8  2017 Bachletten            81580
+## # … with 13 more rows
+```
+
+]
+
+
+---
+
+# `arrange()`
+
+.pull-left4[
+
+
+```r
+# Sort ascending
+TIBBLE %&gt;%
+  arrange(VAR1, VAR2)
+
+# Sort descending w/ desc()
+TIBBLE %&gt;%
+  arrange(desc(VAR1), VAR2)
+```
+
+]
+
+.pull-right5[
+
+```r
+basel %&gt;%
+  select(year, quarter, income_mean) %&gt;%
+  filter(year == 2017) %&gt;% 
+  
+  # Sort by income
+  arrange(income_mean)
+```
+
+```
+## # A tibble: 21 × 3
+##    year quarter       income_mean
+##   &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
+## 1  2017 Klybeck             41569
+## 2  2017 Kleinhüningen       45664
+## 3  2017 Clara               50680
+## 4  2017 Matthäus            50786
+## 5  2017 Iselin              51600
+## 6  2017 St. Johann          52890
+## 7  2017 Rosental            54543
+## 8  2017 Gundeldingen        56544
+## # … with 13 more rows
+```
+
+]
+
+---
+
+# `summarize()`
+
+.pull-left4[
+
+
+
+```r
+# Create new summary variables
+TIBBLE %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  filter(year == 2017) %&gt;% 
+ 
+  # Calculate averages in 2017
+  summarize(
+    income = mean(income_mean),
+    wealth = mean(wealth_mean))
+```
+
+```
+## # A tibble: 1 × 2
+##   income  wealth
+##    &lt;dbl&gt;   &lt;dbl&gt;
+## 1 72388. 560333.
+```
+
+
+]
+
+&lt;!---
+
+
+# `summarise_if()`
+
+.pull-left4[
+
+
+
+```r
+# Create new summary variables
+TIBBLE %&gt;%
+  summarise_if(
+    CONDITION,
+    SUMMARY_FUN
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;% 
+  
+  # Calculate averages in 2017
+  summarize_if(is.numeric,
+               mean)
+```
+
+```
+## # A tibble: 1 × 9
+##    year quarter_no     N
+##   &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1  2009       11.4 5381.
+## # … with 6 more variables:
+## #   income_mean &lt;dbl&gt;,
+## #   income_median &lt;dbl&gt;,
+## #   income_gini &lt;dbl&gt;,
+## #   wealth_mean &lt;dbl&gt;,
+## #   wealth_median &lt;dbl&gt;,
+## #   wealth_gini &lt;dbl&gt;
+```
+
+
+]
+
+---&gt;
+
+---
+
+# `group_by()`
+
+.pull-left4[
+
+
+```r
+# Create grouped summary variables
+TIBBLE %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Calculate averages for all years
+  group_by(year) %&gt;% 
+  summarize(
+    income = mean(income_mean),
+    wealth = mean(wealth_mean))
+```
+
+```
+## # A tibble: 17 × 3
+##    year income  wealth
+##   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1  2001 63027. 347770.
+## 2  2002 63555. 367401.
+## 3  2003 63083. 373278.
+## 4  2004 62298. 353968.
+## 5  2005 63133. 441864.
+## 6  2006 64148. 465242.
+## 7  2007 66594  435270.
+## 8  2008 66463. 401131.
+## # … with 9 more rows
+```
+
+]
+
+---
+
+# `group_by()`
+
+.pull-left4[
+
+
+```r
+# Create grouped summary variables
+TIBBLE %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Calculate averages for all years
+  group_by(year) %&gt;% 
+  summarize(
+    income = mean(income_mean),
+    wealth = mean(wealth_mean)) %&gt;% 
+  arrange(income) 
+```
+
+```
+## # A tibble: 17 × 3
+##    year income  wealth
+##   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1  2004 62298. 353968.
+## 2  2001 63027. 347770.
+## 3  2003 63083. 373278.
+## 4  2005 63133. 441864.
+## 5  2002 63555. 367401.
+## 6  2006 64148. 465242.
+## 7  2011 66050. 398102.
+## 8  2008 66463. 401131.
+## # … with 9 more rows
+```
+
+]
+
+---
+
+
+
+
+.pull-left4[
+
+# `*_join()`
+
+
+```r
+# Join two tibbles
+TIBBLE1 %&gt;%
+  left_join(TIBBLE2, 
+            by = c("KEY1" = "KEY2"))
+```
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+
+```r
+basel %&gt;%
+  group_by(year) %&gt;% 
+  summarize(
+    income = mean(income_mean),
+    wealth = mean(wealth_mean)) %&gt;% 
+  
+  # join back to basel
+  right_join(basel)
+```
+
+```
+## # A tibble: 357 × 12
+##    year income  wealth quarter     
+##   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       
+## 1  2001 63027. 347770. Altstadt Gr…
+## 2  2001 63027. 347770. Vorstädte   
+## 3  2001 63027. 347770. Am Ring     
+## 4  2001 63027. 347770. Breite      
+## 5  2001 63027. 347770. St. Alban   
+## 6  2001 63027. 347770. Gundeldingen
+## 7  2001 63027. 347770. Bruderholz  
+## 8  2001 63027. 347770. Bachletten  
+## # … with 349 more rows, and 8 more
+## #   variables: quarter_no &lt;dbl&gt;,
+## #   N &lt;dbl&gt;, income_mean &lt;dbl&gt;,
+## #   income_median &lt;dbl&gt;,
+## #   income_gini &lt;dbl&gt;,
+## #   wealth_mean &lt;dbl&gt;, …
+```
+]
+
+
+---
+
+
+
+
+# &lt;mono&gt;tidyr&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Benefits over Base R:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Did not exist before.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/tidyr.png" height=240px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;img src="image/tidyr-spread-gather-loop.gif" height=420px&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://github.com/gadenbuie/tidyexplain"&gt;tidyexplain&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# `pivot_longer()`
+
+.pull-left4[
+
+
+```r
+# wide to long
+TIBBLE %&gt;% 
+  pivot_longer(cols = VARS,
+               names_to = NAME1,
+               values_to = NAME2)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+# wide to long
+basel %&gt;% 
+ select(year, quarter, 
+        income_mean, wealth_mean) %&gt;% 
+ pivot_longer(cols = c(income_mean, wealth_mean),
+              names_to = 'name',
+              values_to = 'value')
+```
+
+```
+## # A tibble: 714 × 4
+##    year quarter        name   value
+##   &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;dbl&gt;
+## 1  2001 Altstadt Gros… inco… 8.78e4
+## 2  2001 Altstadt Gros… weal… 1.01e6
+## 3  2001 Vorstädte      inco… 8.41e4
+## 4  2001 Vorstädte      weal… 1.12e6
+## 5  2001 Am Ring        inco… 6.26e4
+## 6  2001 Am Ring        weal… 3.01e5
+## 7  2001 Breite         inco… 5.20e4
+## 8  2001 Breite         weal… 1.05e5
+## # … with 706 more rows
+```
+]
+
+---
+
+# The R ecosphere
+
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/recosphere.png" height="300px"&gt;
+&lt;/p&gt;
+
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/rstudio.png"&gt;
+&lt;/p&gt;
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left"&gt;
+  &lt;img src="image/editor_edit.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Shortcut for &lt;high&gt;send Code to Console&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;&amp;#8984;/ctrl + &amp;#9166;&lt;/font&gt;&lt;br&gt;&lt;br2&gt;&lt;br2&gt;
+Shortcut for &lt;high&gt;run Chunk again&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;  &amp;#8984;/ctrl + &amp;#8997; + p&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/auto_complete_1.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# RStudio
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RStudio is...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;A high-productivity &lt;high&gt;data science IDE.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;The &lt;high&gt;company&lt;/high&gt; behind the tidyverse.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Designed for R tidyverse with &lt;high&gt;good integration&lt;/high&gt; for Python, Markdown, or C++.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left"&gt;
+  &lt;img src="image/folder_structure.png" height="340px"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href=""&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

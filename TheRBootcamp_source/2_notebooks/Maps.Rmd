@@ -1,0 +1,107 @@
+---
+title: "R Notebook"
+output:
+editor_options:
+  chunk_output_type: console
+---
+
+In this practical, you will create a map of Basel showing the distribution of wealth.   
+
+# 0 - Preliminaries
+
+1. If you haven't done so already, load the `tidyverse` and the `taxation.csv` data. 
+
+```{r}
+library(tidyverse)
+basel <- read_csv('1_data/taxation.csv')
+```
+
+2. Load the `sf` package. 
+
+```{r}
+library(sf)
+```
+
+# 1 - Loading shapefiles
+
+1. Use `read_sf` to read in all of the shape files contained in the `quarters` folder and save the result as `basel_map`. The function will automatically read all files contained in the folder.
+
+```{r}
+basel_map <- read_sf("1_data/quarters")
+```
+
+2. Print `basel_map` in the console and try to make sense of its contents. 
+
+# 2 - Plotting a map
+
+1. Now, put Basel's quarters on the map. Pipe the `basel_map` object into an otherwise empty `ggplot()` function and add `geom_sf()`. 
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf()
+```
+
+2. Since we are not really interested in coordinates, remove the background by adding `theme_void()`.  
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf() + 
+  XX
+```
+
+3. If you like, you could already start styling the map, e.g., by coloring the borders and areas. To do this, set, for instance, `col = "white"` and `fill = "blue"`. But the question is where? Try first making these settings inside `ggplot(aes())`. 
+
+```{r}
+basel_map %>% 
+  ggplot(aes(XX = XX, XX = XX)) + 
+  geom_sf() + 
+  XX
+```
+
+4. That didn't work. The problem is that anything inside of `aes()` is interpreted as a variable, not as constant. Now make these settings inside of `geom_sf()` without using the `aes()` helper function. That's how we usually set aesthetics to constants: inside of the geom, outside of `aes()`.
+
+```{r}
+basel_map %>% 
+  ggplot() + 
+  geom_sf(XX = XX, XX = XX) + 
+  XX
+```
+
+# 3 - Adding variables
+
+1. You know already how to create a map. Now, we shall see how we can add variables, such as income and wealth and represent them in our map. To add the variables in our `basel` object, simply `join` it to the `basel_map` object by matching `"TYPE"` and `"quarter"`. This is possible because `basel_map` is also a `tibble`. Save the result back to `basel_map`.
+
+```{r}
+basel_map <- basel_map %>% 
+  left_join(basel,
+            by = c("TYPE" = "quarter"))
+```
+
+2. Now that our taxation data has been added to `basel_map`, you can start representing the data in the map. How about instead of `fill = "blue"` you fill the areas according to `wealth_mean`. Since `wealth_mean` is a variable, place it into `aes()`. You can do this either inside `ggplot()` or `geom_sf()`. Note that if you forget to delete `fill = "blue"` nothing will happen, as setting `fill` to a constant will overwrite the settings made in `aes()`.    
+
+```{r}
+basel_map %>% 
+  ggplot(aes(XX = XX)) + 
+  geom_sf(XX = XX) + 
+  XX
+```
+
+# 4 - Styling
+
+1. Add appropriate labels using `labs()`. 
+
+2. Fix the legend title by adding, e.g., `scale_fill_continuous(name = 'Wealth')`.
+
+# 5 - Go explore
+
+1. Color the quarters according to other variables. 
+
+2. Change the color set to viridis. 
+
+
+
+
+
+

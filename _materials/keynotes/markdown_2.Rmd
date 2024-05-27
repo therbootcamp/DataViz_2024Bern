@@ -1,0 +1,19 @@
+---
+title: ""
+output: html_document
+---
+
+## Heading 2
+
+<table>
+  <col width = 50%>
+  <col width = 50%>
+  <tr>
+    <td>
+    This **word** is set to bold in Markdown. 
+    </td>
+    <td>
+    This <b>word</b> is set to bold in HTML.
+    </td>
+  </tr>
+</table>

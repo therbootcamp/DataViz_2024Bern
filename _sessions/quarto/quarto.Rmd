@@ -77,6 +77,35 @@ basel <- read_csv("1_data/taxation.csv")
 
 ```
 
+# What is Quarto?
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Open-source scientific and technical <high>publishing system</high>.<br><br>
+  <li class="m2"><span>Simple <high>syntax for formatting</high> documents.</span></li>  
+  <ul>
+    <li><span>create <high>dynamic, reproducible content</high> with R, Python, Julia ...</span></li>   
+    <li><span>publish to <high>different output formats</high> (articles, presentations, dashboards, websites, books)</span></li>  
+    <li><span>write using <high>simple (R)Markdown</high></span></li> 
+  </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<br>
+
+<p align = "center">
+  <img src="image/quarto.png" width=400px><br>
+  <font style="font-size:10px">from <a href="https://quarto.org">quarto.org</a></font>
+</p>
+
+]
+
+---
+
 # What is Markdown?
 
 .pull-left4[
@@ -201,7 +230,7 @@ basel <- read_csv("1_data/taxation.csv")
 .pull-right5[
 
 <p align = "center">
-  <img src="image/markdown_templ.png" height=400px>
+  <img src="image/base_quarto_header.png" height=400px>
 </p>
 
 ]
@@ -230,6 +259,35 @@ basel <- read_csv("1_data/taxation.csv")
 <p align = "center">
   <img src="image/pipeline.png">
 </p>
+
+]
+
+---
+
+# Rendering your file
+
+.pull-left4[
+
+<high>Rendering</high> (translating) your .qmd file into the <high>final format</high>: 
+<ul>
+  <li class="m1"><span>Using the <high>Render-button</high> in RStudio.</span></li>
+
+  <li class="m2"><span>Selecting <high>'Render on save'</high> - rendering will automatically be executed once you save your file.</span></li>
+
+
+  <li class="m3"><span>In the <high>Terminal</high>.</span></li>
+  
+  <li class="m4"><span>On the <high>R console</high>.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/render.png">
+</p>
+
 
 ]
 

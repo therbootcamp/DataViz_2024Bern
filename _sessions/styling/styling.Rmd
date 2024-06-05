@@ -2,10 +2,10 @@
 title: "Styling"
 author: "Visualizing and communicating data with R<br>
   <a href='https://therbootcamp.github.io'>
-    <font style='font-size:1.4em'>The R Bootcamp @ GSERM</font>
+    <font style='font-size:1.4em'>The R Bootcamp @ UniBE</font>
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/DataViz_2022GSERM/'>
+  <a href='https://therbootcamp.github.io/DataViz_2024Bern/'>
     <i class='fas fa-clock' style='font-size:1.4em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Visualizing and communicating data with R<br>
   <a href='https://www.linkedin.com/company/27090302'>
     <i class='fab fa-linkedin' style='font-size: 1.4em;'></i>
   </a>"
-date: "June 2022"
+date: "June 2024"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-      The R Bootcamp | June 2022
+      The R Bootcamp | June 2024
       </font>
     </a>
     </span>

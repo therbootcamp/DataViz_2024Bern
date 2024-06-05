@@ -293,7 +293,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# HTML Pipeline
+# HTML Pipeline XXX UPDATE!
 
 .pull-left4[
 
@@ -337,7 +337,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Render
+# Displaying HTML
 
 .pull-left3[
 

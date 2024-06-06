@@ -49,12 +49,12 @@ taxation.csv
 # packages
 
 tidyverse
-xaringan
+	xaringan
 sf
 knitr
 viridis
-ggimage
+	ggimage
 ggraph
 tidygraph
-leaflet
+	leaflet
 plotly

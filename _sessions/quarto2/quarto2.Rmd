@@ -77,15 +77,25 @@ basel <- read_csv("1_data/taxation.csv")
 
 ```
 
-# Additional functionalities
+# Output formats
 
 .pull-left4[
 
 <ul>
   <li class="m1"><span>Presentations</li> 
+  <ul>
+    <li><span><high>HTML with reveal.js</high></span></li>
+    <li><span>Powerpoint</span></li>  
+    <li><span>LaTeX with Beamer</span></li>
+  </ul>
   <li class="m2"><span>Dashboards</span></li> 
   <li class="m3"><span>Websites</span></li> 
   <li class="m4"><span>Manuscripts</span></li> 
+    <ul>
+    <li><span>HTML </span></li>
+    <li><span>Word</span></li>  
+    <li><span>LaTeX</span></li>
+  </ul>
 </ul>
 
 ]
@@ -107,17 +117,56 @@ Screenshot of each product
 # Presentations
 
 .pull-left4[
-Quarto supports different presentation formats:
+<high>HTML</high> with reveal.js
+
 <ul>
-  <li class="m1"><span>HTML with reveal.js</span></li> 
-  <li class="m2"><span>Powerpoint with MS Office</span></li>
-    <li class="m3"><span>LaTeX with Beamer</span></li>
+  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono># Title</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>section</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Title</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>slide</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-</mono>
+  </td>
+  <td bgcolor="white">
+  <high>List item</high>
+  </td> 
+</tr>
+
+</table>
+
 
 ]
 
 .pull-right5[
-<div style="width:60%">
+
+<div style="width:70%">
 ````markdown
 ---
 title: "Habits"
@@ -125,76 +174,270 @@ author: "John Doe"
 format: revealjs
 ---
 
-## Getting up
+# Daily routine
 
+## Getting up
 - Turn off alarm
 - Get out of bed
 
 ## Going to sleep
-
 - Get in bed
 - Count sheep
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/turn_on.html" width = "60%" ></iframe>
-
-
+<iframe class="slide-deck" src="example_presentations/turn_on.html" width = "70%" ></iframe>
 
 ]
-
----
-
-# check 
-
-
-.pull-left4[
-Quarto supports different presentation formats:
-<ul>
-  <li class="m1"><span></span></li> 
-  <li class="m2"><span></span></li>  
-</ul>
-
-]
-
-.pull-right5[
-
-````{verbatim}
-```
----
----
-```
-````
-
-]
-
-
-
 
 ---
 
 # Presentations
 
 .pull-left4[
-Quarto supports different presentation formats:
+<high>HTML</high> with reveal.js
+
 <ul>
-  <li class="m1"><span></span></li> 
-  <li class="m2"><span></span></li>  
+  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono># Title</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>section</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Title</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>slide</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-</mono>
+  </td>
+  <td bgcolor="white">
+  <high>List item</high>
+  </td> 
+</tr>
+
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs:
+    incremental: true
+---
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/incremental.html" width = "70%" ></iframe>
+
+]
+
+---
+
+# Columns
+
+.pull-left4[
+<high>HTML</high> with reveal.js
+
+<ul>
+  <li class="m1"><span><high>Distribute</high> content with <high>columns</high> <br>defined by fences <mono>::::</mono>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono><mono>:::: {.column}</mono></mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>column</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>::: {.column width="40%"}</mono>
+  </td>
+  <td bgcolor="white">
+  Set column <high>width</high>
+  </td> 
+</tr>
+
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+:::: {.columns}
+::: {.column width="40%"}
+Left column
+- Turn off alarm
+- Get out of bed
+:::
+
+::: {.column width="60%"}
+Right column
+
+- Get in bed
+- Count sheep
+:::
+::::
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/columns.html" width = "70%" ></iframe>
+
+]
+
+---
+
+# Speaker notes
+
+.pull-left4[
+
+<ul>
+  <li class="m1"> <span>Add Speaker <high>notes</high> with <mono>{.notes}</mono></span></li> 
+  <li class="m2"><span>Press <mono>S</mono> for presentation view.</span></li> 
+
 </ul>
 
 ]
 
 .pull-right5[
 
-<br>
+<div style="width:70%">
+````markdown
+## Slide with speaker notes
 
-<p align = "center">
-  <img src="image/" width=400px><br>
-  <font style="font-size:10px">from <a href="https://de.wikipedia.org/wiki/Markdown">wikipedia.org</a></font>
-</p>
+Slide content
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+````
+</div>
+<img src="image/speaker_notes.png" width=400px><br>
 
 ]
 
 ---
+
+# Footer & Logo
+
+.pull-left4[
+
+Add information on the bottom of <high> each slide<high> in the YAML header.
+
+<ul>
+  <li class="m1"><span> <high>Footer text</high> </span></li> 
+  <li class="m2"><span><high>Logo<Logo></span></li> 
+
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/footer.html" width = "70%" ></iframe>
+
+]
+
+---
+
+
+# Footer & Logo
+
+.pull-left4[
+
+Add information on the bottom of <high> each slide<high> in the YAML header.
+
+<ul>
+  <li class="m1"><span><high>Footer text</high> </span></li> 
+  <li class="m2"><span><high>Logo<Logo></span></li> 
+  <li class="m3"><span>Custom footer per slide with <br><mono>::: footer</mono></span></li> 
+
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+...
+
+::: footer
+Custom footer text
+:::
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" ></iframe>
+
+]
+
+---
+
+
+
+
+
 
 
 # Dashboards
@@ -222,6 +465,93 @@ Quarto supports different presentation formats:
 
 ---
 
+# Websites
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>New Project</high></span></li> 
+  <li class="m2"><span><high>Quarto Website</high> in new folder </span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/quarto_website_generation.png" height=400px>
+</p>
+
+
+]
+
+---
+
+# Websites
+
+.pull-left4[
+A set of files is automatically generated in the new folder.
+<ul>
+  <li class="m1"><span><mono>.qmd</mono> with Text</span></li> 
+  <li class="m2"><span><mono>.css</mono> Style</span></li> 
+  <li class="m3"><span><mono>.yml</mono> YAML config file</span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/web_folder.png" height=400px>
+</p>
+
+]
+
+---
+
+# <mono>_quarto.yml</mono> config file
+
+.pull-left4[
+
+Global information for the website configuration.
+<ul>
+  <li class="m1"><span><mono>navbar</mono> sets location and content of navigation</span></li> 
+  <li class="m2"><span><mono>theme, css</mono> define layout</span></li> 
+    <li class="m3"><span><mono>toc</mono> adds table of contents</span></li>
+
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+
+project:
+  type: website
+
+website:
+  title: "today"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+````
+</div>
+<iframe class="slide-deck" src="" width = "70%" ></iframe>
+
+]
+
+---
 
 
 # Websites
@@ -229,21 +559,33 @@ Quarto supports different presentation formats:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Developed by John Gruber and Aaron Swartz in 2004.<br><br>
-  "<high>easy-to-read</high> and <high>easy-to-write</high> plain text format, [...] convert it to structurally valid XHTML (or HTML)"</span></li> 
-  <li class="m2"><span>Simple <high>syntax for formatting</high> documents.</span></li>  
+  <li class="m1"><span><high>Top</high> navigation</span></li> 
+  <li class="m2"><span><high>Side</high> navigation</span></li>
+  <li class="m3"><span><high>Combination</high> top links to sections</span></li>
 </ul>
 
 ]
 
 .pull-right5[
 
-<br>
+<div style="width:70%">
+````markdown
 
-<p align = "center">
-  <img src="image/" width=400px><br>
-  <font style="font-size:10px">from <a href="https://de.wikipedia.org/wiki/Markdown">wikipedia.org</a></font>
-</p>
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+...
+
+::: footer
+Custom footer text
+:::
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" ></iframe>
 
 ]
 
@@ -309,1898 +651,6 @@ Quarto supports different presentation formats:
 
 ]
 
----
-
-# R Markdown elements
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>RMarkdown scripts consist of several <high>elements</high>.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Element</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>YAML</mono>
-  </td>
-  <td bgcolor="white">
-  <b>Y</b>AML <b>A</b>in't <b>M</b>arkup <b>L</b>anguage<br>
-  <high>general document settings</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>Setup chunk</mono>
-  </td>
-  <td bgcolor="white">
-  control <high>chunks</high> settings<br>
-  load <high>packages</high><br>
-  load <high>data</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>Markdown</mono>
-  </td>
-  <td bgcolor="white">
-  <high>header</high><br>
-  <high>text</high> highlighting
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>Code chunk</mono>
-  </td>
-  <td bgcolor="white">
-  R <high>Code</high><br>
-  R <high>Outputs<high>
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/base_quarto_header.png" height=400px>
-</p>
-
-]
-
----
-
-# Pipeline
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>RMarkdown can be translated into different <high>document types</high>.</span></li><br>
-    <ul>
-    <li><span>PDF</span></li>
-    <li><span>HTML</span></li>   
-    <li><span>Word</span></li>
-    <li><span>PowerPoint</span></li>
-  </ul><br>
-  <li class="m2"><span>To this end, <high>several translation steps</high> are necessary.</span></li><br>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/pipeline.png">
-</p>
-
-]
-
----
-
-# Rendering your file
-
-.pull-left4[
-
-<high>Rendering</high> (translating) your .qmd file into the <high>final format</high>: 
-<ul>
-  <li class="m1"><span>Using the <high>Render-button</high> in RStudio.</span></li>
-
-  <li class="m2"><span>Selecting <high>'Render on save'</high> - rendering will automatically be executed once you save your file.</span></li>
-
-
-  <li class="m3"><span>In the <high>Terminal</high>.</span></li>
-  
-  <li class="m4"><span>On the <high>R console</high>.</span></li>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/render.png">
-</p>
-
-
-]
-
----
-
-# HTML Pipeline XXX UPDATE!
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>HTML is a <high>universal framework</high> for documents, presentations, and dashboards</span></li>
-  <li class="m2"><span>HTML <high>export to PDF</high> is often straightforward.</span></li><br>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/pipeline2.png">
-</p>
-
-]
-
----
-
-# HTML
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span><b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage.</span></li>
-  <li class="m2"><span>The format of the <high>World Wide Web</high>s.</span></li>
-  <li class="m3"><span>Affords flexible styling through <high>CSS</high> (Cascading Style Sheets).</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_templ_html.png">
-</p>
-
-]
-
----
-
-# Displaying HTML
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>HTML gets <high>interpreted</high> in RStudio (or browsers) so that a well-formatted document emerges.</span></li>
-  <li class="m2"><span><high>Rstudio</high> also shows rendered documents (rather than the raw html). </span></li><br>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans.png">
-</p>
-
-]
-
----
-
-# Headers
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Headers on different <high>levels</high> can be set using <mono>#</mono>.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono># text</mono>
-  </td>
-  <td bgcolor="white">
-  level 1
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>## text</mono>
-  </td>
-  <td bgcolor="white">
-  level 2
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>...</mono>
-  </td>
-  <td bgcolor="white">
-  ...
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>##### txt</mono>
-  </td>
-  <td bgcolor="white">
-  level 5
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_2.png">
-</p>
-
-]
-
----
-
-# Headers
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Headers on different <high>levels</high> can be set using <mono>#</mono>.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono># text</mono>
-  </td>
-  <td bgcolor="white">
-  level 1
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>## text</mono>
-  </td>
-  <td bgcolor="white">
-  level 2
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>...</mono>
-  </td>
-  <td bgcolor="white">
-  ...
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>##### txt</mono>
-  </td>
-  <td bgcolor="white">
-  level 5
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_3.png">
-</p>
-
-]
-
----
-
-# Highlighting
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Various operators enable <high>text- and code</high> highlighting.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
-  <col width="50%">
-  <col width="50%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;<mono>text</mono>&ast;
-  </td>
-  <td bgcolor="white">
-  italic
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;<mono>text</mono>&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  bold
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  italic and bold 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>text</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  code
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>r "text"</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  inline code
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_5.png">
-</p>
-
-]
-
----
-
-# Highlighting
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Various operators enable <high>text- and code</high> highlighting.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
-  <col width="50%">
-  <col width="50%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;<mono>text</mono>&ast;
-  </td>
-  <td bgcolor="white">
-  italic
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;<mono>text</mono>&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  bold
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  italic and bold 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>text</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  code
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>r "text"</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  inline code
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_4.png">
-</p>
-
-]
-
-
----
-
-# Highlighting
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Various operators enable <high>text- and code</high> highlighting.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
-  <col width="50%">
-  <col width="50%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;<mono>text</mono>&ast;
-  </td>
-  <td bgcolor="white">
-  italic
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;<mono>text</mono>&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  bold
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
-  </td>
-  <td bgcolor="white">
-  italic and bold 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>text</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  code
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  &grave;<mono>r "text"</mono>&grave;
-  </td>
-  <td bgcolor="white">
-  inline code
-  </td> 
-</tr>
-</table>
-
-]
-
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_6.png">
-</p>
-
-]
-
-
----
-
-# Inline code
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span><high>Numbers or labels</high> in text can be parameterized using inline code.</span></li>
-  <li class="m2"><span>Inline code can include <high>any</high> type/length of code.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_7.png">
-</p>
-
-]
-
----
-
-# Chunks
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>A <high>code <mono>chunk</mono></high> can contain any R code.</span></li>
-  <li class="m2"><span>The behavior of code chunks can be controlled using <high>chunk arguments</high>.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_8_0.png">
-</p>
-
-]
-
----
-
-# Chunks
-
-.pull-left3[
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
-  <col width="60%">
-  <col width="40%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>echo=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Show/hide <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>eval=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Run/not-run <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>include=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude all <high>output</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>message=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>messages</highm> in output.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>warning=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
-  </td> 
-</tr>
-</table>
-
-<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_8.png">
-</p>
-
-]
-
-
-
----
-
-# Chunks
-
-.pull-left3[
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
-  <col width="60%">
-  <col width="40%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>echo=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Show/hide <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>eval=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Run/not-run <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>include=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude all <high>output</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>message=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>messages</highm> in output.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>warning=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
-  </td> 
-</tr>
-</table>
-
-<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_9.png">
-</p>
-
-]
-
-
----
-
-# Chunks
-
-.pull-left3[
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
-  <col width="60%">
-  <col width="40%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>echo=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Show/hide <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>eval=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Run/not-run <high>code</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>include=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude all <high>output</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>message=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>messages</highm> in output.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>warning=T/F</mono>
-  </td>
-  <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
-  </td> 
-</tr>
-</table>
-
-<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_10.png">
-</p>
-
-]
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_11.png">
-</p>
-
-]
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-
-<p align = "center">
-  <img src="image/markdown_trans_13.png">
-</p>
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-
-<p align = "center">
-  <img src="image/markdown_trans_14.png">
-</p>
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<p align = "center">
-  <img src="image/markdown_trans_15.png">
-</p>
-
-]
-
-
----
-
-# Relative path
-
-.pull-left35[
-
-<ul>
-  <li class="m1"><span>When rendered, markdown documents do not use the current <high>working directory</high>.</span></li><br>
-  <li class="m2"><span>Paths need to be defined <high>relative to the position of the .Rmd file</high>.</span></li>
-</ul>
-
-<br>
-```R
-# load data
-read_csv("../1_data/data.csv")
-
-```
-
-]
-
-.pull-right55[
-<br>
-<p align = "center">
-  <img src="image/folder.png" height=280px>
-</p>
-
-]
-
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-<ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.width</mono>, <mono>fig.height</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Width</high> and <high>height</high> in inches.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.asp</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Aspect ratio</high>: Height relative to width.   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Position</high> of the graph: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>dpi</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Resolution</high> of the graph (dots per inch).
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_1.png" height=520px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-<ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.width</mono>, <mono>fig.height</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Width</high> and <high>height</high> in inches.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.asp</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Aspect ratio</high>: Height relative to width.   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Position</high> of the graph: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>dpi</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Resolution</high> of the graph (dots per inch).
-  </td> 
-</tr>
-</table>
-]
-
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_2.png" height=520px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-<ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.width</mono>, <mono>fig.height</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Width</high> and <high>height</high> in inches.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.asp</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Aspect ratio</high>: Height relative to width.   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Position</high> of the graph: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>dpi</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Resolution</high> of the graph (dots per inch).
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_3.png" height=520px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-<ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.width</mono>, <mono>fig.height</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Width</high> and <high>height</high> in inches.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.asp</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Aspect ratio</high>: Height relative to width.   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Position</high> of the graph: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>dpi</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Resolution</high> of the graph (dots per inch).
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_4.png" height=520px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-<ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.width</mono>, <mono>fig.height</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Width</high> and <high>height</high> in inches.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.asp</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Aspect ratio</high>: Height relative to width.   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>fig.align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Position</high> of the graph: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>dpi</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Resolution</high> of the graph (dots per inch).
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_5.png" height=520px>
-</p>
-
-]
-
-
----
-
-.pull-left4[
-
-# Captions
-
-<ul>
-  <li class="m1"><span>Captions can be added with  <highm>fig.cap</highm>.</span></li> 
-  <li class="m2"><span>The caption text can be defined  <high>within the chunks</high>.</span></li> 
-</ul>
-
-
-]
-
-.pull-right5[
-<br>
-<p align = "center">
-  <img src="image/plot_6.png" height=520px>
-</p>
-
-]
-
-
----
-
-.pull-left4[
-
-# Links, footnotes
-
-<ul>
-  <li class="m1"><span>There is specific <high>markdown syntax</high> to include links and footnotes.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lsqb;Name&rsqb;(URL)</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Link</high>. Name is displayed in the text, the URL is not displayed.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>^&lsqb;Text&rsqb;</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Footnotes</high> are included after the end of the text.    
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>***</mono>
-  </td>
-  <td bgcolor="white">
-   Includes a <high>horizontal</high> separation line.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-<br><br>
-<p align = "center">
-  <img src="image/links.png" height = 540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# Quotes
-
-<ul>
-  <li class="m1"><span><high>Quotes</high> are generated directly in Markdown.</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Markdown</b>
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>> block quote</mono>
-  </td>
-  <td bgcolor="white">
-  Text will be displayed as a <high>Quote</high>.<high></high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono></mono> 
-  </td>
-  <td bgcolor="white">
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono></mono>
-  </td>
-  <td bgcolor="white">
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-<br><br>
-<p align = "center">
-  <img src="image/quote.png" height = 540px>
-</p>
-
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_1.png" height=540px>
-</p>
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_2.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_3.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_4.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_5.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_6.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left3[
-
-# HTML
-
-
-<ul>
-  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage enables the layout of text and content with <high>HTML-Tags<high>.</span></li> 
-  </ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Tag</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
-  <td bgcolor="white">
-  <high>Heading</high> level 1, 2,...
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;br&gt;</mono>
-  </td>
-  <td bgcolor="white">
-   New <high>line</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Bold, italics, underline.</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Container</high>, text section.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;table&gt;</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Tables</high>, columns.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/html_1.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left3[
-
-# CSS
-
-<ul>
-  <li class="m1"><span><b>C</b>ascading <b>S</b>tyle <b>S</b>heets allow you to set additional <high>aesthetic characteristics</high> of <high>HTML</high> in an external file.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br><br>
-<p align = "center">
-  <img src="image/css_1.png" height=480px>
-</p>
-
-]
 
 ---
 

@@ -4,6 +4,8 @@ author: "John Doe"
 format: revealjs
 ---
 
+# Daily routine
+
 ## Getting up
 
 - Turn off alarm

@@ -1,0 +1,35 @@
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs:
+    incremental: true
+---
+
+# Daily routine
+
+## Getting up - Going to sleep
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+
+- Turn off alarm
+- Get out of bed
+
+:::
+
+::: {.column width="60%"}
+Right column
+
+- Get in bed
+- Count sheep
+
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::

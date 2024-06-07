@@ -51,15 +51,25 @@ layout: true
 
 
 
-# Additional functionalities
+# Output formats
 
 .pull-left4[
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Presentations&lt;/li&gt; 
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;HTML with reveal.js&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Powerpoint&lt;/span&gt;&lt;/li&gt;  
+    &lt;li&gt;&lt;span&gt;LaTeX with Beamer&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Dashboards&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m3"&gt;&lt;span&gt;Websites&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m4"&gt;&lt;span&gt;Manuscripts&lt;/span&gt;&lt;/li&gt; 
+    &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;HTML &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;  
+    &lt;li&gt;&lt;span&gt;LaTeX&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/ul&gt;
 
 ]
@@ -81,17 +91,56 @@ Screenshot of each product
 # Presentations
 
 .pull-left4[
-Quarto supports different presentation formats:
+&lt;high&gt;HTML&lt;/high&gt; with reveal.js
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;HTML with reveal.js&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Powerpoint with MS Office&lt;/span&gt;&lt;/li&gt;
-    &lt;li class="m3"&gt;&lt;span&gt;LaTeX with Beamer&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Define &lt;high&gt;Sections&lt;/high&gt; and &lt;high&gt;Slides&lt;/high&gt; using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# Title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;section&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;slide&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;List item&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
 
 ]
 
 .pull-right5[
-&lt;div style="width:60%"&gt;
+
+&lt;div style="width:70%"&gt;
 ````markdown
 ---
 title: "Habits"
@@ -99,71 +148,270 @@ author: "John Doe"
 format: revealjs
 ---
 
-## Getting up
+# Daily routine
 
+## Getting up
 - Turn off alarm
 - Get out of bed
 
 ## Going to sleep
-
 - Get in bed
 - Count sheep
 ````
 &lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_presentations/turn_on.html" width = "60%" &gt;&lt;/iframe&gt;
-
-
+&lt;iframe class="slide-deck" src="example_presentations/turn_on.html" width = "70%" &gt;&lt;/iframe&gt;
 
 ]
-
----
-
-# check 
-
-
-.pull-left4[
-Quarto supports different presentation formats:
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;  
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-
-]
-
-
-
 
 ---
 
 # Presentations
 
 .pull-left4[
-Quarto supports different presentation formats:
+&lt;high&gt;HTML&lt;/high&gt; with reveal.js
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt;Define &lt;high&gt;Sections&lt;/high&gt; and &lt;high&gt;Slides&lt;/high&gt; using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# Title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;section&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;slide&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;List item&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs:
+    incremental: true
+---
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/incremental.html" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Columns
+
+.pull-left4[
+&lt;high&gt;HTML&lt;/high&gt; with reveal.js
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Distribute&lt;/high&gt; content with &lt;high&gt;columns&lt;/high&gt; &lt;br&gt;defined by fences &lt;mono&gt;::::&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;mono&gt;:::: {.column}&lt;/mono&gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;column&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;::: {.column width="40%"}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Set column &lt;high&gt;width&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+:::: {.columns}
+::: {.column width="40%"}
+Left column
+- Turn off alarm
+- Get out of bed
+:::
+
+::: {.column width="60%"}
+Right column
+
+- Get in bed
+- Count sheep
+:::
+::::
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/columns.html" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Speaker notes
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt; &lt;span&gt;Add Speaker &lt;high&gt;notes&lt;/high&gt; with &lt;mono&gt;{.notes}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Press &lt;mono&gt;S&lt;/mono&gt; for presentation view.&lt;/span&gt;&lt;/li&gt; 
+
 &lt;/ul&gt;
 
 ]
 
 .pull-right5[
 
-&lt;br&gt;
+&lt;div style="width:70%"&gt;
+````markdown
+## Slide with speaker notes
 
-&lt;p align = "center"&gt;
-  &lt;img src="image/" width=400px&gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://de.wikipedia.org/wiki/Markdown"&gt;wikipedia.org&lt;/a&gt;&lt;/font&gt;
-&lt;/p&gt;
+Slide content
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+````
+&lt;/div&gt;
+&lt;img src="image/speaker_notes.png" width=400px&gt;&lt;br&gt;
 
 ]
 
 ---
+
+# Footer &amp; Logo
+
+.pull-left4[
+
+Add information on the bottom of &lt;high&gt; each slide&lt;high&gt; in the YAML header.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; &lt;high&gt;Footer text&lt;/high&gt; &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
+
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/footer.html" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+
+# Footer &amp; Logo
+
+.pull-left4[
+
+Add information on the bottom of &lt;high&gt; each slide&lt;high&gt; in the YAML header.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer text&lt;/high&gt; &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Custom footer per slide with &lt;br&gt;&lt;mono&gt;::: footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
+
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+...
+
+::: footer
+Custom footer text
+:::
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+
+
+
+
 
 
 # Dashboards
@@ -191,6 +439,93 @@ Quarto supports different presentation formats:
 
 ---
 
+# Websites
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;New Project&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Quarto Website&lt;/high&gt; in new folder &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/quarto_website_generation.png" height=400px&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# Websites
+
+.pull-left4[
+A set of files is automatically generated in the new folder.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.qmd&lt;/mono&gt; with Text&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; Style&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.yml&lt;/mono&gt; YAML config file&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/web_folder.png" height=400px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# &lt;mono&gt;_quarto.yml&lt;/mono&gt; config file
+
+.pull-left4[
+
+Global information for the website configuration.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets location and content of navigation&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; define layout&lt;/span&gt;&lt;/li&gt; 
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds table of contents&lt;/span&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+
+project:
+  type: website
+
+website:
+  title: "today"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
 
 
 # Websites
@@ -198,21 +533,33 @@ Quarto supports different presentation formats:
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Developed by John Gruber and Aaron Swartz in 2004.&lt;br&gt;&lt;br&gt;
-  "&lt;high&gt;easy-to-read&lt;/high&gt; and &lt;high&gt;easy-to-write&lt;/high&gt; plain text format, [...] convert it to structurally valid XHTML (or HTML)"&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Simple &lt;high&gt;syntax for formatting&lt;/high&gt; documents.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Top&lt;/high&gt; navigation&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Side&lt;/high&gt; navigation&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Combination&lt;/high&gt; top links to sections&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
 
 .pull-right5[
 
-&lt;br&gt;
+&lt;div style="width:70%"&gt;
+````markdown
 
-&lt;p align = "center"&gt;
-  &lt;img src="image/" width=400px&gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://de.wikipedia.org/wiki/Markdown"&gt;wikipedia.org&lt;/a&gt;&lt;/font&gt;
-&lt;/p&gt;
+---
+format:
+  revealjs:
+    logo: logo.png
+    footer: "University of Bern"
+---
+...
+
+::: footer
+Custom footer text
+:::
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" &gt;&lt;/iframe&gt;
 
 ]
 
@@ -278,1898 +625,6 @@ Quarto supports different presentation formats:
 
 ]
 
----
-
-# R Markdown elements
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown scripts consist of several &lt;high&gt;elements&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Element&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;YAML&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;in't &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage&lt;br&gt;
-  &lt;high&gt;general document settings&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;Setup chunk&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  control &lt;high&gt;chunks&lt;/high&gt; settings&lt;br&gt;
-  load &lt;high&gt;packages&lt;/high&gt;&lt;br&gt;
-  load &lt;high&gt;data&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;Markdown&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;header&lt;/high&gt;&lt;br&gt;
-  &lt;high&gt;text&lt;/high&gt; highlighting
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;Code chunk&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  R &lt;high&gt;Code&lt;/high&gt;&lt;br&gt;
-  R &lt;high&gt;Outputs&lt;high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/base_quarto_header.png" height=400px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Pipeline
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-    &lt;ul&gt;
-    &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
-    &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;PowerPoint&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;&lt;br&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;To this end, &lt;high&gt;several translation steps&lt;/high&gt; are necessary.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/pipeline.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Rendering your file
-
-.pull-left4[
-
-&lt;high&gt;Rendering&lt;/high&gt; (translating) your .qmd file into the &lt;high&gt;final format&lt;/high&gt;: 
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Using the &lt;high&gt;Render-button&lt;/high&gt; in RStudio.&lt;/span&gt;&lt;/li&gt;
-
-  &lt;li class="m2"&gt;&lt;span&gt;Selecting &lt;high&gt;'Render on save'&lt;/high&gt; - rendering will automatically be executed once you save your file.&lt;/span&gt;&lt;/li&gt;
-
-
-  &lt;li class="m3"&gt;&lt;span&gt;In the &lt;high&gt;Terminal&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  
-  &lt;li class="m4"&gt;&lt;span&gt;On the &lt;high&gt;R console&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/render.png"&gt;
-&lt;/p&gt;
-
-
-]
-
----
-
-# HTML Pipeline XXX UPDATE!
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;HTML is a &lt;high&gt;universal framework&lt;/high&gt; for documents, presentations, and dashboards&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;HTML &lt;high&gt;export to PDF&lt;/high&gt; is often straightforward.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/pipeline2.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# HTML
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;yper&lt;b&gt;T&lt;/b&gt;ext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;The format of the &lt;high&gt;World Wide Web&lt;/high&gt;s.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Affords flexible styling through &lt;high&gt;CSS&lt;/high&gt; (Cascading Style Sheets).&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_templ_html.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Displaying HTML
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;HTML gets &lt;high&gt;interpreted&lt;/high&gt; in RStudio (or browsers) so that a well-formatted document emerges.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Rstudio&lt;/high&gt; also shows rendered documents (rather than the raw html). &lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Headers
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Headers on different &lt;high&gt;levels&lt;/high&gt; can be set using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;# text&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 1
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;## text&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 2
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;...&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  ...
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;##### txt&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 5
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_2.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Headers
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Headers on different &lt;high&gt;levels&lt;/high&gt; can be set using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;# text&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 1
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;## text&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 2
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;...&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  ...
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;##### txt&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  level 5
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_3.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Highlighting
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
-  &lt;col width="50%"&gt;
-  &lt;col width="50%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  bold
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic and bold 
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  inline code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_5.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Highlighting
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
-  &lt;col width="50%"&gt;
-  &lt;col width="50%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  bold
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic and bold 
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  inline code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_4.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Highlighting
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Various operators enable &lt;high&gt;text- and code&lt;/high&gt; highlighting.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
-  &lt;col width="50%"&gt;
-  &lt;col width="50%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  bold
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  italic and bold 
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  inline code
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_6.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Inline code
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Numbers or labels&lt;/high&gt; in text can be parameterized using inline code.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Inline code can include &lt;high&gt;any&lt;/high&gt; type/length of code.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_7.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Chunks
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;A &lt;high&gt;code &lt;mono&gt;chunk&lt;/mono&gt;&lt;/high&gt; can contain any R code.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;The behavior of code chunks can be controlled using &lt;high&gt;chunk arguments&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_8_0.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Chunks
-
-.pull-left3[
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
-  &lt;col width="60%"&gt;
-  &lt;col width="40%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;echo=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Show/hide &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;eval=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Run/not-run &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;include=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;message=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;warning=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_8.png"&gt;
-&lt;/p&gt;
-
-]
-
-
-
----
-
-# Chunks
-
-.pull-left3[
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
-  &lt;col width="60%"&gt;
-  &lt;col width="40%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;echo=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Show/hide &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;eval=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Run/not-run &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;include=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;message=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;warning=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_9.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Chunks
-
-.pull-left3[
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
-  &lt;col width="60%"&gt;
-  &lt;col width="40%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;echo=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Show/hide &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;eval=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Run/not-run &lt;high&gt;code&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;include=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;message=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;warning=T/F&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_10.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_11.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_13.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_14.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_15.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Relative path
-
-.pull-left35[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;When rendered, markdown documents do not use the current &lt;high&gt;working directory&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Paths need to be defined &lt;high&gt;relative to the position of the .Rmd file&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-```R
-# load data
-read_csv("../1_data/data.csv")
-
-```
-
-]
-
-.pull-right55[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/folder.png" height=280px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;dpi&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-]
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_1.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;dpi&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-]
-
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_2.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;dpi&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-]
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_3.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;dpi&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-]
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_4.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# Scale graphs
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;dpi&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Resolution&lt;/high&gt; of the graph (dots per inch).
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-]
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_5.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-.pull-left4[
-
-# Captions
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Captions can be added with  &lt;highm&gt;fig.cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The caption text can be defined  &lt;high&gt;within the chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-
-]
-
-.pull-right5[
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/plot_6.png" height=520px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-.pull-left4[
-
-# Links, footnotes
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include links and footnotes.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lsqb;Name&amp;rsqb;(URL)&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Link&lt;/high&gt;. Name is displayed in the text, the URL is not displayed.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;^&amp;lsqb;Text&amp;rsqb;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Footnotes&lt;/high&gt; are included after the end of the text.    
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;***&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   Includes a &lt;high&gt;horizontal&lt;/high&gt; separation line.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/links.png" height = 540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# Quotes
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Quotes&lt;/high&gt; are generated directly in Markdown.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&gt; block quote&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Text will be displayed as a &lt;high&gt;Quote&lt;/high&gt;.&lt;high&gt;&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/quote.png" height = 540px&gt;
-&lt;/p&gt;
-
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_1.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_2.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_3.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_4.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_5.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_6.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left3[
-
-# HTML
-
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;ypertext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage enables the layout of text and content with &lt;high&gt;HTML-Tags&lt;high&gt;.&lt;/span&gt;&lt;/li&gt; 
-  &lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Tag&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt,...&lt;/mono&gt; &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Heading&lt;/high&gt; level 1, 2,...
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;br&amp;gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   New &lt;high&gt;line&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;b&amp;gt;, &amp;lt;i&amp;gt;, &amp;lt;u&amp;gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Bold, italics, underline.&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;div&amp;gt;, &amp;lt;p&amp;gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Container&lt;/high&gt;, text section.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;table&amp;gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Tables&lt;/high&gt;, columns.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/html_1.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left3[
-
-# CSS
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;C&lt;/b&gt;ascading &lt;b&gt;S&lt;/b&gt;tyle &lt;b&gt;S&lt;/b&gt;heets allow you to set additional &lt;high&gt;aesthetic characteristics&lt;/high&gt; of &lt;high&gt;HTML&lt;/high&gt; in an external file.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/css_1.png" height=480px&gt;
-&lt;/p&gt;
-
-]
 
 ---
 

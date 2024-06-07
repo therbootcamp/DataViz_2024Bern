@@ -117,15 +117,27 @@ Quarto supports different presentation formats:
 ]
 
 .pull-right5[
+<div style="width:60%">
+````markdown
+---
+title: "Habits"
+author: "John Doe"
+format: revealjs
+---
 
-<br>
-<p align = "center">
+## Getting up
 
+- Turn off alarm
+- Get out of bed
 
+## Going to sleep
 
+- Get in bed
+- Count sheep
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/turn_on.html" width = "60%" ></iframe>
 
-  <iframe class="slide-deck" src="quarto2.html" width = "50%" ></iframe>
-</p>
 
 
 ]

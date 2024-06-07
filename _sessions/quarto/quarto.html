@@ -216,7 +216,7 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated (rendered) into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
     &lt;ul&gt;
     &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
@@ -242,7 +242,7 @@ layout: true
 
 .pull-left4[
 
-&lt;high&gt;Rendering&lt;/high&gt; (translating) your .qmd file into the &lt;high&gt;final format&lt;/high&gt;: 
+&lt;high&gt;Rendering&lt;/high&gt; (translating) your .qmd file into the &lt;high&gt;final document type&lt;/high&gt;: 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Using the &lt;high&gt;Render-button&lt;/high&gt; in RStudio.&lt;/span&gt;&lt;/li&gt;
 
@@ -734,7 +734,7 @@ layout: true
 
 ---
 
-# Chunks
+# Chunks REDO WITH FALSE IN CHUNK
 
 .pull-left3[
 
@@ -799,7 +799,7 @@ layout: true
 
 &lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_8.png"&gt;
+  &lt;img src="image/"&gt;
 &lt;/p&gt;
 
 ]
@@ -953,13 +953,13 @@ layout: true
 
 ---
 
-# Setup chunk
+# Global chunk options
 
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Set &lt;high&gt; global settings for all chunks&lt;/high&gt; in the YAML header.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;All chunk options can be used.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -968,21 +968,22 @@ layout: true
 
 &lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_11.png"&gt;
+  &lt;img src="image/markdown_trans_8.png"&gt;
 &lt;/p&gt;
 
 ]
 
 ---
 
-# Setup chunk
+# Global chunk options
 
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Set &lt;high&gt; global settings for all chunks&lt;/high&gt; in the YAML header.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 
 ]
 
@@ -1067,6 +1068,7 @@ read_csv("../1_data/data.csv")
   &lt;img src="image/folder.png" height=280px&gt;
 &lt;/p&gt;
 
+
 ]
 
 
@@ -1094,7 +1096,7 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig-width&lt;/mono&gt;, &lt;mono&gt;fig-height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
@@ -1102,18 +1104,10 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;mono&gt;fig-asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1159,7 +1153,7 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig-width&lt;/mono&gt;, &lt;mono&gt;fig-height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
@@ -1167,18 +1161,10 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;mono&gt;fig-asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1225,7 +1211,7 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig-width&lt;/mono&gt;, &lt;mono&gt;fig-height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
@@ -1233,18 +1219,10 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;mono&gt;fig-asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1290,7 +1268,7 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig-width&lt;/mono&gt;, &lt;mono&gt;fig-height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
@@ -1298,18 +1276,10 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;mono&gt;fig-asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1355,7 +1325,7 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig-width&lt;/mono&gt;, &lt;mono&gt;fig-height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Width&lt;/high&gt; and &lt;high&gt;height&lt;/high&gt; in inches.
@@ -1363,18 +1333,10 @@ read_csv("../1_data/data.csv")
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;mono&gt;fig-asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect ratio&lt;/high&gt;: Height relative to width.   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.align&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; of the graph: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1404,7 +1366,7 @@ read_csv("../1_data/data.csv")
 # Captions
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Captions can be added with  &lt;highm&gt;fig.cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Captions can be added with  &lt;highm&gt;fig-cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The caption text can be defined  &lt;high&gt;within the chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 

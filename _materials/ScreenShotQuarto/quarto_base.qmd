@@ -3,15 +3,26 @@ title: "Quarto"
 format:
   html
 execute:
-  echo: true
+  echo: false
+  message: false
+  warning: false
 ---
+
+```{r}
+# load packages
+library(tidyverse)
+
+# load data
+taxation <- read_csv('1_data/taxation.csv')
+```
+
 
 ### Heading
 
 This is a Markdown text block.
 
 ```{r cars}
-summary(cars)
+summary(taxation$N)
 ```
 
 

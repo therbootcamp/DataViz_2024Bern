@@ -88,9 +88,8 @@ basel <- read_csv("1_data/taxation.csv")
     <li><span>Powerpoint</span></li>  
     <li><span>LaTeX with Beamer</span></li>
   </ul>
-  <li class="m2"><span>Dashboards</span></li> 
-  <li class="m3"><span>Websites</span></li> 
-  <li class="m4"><span>Manuscripts</span></li> 
+  <li class="m2"><span>Websites</span></li> 
+  <li class="m3"><span>Manuscripts</span></li> 
     <ul>
     <li><span>HTML </span></li>
     <li><span>Word</span></li>  
@@ -290,7 +289,7 @@ format:
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>::: {.column width="40%"}</mono>
+  <mono>::: {.column width="XX%"}</mono>
   </td>
   <td bgcolor="white">
   Set column <high>width</high>
@@ -440,30 +439,6 @@ Custom footer text
 
 
 
-# Dashboards
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Developed by John Gruber and Aaron Swartz in 2004.<br><br>
-  "<high>easy-to-read</high> and <high>easy-to-write</high> plain text format, [...] convert it to structurally valid XHTML (or HTML)"</span></li> 
-  <li class="m2"><span>Simple <high>syntax for formatting</high> documents.</span></li>  
-</ul>
-
-]
-
-.pull-right5[
-
-<br>
-
-<p align = "center">
-  <img src="image/" width=400px><br>
-  <font style="font-size:10px">from <a href="https://de.wikipedia.org/wiki/Markdown">wikipedia.org</a></font>
-</p>
-
-]
-
----
 
 # Websites
 

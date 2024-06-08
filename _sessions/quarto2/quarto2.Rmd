@@ -445,10 +445,11 @@ Custom footer text
 ]
 
 ---
+
 # Presentations
 
 .pull-left4[
-<high>HTML</high> with Power Point
+<high>Power Point</high>
 
 <ul>
   <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
@@ -509,7 +510,7 @@ Custom footer text
 ---
 title: "Habits"
 author: "John Doe"
-format: revealjs
+format: pptx
 ---
 
 # Daily routine
@@ -523,11 +524,86 @@ format: revealjs
 - Count sheep
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/turn_on.html" width = "70%" ></iframe>
+<p align = "center">
+
+</p>
 
 ]
 
+
 ---
+
+# Presentations
+
+.pull-left4[
+<high>Power Point</high>
+
+<ul>
+  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>section</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>##</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>slide</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-</mono>
+  </td>
+  <td bgcolor="white">
+  <high>List</high> item
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>incremental</mono>
+  </td>
+  <td bgcolor="white">
+  <high>stepwise</high> reveal
+  </td> 
+</tr>
+</table>
+
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+
+</div>
+<p align = "center">
+  <img src="image/powerpoint.png" height=400px>
+</p>
+
+]
+
+
+---
+
 
 # Websites
 
@@ -535,7 +611,7 @@ format: revealjs
 
 <ul>
   <li class="m1"><span><high>New Project</high></span></li> 
-  <li class="m2"><span><high>Quarto Website</high> in new folder </span></li>
+  <li class="m2"><span><high>Quarto Website</high> a new folder <mono>_site</mono></span></li>
 </ul>
 
 ]

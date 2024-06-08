@@ -109,7 +109,7 @@ Screenshot of each product
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;# Title&lt;/mono&gt;
+  &lt;mono&gt;#&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   Add new &lt;high&gt;section&lt;/high&gt;
@@ -117,7 +117,7 @@ Screenshot of each product
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;## Title&lt;/mono&gt;
+  &lt;mono&gt;##&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   Add new &lt;high&gt;slide&lt;/high&gt;
@@ -128,10 +128,17 @@ Screenshot of each product
   &lt;mono&gt;-&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;List item&lt;/high&gt;
+  &lt;high&gt;List&lt;/high&gt; item
   &lt;/td&gt; 
 &lt;/tr&gt;
-
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;incremental&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;stepwise&lt;/high&gt; reveal
+  &lt;/td&gt; 
+&lt;/tr&gt;
 &lt;/table&gt;
 
 
@@ -186,7 +193,7 @@ format: revealjs
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;# Title&lt;/mono&gt;
+  &lt;mono&gt;#&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   Add new &lt;high&gt;section&lt;/high&gt;
@@ -194,7 +201,7 @@ format: revealjs
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;## Title&lt;/mono&gt;
+  &lt;mono&gt;##&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   Add new &lt;high&gt;slide&lt;/high&gt;
@@ -205,10 +212,17 @@ format: revealjs
   &lt;mono&gt;-&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;List item&lt;/high&gt;
+  &lt;high&gt;List&lt;/high&gt; item
   &lt;/td&gt; 
 &lt;/tr&gt;
-
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;incremental&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;stepwise&lt;/high&gt; reveal
+  &lt;/td&gt; 
+&lt;/tr&gt;
 &lt;/table&gt;
 
 ]
@@ -236,7 +250,6 @@ format:
 # Columns
 
 .pull-left4[
-&lt;high&gt;HTML&lt;/high&gt; with reveal.js
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Distribute&lt;/high&gt; content with &lt;high&gt;columns&lt;/high&gt; &lt;br&gt;defined by fences &lt;mono&gt;::::&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
@@ -258,7 +271,7 @@ format:
   &lt;mono&gt;&lt;mono&gt;:::: {.column}&lt;/mono&gt;&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Add new &lt;high&gt;column&lt;/high&gt;
+  Add &lt;high&gt;columns&lt;/high&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -307,7 +320,7 @@ Right column
 
 &lt;ul&gt;
   &lt;li class="m1"&gt; &lt;span&gt;Add Speaker &lt;high&gt;notes&lt;/high&gt; with &lt;mono&gt;{.notes}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Press &lt;mono&gt;S&lt;/mono&gt; for presentation view.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Press &lt;mono&gt;S&lt;/mono&gt; for &lt;high&gt;presentation view&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 
@@ -337,11 +350,12 @@ Speaker notes go here.
 
 .pull-left4[
 
-Add information on the bottom of &lt;high&gt; each slide&lt;high&gt; in the YAML header.
+Add information on &lt;high&gt; each slide&lt;/high&gt;.
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;high&gt;Footer text&lt;/high&gt; &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer&lt;/high&gt; text &lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide with &lt;br&gt;&lt;mono&gt;footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 
@@ -366,17 +380,16 @@ format:
 
 ---
 
-
 # Footer &amp; Logo
 
 .pull-left4[
 
-Add information on the bottom of &lt;high&gt; each slide&lt;high&gt; in the YAML header.
+Add information on &lt;high&gt; each slide&lt;/high&gt;.
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer text&lt;/high&gt; &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer&lt;/high&gt; text &lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Custom footer per slide with &lt;br&gt;&lt;mono&gt;::: footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide with &lt;br&gt;&lt;mono&gt;footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 
@@ -406,13 +419,89 @@ Custom footer text
 ]
 
 ---
+# Presentations
+
+.pull-left4[
+&lt;high&gt;HTML&lt;/high&gt; with Power Point
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Define &lt;high&gt;Sections&lt;/high&gt; and &lt;high&gt;Slides&lt;/high&gt; using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;section&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Add new &lt;high&gt;slide&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;List&lt;/high&gt; item
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;incremental&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;stepwise&lt;/high&gt; reveal
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 
 
+]
 
+.pull-right5[
 
+&lt;div style="width:70%"&gt;
+````markdown
+---
+title: "Habits"
+author: "John Doe"
+format: revealjs
+---
 
+# Daily routine
 
+## Getting up
+- Turn off alarm
+- Get out of bed
 
+## Going to sleep
+- Get in bed
+- Count sheep
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/turn_on.html" width = "70%" &gt;&lt;/iframe&gt;
+
+]
+
+---
 
 # Websites
 
@@ -439,11 +528,11 @@ Custom footer text
 # Websites
 
 .pull-left4[
-A set of files is automatically generated in the new folder.
+A &lt;high&gt;set of files&lt;/high&gt; is automatically generated in the &lt;high&gt;new folder&lt;/high&gt;.
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.qmd&lt;/mono&gt; with Text&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; Style&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.yml&lt;/mono&gt; YAML config file&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.qmd&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.yml&lt;/mono&gt; YAML &lt;high&gt;config file&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
@@ -458,15 +547,16 @@ A set of files is automatically generated in the new folder.
 
 ---
 
+
 # &lt;mono&gt;_quarto.yml&lt;/mono&gt; config file
 
 .pull-left4[
 
-Global information for the website configuration.
+Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets location and content of navigation&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; define layout&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds table of contents&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets &lt;high&gt;location&lt;/high&gt; and &lt;high&gt;content&lt;/high&gt; of navigation&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; &lt;high&gt;define layout&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds &lt;high&gt;table of contents&lt;high&gt;&lt;/span&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -474,14 +564,13 @@ Global information for the website configuration.
 
 .pull-right5[
 
-&lt;div style="width:70%"&gt;
 ````markdown
 
 project:
   type: website
 
 website:
-  title: "today"
+  title: "Our UniBE website"
   navbar:
     left:
       - href: index.qmd
@@ -495,98 +584,41 @@ format:
     toc: true
     
 ````
-&lt;/div&gt;
-&lt;iframe class="slide-deck" src="" width = "70%" &gt;&lt;/iframe&gt;
 
 ]
 
 ---
 
+# &lt;mono&gt;_quarto.yml&lt;/mono&gt; config file
+
+.pull-left4[
+
+Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets &lt;high&gt;location&lt;/high&gt; and &lt;high&gt;content&lt;/high&gt; of navigation&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; &lt;high&gt;define layout&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds &lt;high&gt;table of contents&lt;high&gt;&lt;/span&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;iframe src="example_website/web/_site/index.html" width="500" height="400"&gt;&lt;/iframe&gt;
+
+]
+
+---
 
 # Websites
 
 .pull-left4[
-
+A &lt;high&gt;set of files&lt;/high&gt; is automatically generated in the &lt;high&gt;new folder&lt;/high&gt;.
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Top&lt;/high&gt; navigation&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Side&lt;/high&gt; navigation&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Combination&lt;/high&gt; top links to sections&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;div style="width:70%"&gt;
-````markdown
-
----
-format:
-  revealjs:
-    logo: logo.png
-    footer: "University of Bern"
----
-...
-
-::: footer
-Custom footer text
-:::
-
-````
-&lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" &gt;&lt;/iframe&gt;
-
-]
-
----
-
-
-# Manuscripts
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Developed by John Gruber and Aaron Swartz in 2004.&lt;br&gt;&lt;br&gt;
-  "&lt;high&gt;easy-to-read&lt;/high&gt; and &lt;high&gt;easy-to-write&lt;/high&gt; plain text format, [...] convert it to structurally valid XHTML (or HTML)"&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Simple &lt;high&gt;syntax for formatting&lt;/high&gt; documents.&lt;/span&gt;&lt;/li&gt;  
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/" width=400px&gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://de.wikipedia.org/wiki/Markdown"&gt;wikipedia.org&lt;/a&gt;&lt;/font&gt;
-&lt;/p&gt;
-
-]
-
----
-
-
-
-
-
-
-
-
-# What is R Markdown?
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Uses Markdown for &lt;high&gt;formatting dynamic reports&lt;/high&gt; that include ...&lt;/span&gt;&lt;/li&gt;&lt;br&gt; 
-  &lt;ul&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;R code chunks&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;R inline Code&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;Visualizations&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Statistical outputs&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Tables&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;etc.&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.html&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.json&lt;/mono&gt; &lt;high&gt;Search &lt;/high&gt; capabilities&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
@@ -594,8 +626,7 @@ Custom footer text
 .pull-right5[
 
 &lt;p align = "center"&gt;
-  &lt;img src="image/hex.png" height=300&gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://rmarkdown.rstudio.com/docs/"&gt;rmarkdown.rstudio.com&lt;/a&gt;&lt;/font&gt;
+  &lt;img src="image/web_site_folder.png" height=400px&gt;
 &lt;/p&gt;
 
 ]

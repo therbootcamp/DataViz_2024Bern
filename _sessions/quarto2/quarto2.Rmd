@@ -135,7 +135,7 @@ Screenshot of each product
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono># Title</mono>
+  <mono>#</mono>
   </td>
   <td bgcolor="white">
   Add new <high>section</high>
@@ -143,7 +143,7 @@ Screenshot of each product
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Title</mono>
+  <mono>##</mono>
   </td>
   <td bgcolor="white">
   Add new <high>slide</high>
@@ -154,10 +154,17 @@ Screenshot of each product
   <mono>-</mono>
   </td>
   <td bgcolor="white">
-  <high>List item</high>
+  <high>List</high> item
   </td> 
 </tr>
-
+<tr>
+  <td bgcolor="white">
+  <mono>incremental</mono>
+  </td>
+  <td bgcolor="white">
+  <high>stepwise</high> reveal
+  </td> 
+</tr>
 </table>
 
 
@@ -212,7 +219,7 @@ format: revealjs
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono># Title</mono>
+  <mono>#</mono>
   </td>
   <td bgcolor="white">
   Add new <high>section</high>
@@ -220,7 +227,7 @@ format: revealjs
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Title</mono>
+  <mono>##</mono>
   </td>
   <td bgcolor="white">
   Add new <high>slide</high>
@@ -231,10 +238,17 @@ format: revealjs
   <mono>-</mono>
   </td>
   <td bgcolor="white">
-  <high>List item</high>
+  <high>List</high> item
   </td> 
 </tr>
-
+<tr>
+  <td bgcolor="white">
+  <mono>incremental</mono>
+  </td>
+  <td bgcolor="white">
+  <high>stepwise</high> reveal
+  </td> 
+</tr>
 </table>
 
 ]
@@ -262,7 +276,6 @@ format:
 # Columns
 
 .pull-left4[
-<high>HTML</high> with reveal.js
 
 <ul>
   <li class="m1"><span><high>Distribute</high> content with <high>columns</high> <br>defined by fences <mono>::::</mono>.</span></li>
@@ -284,7 +297,7 @@ format:
   <mono><mono>:::: {.column}</mono></mono>
   </td>
   <td bgcolor="white">
-  Add new <high>column</high>
+  Add <high>columns</high>
   </td> 
 </tr>
 <tr>
@@ -333,7 +346,7 @@ Right column
 
 <ul>
   <li class="m1"> <span>Add Speaker <high>notes</high> with <mono>{.notes}</mono></span></li> 
-  <li class="m2"><span>Press <mono>S</mono> for presentation view.</span></li> 
+  <li class="m2"><span>Press <mono>S</mono> for <high>presentation view</high>.</span></li> 
 
 </ul>
 
@@ -363,11 +376,12 @@ Speaker notes go here.
 
 .pull-left4[
 
-Add information on the bottom of <high> each slide<high> in the YAML header.
+Add information on <high> each slide</high>.
 
 <ul>
-  <li class="m1"><span> <high>Footer text</high> </span></li> 
+  <li class="m1"><span><high>Footer</high> text </span></li> 
   <li class="m2"><span><high>Logo<Logo></span></li> 
+  <li class="m3"><span><high>Custom footer</high> per slide with <br><mono>footer</mono></span></li> 
 
 </ul>
 
@@ -392,17 +406,16 @@ format:
 
 ---
 
-
 # Footer & Logo
 
 .pull-left4[
 
-Add information on the bottom of <high> each slide<high> in the YAML header.
+Add information on <high> each slide</high>.
 
 <ul>
-  <li class="m1"><span><high>Footer text</high> </span></li> 
+  <li class="m1"><span><high>Footer</high> text </span></li> 
   <li class="m2"><span><high>Logo<Logo></span></li> 
-  <li class="m3"><span>Custom footer per slide with <br><mono>::: footer</mono></span></li> 
+  <li class="m3"><span><high>Custom footer</high> per slide with <br><mono>footer</mono></span></li> 
 
 </ul>
 
@@ -432,13 +445,89 @@ Custom footer text
 ]
 
 ---
+# Presentations
+
+.pull-left4[
+<high>HTML</high> with Power Point
+
+<ul>
+  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>section</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>##</mono>
+  </td>
+  <td bgcolor="white">
+  Add new <high>slide</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-</mono>
+  </td>
+  <td bgcolor="white">
+  <high>List</high> item
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>incremental</mono>
+  </td>
+  <td bgcolor="white">
+  <high>stepwise</high> reveal
+  </td> 
+</tr>
+</table>
 
 
+]
 
+.pull-right5[
 
+<div style="width:70%">
+````markdown
+---
+title: "Habits"
+author: "John Doe"
+format: revealjs
+---
 
+# Daily routine
 
+## Getting up
+- Turn off alarm
+- Get out of bed
 
+## Going to sleep
+- Get in bed
+- Count sheep
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/turn_on.html" width = "70%" ></iframe>
+
+]
+
+---
 
 # Websites
 
@@ -465,11 +554,11 @@ Custom footer text
 # Websites
 
 .pull-left4[
-A set of files is automatically generated in the new folder.
+A <high>set of files</high> is automatically generated in the <high>new folder</high>.
 <ul>
-  <li class="m1"><span><mono>.qmd</mono> with Text</span></li> 
-  <li class="m2"><span><mono>.css</mono> Style</span></li> 
-  <li class="m3"><span><mono>.yml</mono> YAML config file</span></li> 
+  <li class="m1"><span><mono>.qmd</mono> with <high>Text</high></span></li> 
+  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
+  <li class="m3"><span><mono>.yml</mono> YAML <high>config file</high></span></li> 
 </ul>
 
 ]
@@ -484,15 +573,16 @@ A set of files is automatically generated in the new folder.
 
 ---
 
+
 # <mono>_quarto.yml</mono> config file
 
 .pull-left4[
 
-Global information for the website configuration.
+Global information for the <high>website configuration</high>.
 <ul>
-  <li class="m1"><span><mono>navbar</mono> sets location and content of navigation</span></li> 
-  <li class="m2"><span><mono>theme, css</mono> define layout</span></li> 
-    <li class="m3"><span><mono>toc</mono> adds table of contents</span></li>
+  <li class="m1"><span><mono>navbar</mono> sets <high>location</high> and <high>content</high> of navigation</span></li> 
+  <li class="m2"><span><mono>theme, css</mono> <high>define layout</high></span></li> 
+    <li class="m3"><span><mono>toc</mono> adds <high>table of contents<high></span></li>
 
 </ul>
 
@@ -500,14 +590,13 @@ Global information for the website configuration.
 
 .pull-right5[
 
-<div style="width:70%">
 ````markdown
 
 project:
   type: website
 
 website:
-  title: "today"
+  title: "Our UniBE website"
   navbar:
     left:
       - href: index.qmd
@@ -521,98 +610,41 @@ format:
     toc: true
     
 ````
-</div>
-<iframe class="slide-deck" src="" width = "70%" ></iframe>
 
 ]
 
 ---
 
+# <mono>_quarto.yml</mono> config file
+
+.pull-left4[
+
+Global information for the <high>website configuration</high>.
+<ul>
+  <li class="m1"><span><mono>navbar</mono> sets <high>location</high> and <high>content</high> of navigation</span></li> 
+  <li class="m2"><span><mono>theme, css</mono> <high>define layout</high></span></li> 
+    <li class="m3"><span><mono>toc</mono> adds <high>table of contents<high></span></li>
+
+</ul>
+
+]
+
+.pull-right5[
+
+<iframe src="example_website/web/_site/index.html" width="500" height="400"></iframe>
+
+]
+
+---
 
 # Websites
 
 .pull-left4[
-
+A <high>set of files</high> is automatically generated in the <high>new folder</high>.
 <ul>
-  <li class="m1"><span><high>Top</high> navigation</span></li> 
-  <li class="m2"><span><high>Side</high> navigation</span></li>
-  <li class="m3"><span><high>Combination</high> top links to sections</span></li>
-</ul>
-
-]
-
-.pull-right5[
-
-<div style="width:70%">
-````markdown
-
----
-format:
-  revealjs:
-    logo: logo.png
-    footer: "University of Bern"
----
-...
-
-::: footer
-Custom footer text
-:::
-
-````
-</div>
-<iframe class="slide-deck" src="example_presentations/footer_custom.html" width = "70%" ></iframe>
-
-]
-
----
-
-
-# Manuscripts
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Developed by John Gruber and Aaron Swartz in 2004.<br><br>
-  "<high>easy-to-read</high> and <high>easy-to-write</high> plain text format, [...] convert it to structurally valid XHTML (or HTML)"</span></li> 
-  <li class="m2"><span>Simple <high>syntax for formatting</high> documents.</span></li>  
-</ul>
-
-]
-
-.pull-right5[
-
-<br>
-
-<p align = "center">
-  <img src="image/" width=400px><br>
-  <font style="font-size:10px">from <a href="https://de.wikipedia.org/wiki/Markdown">wikipedia.org</a></font>
-</p>
-
-]
-
----
-
-
-
-
-
-
-
-
-# What is R Markdown?
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Uses Markdown for <high>formatting dynamic reports</high> that include ...</span></li><br> 
-  <ul>
-    <li><span><high>R code chunks</high></span></li>
-    <li><span><high>R inline Code</high></span></li>  
-    <li><span><high>Visualizations</high></span></li>
-    <li><span>Statistical outputs</span></li>
-    <li><span>Tables</span></li>
-    <li><span>etc.</span></li>
-  </ul>
+  <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
+  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
+  <li class="m3"><span><mono>.json</mono> <high>Search </high> capabilities</span></li> 
 </ul>
 
 ]
@@ -620,8 +652,7 @@ Custom footer text
 .pull-right5[
 
 <p align = "center">
-  <img src="image/hex.png" height=300><br>
-  <font style="font-size:10px">from <a href="https://rmarkdown.rstudio.com/docs/">rmarkdown.rstudio.com</a></font>
+  <img src="image/web_site_folder.png" height=400px>
 </p>
 
 ]

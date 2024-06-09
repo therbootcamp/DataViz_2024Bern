@@ -244,10 +244,10 @@ basel <- read_csv("1_data/taxation.csv")
 <ul>
   <li class="m1"><span>RMarkdown can be translated (rendered) into different <high>document types</high>.</span></li><br>
     <ul>
-    <li><span>PDF</span></li>
     <li><span>HTML</span></li>   
     <li><span>Word</span></li>
     <li><span>PowerPoint</span></li>
+    <li><span>PDF</span></li>
   </ul><br>
   <li class="m2"><span>To this end, <high>several translation steps</high> are necessary.</span></li><br>
 </ul>
@@ -257,7 +257,8 @@ basel <- read_csv("1_data/taxation.csv")
 .pull-right5[
 
 <p align = "center">
-  <img src="image/pipeline.png">
+  <img src="image/pipeline.png" width=800px><br>
+  <font style="font-size:10px">from <a href="https://quarto.org">quarto.org</a></font>
 </p>
 
 ]
@@ -298,7 +299,7 @@ basel <- read_csv("1_data/taxation.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>HTML is a <high>universal framework</high> for documents, presentations, and dashboards</span></li>
+  <li class="m1"><span>HTML is a <high>universal framework</high> for documents, presentations, websites and dashboards</span></li>
   <li class="m2"><span>HTML <high>export to PDF</high> is often straightforward.</span></li><br>
 </ul>
 
@@ -760,7 +761,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Chunks REDO WITH FALSE IN CHUNK
+# Chunks
 
 .pull-left3[
 
@@ -825,7 +826,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 <br>
 <p align = "center">
-  <img src="image/">
+  <img src="image/echo_false.png">
 </p>
 
 ]
@@ -1001,37 +1002,13 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Global chunk options
+# Initial chunk
 
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Set <high> global settings for all chunks</high> in the YAML header.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
-</ul>
-
-
-]
-
-.pull-right6[
-
-
-<p align = "center">
-  <img src="image/markdown_trans_13.png">
-</p>
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
+  <li class="m1"><span>Load packages and data inthe initial chunk.</span></li>
+  <li class="m2"><span>Additional global behavior is set in the YAML header.</span></li>
 </ul>
 
 ]
@@ -1048,13 +1025,13 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Setup chunk
+# Initial chunk
 
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>The setup chunk affords <high> general settings for all chunks</high>.</span></li>
-  <li class="m2"><span>Additional functions assist.</span></li>
+  <li class="m1"><span>Load packages and data inthe initial chunk.</span></li>
+  <li class="m2"><span>Additional global behavior is set in the YAML header.</span></li>
 </ul>
 
 ]
@@ -1070,7 +1047,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Relative path
+# Relative path ### DO we still need this? ###
 
 .pull-left35[
 
@@ -1443,14 +1420,6 @@ read_csv("../1_data/data.csv")
   </td>
   <td bgcolor="white">
    <high>Footnotes</high> are included after the end of the text.    
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>***</mono>
-  </td>
-  <td bgcolor="white">
-   Includes a <high>horizontal</high> separation line.
   </td> 
 </tr>
 </table>
@@ -2024,6 +1993,6 @@ read_csv("../1_data/data.csv")
 
 class: middle, center
 
-<h1><font style="font-size:12px">click to open</font><br><a href="https://therbootcamp.github.io/DataViz_2022GSERM/_sessions/markdown/markdown_report.html">Practical</a></h1>
+<h1><a href="Quarto_report.html">Practical</a></h1>
 
 

@@ -381,7 +381,7 @@ Add information on <high> each slide</high>.
 <ul>
   <li class="m1"><span><high>Footer</high> text </span></li> 
   <li class="m2"><span><high>Logo<Logo></span></li> 
-  <li class="m3"><span><high>Custom footer</high> per slide with <br><mono>footer</mono></span></li> 
+  <li class="m3"><span><high>Custom footer</high> per slide </span></li> 
 
 </ul>
 
@@ -415,7 +415,7 @@ Add information on <high> each slide</high>.
 <ul>
   <li class="m1"><span><high>Footer</high> text </span></li> 
   <li class="m2"><span><high>Logo<Logo></span></li> 
-  <li class="m3"><span><high>Custom footer</high> per slide with <br><mono>footer</mono></span></li> 
+  <li class="m3"><span><high>Custom footer</high> per slide</span></li> 
 
 </ul>
 
@@ -446,10 +446,195 @@ Custom footer text
 
 ---
 
-# Presentations
+# Aligning text
 
 .pull-left4[
-<high>Power Point</high>
+
+Specific functions to define  <high>position/size</high> of text on a slide.
+
+<ul>
+  <li class="m1"><span><mono>.center</mono> text on slide  </span></li> 
+  <li class="m2"><span><mono>.r-fit-text</mono> <high>BIG</high> text  </span></li> 
+
+  <li class="m3"><span><mono>.stretch</mono> text between components  </span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+## This is important {.center}
+
+Sleep 7 hours!
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/center.html" width = "70%" height = "250" ></iframe>
+
+]
+
+---
+
+# Aligning text
+
+.pull-left4[
+
+Specific functions to define  <high>position/size</high> of text on a slide.
+
+<ul>
+  <li class="m1"><span><mono>.center</mono> text on slide  </span></li> 
+  <li class="m2"><span><mono>.r-fit-text</mono> <high>BIG</high> text  </span></li> 
+
+  <li class="m3"><span><mono>.stretch</mono> text between components  </span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+## {.center}
+
+::: {.r-fit-text}
+Even more important!
+:::
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/BIG.html" width = "70%" height = "250" ></iframe>
+
+]
+
+
+
+---
+
+# Aligning text
+
+.pull-left4[
+
+Specific functions to define  <high>position/size</high> of text on a slide.
+
+<ul>
+  <li class="m1"><span><mono>.center</mono> text on slide  </span></li> 
+  <li class="m2"><span><mono>.r-fit-text</mono> <high>BIG</high> text  </span></li> 
+
+  <li class="m3"><span><mono>.stretch</mono> text between components  </span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+## {.center}
+
+Here is an image:
+
+![](unibe.png){.r-stretch}
+
+Some text after the image.
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/stretch.html" width = "70%" height = "250" ></iframe>
+
+]
+
+---
+
+
+
+
+
+
+# Themes
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>Built in themes</high> allow for simple change of <high>global appearance</high>. </span></li> 
+  <li class="m2"><span><high>11<Logo> themes available</span></li> 
+<ul> 
+<li>beige
+<li>blood
+<li>dark
+<li>default
+<li>league
+<li>moon
+<li>night
+<li>serif
+<li>simple
+<li>sky
+<li>solarized
+</ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+---
+format:
+  revealjs: 
+    theme: dark
+---
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/themes_1.html" width = "70%" height = "250"></iframe>
+
+]
+
+---
+
+# Themes
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>Built in themes</high> allow for simple change of <high>global appearance</high>. </span></li> 
+  <li class="m2"><span><high>11<Logo> themes available</span></li> 
+<ul> 
+<li>beige
+<li>blood
+<li>dark
+<li>default
+<li>league
+<li>moon
+<li>night
+<li>serif
+<li>simple
+<li>sky
+<li>solarized
+</ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+---
+format:
+  revealjs: 
+    theme: solarized
+---
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/themes_2.html" width = "70%" height = "250" ></iframe>
+
+]
+
+---
+
+
+# Presentations in Power Point
+
+.pull-left4[
 
 <ul>
   <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
@@ -611,7 +796,7 @@ format: pptx
 
 <ul>
   <li class="m1"><span><high>New Project</high></span></li> 
-  <li class="m2"><span><high>Quarto Website</high> a new folder <mono>_site</mono></span></li>
+  <li class="m2"><span><high>Quarto Website</high> </span></li>
 </ul>
 
 ]
@@ -716,7 +901,7 @@ Global information for the <high>website configuration</high>.
 # Websites
 
 .pull-left4[
-A <high>set of files</high> is automatically generated in the <high>new folder</high>.
+A <high>set of files</high> is automatically generated in a <high>new folder</high> <mono>_site</mono>.
 <ul>
   <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
   <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 

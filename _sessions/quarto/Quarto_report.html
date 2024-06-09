@@ -11,7 +11,7 @@
 
 
 
-<title>Markdown report</title>
+<title>Quarto Report</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,42 +348,59 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Markdown report</h1>
+<h1 class="title toc-ignore">Quarto Report</h1>
 
 </div>
 
 
-<p>In this practical, you will <a href="https://therbootcamp.github.io/DataViz_2022GSERM/_sessions/markdown/Report.html"><strong>recreate
+<p>In this practical, you will <a href="Report.html"><strong>recreate
 this html report</strong></a>.</p>
 <div id="preliminaries" class="section level3">
 <h3>0 - Preliminaries</h3>
 <ol style="list-style-type: decimal">
-<li><p>Go to the File - New File menu and select the file type R
-Markdown, enter the title <code>Do the rich get richer in Basel?</code>
-and your name, and then hit ok.</p></li>
-<li><p>Click on the little gear symbol on top of the editor and select
-<code>Preview in Viewer Pane</code>.</p></li>
-<li><p>Click the <code>Knit</code> button and observe whether the
+<li><p>Go to the File - New File menu and select the file type
+<mono>Quarto Document</mono>, enter the title
+<code>Do the rich get richer in Basel?</code> and your name, leave the
+file type as HTML and then hit <mono>Create</mono>.</p></li>
+<li><p>Click the <code>Render</code> button and observe whether the
 template content currently included in the file is correctly rendered
-and displayed in the Viewer Pane. When you knit for the first time, you
-will be asked to choose a file name. Call the document
+and displayed in the Viewer Pane. When you render for the first time,
+you will be asked to choose a file name. Call the document
 <code>basel_report</code></p></li>
-<li><p>Clear everything in the document except for the YAML header and
-the code chunk named <code>setup</code>.</p></li>
+<li><p>Clear everything in the document except for the YAML
+header.</p></li>
+<li><p>Add an initial R chunk accessing the Menu with
+<code>Code - Insert Chunk</code>.</p></li>
+<li><p>Within the chunk add <code>#| include: false</code> in the first
+line to suppress messages, e.g., from the tidyverse. Load the
+<code>tidyverse</code> and <code>patchwork</code> packages. Read in the
+<code>taxation.csv</code> data as a new object called
+<code>basel</code>. Note that when running the Quarto file it will use
+its own location as the working directory. Consequently, use
+<code>1_data/taxation.csv</code> as the file path.</p></li>
+<li><p>Render the document and check whether the data and packages are
+loaded correctly, i.e., you don’t see an error message.</p></li>
+<li><p>Include <code>echo: false</code> in your YAML header to remove
+code display for all chunks in the document. Be careful to follow the
+indentation as shown below!</p></li>
 </ol>
+<pre class="markdown"><code>format: 
+  html
+execute:
+  echo: false</code></pre>
 </div>
 <div id="intro" class="section level3">
 <h3>2 - Intro</h3>
 <ol style="list-style-type: decimal">
-<li>Copy the text below right under the YAML header.</li>
+<li>Copy the following text below the initial chunk.</li>
 </ol>
 <pre><code>Inequalities in income and wealth are a growing social issue FOOTNOTE. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city’s quarters.</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Next replace the text <code>FOOTNOTE</code> with the actual
 footnote
 <code>^[See https://www.un.org/en/un75/inequality-bridging-divide.]</code>.</p></li>
-<li><p>Knit the document (i.e., hit the <code>Knit</code> button) and
-observe whether the new contents are accurately displayed.</p></li>
+<li><p>Render the document (i.e., hit the <code>Render</code> button)
+and observe whether the new contents are accurately displayed.</p></li>
 </ol>
 </div>
 <div id="data" class="section level3">
@@ -402,28 +419,12 @@ inline code (not apostrophes as used here).</p></li>
 <li><p>Replace the text <code>LINK</code> with
 <code>[Open Data Basel](https://www.opendata.bs.ch/)</code> to link to
 the Basel Open Data webpage.</p></li>
-<li><p>Knit the document and observe whether the new contents are
+<li><p>Render the document and observe whether the new contents are
 displayed.</p></li>
 </ol>
 </div>
-<div id="setup" class="section level3">
-<h3>4 - Setup</h3>
-<ol style="list-style-type: decimal">
-<li><p>Before you can turn to including the visualization, you need to
-add a couple of items within the setup chunk (below the
-<code>opts_chunk</code> function). First, load the
-<code>tidyverse</code> and <code>patchwork</code>. Second, read in the
-<code>taxation.csv</code> data and call the object <code>basel</code>.
-Note that when running the rmarkdown file it will use its own location
-as the working directory. Consequently, use
-<code>../1_data/taxation.csv</code> as the file path.</p></li>
-<li><p>Knit the document and observe that the changes to the setup chunk
-have no <em>visible</em> effect due to
-<code>include = FALSE</code>.</p></li>
-</ol>
-</div>
 <div id="visualization" class="section level3">
-<h3>5 - Visualization</h3>
+<h3>4 - Visualization</h3>
 <ol style="list-style-type: decimal">
 <li><p>Create a header at the third level (<code>###</code>) with the
 title <code>Quantifying inequality</code>.</p></li>
@@ -431,9 +432,8 @@ title <code>Quantifying inequality</code>.</p></li>
 </ol>
 <pre><code>The figure below shows the development of income (panel A) and wealth (panel B) in Basel&#39;s quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Next, move the cursor below the text you just added and then go
-to the Code menu on top and select the first option
-<code>Insert Chunk</code>.</p></li>
+<li><p>Next, move the cursor below the text you just added and add a new
+R chunk (<code>Code - Insert Chunk</code>).</p></li>
 <li><p>Now, copy the following code into the newly-created, empty
 chunk.</p></li>
 </ol>
@@ -468,18 +468,17 @@ plot_income + plot_wealth  +
         legend.key.height = unit(.01,&quot;in&quot;))
   </code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Knit the document and observe that there it now includes code and
-a visualization.</p></li>
-<li><p>Add the following two changes to the chunk settings:
-<code>echo = FALSE</code> to hide the code (but not the visualization)
-and <code>fig.asp=.7</code> to use more of the width of the document,
-and <code>fig.fullwidth=TRUE</code>.</p></li>
-<li><p>Knit the document and observe that the code is no longer visible
-and that the aspect ratio of the plot has changed.</p></li>
+<li><p>Render the document and observe that there it now includes a
+visualization.</p></li>
+<li><p>Add the following to the chunk settings:
+<code>|# fig-asp: .7</code> to improve the use more of the width of the
+document, and <code>|# out-width: 100%</code>.</p></li>
+<li><p>Render the document and observe that the aspect ratio of the plot
+has changed.</p></li>
 </ol>
 </div>
 <div id="conclusion" class="section level3">
-<h3>6 - Conclusion</h3>
+<h3>5 - Conclusion</h3>
 <ol style="list-style-type: decimal">
 <li><p>Create a header at the third level (<code>###</code>) with the
 title <code>Income and wealth</code>.</p></li>
@@ -487,27 +486,23 @@ title <code>Income and wealth</code>.</p></li>
 </ol>
 <pre><code>The presented analysis of income and wealth inequalities based on Basel&#39;s quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters&#39; inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Knit the document and observe that all of the report’s contents are
-now included.</li>
+<li>Render the document and observe that all of the report’s contents
+are now included.</li>
 </ol>
 </div>
 <div id="theme" class="section level3">
-<h3>7 - Theme</h3>
+<h3>6 - Theme</h3>
 <ol style="list-style-type: decimal">
 <li>Finally, change the YAML header so that a different styling theme
-(<code>flatly</code>) is used. Don’t forget to replace
-<code>YOURNAME</code> with your name. See below.</li>
+(<code>flatly</code>) is used.</li>
 </ol>
-<pre><code>---
-title: &quot;Do the rich get richer in Basel?&quot;
-date: &#39;2022-06-23&#39;
-author: &quot;YOURNAME
-output: 
-  html_document: 
-    theme: flatly
----</code></pre>
+<pre class="markdown"><code>format: 
+  html
+execute:
+  echo: false
+theme: flatly</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Knit the document and observe that the report is complete..</li>
+<li>Render the document and observe that the report is complete.</li>
 </ol>
 </div>
 

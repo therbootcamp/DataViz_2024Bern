@@ -218,10 +218,10 @@ layout: true
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated (rendered) into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
     &lt;ul&gt;
-    &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
     &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;PowerPoint&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;&lt;br&gt;
   &lt;li class="m2"&gt;&lt;span&gt;To this end, &lt;high&gt;several translation steps&lt;/high&gt; are necessary.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
 &lt;/ul&gt;
@@ -231,7 +231,8 @@ layout: true
 .pull-right5[
 
 &lt;p align = "center"&gt;
-  &lt;img src="image/pipeline.png"&gt;
+  &lt;img src="image/pipeline.png" width=800px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://quarto.org"&gt;quarto.org&lt;/a&gt;&lt;/font&gt;
 &lt;/p&gt;
 
 ]
@@ -272,7 +273,7 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;HTML is a &lt;high&gt;universal framework&lt;/high&gt; for documents, presentations, and dashboards&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML is a &lt;high&gt;universal framework&lt;/high&gt; for documents, presentations, websites and dashboards&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;HTML &lt;high&gt;export to PDF&lt;/high&gt; is often straightforward.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
 &lt;/ul&gt;
 
@@ -734,7 +735,7 @@ layout: true
 
 ---
 
-# Chunks REDO WITH FALSE IN CHUNK
+# Chunks
 
 .pull-left3[
 
@@ -799,7 +800,7 @@ layout: true
 
 &lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/"&gt;
+  &lt;img src="image/echo_false.png"&gt;
 &lt;/p&gt;
 
 ]
@@ -975,37 +976,13 @@ layout: true
 
 ---
 
-# Global chunk options
+# Initial chunk
 
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Set &lt;high&gt; global settings for all chunks&lt;/high&gt; in the YAML header.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-]
-
-.pull-right6[
-
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_13.png"&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Setup chunk
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Load packages and data inthe initial chunk.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional global behavior is set in the YAML header.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -1022,13 +999,13 @@ layout: true
 
 ---
 
-# Setup chunk
+# Initial chunk
 
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The setup chunk affords &lt;high&gt; general settings for all chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional functions assist.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Load packages and data inthe initial chunk.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional global behavior is set in the YAML header.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -1044,7 +1021,7 @@ layout: true
 
 ---
 
-# Relative path
+# Relative path ### DO we still need this? ###
 
 .pull-left35[
 
@@ -1417,14 +1394,6 @@ read_csv("../1_data/data.csv")
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Footnotes&lt;/high&gt; are included after the end of the text.    
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;***&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   Includes a &lt;high&gt;horizontal&lt;/high&gt; separation line.
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -1998,7 +1967,7 @@ read_csv("../1_data/data.csv")
 
 class: middle, center
 
-&lt;h1&gt;&lt;font style="font-size:12px"&gt;click to open&lt;/font&gt;&lt;br&gt;&lt;a href="https://therbootcamp.github.io/DataViz_2022GSERM/_sessions/markdown/markdown_report.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="Quarto_report.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
 
 
     </textarea>

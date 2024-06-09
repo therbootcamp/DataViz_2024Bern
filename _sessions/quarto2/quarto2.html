@@ -355,7 +355,7 @@ Add information on &lt;high&gt; each slide&lt;/high&gt;.
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer&lt;/high&gt; text &lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide with &lt;br&gt;&lt;mono&gt;footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide &lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 
@@ -389,7 +389,7 @@ Add information on &lt;high&gt; each slide&lt;/high&gt;.
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Footer&lt;/high&gt; text &lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Logo&lt;Logo&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide with &lt;br&gt;&lt;mono&gt;footer&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Custom footer&lt;/high&gt; per slide&lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 
@@ -420,10 +420,195 @@ Custom footer text
 
 ---
 
-# Presentations
+# Aligning text
 
 .pull-left4[
-&lt;high&gt;Power Point&lt;/high&gt;
+
+Specific functions to define  &lt;high&gt;position/size&lt;/high&gt; of text on a slide.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.center&lt;/mono&gt; text on slide  &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.r-fit-text&lt;/mono&gt; &lt;high&gt;BIG&lt;/high&gt; text  &lt;/span&gt;&lt;/li&gt; 
+
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.stretch&lt;/mono&gt; text between components  &lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+## This is important {.center}
+
+Sleep 7 hours!
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/center.html" width = "70%" height = "250" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Aligning text
+
+.pull-left4[
+
+Specific functions to define  &lt;high&gt;position/size&lt;/high&gt; of text on a slide.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.center&lt;/mono&gt; text on slide  &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.r-fit-text&lt;/mono&gt; &lt;high&gt;BIG&lt;/high&gt; text  &lt;/span&gt;&lt;/li&gt; 
+
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.stretch&lt;/mono&gt; text between components  &lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+## {.center}
+
+::: {.r-fit-text}
+Even more important!
+:::
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/BIG.html" width = "70%" height = "250" &gt;&lt;/iframe&gt;
+
+]
+
+
+
+---
+
+# Aligning text
+
+.pull-left4[
+
+Specific functions to define  &lt;high&gt;position/size&lt;/high&gt; of text on a slide.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.center&lt;/mono&gt; text on slide  &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.r-fit-text&lt;/mono&gt; &lt;high&gt;BIG&lt;/high&gt; text  &lt;/span&gt;&lt;/li&gt; 
+
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.stretch&lt;/mono&gt; text between components  &lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+## {.center}
+
+Here is an image:
+
+![](unibe.png){.r-stretch}
+
+Some text after the image.
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/stretch.html" width = "70%" height = "250" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+
+
+
+
+
+# Themes
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Built in themes&lt;/high&gt; allow for simple change of &lt;high&gt;global appearance&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;11&lt;Logo&gt; themes available&lt;/span&gt;&lt;/li&gt; 
+&lt;ul&gt; 
+&lt;li&gt;beige
+&lt;li&gt;blood
+&lt;li&gt;dark
+&lt;li&gt;default
+&lt;li&gt;league
+&lt;li&gt;moon
+&lt;li&gt;night
+&lt;li&gt;serif
+&lt;li&gt;simple
+&lt;li&gt;sky
+&lt;li&gt;solarized
+&lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+---
+format:
+  revealjs: 
+    theme: dark
+---
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/themes_1.html" width = "70%" height = "250"&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Themes
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Built in themes&lt;/high&gt; allow for simple change of &lt;high&gt;global appearance&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;11&lt;Logo&gt; themes available&lt;/span&gt;&lt;/li&gt; 
+&lt;ul&gt; 
+&lt;li&gt;beige
+&lt;li&gt;blood
+&lt;li&gt;dark
+&lt;li&gt;default
+&lt;li&gt;league
+&lt;li&gt;moon
+&lt;li&gt;night
+&lt;li&gt;serif
+&lt;li&gt;simple
+&lt;li&gt;sky
+&lt;li&gt;solarized
+&lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:70%"&gt;
+````markdown
+---
+format:
+  revealjs: 
+    theme: solarized
+---
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_presentations/themes_2.html" width = "70%" height = "250" &gt;&lt;/iframe&gt;
+
+]
+
+---
+
+
+# Presentations in Power Point
+
+.pull-left4[
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Define &lt;high&gt;Sections&lt;/high&gt; and &lt;high&gt;Slides&lt;/high&gt; using &lt;mono&gt;#&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
@@ -585,7 +770,7 @@ format: pptx
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;New Project&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Quarto Website&lt;/high&gt; a new folder &lt;mono&gt;_site&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Quarto Website&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -690,7 +875,7 @@ Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
 # Websites
 
 .pull-left4[
-A &lt;high&gt;set of files&lt;/high&gt; is automatically generated in the &lt;high&gt;new folder&lt;/high&gt;.
+A &lt;high&gt;set of files&lt;/high&gt; is automatically generated in a &lt;high&gt;new folder&lt;/high&gt; &lt;mono&gt;_site&lt;/mono&gt;.
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.html&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 

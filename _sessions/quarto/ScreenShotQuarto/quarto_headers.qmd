@@ -8,15 +8,6 @@ format:
     theme: lumen
 ---
 
-````markdown
-format:
-  html:
-    toc: true
-    toc-location: body
-    toc-depth: 4
-    theme: lumen
-````
-
 # Heading 1
 
 This is a text block.

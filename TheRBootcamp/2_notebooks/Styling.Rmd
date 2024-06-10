@@ -256,9 +256,4 @@ averages %>%
 ```
 
 
-# 8 - Project work
-
-1. Try to use what you have learned in this section to style the visualizations that you created in the first plotting session based on your data. 
-
-
 

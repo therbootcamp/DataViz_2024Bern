@@ -85,16 +85,10 @@ basel <- read_csv("1_data/taxation.csv")
   <li class="m1"><span>Presentations</li> 
   <ul>
     <li><span><high>HTML with reveal.js</high></span></li>
-    <li><span>Powerpoint</span></li>  
+    <li><span><high>Powerpoint</high></span></li>  
     <li><span>LaTeX with Beamer</span></li>
   </ul>
-  <li class="m2"><span>Websites</span></li> 
-  <li class="m3"><span>Manuscripts</span></li> 
-    <ul>
-    <li><span>HTML </span></li>
-    <li><span>Word</span></li>  
-    <li><span>LaTeX</span></li>
-  </ul>
+  <li class="m2"><span><high>Websites</high></span></li> 
 </ul>
 
 ]
@@ -267,7 +261,7 @@ format:
 
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/incremental.html" width = "70%" ></iframe>
+<iframe class="slide-deck" src="example_presentations/incremental.html" width = "70%" height = "250"></iframe>
 
 ]
 
@@ -400,7 +394,7 @@ format:
 
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/footer.html" width = "70%" ></iframe>
+<iframe class="slide-deck" src="example_presentations/footer.html" width = "70%" height = "250"></iframe>
 
 ]
 
@@ -551,7 +545,7 @@ Some text after the image.
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
   <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
@@ -564,7 +558,7 @@ Emphasizing with <high>colors</high>.
 ````markdown
 ##
 
-Even [more]{style="color:red;"} 
+Even [more]{style="color:red"} 
 important!
 
 ````
@@ -582,7 +576,7 @@ important!
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
   <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
@@ -595,7 +589,7 @@ Emphasizing with <high>colors</high>.
 ````markdown
 ## {background-color="lightblue"}
 
-Even [more]{style="color:red;"} 
+Even [more]{style="color:red"} 
 important!
 ````
 </div>
@@ -612,7 +606,7 @@ important!
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
   <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
 </ul>
@@ -641,7 +635,7 @@ title-slide-attributes:
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
   <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
 </ul>
@@ -694,7 +688,7 @@ title-slide-attributes:
 
 .pull-right5[
 
-<div style="width:70%">
+<div style="width:82%">
 ````markdown
 ---
 format:
@@ -703,7 +697,7 @@ format:
 ---
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/themes_1.html" width = "70%" height = "250"></iframe>
+<iframe class="slide-deck" src="example_presentations/themes_1.html" width = "82%" height = "300"></iframe>
 
 ]
 
@@ -735,7 +729,7 @@ format:
 
 .pull-right5[
 
-<div style="width:70%">
+<div style="width:82%">
 ````markdown
 ---
 format:
@@ -744,7 +738,7 @@ format:
 ---
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/themes_2.html" width = "70%" height = "250" ></iframe>
+<iframe class="slide-deck" src="example_presentations/themes_2.html" width = "82%" height = "300" ></iframe>
 
 ]
 
@@ -756,7 +750,7 @@ format:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
+  <li class="m1"><span>Update <mono>format</mono> to <high>pptx</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
@@ -840,10 +834,9 @@ format: pptx
 # Presentations
 
 .pull-left4[
-<high>Power Point</high>
 
 <ul>
-  <li class="m1"><span>Define <high>Sections</high> and <high>Slides</high> using <mono>#</mono>.</span></li>
+  <li class="m1"><span>Update <mono>format</mono> to <high>pptx</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
@@ -908,14 +901,42 @@ format: pptx
 
 ---
 
-
 # Websites
 
 .pull-left4[
 
+Quarto Websites allow you to publish groups of documents.
+Websites share: 
 <ul>
-  <li class="m1"><span><high>New Project</high></span></li> 
-  <li class="m2"><span><high>Quarto Website</high> </span></li>
+  <li class="m1"><span><high>navigation</high></span></li> 
+  <li class="m2"><span><high>rendering</high> </span></li>
+  <li class="m3"><span><high>visual style</high> </span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/.png" height=400px>
+</p>
+
+
+]
+
+---
+
+# Website setup
+
+To ininiate the setup of a Quarto Website you have to setup a new project.
+
+.pull-left4[
+
+<ul>
+    <li class="m1"><span>Go to <high>File - New Project</high></span></li> 
+    <li class="m2"><span>Select <high>New Directory</high></span></li> 
+    <li class="m3"><span>Select <high>Quarto Website</high></span></li> 
+    <li class="m4"><span>Enter <high>Directory name</high> </span></li>
 </ul>
 
 ]
@@ -1017,14 +1038,14 @@ Global information for the <high>website configuration</high>.
 
 ---
 
-# Websites
+# Render Website
 
 .pull-left4[
-A <high>set of files</high> is automatically generated in a <high>new folder</high> <mono>_site</mono>.
+<mono>.qmd</mono> files are translated to <mono>.html in <mono>_site</mono>.
 <ul>
   <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
   <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
-  <li class="m3"><span><mono>.json</mono> <high>Search </high> capabilities</span></li> 
+  <li class="m3"><span><mono>.json</mono> <high>search </high> capabilities</span></li> 
 </ul>
 
 ]
@@ -1037,11 +1058,115 @@ A <high>set of files</high> is automatically generated in a <high>new folder</hi
 
 ]
 
+---
+
+# Expanding navigation bar
+
+.pull-left4[
+
+Global information for the <high>website configuration</high>.
+<ul>
+  <li class="m1"><span><mono>background</mono> defines color of navigation bar</span></li> 
+    <ul>
+    <li> primary
+    <li> secondary
+    <li> success
+    <li> danger
+    <li> warning
+    <li> info
+    <li> light
+    <li> dark
+    <li> any <mono>hex color</mono>, e.g., <mono>#ff2d4c</mono>
+    </ul>
+
+
+</ul>
+
+]
+
+.pull-right5[
+<div style="width:70%">
+````markdown
+website:
+  title: "Our UniBE website"
+  navbar:
+    background: primary
+````
+</div>
+<iframe src="example_website_color/web/_site/index.html" width="500" height="400"></iframe>
+
+]
+
+---
+
+# Expanding navigation bar
+
+.pull-left4[
+
+Adding <high>website configuration</high>.
+<ul>
+  <li class="m1"><span><mono>background</mono> defines color of navigation bar</span></li> 
+    <ul>
+    <li> primary
+    <li> secondary
+    <li> success
+    <li> danger
+    <li> warning
+    <li> info
+    <li> light
+    <li> dark
+    <li> any <mono>hex color</mono>, e.g., <mono>#ff2d4c</mono>
+    </ul>
+
+
+</ul>
+
+]
+
+.pull-right5[
+<div style="width:70%">
+````markdown
+website:
+  title: "Our UniBE website"
+  navbar:
+    background: primary
+````
+</div>
+<iframe src="example_website_color/web/_site/index.html" width="500" height="400"></iframe>
+
+]
+
+---
+
+# Links
+
+.pull-left4[
+<mono>.qmd</mono> files are translated to <mono>.html in <mono>_site</mono>.
+<ul>
+  <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
+  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
+  <li class="m3"><span><mono>.json</mono> <high>search </high> capabilities</span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+[about](about.qmd)
+[about](about.qmd#section)
+
+
+<p align = "center">
+  <img src="image/web_site_folder.png" height=400px>
+</p>
+
+]
+
 
 ---
 
 class: middle, center
 
-<h1><font style="font-size:12px">click to open</font><br><a href="https://therbootcamp.github.io/DataViz_2022GSERM/_sessions/markdown/markdown_report.html">Practical</a></h1>
+<h1><a href="">Practical</a></h1>
 
 

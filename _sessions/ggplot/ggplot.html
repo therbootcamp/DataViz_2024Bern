@@ -123,7 +123,7 @@ layout: true
 &lt;/ul&gt;
 
 
-```r
+``` r
 # averages per year
 basel_avg &lt;- basel %&gt;% 
   group_by(year) %&gt;% 
@@ -138,7 +138,7 @@ basel_avg &lt;- basel %&gt;%
 .pull-right45[
 
 
-```r
+``` r
 basel_avg
 ```
 
@@ -190,7 +190,7 @@ basel_avg
 .pull-right45[
 
 
-```r
+``` r
 ggplot(data = basel_avg)
 ```
 
@@ -223,7 +223,7 @@ ggplot(data = basel_avg)
 .pull-right45[
 
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean))
@@ -247,7 +247,7 @@ ggplot(data = basel_avg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -308,7 +308,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -339,7 +339,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -371,7 +371,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -403,7 +403,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -437,7 +437,7 @@ ggplot(data = basel_avg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -476,7 +476,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -510,7 +510,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-```r
+``` r
 # pivot to long format
 basel_avg_long &lt;- basel_avg %&gt;% 
   pivot_longer(-year, 
@@ -524,7 +524,7 @@ basel_avg_long &lt;- basel_avg %&gt;%
 .pull-right45[
 
 
-```r
+``` r
 basel_avg_long
 ```
 
@@ -558,7 +558,7 @@ basel_avg_long
 
 &lt;br&gt;
 
-```r
+``` r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -592,7 +592,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-```r
+``` r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -626,7 +626,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-```r
+``` r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -664,7 +664,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-```r
+``` r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -706,7 +706,7 @@ ggplot(data = basel_avg_long,
 &lt;br&gt;
 
 
-```r
+``` r
 basel_long &lt;- basel %&gt;% 
   pivot_longer(c(income_mean, income_median),
                names_to = 'statistic',
@@ -734,7 +734,7 @@ basel_long &lt;- basel %&gt;%
 &lt;br&gt;
 
 
-```r
+``` r
 # use basel_long
 ggplot(data = basel_long,
        mapping = aes(
@@ -782,7 +782,7 @@ ggplot(data = basel_long,
 &lt;br&gt;
 
 
-```r
+``` r
 # two quarter-specific plots
 breite
 clara
@@ -793,7 +793,7 @@ clara
 .pull-right45[
 
 
-```r
+``` r
 breite/clara
 ```
 
@@ -823,7 +823,7 @@ breite/clara
 &lt;br&gt;
 
 
-```r
+``` r
 # two quarter-specific plots
 breite
 clara
@@ -834,7 +834,7 @@ clara
 .pull-right45[
 
 
-```r
+``` r
 breite+clara
 ```
 
@@ -865,7 +865,7 @@ breite+clara
 &lt;br&gt;
 
 
-```r
+``` r
 # two quarter-specific plots
 breite
 clara
@@ -876,7 +876,7 @@ clara
 .pull-right45[
 
 
-```r
+``` r
 breite+clara+plot_layout(guides="collect")
 ```
 
@@ -907,7 +907,7 @@ breite+clara+plot_layout(guides="collect")
 &lt;br&gt;
 
 
-```r
+``` r
 # two quarter-specific plots
 breite
 clara
@@ -918,7 +918,7 @@ clara
 .pull-right45[
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-```r
+``` r
 all/(breite+clara)+
   plot_layout(guides="collect")
 ```

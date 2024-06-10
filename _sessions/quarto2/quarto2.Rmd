@@ -544,7 +544,126 @@ Some text after the image.
 
 ---
 
+# Adding color
 
+.pull-left4[
+
+Emphasizing with <high>colors</high>.
+
+<ul>
+  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+##
+
+Even [more]{style="color:red;"} 
+important!
+
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/color.html" width = "70%" height = "300" ></iframe>
+
+]
+
+---
+
+# Adding color
+
+.pull-left4[
+
+Emphasizing with <high>colors</high>.
+
+<ul>
+  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:70%">
+````markdown
+## {background-color="lightblue"}
+
+Even [more]{style="color:red;"} 
+important!
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/color.html" width = "70%" height = "300" ></iframe>
+
+]
+
+---
+
+# Adding color
+
+.pull-left4[
+
+Emphasizing with <high>colors</high>.
+
+<ul>
+  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:82%">
+````markdown
+title-slide-attributes:
+    data-background-color: "lightblue"
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/title_slide_lightblue.html" width = "82%" height = "300" ></iframe>
+
+]
+
+
+---
+
+# Adding color
+
+.pull-left4[
+
+Emphasizing with <high>colors</high>.
+
+<ul>
+  <li class="m1"><span><mono>[word]{style="color:red;"}</mono> for text</span></li> 
+  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:82%">
+````markdown
+title-slide-attributes:
+    data-background-color: "lightblue"
+    data-background-image: unibe.png
+    data-background-size: 150px
+    data-background-position: 10px 10px
+````
+</div>
+<iframe class="slide-deck" src="example_presentations/title_slide.html" width = "82%" height = "300" ></iframe>
+
+]
+
+---
 
 
 

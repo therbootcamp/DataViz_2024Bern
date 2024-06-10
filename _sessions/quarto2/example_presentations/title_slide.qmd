@@ -1,0 +1,11 @@
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs
+title-slide-attributes:
+    data-background-color: "lightblue"
+    data-background-image: unibe.png
+    data-background-size: 80px
+    data-background-position:  10px 10px
+---

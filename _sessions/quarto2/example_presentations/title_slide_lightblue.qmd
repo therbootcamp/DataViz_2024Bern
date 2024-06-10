@@ -1,0 +1,8 @@
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs
+title-slide-attributes:
+    data-background-color: "lightblue"
+---

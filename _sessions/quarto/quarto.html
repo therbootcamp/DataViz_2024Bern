@@ -268,7 +268,7 @@ layout: true
 
 ---
 
-# HTML Pipeline XXX UPDATE!
+# HTML Pipeline
 
 .pull-left4[
 
@@ -718,7 +718,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;A &lt;high&gt;code &lt;mono&gt;chunk&lt;/mono&gt;&lt;/high&gt; can contain any R code.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;A &lt;high&gt;code chunk&lt;/high&gt; can contain any R code.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;The behavior of code chunks can be controlled using &lt;high&gt;chunk arguments&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -954,35 +954,13 @@ layout: true
 
 ---
 
-# Global chunk options
-
-.pull-left3[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Set &lt;high&gt; global settings for all chunks&lt;/high&gt; in the YAML header.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;All chunk options can be used.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/markdown_trans_8.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
 # Initial chunk
 
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Load packages and data inthe initial chunk.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional global behavior is set in the YAML header.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Load packages and data in the &lt;high&gt;initial chunk&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Additional &lt;high&gt;global behavior&lt;/high&gt; is set in the YAML header.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -999,25 +977,384 @@ layout: true
 
 ---
 
-# Initial chunk
+.pull-left4[
 
-.pull-left3[
+# YAML
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Load packages and data inthe initial chunk.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Additional global behavior is set in the YAML header.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Show/hide &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Run/not-run &lt;high&gt;code&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude all &lt;high&gt;output&lt;/high&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;messages&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Include/exclude &lt;highm&gt;warnings&lt;/highm&gt; in output.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
 
 ]
 
-.pull-right6[
+.pull-right5[
 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;p align = "center"&gt;
   &lt;img src="image/markdown_trans_15.png"&gt;
 &lt;/p&gt;
 
 ]
 
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:400px"&gt;
+````markdown
+---
+format:
+  html:
+    toc: true
+---
+
+````
+&lt;/div&gt;
+&lt;img src="image/yaml_2q.png" width=400px&gt;&lt;br&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:400px"&gt;
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+---
+
+````
+&lt;/div&gt;
+&lt;img src="image/yaml_3q.png" width=400px&gt;&lt;br&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:400px"&gt;
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-depth: 4
+---
+
+````
+&lt;/div&gt;
+&lt;img src="image/yaml_4q.png" width=400px&gt;&lt;br&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Properties&lt;/high&gt; of the layout.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;includes&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:400px"&gt;
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-depth: 4
+    theme: lumen
+---
+
+````
+&lt;/div&gt;
+&lt;img src="image/yaml_5q.png" width=400px&gt;&lt;br&gt;
+
+]
 
 ---
 
@@ -1057,7 +1394,7 @@ read_csv("../1_data/data.csv")
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1114,7 +1451,7 @@ read_csv("../1_data/data.csv")
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1172,7 +1509,7 @@ read_csv("../1_data/data.csv")
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1229,7 +1566,7 @@ read_csv("../1_data/data.csv")
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1286,7 +1623,7 @@ read_csv("../1_data/data.csv")
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1464,504 +1801,6 @@ read_csv("../1_data/data.csv")
 
 ]
 
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_1.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_2.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_3.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_4.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_5.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;'int &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Enables the definition of general &lt;high&gt;properties of a document&lt;/high&gt; and code inclusions.&lt;span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Argument&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;toc_depth&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Depth&lt;/high&gt; of the &lt;b&gt;T&lt;/b&gt;able &lt;b&gt;O&lt;/b&gt;f &lt;b&gt;C&lt;/b&gt;ontents.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;theme&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Properties&lt;/high&gt; of the layout.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;includes&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Code inclusions&lt;/high&gt; before (&lt;mono&gt;before_body&lt;/mono&gt;), after (&lt;mono&gt;after_body&lt;/mono&gt;) &lt;mono&gt;body&lt;/mono&gt;, or &lt;mono&gt;in_header&lt;/mono&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/yaml_6.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left3[
-
-# HTML
-
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;ypertext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage enables the layout of text and content with &lt;high&gt;HTML-Tags&lt;high&gt;.&lt;/span&gt;&lt;/li&gt; 
-  &lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Tag&lt;/b&gt;   
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt,...&lt;/mono&gt; &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Heading&lt;/high&gt; level 1, 2,...
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;br&amp;gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   New &lt;high&gt;line&lt;/high&gt;.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;b&amp;gt;, &amp;lt;i&amp;gt;, &amp;lt;u&amp;gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Bold, italics, underline.&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;div&amp;gt;, &amp;lt;p&amp;gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Container&lt;/high&gt;, text section.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&amp;lt;table&amp;gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Tables&lt;/high&gt;, columns.
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/html_1.png" height=540px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-.pull-left3[
-
-# CSS
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;C&lt;/b&gt;ascading &lt;b&gt;S&lt;/b&gt;tyle &lt;b&gt;S&lt;/b&gt;heets allow you to set additional &lt;high&gt;aesthetic characteristics&lt;/high&gt; of &lt;high&gt;HTML&lt;/high&gt; in an external file.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right6[
-
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/css_1.png" height=480px&gt;
-&lt;/p&gt;
-
-]
 
 ---
 

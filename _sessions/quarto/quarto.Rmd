@@ -294,7 +294,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# HTML Pipeline XXX UPDATE!
+# HTML Pipeline
 
 .pull-left4[
 
@@ -744,7 +744,7 @@ basel <- read_csv("1_data/taxation.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>A <high>code <mono>chunk</mono></high> can contain any R code.</span></li>
+  <li class="m1"><span>A <high>code chunk</high> can contain any R code.</span></li>
   <li class="m2"><span>The behavior of code chunks can be controlled using <high>chunk arguments</high>.</span></li>
 </ul>
 
@@ -980,35 +980,13 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Global chunk options
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>Set <high> global settings for all chunks</high> in the YAML header.</span></li>
-  <li class="m2"><span>All chunk options can be used.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_8.png">
-</p>
-
-]
-
----
-
 # Initial chunk
 
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Load packages and data inthe initial chunk.</span></li>
-  <li class="m2"><span>Additional global behavior is set in the YAML header.</span></li>
+  <li class="m1"><span>Load packages and data in the <high>initial chunk</high>.</span></li>
+  <li class="m2"><span>Additional <high>global behavior</high> is set in the YAML header.</span></li>
 </ul>
 
 ]
@@ -1025,25 +1003,384 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
-# Initial chunk
+.pull-left4[
 
-.pull-left3[
+# YAML
 
 <ul>
-  <li class="m1"><span>Load packages and data inthe initial chunk.</span></li>
-  <li class="m2"><span>Additional global behavior is set in the YAML header.</span></li>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
+  <col width="60%">
+  <col width="40%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>echo=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Show/hide <high>code</high>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>eval=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Run/not-run <high>code</high>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>include=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Include/exclude all <high>output</high>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>message=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Include/exclude <highm>messages</highm> in output.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>warning=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Include/exclude <highm>warnings</highm> in output.
+  </td> 
+</tr>
+</table>
+
+<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
+
 
 ]
 
-.pull-right6[
+.pull-right5[
 
+<br><br><br><br><br>
 <p align = "center">
   <img src="image/markdown_trans_15.png">
 </p>
 
 ]
 
+---
+
+.pull-left4[
+
+# YAML
+
+<ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Properties</high> of the layout.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:400px">
+````markdown
+---
+format:
+  html:
+    toc: true
+---
+
+````
+</div>
+<img src="image/yaml_2q.png" width=400px><br>
+
+]
+
+
+---
+
+.pull-left4[
+
+# YAML
+
+<ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Properties</high> of the layout.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:400px">
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+---
+
+````
+</div>
+<img src="image/yaml_3q.png" width=400px><br>
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+<ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Properties</high> of the layout.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:400px">
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-depth: 4
+---
+
+````
+</div>
+<img src="image/yaml_4q.png" width=400px><br>
+
+]
+
+---
+
+.pull-left4[
+
+# YAML
+
+<ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Properties</high> of the layout.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
+<div style="width:400px">
+````markdown
+---
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-depth: 4
+    theme: lumen
+---
+
+````
+</div>
+<img src="image/yaml_5q.png" width=400px><br>
+
+]
 
 ---
 
@@ -1083,7 +1420,7 @@ read_csv("../1_data/data.csv")
 
 <ul>
   <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
+  <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1140,7 +1477,7 @@ read_csv("../1_data/data.csv")
 
 <ul>
   <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
+  <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1198,7 +1535,7 @@ read_csv("../1_data/data.csv")
 
 <ul>
   <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
+  <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1255,7 +1592,7 @@ read_csv("../1_data/data.csv")
 
 <ul>
   <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
+  <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1312,7 +1649,7 @@ read_csv("../1_data/data.csv")
 
 <ul>
   <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
-  <li class="m2"><span>The arguments (normally) start with  <highm>fig.*</highm>.</span></li> 
+  <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1490,504 +1827,6 @@ read_csv("../1_data/data.csv")
 
 ]
 
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_1.png" height=540px>
-</p>
-
-]
-
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_2.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_3.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_4.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_5.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left4[
-
-# YAML
-
-<ul>
-  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
-  <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Argument</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> 
-  </td>
-  <td bgcolor="white">
-  <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Depth</high> of the <b>T</b>able <b>O</b>f <b>C</b>ontents.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Properties</high> of the layout.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>includes</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Code inclusions</high> before (<mono>before_body</mono>), after (<mono>after_body</mono>) <mono>body</mono>, or <mono>in_header</mono>.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-<br>
-<p align = "center">
-  <img src="image/yaml_6.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left3[
-
-# HTML
-
-
-<ul>
-  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage enables the layout of text and content with <high>HTML-Tags<high>.</span></li> 
-  </ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Tag</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Description</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
-  <td bgcolor="white">
-  <high>Heading</high> level 1, 2,...
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;br&gt;</mono>
-  </td>
-  <td bgcolor="white">
-   New <high>line</high>.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Bold, italics, underline.</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Container</high>, text section.
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>&lt;table&gt;</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Tables</high>, columns.
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/html_1.png" height=540px>
-</p>
-
-]
-
----
-
-.pull-left3[
-
-# CSS
-
-<ul>
-  <li class="m1"><span><b>C</b>ascading <b>S</b>tyle <b>S</b>heets allow you to set additional <high>aesthetic characteristics</high> of <high>HTML</high> in an external file.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-
-<br><br>
-<p align = "center">
-  <img src="image/css_1.png" height=480px>
-</p>
-
-]
 
 ---
 

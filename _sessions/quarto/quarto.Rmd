@@ -255,7 +255,7 @@ basel <- read_csv("1_data/taxation.csv")
 ]
 
 .pull-right5[
-
+<br><br><br><br>
 <p align = "center">
   <img src="image/pipeline.png" width=800px><br>
   <font style="font-size:10px">from <a href="https://quarto.org">quarto.org</a></font>
@@ -813,7 +813,7 @@ basel <- read_csv("1_data/taxation.csv")
   <mono>warning=T/F</mono>
   </td>
   <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
+  Include/exclude <highm>warnings</highm>.
   </td> 
 </tr>
 </table>
@@ -887,7 +887,7 @@ basel <- read_csv("1_data/taxation.csv")
   <mono>warning=T/F</mono>
   </td>
   <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
+  Include/exclude <highm>warnings</highm>.
   </td> 
 </tr>
 </table>
@@ -960,7 +960,7 @@ basel <- read_csv("1_data/taxation.csv")
   <mono>warning=T/F</mono>
   </td>
   <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
+  Include/exclude <highm>warnings</highm>.
   </td> 
 </tr>
 </table>
@@ -1011,8 +1011,7 @@ basel <- read_csv("1_data/taxation.csv")
   <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
   <li class="m2"><span>Enables the definition of general <high>properties of a document</high> and code inclusions.<span></li>
 </ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:px" width=100%>
   <col width="60%">
   <col width="40%">
 <tr>
@@ -1052,7 +1051,7 @@ basel <- read_csv("1_data/taxation.csv")
   <mono>message=T/F</mono>
   </td>
   <td bgcolor="white">
-  Include/exclude <highm>messages</highm> in output.
+  Include/exclude <high>messages</high>.
   </td> 
 </tr>
 <tr>
@@ -1060,7 +1059,7 @@ basel <- read_csv("1_data/taxation.csv")
   <mono>warning=T/F</mono>
   </td>
   <td bgcolor="white">
-  Include/exclude <highm>warnings</highm> in output.
+  Include/exclude <highm>warnings</highm>.
   </td> 
 </tr>
 </table>
@@ -1138,7 +1137,7 @@ basel <- read_csv("1_data/taxation.csv")
 ]
 
 .pull-right5[
-
+<br>
 <div style="width:400px">
 ````markdown
 ---
@@ -1213,7 +1212,7 @@ format:
 ]
 
 .pull-right5[
-
+<br>
 <div style="width:400px">
 ````markdown
 ---
@@ -1288,7 +1287,7 @@ format:
 ]
 
 .pull-right5[
-
+<br>
 <div style="width:400px">
 ````markdown
 ---
@@ -1364,7 +1363,7 @@ format:
 ]
 
 .pull-right5[
-
+<br>
 <div style="width:400px">
 ````markdown
 ---

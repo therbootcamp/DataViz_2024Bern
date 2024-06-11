@@ -51,18 +51,86 @@ layout: true
 
 
 
-# Output formats
 
 .pull-left4[
 
+# Images
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Presentations&lt;/li&gt; 
-  &lt;ul&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;HTML with reveal.js&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;Powerpoint&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-    &lt;li&gt;&lt;span&gt;LaTeX with Beamer&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Websites&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include images.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;!&amp;lsqb;Caption&amp;rsqb;(Filename)&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Caption&lt;/high&gt; is displayed below the image.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{width=XX}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Changing &lt;high&gt;width&lt;/high&gt; with measure in px, in or %.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{fig-align="XX"}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Define &lt;high&gt;alignment&lt;/high&gt; with 'left', 'right' and 'center'.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.lightbox}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   In HTML add lightbox to allow  &lt;high&gt;zooming&lt;/high&gt; into the image upon clicking on it.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/links.png" height = 540px&gt;
+&lt;/p&gt;
+
+]
+
+
+
+
+
+
+
+# Presentations
+
+.pull-left4[
+
+Quarto supports different &lt;high&gt;output formats&lt;/high&gt; for presentations:
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;HTML&lt;/high&gt; with reveal.js&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Power Point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;LaTeX&lt;/high&gt; (pdf)&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]

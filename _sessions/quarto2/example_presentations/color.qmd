@@ -1,0 +1,25 @@
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs:
+    logo: unibe.png
+    footer: "University of Bern"
+---
+
+## This is important {.center}
+
+Sleep 7 hours!
+
+## 
+
+::: {.r-fit-text}
+Even [more]{style="color:red;"} important!
+:::
+
+## {background-color="lightblue"}
+
+::: {.r-fit-text}
+Even [more]{style="color:red;"} important!
+
+:::

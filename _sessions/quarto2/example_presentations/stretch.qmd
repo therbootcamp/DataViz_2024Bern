@@ -1,0 +1,16 @@
+---
+title: "Habits"
+author: "John Doe"
+format:
+  revealjs:
+    logo: unibe.png
+    footer: "University of Bern"
+---
+
+## {.center}
+
+Here is an image:
+
+![](unibe.png){.r-stretch}
+
+Some text after the image.

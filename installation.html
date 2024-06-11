@@ -42,7 +42,9 @@
 
             <b>Install Base-R</b>:
             <a href="https://cran.r-project.org/bin/windows/base/R-4.4.0-win.exe">Windows</a>,
-            <a href="https://cran.r-project.org/bin/macosx/base/R-4.4.0.pkg">Mac (Intel)</a><br>
+            <a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.0-arm64.pkg">Mac (Apple Silicon)</a>,
+             <a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.0-x86_64.pkg">Mac (Intel)</a>
+            <br>
 
             <b>Install RStudio</b>:
             <a href="https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe">Windows</a>,
@@ -52,19 +54,35 @@
         </tr>
       </table>
 
+<table width=50% cellspacing=0 cellpadding=0 class="downloads">
+        <col width=100%>
+        <tr>
+          <td align=left>
+            <h2>2 - Install Quarto</h2>
+            <h4>
+            Use these links to install Quarto:<br><br>
+
+            <b>Install Quarto</b>:
+            <a href="https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.554/quarto-1.4.554-win.msi">Windows</a>,
+            <a href="https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.554/quarto-1.4.554-macos.pkg">Mac OS</a><br>
+          </h4>
+          </td>
+        </tr>
+      </table>
+
       <table width=50% cellspacing=0 cellpadding=0 class="downloads">
         <col width=100%>
         <tr>
           <td align=left>
-            <h2>2 - Install additional packages</h2>
+            <h2>3 - Install additional packages</h2>
             <h4>
-            This workshop introduces you to several specialized R packages that you will have to install. Please run the following command in your R Console of RStudio:<br><br>
+            This workshop introduces you to several <b>specialized R packages</b> that you will have to install. Please run the following command in your R Console of RStudio:<br><br>
 
             install.packages(c("tidyverse", "patchwork",
                                "ggthemes", "ggrepel", "viridis", 
                                "sf", "ggraph", "tidygraph", 
                                "gganimate", "plotly",
-                               "rmarkdown", "knitr"),
+                               "rmarkdown", "knitr", "quarto", "xaringan", "ggimage", "leaflet"
                                dependencies = TRUE)
             
             <br><br>
@@ -79,7 +97,7 @@
         <col width=100%>
         <tr>
           <td align=left>
-            <h2>3 - <i>Optional</i>: Install additional software</h2>
+            <h2>4 - <i>Optional</i>: Install additional software</h2>
             <h4>
             In case the installation of packages failed (or you wish to install packages from source), install the this Software and rerun the install command above:<br><br>
 

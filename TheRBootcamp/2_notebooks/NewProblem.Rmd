@@ -11,7 +11,7 @@ knitr::opts_chunk$set(message = FALSE,
 ```
 In this practical, you will produce a visualization of your own for the `imdb.csv` (and potentially the `oscars.csv`) data illustrating an insight of your choice.
 
-The `imdb.csv` data set contains the 1000 highest rated movies on the movie platform [IMDb](https://imdb.com/). It has the following columns:
+The `imdb.csv` data set contains the 1000 highest rated movies on the movie platform IMDb (https://imdb.com/). It has the following columns:
 
 - year: Year the movie was released
 - title: Title of the movie
@@ -23,7 +23,7 @@ The `imdb.csv` data set contains the 1000 highest rated movies on the movie plat
 - maturity_rating: Maturity rating of the movie (e.g., PG-13)
 - imdb_rating: Average rating on IMDb a scale from 1 to 10 
 - n_votes: Number of votes on IMDb
-- meta_score: Score on the [Metacritic](https://www.metacritic.com/) platform
+- meta_score: Score on the Metacritic (https://www.metacritic.com/) platform
 - revenue: Movie revenue in USD
 - poster: URL to the movie poster
 
@@ -40,27 +40,16 @@ The `oscars.csv` data set contains all Oscar winners up to today. It has the fol
 
 # 1 - Produce a visualization
 
-<<<<<<< HEAD
-1. Think a question that may produce an insight of interest. Below are a few ideas; however, some requiring more serious data processing. Feel free to choose a question of your own:
-=======
-1. Produce a visualization of your own. The visualization must display and emphasize an insight of interest. Below are a few ideas; however, some requiring more serious data processing. Feel free to pursue your own question:
->>>>>>> 18b0ca19786709975924e069be7d4a158835ded2
+1. Think about a question that may lead to an interesting insight about the data. Below are a few ideas; however, note that some require more serious data processing. Feel free to choose a question of your own. Use either only the `imdb` or the `imdb` and `oscars` data sets. 
 
 - What director or stars were most successful in terms of revenue (or Oscars)?
 - Do longer movies receive better ratings?
 - What genre is most popular?
 - How are number of votes and ratings related?
 - Are movies that receive more positive ratings?
-<<<<<<< HEAD
 - Which actor pairs appear often together? 
 
-2. Spend 5 minutes to sketch out how a plot addressing your question might look like. You can do this on a piece of paper or a program like keynote or powerpoint.
+2. Spend 5 minutes to sketch out how a plot that effectively addresses your question might look like. You can do this on a piece of paper or a program like keynote or powerpoint.
 
 3. Go ahead and implement your plot!
-
-
-
-=======
-- Which actor pairs appear often together?
->>>>>>> 18b0ca19786709975924e069be7d4a158835ded2
 

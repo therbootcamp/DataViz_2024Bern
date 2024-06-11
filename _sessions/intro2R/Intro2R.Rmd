@@ -273,31 +273,6 @@ mean(score)
 ]
 
 .pull-right5[
-<p align="center"><img src="image/input_output.png" height="400"></p>
-]
-
----
-
-# Functions 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Assignments<br></span></li>
-  <ul class="level">
-    <li><span>Object <mono><-</mono> function</span></li>
-    <li><span><mono><-</mono> creates objects</span></li>
-  </ul><br>
-  <li class="m2"><span>Functions</span></li>
-  <ul class="level">
-    <li><span><high>Everything that happens is a function call</high></span></li>
-    <li><span>Functions have (default) arguments</span></li>
-    <li><span>Beware object/argument classes</span></li>
-    <li><span>Functions "live" in packages</span></li>
-  </ul><br>
-</ul>
-]
-
-.pull-right5[
 
 ```{r}
 # an object named score
@@ -1105,7 +1080,7 @@ options(tibble.width = 35, tibble.max_extra_cols = 10, tibble.print_max = 5,
 
 <br>
 <p align="center">
-  <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/tidyr.png" height=240px>
+  <img src="https://media.robotwealth.com/wp-content/uploads/2020/05/21161912/tidyr.png" height=240px>
 </p>
 
 ]
@@ -1156,108 +1131,6 @@ basel %>%
 <p align="center">
 <img src="image/recosphere.png" height="300px">
 </p>
-
-
----
-
-# RStudio
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>RStudio is...</span></li><br>
-  <ul class="level">
-    <li><span>A high-productivity <high>data science IDE.</high></span></li><br>
-    <li><span>The <high>company</high> behind the tidyverse.</span></li><br>
-    <li><span>Designed for R tidyverse with <high>good integration</high> for Python, Markdown, or C++.</span></li><br>
-  </ul>
-</ul>
-
-]
-
-.pull-right6[
-<p align="center">
-<img src="image/rstudio.png">
-</p>
-]
-
----
-
-# RStudio
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>RStudio is...</span></li><br>
-  <ul class="level">
-    <li><span>A high-productivity <high>data science IDE.</high></span></li><br>
-    <li><span>The <high>company</high> behind the tidyverse.</span></li><br>
-    <li><span>Designed for R tidyverse with <high>good integration</high> for Python, Markdown, or C++.</span></li><br>
-  </ul>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "left">
-  <img src="image/editor_edit.png">
-<br><br><br>
-Shortcut for <high>send Code to Console</high>:<br><br2><font size = 6>&#8984;/ctrl + &#9166;</font><br><br2><br2>
-Shortcut for <high>run Chunk again</high>:<br><br2><font size = 6>  &#8984;/ctrl + &#8997; + p</font>
-</p>
-
-]
-
----
-
-# RStudio
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>RStudio is...</span></li><br>
-  <ul class="level">
-    <li><span>A high-productivity <high>data science IDE.</high></span></li><br>
-    <li><span>The <high>company</high> behind the tidyverse.</span></li><br>
-    <li><span>Designed for R tidyverse with <high>good integration</high> for Python, Markdown, or C++.</span></li><br>
-  </ul>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/auto_complete_1.png">
-</p>
-
-]
-
----
-
-# RStudio
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span>RStudio is...</span></li><br>
-  <ul class="level">
-    <li><span>A high-productivity <high>data science IDE.</high></span></li><br>
-    <li><span>The <high>company</high> behind the tidyverse.</span></li><br>
-    <li><span>Designed for R tidyverse with <high>good integration</high> for Python, Markdown, or C++.</span></li><br>
-  </ul>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "left">
-  <img src="image/folder_structure.png" height="340px">
-</p>
-
-]
 
 
 ---

@@ -3,7 +3,7 @@
   <head>
     <title>maps &amp; nets</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ UniBE                  " />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ Bern                  " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # maps &amp; nets
 ]
 .author[
-### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1.4em'>The R Bootcamp @ UniBE</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1.4em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1.4em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1em'>The R Bootcamp @ Bern</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1em;'></i> </a>
 ]
 .date[
 ### June 2024
@@ -582,22 +582,18 @@ network &lt;- basel %&gt;%
 #
 # An undirected multigraph with 1 component
 #
-# Node Data: 21 × 1 (active)
-   name               
-   &lt;chr&gt;              
- 1 Am Ring            
- 2 Bachletten         
- 3 St. Alban          
- 4 Gundeldingen       
- 5 Bruderholz         
- 6 Gotthelf           
- 7 Altstadt Kleinbasel
- 8 Wettstein          
- 9 Hirzbrunnen        
-10 Rosental           
-# ℹ 11 more rows
+# A tibble: 21 × 1
+  name        
+  &lt;chr&gt;       
+1 Am Ring     
+2 Bachletten  
+3 St. Alban   
+4 Gundeldingen
+5 Bruderholz  
+6 Gotthelf    
+# ℹ 15 more rows
 #
-# Edge Data: 184 × 3
+# A tibble: 184 × 3
    from    to weight
   &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;
 1     1    13  0.523

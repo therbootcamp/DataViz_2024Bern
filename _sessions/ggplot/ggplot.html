@@ -3,7 +3,7 @@
   <head>
     <title>ggplot</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ UniBE                  " />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ Bern                  " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # ggplot
 ]
 .author[
-### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1.4em'>The R Bootcamp @ UniBE</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1.4em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1.4em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1em'>The R Bootcamp @ Bern</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1em;'></i> </a>
 ]
 .date[
 ### June 2024
@@ -123,7 +123,7 @@ layout: true
 &lt;/ul&gt;
 
 
-``` r
+```r
 # averages per year
 basel_avg &lt;- basel %&gt;% 
   group_by(year) %&gt;% 
@@ -138,7 +138,7 @@ basel_avg &lt;- basel %&gt;%
 .pull-right45[
 
 
-``` r
+```r
 basel_avg
 ```
 
@@ -190,7 +190,7 @@ basel_avg
 .pull-right45[
 
 
-``` r
+```r
 ggplot(data = basel_avg)
 ```
 
@@ -223,7 +223,7 @@ ggplot(data = basel_avg)
 .pull-right45[
 
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean))
@@ -247,7 +247,7 @@ ggplot(data = basel_avg,
 &lt;br&gt;
 
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -308,7 +308,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -339,7 +339,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -371,7 +371,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -403,7 +403,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -437,7 +437,7 @@ ggplot(data = basel_avg,
 &lt;/ul&gt;
 
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -476,7 +476,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 ggplot(data = basel_avg,
        mapping = aes(x = year, 
                      y = income_mean)) +
@@ -510,7 +510,7 @@ ggplot(data = basel_avg,
 
 &lt;br&gt;
 
-``` r
+```r
 # pivot to long format
 basel_avg_long &lt;- basel_avg %&gt;% 
   pivot_longer(-year, 
@@ -524,7 +524,7 @@ basel_avg_long &lt;- basel_avg %&gt;%
 .pull-right45[
 
 
-``` r
+```r
 basel_avg_long
 ```
 
@@ -558,7 +558,7 @@ basel_avg_long
 
 &lt;br&gt;
 
-``` r
+```r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -592,7 +592,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-``` r
+```r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -626,7 +626,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-``` r
+```r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -664,7 +664,7 @@ ggplot(data = basel_avg_long,
 
 &lt;br&gt;
 
-``` r
+```r
 # use basel_avg_long
 ggplot(data = basel_avg_long,
        mapping = aes(
@@ -706,7 +706,7 @@ ggplot(data = basel_avg_long,
 &lt;br&gt;
 
 
-``` r
+```r
 basel_long &lt;- basel %&gt;% 
   pivot_longer(c(income_mean, income_median),
                names_to = 'statistic',
@@ -734,7 +734,7 @@ basel_long &lt;- basel %&gt;%
 &lt;br&gt;
 
 
-``` r
+```r
 # use basel_long
 ggplot(data = basel_long,
        mapping = aes(
@@ -782,7 +782,7 @@ ggplot(data = basel_long,
 &lt;br&gt;
 
 
-``` r
+```r
 # two quarter-specific plots
 breite
 clara
@@ -793,7 +793,7 @@ clara
 .pull-right45[
 
 
-``` r
+```r
 breite/clara
 ```
 
@@ -823,7 +823,7 @@ breite/clara
 &lt;br&gt;
 
 
-``` r
+```r
 # two quarter-specific plots
 breite
 clara
@@ -834,7 +834,7 @@ clara
 .pull-right45[
 
 
-``` r
+```r
 breite+clara
 ```
 
@@ -865,7 +865,7 @@ breite+clara
 &lt;br&gt;
 
 
-``` r
+```r
 # two quarter-specific plots
 breite
 clara
@@ -876,7 +876,7 @@ clara
 .pull-right45[
 
 
-``` r
+```r
 breite+clara+plot_layout(guides="collect")
 ```
 
@@ -907,7 +907,7 @@ breite+clara+plot_layout(guides="collect")
 &lt;br&gt;
 
 
-``` r
+```r
 # two quarter-specific plots
 breite
 clara
@@ -918,7 +918,7 @@ clara
 .pull-right45[
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-``` r
+```r
 all/(breite+clara)+
   plot_layout(guides="collect")
 ```

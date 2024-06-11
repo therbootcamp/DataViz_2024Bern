@@ -3,7 +3,7 @@
   <head>
     <title>Styling</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ UniBE                  " />
+    <meta name="author" content="Visualizing and communicating data with R   The R Bootcamp @ Bern                  " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # Styling
 ]
 .author[
-### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1.4em'>The R Bootcamp @ UniBE</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1.4em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1.4em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1.4em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1.4em;'></i> </a>
+### Visualizing and communicating data with R<br> <a href='https://therbootcamp.github.io'> <font style='font-size:1em'>The R Bootcamp @ Bern</font> </a> <br> <a href='https://therbootcamp.github.io/DataViz_2024Bern/'> <i class='fas fa-clock' style='font-size:1em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;' ></i> </a>  <a href='therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: 1em;'></i> </a>  <a href='https://www.linkedin.com/company/27090302'> <i class='fab fa-linkedin' style='font-size: 1em;'></i> </a>
 ]
 .date[
 ### June 2024
@@ -92,7 +92,7 @@ layout: true
 &lt;br&gt;
 
 
-``` r
+```r
 # store plot as object
 my_plot &lt;- ggplot(basel, 
                  aes(x = year, 
@@ -109,7 +109,7 @@ my_plot &lt;- ggplot(basel,
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot 
 ```
 
@@ -147,7 +147,7 @@ my_plot
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot + theme_classic()
 ```
 
@@ -183,7 +183,7 @@ my_plot + theme_classic()
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot + theme_excel()
 ```
 
@@ -220,7 +220,7 @@ my_plot + theme_excel()
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot + theme_economist()
 ```
 
@@ -256,7 +256,7 @@ my_plot + theme_economist()
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot + theme_wsj()
 ```
 
@@ -292,7 +292,7 @@ my_plot + theme_wsj()
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot + theme_minimal()
 ```
 
@@ -321,7 +321,7 @@ my_plot + theme_minimal()
 &lt;br&gt;
 
 
-``` r
+```r
 # Using theme
 my_plot + 
   theme(argument = element_*(), 
@@ -359,7 +359,7 @@ my_plot +
 &lt;br&gt;
 
 
-``` r
+```r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -399,7 +399,7 @@ my_plot +
 &lt;br&gt;
 
 
-``` r
+```r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -440,7 +440,7 @@ my_plot +
 &lt;br&gt;
 
 
-``` r
+```r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -478,7 +478,7 @@ my_plot +
 &lt;br&gt;
 
 
-``` r
+```r
 # save my theme
 my_theme &lt;- theme(
   legend.position = "bottom",
@@ -545,7 +545,7 @@ my_plot +
 &lt;/ul&gt;
 
 
-``` r
+```r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -583,7 +583,7 @@ my_plot +
 
 
 
-``` r
+```r
 # change data
 basel_order &lt;- basel %&gt;%
     
@@ -639,7 +639,7 @@ basel_order
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -678,7 +678,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -717,7 +717,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -756,7 +756,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -795,7 +795,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -834,7 +834,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_order %&gt;%
   
   # original code
@@ -884,7 +884,7 @@ basel_order %&gt;%
 &lt;br&gt;
 
 
-``` r
+```r
 my_plot +
   labs(x = "Year",
        y = "Median income",
@@ -920,7 +920,7 @@ my_plot +
 
 
 
-``` r
+```r
 basel_agg &lt;- basel %&gt;%
   
   # get income mean in 2001
@@ -977,7 +977,7 @@ basel_agg
 
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1012,7 +1012,7 @@ basel_agg %&gt;%
 
 
 
-``` r
+```r
 # confidence interval function
 ci = function(x) {
   n = length(x)
@@ -1073,7 +1073,7 @@ basel_agg &lt;- basel %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1109,7 +1109,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1147,7 +1147,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1190,7 +1190,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1228,7 +1228,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-``` r
+```r
 basel_agg %&gt;%
   
   # plot code
@@ -1284,7 +1284,7 @@ basel_agg %&gt;%
 
 
 
-``` r
+```r
 # Save as pdf
 ggsave(filename = "my_plot.pdf",
        plot = my_plot,

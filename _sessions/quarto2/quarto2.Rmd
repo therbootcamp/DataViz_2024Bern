@@ -87,8 +87,8 @@ basel <- read_csv("1_data/taxation.csv")
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
+  <col width="50%">
+  <col width="50%">
 <tr>
   <td bgcolor="white">
     <b>Markdown</b>
@@ -134,42 +134,454 @@ basel <- read_csv("1_data/taxation.csv")
 ]
 
 .pull-right5[
-<br><br>
-<p align = "center">
-  <img src="image/links.png" height = 540px>
-</p>
+<br>
+<div style="width:100%">
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png)
+````
+</div>
+<iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 300></iframe>
+
 
 ]
 
-
-
-
-
-
-
-# Presentations
+---
 
 .pull-left4[
 
-Quarto supports different <high>output formats</high> for presentations:
+# Images
 
 <ul>
-  <li class="m1"><span><high>HTML</high> with reveal.js</li>
-  <li class="m2"><span><high>Power Point</high></span></li> 
-  <li class="m2"><span><high>LaTeX</high> (pdf)</span></li> 
+  <li class="m1"><span>There is specific <high>markdown syntax</high> to include images.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>!&lsqb;Caption&rsqb;(Filename)</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Caption</high> is displayed below the image.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{width=XX}</mono>
+  </td>
+  <td bgcolor="white">
+   Changing <high>width</high> with measure in px, in or %.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{fig-align="XX"}</mono>
+  </td>
+  <td bgcolor="white">
+   Define <high>alignment</high> with 'left', 'right' and 'center'.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.lightbox}</mono>
+  </td>
+  <td bgcolor="white">
+   In HTML add lightbox to allow  <high>zooming</high> into the image upon clicking on it.    
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br>
+<div style="width:100%">
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png){width='30%'}
+````
+</div>
+<iframe class="slide-deck" src="example_image_size/image.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+.pull-left4[
+
+# Images
+
+<ul>
+  <li class="m1"><span>There is specific <high>markdown syntax</high> to include images.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>!&lsqb;Caption&rsqb;(Filename)</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Caption</high> is displayed below the image.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{width=XX}</mono>
+  </td>
+  <td bgcolor="white">
+   Changing <high>width</high> with measure in px, in or %.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{fig-align="XX"}</mono>
+  </td>
+  <td bgcolor="white">
+   Define <high>alignment</high> with 'left', 'right' and 'center'.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.lightbox}</mono>
+  </td>
+  <td bgcolor="white">
+   In HTML add lightbox to allow  <high>zooming</high> into the image upon clicking on it.    
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br>
+<div style="width:100%">
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png){width='30%' fig-align='left'}
+````
+</div>
+<iframe class="slide-deck" src="example_image_position/image.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+.pull-left4[
+
+# Images
+
+<ul>
+  <li class="m1"><span>There is specific <high>markdown syntax</high> to include images.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>!&lsqb;Caption&rsqb;(Filename)</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Caption</high> is displayed below the image.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{width=XX}</mono>
+  </td>
+  <td bgcolor="white">
+   Changing <high>width</high> with measure in px, in or %.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{fig-align="XX"}</mono>
+  </td>
+  <td bgcolor="white">
+   Define <high>alignment</high> with 'left', 'right' and 'center'.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.lightbox}</mono>
+  </td>
+  <td bgcolor="white">
+   In HTML add lightbox to allow  <high>zooming</high> into the image upon clicking on it.    
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br>
+<div style="width:100%">
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left' .lightbox}
+````
+</div>
+<iframe class="slide-deck" src="example_image_light/image.html" width = "100%" height = 300></iframe>
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom <high>markdown table</high> output.
+
+<ul>
+  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
 </ul>
 
 ]
 
 .pull-right5[
 
-<br>
+<div style="width:100%">
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
 
-<p align = "center">
-Screenshot of each product
-  <img src="image/" width=400px><br>
-  <font style="font-size:10px">from <a href="https://quarto.org">quarto.org</a></font>
-</p>
+: Simple pipe table syntax
+````
+</div>
+<iframe class="slide-deck" src="example_table/table.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom <high>markdown table</high> output.
+
+<ul>
+  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+
+<div style="width:100%">
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Simple pipe table syntax {tbl-colwidths="[10,10,20,60]"}
+
+````
+</div>
+<iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom <high>markdown table</high> output.
+
+<ul>
+  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+
+<div style="width:100%">
+````markdown
+::: {#tbl-panel layout-ncol=1}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+````
+</div>
+<br>
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom <high>markdown table</high> output.
+
+<ul>
+  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<iframe class="slide-deck" src="example_table_sub/table.html" width = "100%" height = "100%"></iframe>
+
+
+]
+
+---
+
+# Cross referencing
+
+.pull-left4[
+
+Cross references  <high>ease navigation </high> of documents.
+
+<ul>
+  <li class="m1"><span>A cross reference consist of a <high>label (#)</high> and <high>referrer (@)</high></span></li>
+  <li class="m2"><span>Add label to <high>images</high> with <mono>#fig-label</mono></span>, to <high>tables</high> with <mono>#tbl-label</mono></span></li>
+  <li class="m3"><span>Insert referrer in text to <high>Images</high> with <mono>&commat;fig-label</mono></span>, to <high>tables</high> with <mono>&commat;tbl-label</mono></li> </span></li>  
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:100%">
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Simple pipe table syntax {#tbl-pipe}
+
+And then references in text - see @tbl-pipe.
+````
+</div>
+<iframe class="slide-deck" src="example_ref/ref.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+# Cross referencing
+
+.pull-left4[
+
+Cross references  <high>ease navigation </high> of documents.
+
+<ul>
+  <li class="m1"><span>A cross reference consist of a <high>label (#)</high> and <high>referrer (@)</high></span></li>
+  <li class="m2"><span>Add label to <high>images</high> with <mono>#fig-label</mono></span>, to <high>tables</high> with <mono>#tbl-label</mono></span></li>
+  <li class="m3"><span>Insert referrer in text to <high>Images</high> with <mono>&commat;fig-label</mono></span>, to <high>tables</high> with <mono>&commat;tbl-label</mono></li> </span></li>  
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:100%">
+````markdown
+![Logo Uni Bern](unibe.png){width='30%' fig-align='left' #fig-logo} 
+
+As can been seen in @fig-logo.
+````
+</div>
+<iframe class="slide-deck" src="example_image_ref/image_ref.html" width = "100%" height = 300></iframe>
+
 
 ]
 
@@ -962,270 +1374,6 @@ format: pptx
 </div>
 <p align = "center">
   <img src="image/powerpoint.png" height=400px>
-</p>
-
-]
-
-
----
-
-# Websites
-
-.pull-left4[
-
-Quarto Websites allow you to publish groups of documents.
-Websites share: 
-<ul>
-  <li class="m1"><span><high>navigation</high></span></li> 
-  <li class="m2"><span><high>rendering</high> </span></li>
-  <li class="m3"><span><high>visual style</high> </span></li>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/.png" height=400px>
-</p>
-
-
-]
-
----
-
-# Website setup
-
-To ininiate the setup of a Quarto Website you have to setup a new project.
-
-.pull-left4[
-
-<ul>
-    <li class="m1"><span>Go to <high>File - New Project</high></span></li> 
-    <li class="m2"><span>Select <high>New Directory</high></span></li> 
-    <li class="m3"><span>Select <high>Quarto Website</high></span></li> 
-    <li class="m4"><span>Enter <high>Directory name</high> </span></li>
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/quarto_website_generation.png" height=400px>
-</p>
-
-
-]
-
----
-
-# Websites
-
-.pull-left4[
-A <high>set of files</high> is automatically generated in the <high>new folder</high>.
-<ul>
-  <li class="m1"><span><mono>.qmd</mono> with <high>Text</high></span></li> 
-  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
-  <li class="m3"><span><mono>.yml</mono> YAML <high>config file</high></span></li> 
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/web_folder.png" height=400px>
-</p>
-
-]
-
----
-
-
-# <mono>_quarto.yml</mono> config file
-
-.pull-left4[
-
-Global information for the <high>website configuration</high>.
-<ul>
-  <li class="m1"><span><mono>navbar</mono> sets <high>location</high> and <high>content</high> of navigation</span></li> 
-  <li class="m2"><span><mono>theme, css</mono> <high>define layout</high></span></li> 
-    <li class="m3"><span><mono>toc</mono> adds <high>table of contents<high></span></li>
-
-</ul>
-
-]
-
-.pull-right5[
-
-````markdown
-
-project:
-  type: website
-
-website:
-  title: "Our UniBE website"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    
-````
-
-]
-
----
-
-# <mono>_quarto.yml</mono> config file
-
-.pull-left4[
-
-Global information for the <high>website configuration</high>.
-<ul>
-  <li class="m1"><span><mono>navbar</mono> sets <high>location</high> and <high>content</high> of navigation</span></li> 
-  <li class="m2"><span><mono>theme, css</mono> <high>define layout</high></span></li> 
-    <li class="m3"><span><mono>toc</mono> adds <high>table of contents<high></span></li>
-
-</ul>
-
-]
-
-.pull-right5[
-
-<iframe src="example_website/web/_site/index.html" width="500" height="400"></iframe>
-
-]
-
----
-
-# Render Website
-
-.pull-left4[
-<mono>.qmd</mono> files are translated to <mono>.html in <mono>_site</mono>.
-<ul>
-  <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
-  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
-  <li class="m3"><span><mono>.json</mono> <high>search </high> capabilities</span></li> 
-</ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/web_site_folder.png" height=400px>
-</p>
-
-]
-
----
-
-# Expanding navigation bar
-
-.pull-left4[
-
-Global information for the <high>website configuration</high>.
-<ul>
-  <li class="m1"><span><mono>background</mono> defines color of navigation bar</span></li> 
-    <ul>
-    <li> primary
-    <li> secondary
-    <li> success
-    <li> danger
-    <li> warning
-    <li> info
-    <li> light
-    <li> dark
-    <li> any <mono>hex color</mono>, e.g., <mono>#ff2d4c</mono>
-    </ul>
-
-
-</ul>
-
-]
-
-.pull-right5[
-<div style="width:70%">
-````markdown
-website:
-  title: "Our UniBE website"
-  navbar:
-    background: primary
-````
-</div>
-<iframe src="example_website_color/web/_site/index.html" width="500" height="400"></iframe>
-
-]
-
----
-
-# Expanding navigation bar
-
-.pull-left4[
-
-Adding <high>website configuration</high>.
-<ul>
-  <li class="m1"><span><mono>background</mono> defines color of navigation bar</span></li> 
-    <ul>
-    <li> primary
-    <li> secondary
-    <li> success
-    <li> danger
-    <li> warning
-    <li> info
-    <li> light
-    <li> dark
-    <li> any <mono>hex color</mono>, e.g., <mono>#ff2d4c</mono>
-    </ul>
-
-
-</ul>
-
-]
-
-.pull-right5[
-<div style="width:70%">
-````markdown
-website:
-  title: "Our UniBE website"
-  navbar:
-    background: primary
-````
-</div>
-<iframe src="example_website_color/web/_site/index.html" width="500" height="400"></iframe>
-
-]
-
----
-
-# Links
-
-.pull-left4[
-<mono>.qmd</mono> files are translated to <mono>.html in <mono>_site</mono>.
-<ul>
-  <li class="m1"><span><mono>.html</mono> with <high>Text</high></span></li> 
-  <li class="m2"><span><mono>.css</mono> <high>Style</high></span></li> 
-  <li class="m3"><span><mono>.json</mono> <high>search </high> capabilities</span></li> 
-</ul>
-
-]
-
-.pull-right5[
-
-[about](about.qmd)
-[about](about.qmd#section)
-
-
-<p align = "center">
-  <img src="image/web_site_folder.png" height=400px>
 </p>
 
 ]

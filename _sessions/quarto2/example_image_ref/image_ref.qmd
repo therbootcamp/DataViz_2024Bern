@@ -1,0 +1,9 @@
+---
+title: ""
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png){width='30%' fig-align='left' #fig-logo} 
+
+As can been seen in @fig-logo.

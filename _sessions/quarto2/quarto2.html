@@ -61,8 +61,8 @@ layout: true
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
     &lt;b&gt;Markdown&lt;/b&gt;
@@ -108,42 +108,454 @@ layout: true
 ]
 
 .pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/links.png" height = 540px&gt;
-&lt;/p&gt;
+&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png)
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
 
 ]
 
-
-
-
-
-
-
-# Presentations
+---
 
 .pull-left4[
 
-Quarto supports different &lt;high&gt;output formats&lt;/high&gt; for presentations:
+# Images
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;HTML&lt;/high&gt; with reveal.js&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Power Point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;LaTeX&lt;/high&gt; (pdf)&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include images.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;!&amp;lsqb;Caption&amp;rsqb;(Filename)&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Caption&lt;/high&gt; is displayed below the image.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{width=XX}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Changing &lt;high&gt;width&lt;/high&gt; with measure in px, in or %.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{fig-align="XX"}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Define &lt;high&gt;alignment&lt;/high&gt; with 'left', 'right' and 'center'.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.lightbox}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   In HTML add lightbox to allow  &lt;high&gt;zooming&lt;/high&gt; into the image upon clicking on it.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png){width='30%'}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_image_size/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+.pull-left4[
+
+# Images
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include images.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;!&amp;lsqb;Caption&amp;rsqb;(Filename)&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Caption&lt;/high&gt; is displayed below the image.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{width=XX}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Changing &lt;high&gt;width&lt;/high&gt; with measure in px, in or %.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{fig-align="XX"}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Define &lt;high&gt;alignment&lt;/high&gt; with 'left', 'right' and 'center'.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.lightbox}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   In HTML add lightbox to allow  &lt;high&gt;zooming&lt;/high&gt; into the image upon clicking on it.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png){width='30%' fig-align='left'}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_image_position/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+.pull-left4[
+
+# Images
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;There is specific &lt;high&gt;markdown syntax&lt;/high&gt; to include images.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;!&amp;lsqb;Caption&amp;rsqb;(Filename)&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Caption&lt;/high&gt; is displayed below the image.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{width=XX}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Changing &lt;high&gt;width&lt;/high&gt; with measure in px, in or %.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{fig-align="XX"}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Define &lt;high&gt;alignment&lt;/high&gt; with 'left', 'right' and 'center'.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.lightbox}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   In HTML add lightbox to allow  &lt;high&gt;zooming&lt;/high&gt; into the image upon clicking on it.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+---
+title: "Quarto"
+format:
+  html
+---
+
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left' .lightbox}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_image_light/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;---&lt;/mono&gt; indicate the &lt;high&gt;relative width&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; set explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
 
 .pull-right5[
 
-&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
 
-&lt;p align = "center"&gt;
-Screenshot of each product
-  &lt;img src="image/" width=400px&gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://quarto.org"&gt;quarto.org&lt;/a&gt;&lt;/font&gt;
-&lt;/p&gt;
+: Simple pipe table syntax
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_table/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;---&lt;/mono&gt; indicate the &lt;high&gt;relative width&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; set explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+&lt;div style="width:100%"&gt;
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Simple pipe table syntax {tbl-colwidths="[10,10,20,60]"}
+
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;---&lt;/mono&gt; indicate the &lt;high&gt;relative width&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; set explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+&lt;div style="width:100%"&gt;
+````markdown
+::: {#tbl-panel layout-ncol=1}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+````
+&lt;/div&gt;
+&lt;br&gt;
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;---&lt;/mono&gt; indicate the &lt;high&gt;relative width&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; set explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;iframe class="slide-deck" src="example_table_sub/table.html" width = "100%" height = "100%"&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+# Cross referencing
+
+.pull-left4[
+
+Cross references  &lt;high&gt;ease navigation &lt;/high&gt; of documents.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;A cross reference consist of a &lt;high&gt;label (#)&lt;/high&gt; and &lt;high&gt;referrer (@)&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Add label to &lt;high&gt;images&lt;/high&gt; with &lt;mono&gt;#fig-label&lt;/mono&gt;&lt;/span&gt;, to &lt;high&gt;tables&lt;/high&gt; with &lt;mono&gt;#tbl-label&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Insert referrer in text to &lt;high&gt;Images&lt;/high&gt; with &lt;mono&gt;&amp;commat;fig-label&lt;/mono&gt;&lt;/span&gt;, to &lt;high&gt;tables&lt;/high&gt; with &lt;mono&gt;&amp;commat;tbl-label&lt;/mono&gt;&lt;/li&gt; &lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:100%"&gt;
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Simple pipe table syntax {#tbl-pipe}
+
+And then references in text - see @tbl-pipe.
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_ref/ref.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+# Cross referencing
+
+.pull-left4[
+
+Cross references  &lt;high&gt;ease navigation &lt;/high&gt; of documents.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;A cross reference consist of a &lt;high&gt;label (#)&lt;/high&gt; and &lt;high&gt;referrer (@)&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Add label to &lt;high&gt;images&lt;/high&gt; with &lt;mono&gt;#fig-label&lt;/mono&gt;&lt;/span&gt;, to &lt;high&gt;tables&lt;/high&gt; with &lt;mono&gt;#tbl-label&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Insert referrer in text to &lt;high&gt;Images&lt;/high&gt; with &lt;mono&gt;&amp;commat;fig-label&lt;/mono&gt;&lt;/span&gt;, to &lt;high&gt;tables&lt;/high&gt; with &lt;mono&gt;&amp;commat;tbl-label&lt;/mono&gt;&lt;/li&gt; &lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:100%"&gt;
+````markdown
+![Logo Uni Bern](unibe.png){width='30%' fig-align='left' #fig-logo} 
+
+As can been seen in @fig-logo.
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_image_ref/image_ref.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
 
 ]
 
@@ -936,270 +1348,6 @@ format: pptx
 &lt;/div&gt;
 &lt;p align = "center"&gt;
   &lt;img src="image/powerpoint.png" height=400px&gt;
-&lt;/p&gt;
-
-]
-
-
----
-
-# Websites
-
-.pull-left4[
-
-Quarto Websites allow you to publish groups of documents.
-Websites share: 
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;navigation&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;rendering&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;visual style&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/.png" height=400px&gt;
-&lt;/p&gt;
-
-
-]
-
----
-
-# Website setup
-
-To ininiate the setup of a Quarto Website you have to setup a new project.
-
-.pull-left4[
-
-&lt;ul&gt;
-    &lt;li class="m1"&gt;&lt;span&gt;Go to &lt;high&gt;File - New Project&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m2"&gt;&lt;span&gt;Select &lt;high&gt;New Directory&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m3"&gt;&lt;span&gt;Select &lt;high&gt;Quarto Website&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m4"&gt;&lt;span&gt;Enter &lt;high&gt;Directory name&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/quarto_website_generation.png" height=400px&gt;
-&lt;/p&gt;
-
-
-]
-
----
-
-# Websites
-
-.pull-left4[
-A &lt;high&gt;set of files&lt;/high&gt; is automatically generated in the &lt;high&gt;new folder&lt;/high&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.qmd&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.yml&lt;/mono&gt; YAML &lt;high&gt;config file&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/web_folder.png" height=400px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-
-# &lt;mono&gt;_quarto.yml&lt;/mono&gt; config file
-
-.pull-left4[
-
-Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets &lt;high&gt;location&lt;/high&gt; and &lt;high&gt;content&lt;/high&gt; of navigation&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; &lt;high&gt;define layout&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds &lt;high&gt;table of contents&lt;high&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-````markdown
-
-project:
-  type: website
-
-website:
-  title: "Our UniBE website"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    
-````
-
-]
-
----
-
-# &lt;mono&gt;_quarto.yml&lt;/mono&gt; config file
-
-.pull-left4[
-
-Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;navbar&lt;/mono&gt; sets &lt;high&gt;location&lt;/high&gt; and &lt;high&gt;content&lt;/high&gt; of navigation&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;theme, css&lt;/mono&gt; &lt;high&gt;define layout&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;toc&lt;/mono&gt; adds &lt;high&gt;table of contents&lt;high&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;iframe src="example_website/web/_site/index.html" width="500" height="400"&gt;&lt;/iframe&gt;
-
-]
-
----
-
-# Render Website
-
-.pull-left4[
-&lt;mono&gt;.qmd&lt;/mono&gt; files are translated to &lt;mono&gt;.html in &lt;mono&gt;_site&lt;/mono&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.html&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.json&lt;/mono&gt; &lt;high&gt;search &lt;/high&gt; capabilities&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/web_site_folder.png" height=400px&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Expanding navigation bar
-
-.pull-left4[
-
-Global information for the &lt;high&gt;website configuration&lt;/high&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;background&lt;/mono&gt; defines color of navigation bar&lt;/span&gt;&lt;/li&gt; 
-    &lt;ul&gt;
-    &lt;li&gt; primary
-    &lt;li&gt; secondary
-    &lt;li&gt; success
-    &lt;li&gt; danger
-    &lt;li&gt; warning
-    &lt;li&gt; info
-    &lt;li&gt; light
-    &lt;li&gt; dark
-    &lt;li&gt; any &lt;mono&gt;hex color&lt;/mono&gt;, e.g., &lt;mono&gt;#ff2d4c&lt;/mono&gt;
-    &lt;/ul&gt;
-
-
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-&lt;div style="width:70%"&gt;
-````markdown
-website:
-  title: "Our UniBE website"
-  navbar:
-    background: primary
-````
-&lt;/div&gt;
-&lt;iframe src="example_website_color/web/_site/index.html" width="500" height="400"&gt;&lt;/iframe&gt;
-
-]
-
----
-
-# Expanding navigation bar
-
-.pull-left4[
-
-Adding &lt;high&gt;website configuration&lt;/high&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;background&lt;/mono&gt; defines color of navigation bar&lt;/span&gt;&lt;/li&gt; 
-    &lt;ul&gt;
-    &lt;li&gt; primary
-    &lt;li&gt; secondary
-    &lt;li&gt; success
-    &lt;li&gt; danger
-    &lt;li&gt; warning
-    &lt;li&gt; info
-    &lt;li&gt; light
-    &lt;li&gt; dark
-    &lt;li&gt; any &lt;mono&gt;hex color&lt;/mono&gt;, e.g., &lt;mono&gt;#ff2d4c&lt;/mono&gt;
-    &lt;/ul&gt;
-
-
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-&lt;div style="width:70%"&gt;
-````markdown
-website:
-  title: "Our UniBE website"
-  navbar:
-    background: primary
-````
-&lt;/div&gt;
-&lt;iframe src="example_website_color/web/_site/index.html" width="500" height="400"&gt;&lt;/iframe&gt;
-
-]
-
----
-
-# Links
-
-.pull-left4[
-&lt;mono&gt;.qmd&lt;/mono&gt; files are translated to &lt;mono&gt;.html in &lt;mono&gt;_site&lt;/mono&gt;.
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;.html&lt;/mono&gt; with &lt;high&gt;Text&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;.css&lt;/mono&gt; &lt;high&gt;Style&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;.json&lt;/mono&gt; &lt;high&gt;search &lt;/high&gt; capabilities&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-[about](about.qmd)
-[about](about.qmd#section)
-
-
-&lt;p align = "center"&gt;
-  &lt;img src="image/web_site_folder.png" height=400px&gt;
 &lt;/p&gt;
 
 ]

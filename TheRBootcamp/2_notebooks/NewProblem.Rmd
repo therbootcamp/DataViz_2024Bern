@@ -51,5 +51,11 @@ The `oscars.csv` data set contains all Oscar winners up to today. It has the fol
 
 2. Spend 5 minutes to sketch out how a plot that effectively addresses your question might look like. You can do this on a piece of paper or a program like keynote or powerpoint.
 
-3. Go ahead and implement your plot!
+3. Go ahead and implement your plot! You can do it here in the notebook or in a different script. 
+
+```{r}
+# YOUR PLOT CODE
+```
+
+
 

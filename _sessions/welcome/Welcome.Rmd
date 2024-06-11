@@ -2,20 +2,20 @@
 title: "Welcome!"
 author: "Visualizing and communicating data with R<br>
   <a href='https://therbootcamp.github.io'>
-    <font style='font-size:1.4em'>The R Bootcamp @ UniBE</font>
+    <font style='font-size:1em'>The R Bootcamp @ Bern</font>
   </a>
   <br>
   <a href='https://therbootcamp.github.io/DataViz_2024Bern/'>
-    <i class='fas fa-clock' style='font-size:1.4em;'></i>
+    <i class='fas fa-clock' style='font-size:1em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
-    <i class='fas fa-home' style='font-size:1.4em;' ></i>
+    <i class='fas fa-home' style='font-size:1em;' ></i>
   </a>&#8239;
   <a href='therbootcamp@gmail.com'>
-    <i class='fas fa-envelope' style='font-size: 1.4em;'></i>
+    <i class='fas fa-envelope' style='font-size: 1em;'></i>
   </a>&#8239;
   <a href='https://www.linkedin.com/company/27090302'>
-    <i class='fab fa-linkedin' style='font-size: 1.4em;'></i>
+    <i class='fab fa-linkedin' style='font-size: 1em;'></i>
   </a>"
 date: "June 2024"
 output:
@@ -290,10 +290,12 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 .pull-left35[
 
 <ul>
-  <li class="m1"><span>What is your name?</span></li><br>
-  <li class="m2"><span>Where are you from?</span></li><br>
-  <li class="m3"><span>How much experience do you have with R?</span></li><br>
-  <li class="m4"><span>What is your goal behind wanting to learn data visualization with R?</span></li>
+  <li class="m1"><span>In three sentences:</span></li><br>
+  <ul class="level">
+  <li><span>Who are you?</span></li><br>
+  <li><span>How much experience do you have with R?</span></li><br>
+  <li><span>What do you want to learn about data visualization?</span></li>
+  </ul>
 </ul>
 
 ]
@@ -307,13 +309,6 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 </p>
 
 ]
-
----
-
-class: middle, center
-
-<h1><a href="https://www.dropbox.com/s/siwk0mqzr3dofc5/TheRBootcamp.zip?dl=1">Download<br>project</a></h1>
-
 
 ---
 

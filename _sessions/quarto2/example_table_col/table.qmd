@@ -13,6 +13,6 @@ execute:
 #| tbl-cap: "Basel data"
 library(tidyverse)
 library(knitr)
-basel <-read_csv('../1_Data/basel.csv')
+basel <-read_csv('../1_Data/taxation.csv')
 kable(head(basel))
 ```

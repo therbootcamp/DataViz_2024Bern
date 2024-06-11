@@ -354,6 +354,21 @@ basel <- read_csv("1_data/taxation.csv")
 
 ---
 
+---
+
+# Diagrams
+
+https://quarto.org/docs/authoring/diagrams.html
+
+
+---
+
+# Diagrams sizing
+
+https://quarto.org/docs/authoring/diagrams.html
+
+---
+
 # Tables
 
 .pull-left4[
@@ -464,7 +479,7 @@ Quarto supports custom <high>markdown table</high> output.
 
 .pull-left4[
 
-The content of tables can be <high>calculated</high> within chunks.
+Within tables <high>adding chunks</high> allows execution of R-code.
 
 <ul>
   <li class="m1"><span>In-Line R-Code and R-chunks generate <high>dynamic</high> tables.</li>
@@ -480,12 +495,14 @@ The content of tables can be <high>calculated</high> within chunks.
 
 <div style="width:100%">
 ````markdown
+{r}
 #| label: tbl-iris
 #| tbl-cap: "Basel data"
 library(tidyverse)
 library(knitr)
-basel <-read_csv('../1_Data/basel.csv')
+basel <- read_csv('../1_Data/taxation.csv')
 kable(head(basel))
+
 ````
 </div>
 <iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300></iframe>
@@ -563,9 +580,18 @@ As can been seen in @fig-logo.
 
 # Themes
 
+https://quarto.org/docs/output-formats/html-themes.html
 
 ---
 
+# Layout tricks
+
+https://quarto.org/docs/authoring/article-layout.html
+
+
+
+
+---
 
 # Presentations
 

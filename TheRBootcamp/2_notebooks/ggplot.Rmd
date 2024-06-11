@@ -156,7 +156,9 @@ XX / (XX + XX) + XX
 ```
 
 
+# 6 - Further tasks
 
+1. Play around and create a different plot using the `taxation` data. Maybe a barplot or lollipop plot of the richest quarters? 
 
 
 

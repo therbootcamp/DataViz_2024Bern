@@ -114,6 +114,6 @@ basel %>%
 
 # 5 - Further tasks
 
-1. 
+1. Try out the following dplyr verbs and figure out what they do `count()`, `slice_sample()`, `relocate()`, `column_to_rownames()`, `rowwise()`. 
 
 

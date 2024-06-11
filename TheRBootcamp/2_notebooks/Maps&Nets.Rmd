@@ -16,10 +16,12 @@ library(tidyverse)
 basel <- read_csv('1_data/taxation.csv')
 ```
 
-2. Load the `sf` package. 
+2. Load the `sf` and `tidygraph` packages. 
 
 ```{r}
 library(sf)
+library(tidygraph)
+library(ggraph)
 ```
 
 # 1 - Loading shapefiles
@@ -239,11 +241,34 @@ network %>%
          label = c("Group 1","Group 2"), size=7)
 ```
 
-# 6 - Project work
+# 7 - Further tasks
 
-1. Try to use what you have learned in this section to either create a map or network based on your data. Do this even if your project visualization is neither a map or a network. If you are creating a map, but you are lacking the shapefiles visit https://www.diva-gis.org/datadown. 
+1. Replot the network with out other edge functions, such as `geom_edge_fan()` or `geom_edge_arc()`.
 
+2. Install the `maps` package and then plot a word map with the following code. 
 
+```{r}
+map = map('world', plot = FALSE, fill = TRUE)
+world = sf::st_as_sf(map)
 
+world %>% 
+  ggplot() + 
+  geom_sf()
 
+```
+
+3. Use the following code to rotate the map. Play around with the `lon` and `lat` values. Can you center on Bern? 
+
+```{r}
+world_rotated <- sf::st_transform(
+  world,
+  "+proj=laea +y_0=0 +lon_0=155 +lat_0=-90 +ellps=WGS84 +no_defs")
+
+world_rotated %>% 
+  ggplot() + 
+  geom_sf()
+
+```
+
+4. Try to zoom in on Bern by adding `coord_sf()` and setting the `xlim` and `ylim` arguments. 
 

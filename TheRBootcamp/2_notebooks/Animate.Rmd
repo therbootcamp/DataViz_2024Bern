@@ -109,7 +109,7 @@ plot <- basel %>%
   ggplot(aes(x = wealth_mean, 
              y = income_mean, 
              col = quarter,
-             text = paste0("Quarter: ", quarter,"<br>Year: ", year,"<br>Income: ", income_mean)))) +
+             text = paste0("Quarter: ", quarter,"<br>Year: ", year,"<br>Income: ", income_mean))) +
   geom_point(show.legend = F, 
              size=4) + 
   labs(x = "Wealth", 
@@ -121,10 +121,22 @@ plot <- basel %>%
 3. Use the updated plot in `ggplotly`, set `tooltip = "text"`, and verify that the hover information now only shows the `text` feature. 
 
 ```{r}
-p <- ggplotly(plot, tooltip = "text)
+p <- ggplotly(plot, tooltip = "text")
 p
 ```
 
-# 4 - Project work
+# 4 - Further tasks
 
-1. Try to use what you have learned in this section to either create an animated or interactive version of your plot. 
+1. Try out `transition_filter()` by specifying at least two conditions, such as `quarter == "Breite"`, in the code below.
+
+```{r}
+plot + 
+  transition_filter(transition_length = 2, filter_length = 1, 
+                    CONDITION1, CONDITION2, ...) +
+  ggtitle(label = "Do the rich get richer in Basel?", 
+          subtitle = "Wealth and income") +
+  enter_fly()
+
+```
+
+2. Play around with the `gganimate` package. Find out more https://gganimate.com/reference/index.html.  

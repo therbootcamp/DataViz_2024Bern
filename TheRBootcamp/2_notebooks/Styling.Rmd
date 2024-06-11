@@ -256,4 +256,13 @@ averages %>%
 ```
 
 
+# 8 - Further tasks
+
+1. Try out other coloring functions, such as `scale_color_gradient()` and `scale_fill_gradient()` or `scale_color_manual()` and `scale_fill_manual()`.
+
+2. Try out using additional aesthetics, such as `alpha` or `size`. 
+
+3. Can you add additional annotation to the plot region using `annotate()`? 
+
+
 

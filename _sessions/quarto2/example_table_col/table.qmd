@@ -2,12 +2,17 @@
 title: ""
 format:
   html
+execute: 
+  echo: false
+  message: false
+  warning: false
 ---
 
-| Default | Left | Right | Center |
-|---------|:-----|------:|:------:|
-| 12      | 12   |    12 |   12   |
-| 123     | 123  |   123 |  123   |
-| 1       | 1    |     1 |   1    |
-
-: Simple pipe table syntax {tbl-colwidths="[10,10,20,60]"}
+```{r}
+#| label: tbl-iris
+#| tbl-cap: "Basel data"
+library(tidyverse)
+library(knitr)
+basel <-read_csv('../1_Data/basel.csv')
+kable(head(basel))
+```

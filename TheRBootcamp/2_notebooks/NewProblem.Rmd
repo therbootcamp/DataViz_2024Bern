@@ -1,5 +1,5 @@
 ---
-title: "Intro 2 R exercises"
+title: "Visualization Problem"
 output:
 editor_options:
   chunk_output_type: console
@@ -31,7 +31,7 @@ The `oscars.csv` data set contains all Oscar winners up to today. It has the fol
 
 - title: Title of the movie
 - award_class: Class of the award (e.g., Acting)
-- award_category: Catego0ry of the Award (e.g., ACTRESS IN A SUPPORTING ROLE)
+- award_category: Category of the Award (e.g., ACTRESS IN A SUPPORTING ROLE)
 - name: Name(s) of person/people receiving the Oscar
 
 # 0 - Preliminaries
@@ -40,13 +40,18 @@ The `oscars.csv` data set contains all Oscar winners up to today. It has the fol
 
 # 1 - Produce a visualization
 
+<<<<<<< HEAD
 1. Think a question that may produce an insight of interest. Below are a few ideas; however, some requiring more serious data processing. Feel free to choose a question of your own:
+=======
+1. Produce a visualization of your own. The visualization must display and emphasize an insight of interest. Below are a few ideas; however, some requiring more serious data processing. Feel free to pursue your own question:
+>>>>>>> 18b0ca19786709975924e069be7d4a158835ded2
 
-- What director or stars were most successful in terms of revenue (or oscars)?
+- What director or stars were most successful in terms of revenue (or Oscars)?
 - Do longer movies receive better ratings?
 - What genre is most popular?
 - How are number of votes and ratings related?
 - Are movies that receive more positive ratings?
+<<<<<<< HEAD
 - Which actor pairs appear often together? 
 
 2. Spend 5 minutes to sketch out how a plot addressing your question might look like. You can do this on a piece of paper or a program like keynote or powerpoint.
@@ -55,4 +60,7 @@ The `oscars.csv` data set contains all Oscar winners up to today. It has the fol
 
 
 
+=======
+- Which actor pairs appear often together?
+>>>>>>> 18b0ca19786709975924e069be7d4a158835ded2
 

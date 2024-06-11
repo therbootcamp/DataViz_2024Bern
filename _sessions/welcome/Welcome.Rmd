@@ -111,13 +111,13 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 # Schedule 
 
 <ul>
-  <li class="m1"><span>Core of the workshop consists of 6 sessions on R. Each session is structured into:</span></li>
+  <li class="m1"><span>Core of the workshop consists of 8 sessions on <high>R and visualization</high>. Each session is structured into:</span></li>
   <ul class="level">
-    <li><span>30-60min introduction</high></span></li> 
-    <li><span>30-60min coding exercises</span></li> 
+    <li><span>30-45min introduction</high></span></li> 
+    <li><span>30-45min coding exercises</span></li> 
     <li><span>5-10min Q&A</span></li> 
   </ul>
-  <li class="m2"><span>Additional sessions & afternoon assignments to advance your visualization project.</span></li>
+  <li class="m2"><span>Additional sessions to advance your visualization skills and a final, big <high>competition</high> with <high>prizes</high>.</span></li>
 </ul>
 
 ]
@@ -314,6 +314,6 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/DataViz_2022GSERM/">Schedule</a></h1>
+<h1><a href="https://therbootcamp.github.io/DataViz_2024Bern/">Schedule</a></h1>
 
 

@@ -1,0 +1,61 @@
+---
+title: "Visualization Problem"
+output:
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE,
+                      eval = FALSE)
+```
+In this practical, you will produce a visualization of your own for the `imdb.csv` (and potentially the `oscars.csv`) data illustrating an insight of your choice.
+
+The `imdb.csv` data set contains the 1000 highest rated movies on the movie platform IMDb (https://imdb.com/). It has the following columns:
+
+- year: Year the movie was released
+- title: Title of the movie
+- synopsis: Synopsis
+- genre: Movie Genres (multiple labels seperated by ",")
+- director: Movie director
+- stars: Four primary movie stars in the movie
+- duration: Duration of the movie
+- maturity_rating: Maturity rating of the movie (e.g., PG-13)
+- imdb_rating: Average rating on IMDb a scale from 1 to 10 
+- n_votes: Number of votes on IMDb
+- meta_score: Score on the Metacritic (https://www.metacritic.com/) platform
+- revenue: Movie revenue in USD
+- poster: URL to the movie poster
+
+The `oscars.csv` data set contains all Oscar winners up to today. It has the following columns:
+
+- title: Title of the movie
+- award_class: Class of the award (e.g., Acting)
+- award_category: Category of the Award (e.g., ACTRESS IN A SUPPORTING ROLE)
+- name: Name(s) of person/people receiving the Oscar
+
+# 0 - Preliminaries
+
+1. Load the `tidyverse` and the `imdb.csv` and `oscars.csv` data. Print the data and familiarize yourself with their contents before you proceed to the next section.
+
+# 1 - Produce a visualization
+
+1. Think about a question that may lead to an interesting insight about the data. Below are a few ideas; however, note that some require more serious data processing. Feel free to choose a question of your own. Use either only the `imdb` or the `imdb` and `oscars` data sets. 
+
+- What director or stars were most successful in terms of revenue (or Oscars)?
+- Do longer movies receive better ratings?
+- What genre is most popular?
+- How are number of votes and ratings related?
+- Are movies that receive more positive ratings?
+- Which actor pairs appear often together? 
+
+2. Spend 5 minutes to sketch out how a plot that effectively addresses your question might look like. You can do this on a piece of paper or a program like keynote or powerpoint.
+
+3. Go ahead and implement your plot! You can do it here in the notebook or in a different script. 
+
+```{r}
+# YOUR PLOT CODE
+```
+
+
+

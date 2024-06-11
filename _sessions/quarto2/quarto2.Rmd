@@ -77,18 +77,86 @@ basel <- read_csv("1_data/taxation.csv")
 
 ```
 
-# Output formats
 
 .pull-left4[
 
+# Images
+
 <ul>
-  <li class="m1"><span>Presentations</li> 
-  <ul>
-    <li><span><high>HTML with reveal.js</high></span></li>
-    <li><span><high>Powerpoint</high></span></li>  
-    <li><span>LaTeX with Beamer</span></li>
-  </ul>
-  <li class="m2"><span><high>Websites</high></span></li> 
+  <li class="m1"><span>There is specific <high>markdown syntax</high> to include images.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>!&lsqb;Caption&rsqb;(Filename)</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Caption</high> is displayed below the image.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{width=XX}</mono>
+  </td>
+  <td bgcolor="white">
+   Changing <high>width</high> with measure in px, in or %.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{fig-align="XX"}</mono>
+  </td>
+  <td bgcolor="white">
+   Define <high>alignment</high> with 'left', 'right' and 'center'.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.lightbox}</mono>
+  </td>
+  <td bgcolor="white">
+   In HTML add lightbox to allow  <high>zooming</high> into the image upon clicking on it.    
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/links.png" height = 540px>
+</p>
+
+]
+
+
+
+
+
+
+
+# Presentations
+
+.pull-left4[
+
+Quarto supports different <high>output formats</high> for presentations:
+
+<ul>
+  <li class="m1"><span><high>HTML</high> with reveal.js</li>
+  <li class="m2"><span><high>Power Point</high></span></li> 
+  <li class="m2"><span><high>LaTeX</high> (pdf)</span></li> 
 </ul>
 
 ]

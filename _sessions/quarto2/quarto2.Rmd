@@ -134,15 +134,9 @@ basel <- read_csv("1_data/taxation.csv")
 ]
 
 .pull-right5[
-<br>
+<br><br>
 <div style="width:100%">
 ````markdown
----
-title: "Quarto"
-format:
-  html
----
-
 ![Logo Uni Bern](unibe.png)
 ````
 </div>
@@ -209,15 +203,9 @@ format:
 ]
 
 .pull-right5[
-<br>
+<br><br>
 <div style="width:100%">
 ````markdown
----
-title: "Quarto"
-format:
-  html
----
-
 ![Logo Uni Bern](unibe.png){width='30%'}
 ````
 </div>
@@ -284,15 +272,9 @@ format:
 ]
 
 .pull-right5[
-<br>
+<br><br>
 <div style="width:100%">
 ````markdown
----
-title: "Quarto"
-format:
-  html
----
-
 ![Logo Uni Bern](unibe.png){width='30%' fig-align='left'}
 ````
 </div>
@@ -359,15 +341,9 @@ format:
 ]
 
 .pull-right5[
-<br>
+<br><br>
 <div style="width:100%">
 ````markdown
----
-title: "Quarto"
-format:
-  html
----
-
 ![Logo Uni Bern](unibe.png)
 {width='30%' fig-align='left' .lightbox}
 ````
@@ -387,7 +363,7 @@ Quarto supports custom <high>markdown table</high> output.
 <ul>
   <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
   <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
-  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
   <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
 </ul>
 
@@ -422,44 +398,7 @@ Quarto supports custom <high>markdown table</high> output.
 <ul>
   <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
   <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
-  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
-  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
-</ul>
-
-]
-
-.pull-right5[
-
-
-<div style="width:100%">
-````markdown
-| Default | Left | Right | Center |
-|---------|:-----|------:|:------:|
-| 12      | 12   |    12 |   12   |
-| 123     | 123  |   123 |  123   |
-| 1       | 1    |     1 |   1    |
-
-: Simple pipe table syntax {tbl-colwidths="[10,10,20,60]"}
-
-````
-</div>
-<iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300></iframe>
-
-
-]
-
----
-
-# Tables
-
-.pull-left4[
-
-Quarto supports custom <high>markdown table</high> output.
-
-<ul>
-  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
-  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
-  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
   <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
 </ul>
 
@@ -506,7 +445,7 @@ Quarto supports custom <high>markdown table</high> output.
 <ul>
   <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
   <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
-  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> set explicit <high>column width.</high></span></li> 
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
   <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
 </ul>
 
@@ -514,12 +453,48 @@ Quarto supports custom <high>markdown table</high> output.
 
 .pull-right5[
 
-<iframe class="slide-deck" src="example_table_sub/table.html" width = "100%" height = "100%"></iframe>
+<iframe class="slide-deck" src="example_table_sub/table.html" width = "100%" height = "400"></iframe>
 
 
 ]
 
 ---
+
+# Calulcations in Tables
+
+.pull-left4[
+
+The content of tables can be <high>calculated</high> within chunks.
+
+<ul>
+  <li class="m1"><span>In-Line R-Code and R-chunks generate <high>dynamic</high> tables.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+
+<div style="width:100%">
+````markdown
+#| label: tbl-iris
+#| tbl-cap: "Basel data"
+library(tidyverse)
+library(knitr)
+basel <-read_csv('../1_Data/basel.csv')
+kable(head(basel))
+````
+</div>
+<iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
 
 # Cross referencing
 
@@ -544,7 +519,6 @@ Cross references  <high>ease navigation </high> of documents.
 | 12      | 12   |    12 |   12   |
 | 123     | 123  |   123 |  123   |
 | 1       | 1    |     1 |   1    |
-
 : Simple pipe table syntax {#tbl-pipe}
 
 And then references in text - see @tbl-pipe.

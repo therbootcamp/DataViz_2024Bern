@@ -1,11 +1,10 @@
 ---
-title: "Quarto Report"
+title: "Quarto Report "
+format: html
 execute: 
   echo: false
   message: false
   warning: false
-editor_options:
-  chunk_output_type: console
 ---
 
 In this practical, you will [**recreate this html report**](Report.html).   
@@ -139,3 +138,11 @@ theme: flatly
 ````
 
 2. Render the document and observe that the report is complete.
+
+
+
+
+
+### Further Tasks
+
+1. Produce a .reveal-js presentation with at least 6 slides using the data in inequality from Basel. 

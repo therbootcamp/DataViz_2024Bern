@@ -275,7 +275,8 @@ basel <- read_csv("1_data/taxation.csv")
 <br><br>
 <div style="width:100%">
 ````markdown
-![Logo Uni Bern](unibe.png){width='30%' fig-align='left'}
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left'}
 ````
 </div>
 <iframe class="slide-deck" src="example_image_position/image.html" width = "100%" height = 300></iframe>
@@ -353,19 +354,70 @@ basel <- read_csv("1_data/taxation.csv")
 ]
 
 ---
-
----
+.pull-left4[
 
 # Diagrams
 
-https://quarto.org/docs/authoring/diagrams.html
+Quarto has native support for embedding <high>Mermaid  diagrams</high>.
 
+<ul>
+  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
+  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
+    <li class="m3"><span><mono>[]</mono> hard edges, <mono>()</mono> round edges, <mono>{}</mono> decision point</span></li>
+        <li class="m4"><span>connect nodes with <mono>--></mono></span></li>
+</ul>
+
+
+]
+
+.pull-right5[
+<br><br>
+<div style="width:100%">
+````markdown
+{mermaid}
+  A[Hard edge]
+  B(Round edge)
+  C{Decision}
+````
+</div>
+<iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350></iframe>
+
+]
 
 ---
 
-# Diagrams sizing
 
-https://quarto.org/docs/authoring/diagrams.html
+.pull-left4[
+
+# Diagrams
+
+Quarto has native support for embedding <high>Mermaid  diagrams</high>
+
+<ul>
+  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
+  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
+    <li class="m3"><span><mono>[]</mono> hard edges, <mono>()</mono> round edges, <mono>{}</mono> decision point</span></li>
+        <li class="m4"><span>connect nodes with <mono>--></mono></span></li>
+</ul>
+
+
+]
+
+.pull-right5[
+<br><br>
+<div style="width:100%">
+````markdown
+{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+````
+</div>
+<iframe class="slide-deck" src="example_dia/dia.html" width = "100%"></iframe>
+
+]
 
 ---
 
@@ -475,7 +527,7 @@ Quarto supports custom <high>markdown table</high> output.
 
 ---
 
-# Calulcations in Tables
+# Calculations in Tables
 
 .pull-left4[
 
@@ -483,9 +535,7 @@ Within tables <high>adding chunks</high> allows execution of R-code.
 
 <ul>
   <li class="m1"><span>In-Line R-Code and R-chunks generate <high>dynamic</high> tables.</li>
-  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
-  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
-  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+  <li class="m2"><span>Caption is set with <mono>tab-cap</mono> in chunk-options.</li>
 </ul>
 
 ]
@@ -496,7 +546,6 @@ Within tables <high>adding chunks</high> allows execution of R-code.
 <div style="width:100%">
 ````markdown
 {r}
-#| label: tbl-iris
 #| tbl-cap: "Basel data"
 library(tidyverse)
 library(knitr)

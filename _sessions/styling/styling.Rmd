@@ -1302,67 +1302,7 @@ basel_agg %>%
 
 ]
 
----
 
-.pull-left45[
-
-# Labels and annotations
-
-<ul>
-  <li class="m1"><span><mono>labs()</mono> allow for the addition of titles, subtitles, axis labels and captions.</span></li>
-  <li class="m2"><span>Within a canvas <mono>annotation()</mono> adds further elements to a plot.</span></li>
-</ul>
-
-```{r, eval = F}
-basel_agg %>%
-  
-  # plot code
-  ggplot(aes(x = year, y = inc_m, 
-             col = hi, fill = hi)) +
-  
-  # ribbon geom inserted
-  geom_ribbon(aes(ymin = inc_m - inc_ci,
-                  ymax = inc_m + inc_ci), 
-              alpha = .2) + 
-  
-  # annotation
-  labs(title = "Inequality in Basel",
-       subtitle = "Difference between...",
-       x = "Year",
-       y = "Income") + 
-
-  ... 
-
-
-```
-
-
-]
-
-.pull-right45[
-
-<br>
-
-```{r, fig.width=6,fig.height=7,echo = F}
-basel_agg %>% 
-  
-  # adapted plot
-  ggplot(aes(x = year, y = inc_m, 
-             col = hi, fill = hi)) +
-  geom_ribbon(aes(ymin = inc_m - inc_ci,
-                  ymax = inc_m + inc_ci), 
-              alpha = .2) + 
-  geom_line() + geom_point() +
-  theme_minimal() +
-  theme(legend.position = "none") + 
-  scale_color_viridis_d() + scale_fill_viridis_d() +
-    labs(title = "Inequality in Basel",
-       subtitle = "Difference between poor and rich quarters",
-       x = "Year",
-       y = "Income") 
-```
-
-]
 
 ---
 

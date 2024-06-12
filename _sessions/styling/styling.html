@@ -92,7 +92,7 @@ layout: true
 &lt;br&gt;
 
 
-```r
+``` r
 # store plot as object
 my_plot &lt;- ggplot(basel, 
                  aes(x = year, 
@@ -109,7 +109,7 @@ my_plot &lt;- ggplot(basel,
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot 
 ```
 
@@ -147,7 +147,7 @@ my_plot
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot + theme_classic()
 ```
 
@@ -183,7 +183,7 @@ my_plot + theme_classic()
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot + theme_excel()
 ```
 
@@ -220,7 +220,7 @@ my_plot + theme_excel()
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot + theme_economist()
 ```
 
@@ -256,7 +256,7 @@ my_plot + theme_economist()
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot + theme_wsj()
 ```
 
@@ -292,7 +292,7 @@ my_plot + theme_wsj()
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot + theme_minimal()
 ```
 
@@ -321,7 +321,7 @@ my_plot + theme_minimal()
 &lt;br&gt;
 
 
-```r
+``` r
 # Using theme
 my_plot + 
   theme(argument = element_*(), 
@@ -359,7 +359,7 @@ my_plot +
 &lt;br&gt;
 
 
-```r
+``` r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -399,7 +399,7 @@ my_plot +
 &lt;br&gt;
 
 
-```r
+``` r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -440,7 +440,7 @@ my_plot +
 &lt;br&gt;
 
 
-```r
+``` r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -478,7 +478,7 @@ my_plot +
 &lt;br&gt;
 
 
-```r
+``` r
 # save my theme
 my_theme &lt;- theme(
   legend.position = "bottom",
@@ -545,7 +545,7 @@ my_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Fixing the legend
 my_plot + 
   theme_minimal() +
@@ -583,7 +583,7 @@ my_plot +
 
 
 
-```r
+``` r
 # change data
 basel_order &lt;- basel %&gt;%
     
@@ -639,7 +639,7 @@ basel_order
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -678,7 +678,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -717,7 +717,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -756,7 +756,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -795,7 +795,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -834,7 +834,7 @@ basel_order %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_order %&gt;%
   
   # original code
@@ -884,7 +884,7 @@ basel_order %&gt;%
 &lt;br&gt;
 
 
-```r
+``` r
 my_plot +
   labs(x = "Year",
        y = "Median income",
@@ -920,7 +920,7 @@ my_plot +
 
 
 
-```r
+``` r
 basel_agg &lt;- basel %&gt;%
   
   # get income mean in 2001
@@ -977,7 +977,7 @@ basel_agg
 
 
 
-```r
+``` r
 basel_agg %&gt;%
   
   # plot code
@@ -1012,7 +1012,7 @@ basel_agg %&gt;%
 
 
 
-```r
+``` r
 # confidence interval function
 ci = function(x) {
   n = length(x)
@@ -1073,7 +1073,7 @@ basel_agg &lt;- basel %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_agg %&gt;%
   
   # plot code
@@ -1109,7 +1109,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_agg %&gt;%
   
   # plot code
@@ -1135,49 +1135,7 @@ basel_agg %&gt;%
 
 ]
 
----
 
-.pull-left45[
-
-# Labels and annotations
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;labs()&lt;/mono&gt; allow for the addition of titles, subtitles, axis labels and captions.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Within a canvas &lt;mono&gt;annotation()&lt;/mono&gt; adds further elements to a plot.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-```r
-basel_agg %&gt;%
-  
-  # plot code
-  ggplot(aes(x = year, y = inc_m, 
-             col = hi, fill = hi)) +
-  
-  # ribbon geom inserted
-  geom_ribbon(aes(ymin = inc_m - inc_ci,
-                  ymax = inc_m + inc_ci), 
-              alpha = .2) + 
-  
-  # annotation
-  labs(title = "Inequality in Basel",
-       subtitle = "Difference between...",
-       x = "Year",
-       y = "Income") + 
-
-  ... 
-```
-
-
-]
-
-.pull-right45[
-
-&lt;br&gt;
-
-&lt;img src="styling_files/figure-html/unnamed-chunk-53-1.png" style="display: block; margin: auto;" /&gt;
-
-]
 
 ---
 
@@ -1190,7 +1148,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_agg %&gt;%
   
   # plot code
@@ -1214,7 +1172,7 @@ basel_agg %&gt;%
 
 &lt;br&gt;
 
-&lt;img src="styling_files/figure-html/unnamed-chunk-55-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="styling_files/figure-html/unnamed-chunk-53-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1228,7 +1186,7 @@ basel_agg %&gt;%
 &lt;/ul&gt;
 
 
-```r
+``` r
 basel_agg %&gt;%
   
   # plot code
@@ -1253,7 +1211,7 @@ basel_agg %&gt;%
 
 &lt;br&gt;
 
-&lt;img src="styling_files/figure-html/unnamed-chunk-57-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="styling_files/figure-html/unnamed-chunk-55-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1284,7 +1242,7 @@ basel_agg %&gt;%
 
 
 
-```r
+``` r
 # Save as pdf
 ggsave(filename = "my_plot.pdf",
        plot = my_plot,

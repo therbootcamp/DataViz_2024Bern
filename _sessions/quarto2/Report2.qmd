@@ -30,7 +30,7 @@ Inequalities in income and wealth are a growing social issue ^[See https://www.u
 
 ### Income and wealth
 
-The data contains information on the wealth and income of the inhabitants of the `r length(unique(basel$quarter))` quarters of Basel, which was determined from tax-return documents. The data was provided by [Open Data Basel](https://www.opendata.bs.ch/). Figure  @fig-gini presents a schematic overview of the data. 
+The data provided by [Open Data Basel](https://www.opendata.bs.ch/) contains information on the wealth and income of the inhabitants of the `r length(unique(basel$quarter))` quarters of Basel based on tax-return documents. @fig-gini presents a schematic overview of the data. 
 
 ```{mermaid}
 %%| echo: false

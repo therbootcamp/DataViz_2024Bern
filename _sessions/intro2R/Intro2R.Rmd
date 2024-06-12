@@ -574,7 +574,7 @@ score %>%
 
 <br>
 <p align="center">
-  <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px>
+  <img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/readr.png?raw=true" height=240px>
 </p>
 
 ]
@@ -606,7 +606,7 @@ score %>%
 
 <br>
 <p align="center">
-  <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px>
+  <img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/readr.png?raw=true" height=240px>
 </p>
 
 ]
@@ -647,7 +647,7 @@ basel
 
 <br>
 <p align="center">
-  <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/tibble.png" height=240px>
+  <img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/tibble.png?raw=true" height=240px>
 </p>
 
 ]
@@ -689,7 +689,7 @@ basel
 
 <br>
 <p align="center">
-  <img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png" height=240px>
+  <img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/dplyr.png?raw=true" height=240px>
 </p>
 
 ]

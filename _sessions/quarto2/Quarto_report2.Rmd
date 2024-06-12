@@ -1,5 +1,5 @@
 ---
-title: "Quarto Report "
+title: "Quarto Report"
 format: html
 execute: 
   echo: false
@@ -7,58 +7,100 @@ execute:
   warning: false
 ---
 
-In this practical, you will [**recreate this html report**](Report.html).   
+In this practical, you will [**recreate this html report**](Report2.html).   
 
 ### 0 - Preliminaries
 
-1. Go to the File - New File menu and select the file type <mono>Quarto Document</mono>, enter the title `Do the rich get richer in Basel?` and your name, leave the file type as HTML and then hit <mono>Create</mono>. 
+1. We will continue adapting the document you produced in the last session. 
 
-2. Click the `Render` button and observe whether the template content currently included in the file is correctly rendered and displayed in the Viewer Pane. When you render for the first time, you will be asked to choose a file name. Call the document `basel_report`
+2. Create a header at the third level (`###`) with the title `The Gini Coefficient`. 
 
-3. Clear everything in the document except for the YAML header.  
+3. Add the following text:
 
-4. Add an initial R chunk accessing the Menu with `Code - Insert Chunk`. 
+```{}
+It measures inequality on a scale from 0 to 1, where higher values indicate higher inequality. This can sometimes be shown as a percentage from 0 to 100%, called the “Gini Coefficient”. A value of 0 indicates perfect equality: everyone has the same income.
+```
 
-5. Within the chunk add `#| include: false` in the first line to suppress  messages, e.g., from the tidyverse. Load the `tidyverse` and `patchwork` packages. Read in the `taxation.csv` data as a new object called `basel`. Note that when running the Quarto file it will use its own location as the working directory. Consequently, use `1_data/taxation.csv` as the file path. 
+### 1 - Add a Table of contents
 
-6. Render the document and check whether the data and packages are loaded correctly, i.e., you don't see an error message.
+1. Add the following code to show a Table of Contents
 
-7. Include `echo: false` in your YAML header to remove code display for all chunks in the document. Be careful to follow the indentation as shown below!
-
-````markdown
+```{}
 format: 
-  html
-execute:
-  echo: false
-````
-
-### 2 - Intro
-
-1. Copy the following text below the initial chunk. 
-
-```{}
-Inequalities in income and wealth are a growing social issue FOOTNOTE. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city’s quarters.
+  html: 
+    toc: true
+    toc-title: Contents
 ```
 
-2. Next replace the text `FOOTNOTE` with the actual footnote `^[See https://www.un.org/en/un75/inequality-bridging-divide.]`.
-
-3. Render the document (i.e., hit the `Render` button) and observe whether the new contents are accurately displayed. 
-
-### 3 - Data
-
-1. Create a header at the third level (`###`) with the title `Income and wealth`. 
-
-2. Below the header add the following text. 
+2. Move Table of Contents to the left
 
 ```{}
-The data contains information on the wealth and income of the inhabitants of the INLINE quarters of Basel, which was determined from tax-return documents. The data was provided by LINK. 
+toc-location: left
 ```
 
-3. Replace the text `INLINE` with a piece of inline R code determining the number of quarters in Basel, namely with 'r length(unique(basel))'. Make sure to put accents before and after the inline code (not apostrophes as used here). 
+### 2 - Add a diagram
 
-4. Replace the text `LINK` with `[Open Data Basel](https://www.opendata.bs.ch/)` to link to the Basel Open Data webpage. 
+1. Copy the following Mermaid code into a new chunk. 
 
-5. Render the document and observe whether the new contents are displayed. 
+```{}
+
+```{mermaid}
+flowchart LR
+  A[Income] --> B[Wealth]
+  B --> C{Distribution}
+  C --> D[Higher Gini]
+  C --> E[Lower Gini]
+```
+
+```
+2. 
+
+### 3 - Add a table showing data for St. Alban
+
+1. TEXT data prep
+
+```{}
+#| label: tbl-gini
+#| tbl-cap: "Gini coefficient in St. Alban"
+
+stalban <- 
+basel %>%
+  filter(quarter == 'St. Alban') %>%
+  select(year, N, income_mean, income_median, income_gini)
+```
+
+2. Add the knitr package to the initial chunk in your document with:
+
+```{}
+load(knitr)
+```
+
+3. add kable(stalban)
+
+```{}
+kable(stalban,
+       col.names = c("Year", "N","Income Mean", "Income Median", "Income Gini"),
+      align = "ccccc")
+```
+
+
+4. Render the document and observe whether the new contents are accurately displayed. 
+
+
+
+
+### 3 - Cross references
+
+1. Add a label to the figure 
+
+2. Cross-reference the figure from wihtin the text ..
+
+
+3. Add a lable to the diagram and the table (#tbl-XX) in the same way. 
+
+3. In the text, find appropriate positions to reference each of the three objects (figure, diagram, table) you just labelled.
+
+4. Render the document and observe whether the new contents are displayed. 
 
 ### 4 - Visualization
 

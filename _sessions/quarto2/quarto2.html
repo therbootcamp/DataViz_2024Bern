@@ -249,7 +249,8 @@ layout: true
 &lt;br&gt;&lt;br&gt;
 &lt;div style="width:100%"&gt;
 ````markdown
-![Logo Uni Bern](unibe.png){width='30%' fig-align='left'}
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left'}
 ````
 &lt;/div&gt;
 &lt;iframe class="slide-deck" src="example_image_position/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
@@ -323,6 +324,72 @@ layout: true
 ````
 &lt;/div&gt;
 &lt;iframe class="slide-deck" src="example_image_light/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+]
+
+---
+.pull-left4[
+
+# Diagrams
+
+Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&gt;.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; hard edges, &lt;mono&gt;()&lt;/mono&gt; round edges, &lt;mono&gt;{}&lt;/mono&gt; decision point&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;connect nodes with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+{mermaid}
+  A[Hard edge]
+  B(Round edge)
+  C{Decision}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+
+.pull-left4[
+
+# Diagrams
+
+Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; hard edges, &lt;mono&gt;()&lt;/mono&gt; round edges, &lt;mono&gt;{}&lt;/mono&gt; decision point&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;connect nodes with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+{mermaid}
+flowchart LR
+  A[Hard edge] --&gt; B(Round edge)
+  B --&gt; C{Decision}
+  C --&gt; D[Result one]
+  C --&gt; E[Result two]
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_dia/dia.html" width = "100%"&gt;&lt;/iframe&gt;
 
 ]
 
@@ -434,17 +501,15 @@ Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
 
 ---
 
-# Calulcations in Tables
+# Calculations in Tables
 
 .pull-left4[
 
-The content of tables can be &lt;high&gt;calculated&lt;/high&gt; within chunks.
+Within tables &lt;high&gt;adding chunks&lt;/high&gt; allows execution of R-code.
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;In-Line R-Code and R-chunks generate &lt;high&gt;dynamic&lt;/high&gt; tables.&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; sets explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Caption is set with &lt;mono&gt;tab-cap&lt;/mono&gt; in chunk-options.&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -454,12 +519,13 @@ The content of tables can be &lt;high&gt;calculated&lt;/high&gt; within chunks.
 
 &lt;div style="width:100%"&gt;
 ````markdown
-#| label: tbl-iris
+{r}
 #| tbl-cap: "Basel data"
 library(tidyverse)
 library(knitr)
-basel &lt;-read_csv('../1_Data/basel.csv')
+basel &lt;- read_csv('../1_Data/taxation.csv')
 kable(head(basel))
+
 ````
 &lt;/div&gt;
 &lt;iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
@@ -537,9 +603,18 @@ As can been seen in @fig-logo.
 
 # Themes
 
+https://quarto.org/docs/output-formats/html-themes.html
 
 ---
 
+# Layout tricks
+
+https://quarto.org/docs/authoring/article-layout.html
+
+
+
+
+---
 
 # Presentations
 

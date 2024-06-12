@@ -1,0 +1,12 @@
+---
+title: ""
+format:
+  html
+---
+
+```{mermaid}
+flowchart LR
+  A[Hard edge]
+  B(Round edge)
+  C{Decision}
+```

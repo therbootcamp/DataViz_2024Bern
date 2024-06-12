@@ -188,7 +188,7 @@ layout: true
 
 .pull-right5[
 
-```r
+``` r
 # an object named score
 score &lt;- c(8, 4, 6, 3, 7, 3)
 
@@ -200,7 +200,7 @@ print(score)
 ## [1] 8 4 6 3 7 3
 ```
 
-```r
+``` r
 # print the object (aka show its contents)
 score
 ```
@@ -236,7 +236,7 @@ score
 
 .pull-right5[
 
-```r
+``` r
 # an object named score
 score &lt;- c(8, 4, 6, 3, 7, 3)
 
@@ -275,7 +275,7 @@ mean(score)
 .pull-right5[
 
 
-```r
+``` r
 # an object named score
 score &lt;- c(8, 4, 6, 3, 7, 3)
 
@@ -287,7 +287,7 @@ score
 ## [1] 8 4 6 3 7 3
 ```
 
-```r
+``` r
 # mean of score
 mean(score)
 ```
@@ -321,7 +321,7 @@ mean(score)
 
 .pull-right5[
 
-```r
+``` r
 # no argument
 mean()
 ```
@@ -330,7 +330,7 @@ mean()
 ## Error in mean.default(): argument "x" is missing, with no default
 ```
 
-```r
+``` r
 # one (necessary) argument
 mean(score)
 ```
@@ -339,7 +339,7 @@ mean(score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # one (necessary) argument with name
 mean(x = score)
 ```
@@ -348,7 +348,7 @@ mean(x = score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # NA added to vector score
 mean(x = c(score, NA))
 ```
@@ -382,7 +382,7 @@ mean(x = c(score, NA))
 
 .pull-right5[
 
-```r
+``` r
 # no argument
 mean()
 ```
@@ -391,7 +391,7 @@ mean()
 ## Error in mean.default(): argument "x" is missing, with no default
 ```
 
-```r
+``` r
 # one (necessary) argument
 mean(score)
 ```
@@ -400,7 +400,7 @@ mean(score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # one (necessary) argument with name
 mean(x = score)
 ```
@@ -409,7 +409,7 @@ mean(x = score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # change default in additional argument
 mean(x = c(score, NA), na.rm = TRUE)
 ```
@@ -475,14 +475,14 @@ mean(x = c(score, NA), na.rm = TRUE)
 &lt;high&gt;Install&lt;/high&gt; package &lt;high&gt;once&lt;/high&gt; using `install.packages()`
 
 
-```r
+``` r
 install.packages("tidyverse")
 ```
 &lt;br2&gt;
 &lt;high&gt;Load&lt;/high&gt; existing package &lt;high&gt;every time&lt;/high&gt; using `library()`
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
@@ -571,7 +571,7 @@ library(tidyverse)
 
 
 
-```r
+``` r
 # Numeric vector
 score &lt;- c(8, 4, 6, 3, 7, 3)
 score
@@ -581,7 +581,7 @@ score
 ## [1] 8 4 6 3 7 3
 ```
 
-```r
+``` r
 # Mean: Base-R-style
 mean(score)
 ```
@@ -590,7 +590,7 @@ mean(score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # Mean: dplyr-style
 score %&gt;%  
   mean()  
@@ -648,7 +648,7 @@ score %&gt;%
 
 &lt;br&gt;
 &lt;p align="center"&gt;
-  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/readr.png?raw=true" height=240px&gt;
 &lt;/p&gt;
 
 ]
@@ -680,7 +680,7 @@ score %&gt;%
 
 &lt;br&gt;
 &lt;p align="center"&gt;
-  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/readr.png" height=240px&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/readr.png?raw=true" height=240px&gt;
 &lt;/p&gt;
 
 ]
@@ -691,7 +691,7 @@ score %&gt;%
 
 
 
-```r
+``` r
 # Read in taxation
 basel &lt;- read_csv("1_Data/taxation.csv")
 
@@ -735,7 +735,7 @@ basel
 
 &lt;br&gt;
 &lt;p align="center"&gt;
-  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/tibble.png" height=240px&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/tibble.png?raw=true" height=240px&gt;
 &lt;/p&gt;
 
 ]
@@ -746,7 +746,7 @@ basel
 
 
 
-```r
+``` r
 # Read in taxation
 basel &lt;- read_csv("1_Data/taxation.csv")
 
@@ -791,7 +791,7 @@ basel
 
 &lt;br&gt;
 &lt;p align="center"&gt;
-  &lt;img src="https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png" height=240px&gt;
+  &lt;img src="https://github.com/rstudio/hex-stickers/blob/main/PNG/dplyr.png?raw=true" height=240px&gt;
 &lt;/p&gt;
 
 ]
@@ -865,7 +865,7 @@ basel
 .pull-left4[
 
 
-```r
+``` r
 # Select two columns
 TIBBLE %&gt;% 
   select(VAR1, VAR2)
@@ -880,7 +880,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Select columns
@@ -912,7 +912,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Slice using :
 TIBBLE %&gt;%
   slice(INDEX_START:INDEX_STOP)
@@ -928,7 +928,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
     select(year, quarter, income_mean) %&gt;%
 
@@ -963,7 +963,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Filter using logical comparisons
 TIBBLE %&gt;%
   filter(VAR1 == VAL1,
@@ -976,7 +976,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
     select(year, quarter, income_mean) %&gt;%
 
@@ -1009,7 +1009,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Sort ascending
 TIBBLE %&gt;%
   arrange(VAR1, VAR2)
@@ -1023,7 +1023,7 @@ TIBBLE %&gt;%
 
 .pull-right5[
 
-```r
+``` r
 basel %&gt;%
   select(year, quarter, income_mean) %&gt;%
   filter(year == 2017) %&gt;% 
@@ -1057,7 +1057,7 @@ basel %&gt;%
 
 
 
-```r
+``` r
 # Create new summary variables
 TIBBLE %&gt;%
   summarise(
@@ -1072,7 +1072,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   filter(year == 2017) %&gt;% 
  
@@ -1101,7 +1101,7 @@ basel %&gt;%
 
 
 
-```r
+``` r
 # Create new summary variables
 TIBBLE %&gt;%
   summarise_if(
@@ -1116,7 +1116,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;% 
   
   # Calculate averages in 2017
@@ -1150,7 +1150,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Create grouped summary variables
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
@@ -1166,7 +1166,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Calculate averages for all years
@@ -1200,7 +1200,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Create grouped summary variables
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
@@ -1216,7 +1216,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Calculate averages for all years
@@ -1254,7 +1254,7 @@ basel %&gt;%
 # `*_join()`
 
 
-```r
+``` r
 # Join two tibbles
 TIBBLE1 %&gt;%
   left_join(TIBBLE2, 
@@ -1268,7 +1268,7 @@ TIBBLE1 %&gt;%
 &lt;br&gt;
 
 
-```r
+``` r
 basel %&gt;%
   group_by(year) %&gt;% 
   summarize(
@@ -1341,7 +1341,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # wide to long
 TIBBLE %&gt;% 
   pivot_longer(cols = VARS,
@@ -1354,7 +1354,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 # wide to long
 basel %&gt;% 
  select(year, quarter, 

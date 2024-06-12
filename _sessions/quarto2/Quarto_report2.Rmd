@@ -1,0 +1,190 @@
+---
+title: "Quarto Report"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+In this practical, you will [**recreate this html report**](Report2.html).   
+
+### 0 - Preliminaries
+
+1. We will continue adapting the document you produced in the last session. 
+
+2. Create a header at the third level (`###`) with the title `The Gini Coefficient`. 
+
+3. Add the following text:
+
+```{}
+It measures inequality on a scale from 0 to 1, where higher values indicate higher inequality. This can sometimes be shown as a percentage from 0 to 100%, called the “Gini Coefficient”. A value of 0 indicates perfect equality: everyone has the same income.
+```
+
+### 1 - Add a Table of contents
+
+1. Add the following code to show a Table of Contents
+
+```{}
+format: 
+  html: 
+    toc: true
+    toc-title: Contents
+```
+
+2. Move Table of Contents to the left
+
+```{}
+toc-location: left
+```
+
+### 2 - Add a diagram
+
+1. Copy the following Mermaid code into a new chunk. 
+
+```{}
+
+```{mermaid}
+flowchart LR
+  A[Income] --> B[Wealth]
+  B --> C{Distribution}
+  C --> D[Higher Gini]
+  C --> E[Lower Gini]
+```
+
+```
+2. 
+
+### 3 - Add a table showing data for St. Alban
+
+1. TEXT data prep
+
+```{}
+#| label: tbl-gini
+#| tbl-cap: "Gini coefficient in St. Alban"
+
+stalban <- 
+basel %>%
+  filter(quarter == 'St. Alban') %>%
+  select(year, N, income_mean, income_median, income_gini)
+```
+
+2. Add the knitr package to the initial chunk in your document with:
+
+```{}
+load(knitr)
+```
+
+3. add kable(stalban)
+
+```{}
+kable(stalban,
+       col.names = c("Year", "N","Income Mean", "Income Median", "Income Gini"),
+      align = "ccccc")
+```
+
+
+4. Render the document and observe whether the new contents are accurately displayed. 
+
+
+
+
+### 3 - Cross references
+
+1. Add a label to the figure 
+
+2. Cross-reference the figure from wihtin the text ..
+
+
+3. Add a lable to the diagram and the table (#tbl-XX) in the same way. 
+
+3. In the text, find appropriate positions to reference each of the three objects (figure, diagram, table) you just labelled.
+
+4. Render the document and observe whether the new contents are displayed. 
+
+### 4 - Visualization
+
+1. Create a header at the third level (`###`) with the title `Quantifying inequality`. 
+
+2. Below the header, add the following text:
+
+```{}
+The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.
+```
+
+3. Next, move the cursor below the text you just added and add a new R chunk (`Code - Insert Chunk`).
+
+4. Now, copy the following code into the newly-created, empty chunk. 
+
+```{}
+# create quarter factor
+basel <- basel %>%
+  arrange(year, income_mean) %>% 
+  mutate(quarter = as_factor(quarter)) 
+  
+# create income plot
+plot_income <- basel %>% 
+  ggplot(aes(x = year, y = income_mean, col = quarter)) +
+  labs(x = "Year", y = "Income")
+
+# create income plot
+plot_wealth <- basel %>%
+  ggplot(aes(x = year, y = wealth_median, col = quarter)) +
+  labs(x = "Year", y = "Wealth")
+
+# create joint plot
+plot_income + plot_wealth  + 
+  plot_layout(guides = "collect") +
+  plot_annotation(title = "Inequality in Basel",
+                  subtitle = "Income and wealth development from 2001 to 2017",
+                  caption = "Source: Open Data Basel",
+                  tag_levels = "A") & 
+  geom_point() & 
+  geom_line() &
+  scale_color_viridis_d() &
+  theme_minimal() &
+  theme(legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.height = unit(.01,"in"))
+  
+```
+
+5. Render the document and observe that there it now includes a visualization.
+
+6. Add the following to the chunk settings: `|# fig-asp: .7` to improve the use more of the width of the document, and `|# out-width: 100%`.
+
+5. Render the document and observe that the aspect ratio of the plot has changed.
+
+### 5 - Conclusion
+
+1. Create a header at the third level (`###`) with the title `Income and wealth`. 
+
+2. Below the header, add the following text:
+
+```{}
+The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.
+```
+
+3. Render the document and observe that all of the report's contents are now included.
+
+### 6 - Theme
+
+1. Finally, change the YAML header so that a different styling theme (`flatly`) is used. 
+
+````markdown
+format: 
+  html
+execute:
+  echo: false
+theme: flatly
+````
+
+2. Render the document and observe that the report is complete.
+
+
+
+
+
+### Further Tasks
+
+1. Produce a .reveal-js presentation with at least 6 slides using the data in inequality from Basel. 

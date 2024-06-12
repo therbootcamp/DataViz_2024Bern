@@ -1,11 +1,10 @@
 ---
 title: "Quarto Report"
+format: html
 execute: 
   echo: false
   message: false
   warning: false
-editor_options:
-  chunk_output_type: console
 ---
 
 In this practical, you will [**recreate this html report**](Report.html).   
@@ -139,3 +138,11 @@ theme: flatly
 ````
 
 2. Render the document and observe that the report is complete.
+
+### 7 - Further tasks
+
+1. After the figure add a new paragraph entitled: `Top and bottom quarters`.
+
+2. Within a new R-chunk produce a vector `high` with the five quarters with the highest income, and a vector `low` with the five quarters with the lowest income.  
+
+3. Include the names of these ten quarters in the new paragraph as inline code.

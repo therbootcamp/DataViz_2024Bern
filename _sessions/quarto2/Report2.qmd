@@ -23,7 +23,9 @@ basel <- read_csv("1_Data/taxation.csv")
 ```
 
 
-![](https://therbootcamp.github.io/DataViz_2024Bern/_sessions/welcome/image/basel_open_data.png){width=100 fig-align="right"}
+![](https://therbootcamp.github.io/DataViz_2024Bern/_sessions/welcome/image/basel_open_data.png){width="100" fig-align="right" position=absolute top=0}
+
+
 
 Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.    
 

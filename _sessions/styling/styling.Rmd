@@ -1068,12 +1068,12 @@ basel_agg <- basel %>%
   # get income mean in 2001
   arrange(year, quarter) %>% 
   group_by(quarter) %>% 
-  mutate(inc01 = first(income_med.)) %>% 
+  mutate(inc01 = first(income_med)) %>% 
   
   # group by year and quarter
   group_by(year, 
            hi = inc01 > median(inc01)) %>% 
-  summarize(income = mean(income_med.)) %>% 
+  summarize(income = mean(income_med)) %>% 
   
   # remove grouping
   ungroup()
@@ -1110,7 +1110,8 @@ basel_agg %>%
   # plot code
   ggplot(aes(x = year, y = income, 
              col = hi)) +
-  geom_line() + geom_point() +
+  geom_line() + 
+  geom_point() +
   theme_minimal() +
   theme(legend.position = "none") + 
   scale_color_viridis_d()
@@ -1129,7 +1130,8 @@ basel_agg %>%
   # plot code
   ggplot(aes(x = year, y = income, 
              col = hi)) +
-  geom_line() + geom_point() +
+  geom_line() + 
+  geom_point() +
   theme_minimal() +
   theme(legend.position = "none") + 
   scale_color_viridis_d()

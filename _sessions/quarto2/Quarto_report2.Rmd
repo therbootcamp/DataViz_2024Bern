@@ -7,23 +7,15 @@ execute:
   warning: false
 ---
 
-In this practical, you will [**recreate this html report**](Report2.html).   
+In this practical, you will [**update and adapt your  report**](Report2.html).
 
 ### 0 - Preliminaries
 
-1. We will continue adapting the document you produced in the last session. 
+1. Open the `basel_report.qmd` file you created in the last session.
 
-2. Create a header at the third level (`###`) with the title `The Gini Coefficient`. 
+### 1 - Add a Table of Contents
 
-3. Add the following text:
-
-```{}
-It measures inequality on a scale from 0 to 1, where higher values indicate higher inequality. This can sometimes be shown as a percentage from 0 to 100%, called the “Gini Coefficient”. A value of 0 indicates perfect equality: everyone has the same income.
-```
-
-### 1 - Add a Table of contents
-
-1. Add the following code to show a Table of Contents
+2. Add the following code to show a Table of Contents
 
 ```{}
 format: 
@@ -32,13 +24,27 @@ format:
     toc-title: Contents
 ```
 
-2. Move Table of Contents to the left
+3. Move Table of Contents to the left
 
 ```{}
 toc-location: left
 ```
 
-### 2 - Add a diagram
+### 3 - Add a new paragraph
+
+1. Create a header at the third level (`###`) with the title `The Gini Coefficient`. 
+
+2. Add the following text:
+
+```{}
+It measures inequality on a scale from 0 to 1, where higher
+values indicate higher inequality. This can sometimes be shown
+as a percentage from 0 to 100%, called the “Gini Coefficient”.
+A value of 0 indicates perfect equality: everyone has the same
+income.
+```
+
+### 3 - Add a diagram for the Gini coefficient
 
 1. Copy the following Mermaid code into a new chunk. 
 
@@ -46,23 +52,23 @@ toc-location: left
 
 ```{mermaid}
 flowchart LR
-  A[Income] --> B[Wealth]
-  B --> C{Distribution}
-  C --> D[Higher Gini]
-  C --> E[Lower Gini]
+  A[X] --> B[X]
+  B --> C{X}
+  C --> D[X]
+  C --> E[X]
 ```
 
 ```
-2. 
 
-### 3 - Add a table showing data for St. Alban
+2. Fill in the missing words in the Mermaid code to generate the diagram explaining the Gini coefficient.
+
+### 4 - Add a table in the Appendix showing data for St. Alban
 
 1. TEXT data prep
 
 ```{}
 #| label: tbl-gini
 #| tbl-cap: "Gini coefficient in St. Alban"
-
 stalban <- 
 basel %>%
   filter(quarter == 'St. Alban') %>%

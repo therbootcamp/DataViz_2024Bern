@@ -1132,8 +1132,6 @@ basel %>%
 <img src="image/recosphere.png" height="300px">
 </p>
 
-
-
 ---
 
 class: middle, center

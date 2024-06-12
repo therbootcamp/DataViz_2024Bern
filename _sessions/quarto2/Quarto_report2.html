@@ -96,52 +96,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this practical, you will <a href="Report2.html"><strong>recreate this html report</strong></a>.</p>
+<p>In this practical, you will <a href="Report2.html"><strong>update and adapt your report</strong></a>.</p>
 <section id="preliminaries" class="level3">
 <h3 class="anchored" data-anchor-id="preliminaries">0 - Preliminaries</h3>
 <ol type="1">
-<li><p>We will continue adapting the document you produced in the last session.</p></li>
-<li><p>Create a header at the third level (<code>###</code>) with the title <code>The Gini Coefficient</code>.</p></li>
-<li><p>Add the following text:</p></li>
+<li>Open the <code>basel_report.qmd</code> file you created in the last session.</li>
 </ol>
-<pre><code>It measures inequality on a scale from 0 to 1, where higher values indicate higher inequality. This can sometimes be shown as a percentage from 0 to 100%, called the “Gini Coefficient”. A value of 0 indicates perfect equality: everyone has the same income.</code></pre>
 </section>
 <section id="add-a-table-of-contents" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-table-of-contents">1 - Add a Table of contents</h3>
-<ol type="1">
+<h3 class="anchored" data-anchor-id="add-a-table-of-contents">1 - Add a Table of Contents</h3>
+<ol start="2" type="1">
 <li>Add the following code to show a Table of Contents</li>
 </ol>
 <pre><code>format: 
   html: 
     toc: true
     toc-title: Contents</code></pre>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>Move Table of Contents to the left</li>
 </ol>
 <pre><code>toc-location: left</code></pre>
 </section>
-<section id="add-a-diagram" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-diagram">2 - Add a diagram</h3>
+<section id="add-a-new-paragraph" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-new-paragraph">3 - Add a new paragraph</h3>
+<ol type="1">
+<li><p>Create a header at the third level (<code>###</code>) with the title <code>The Gini Coefficient</code>.</p></li>
+<li><p>Add the following text:</p></li>
+</ol>
+<pre><code>It measures inequality on a scale from 0 to 1, where higher
+values indicate higher inequality. This can sometimes be shown
+as a percentage from 0 to 100%, called the “Gini Coefficient”.
+A value of 0 indicates perfect equality: everyone has the same
+income.</code></pre>
+</section>
+<section id="add-a-diagram-for-the-gini-coefficient" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-diagram-for-the-gini-coefficient">3 - Add a diagram for the Gini coefficient</h3>
 <ol type="1">
 <li>Copy the following Mermaid code into a new chunk.</li>
 </ol>
 <pre><code>
 ```{mermaid}
 flowchart LR
-  A[Income] --&gt; B[Wealth]
-  B --&gt; C{Distribution}
-  C --&gt; D[Higher Gini]
-  C --&gt; E[Lower Gini]</code></pre>
-<pre><code>2. 
+  A[X] --&gt; B[X]
+  B --&gt; C{X}
+  C --&gt; D[X]
+  C --&gt; E[X]</code></pre>
+<pre><code>
+2. Fill in the missing words in the Mermaid code to generate the diagram explaining the Gini coefficient.
 
-### 3 - Add a table showing data for St. Alban
+### 4 - Add a table in the Appendix showing data for St. Alban
 
 1. TEXT data prep
 
 ```{}
 #| label: tbl-gini
 #| tbl-cap: "Gini coefficient in St. Alban"
-
 stalban &lt;- 
 basel %&gt;%
   filter(quarter == 'St. Alban') %&gt;%

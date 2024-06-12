@@ -2,7 +2,7 @@
 title: "Quarto II"
 author: "Visualizing and communicating data with R<br>
   <a href='https://therbootcamp.github.io'>
-    <font style='font-size:1em'>The R Bootcamp @ UniBE</font>
+    <font style='font-size:1em'>The R Bootcamp @ Bern</font>
   </a>
   <br>
   <a href='https://therbootcamp.github.io/DataViz_2024Bern/'>

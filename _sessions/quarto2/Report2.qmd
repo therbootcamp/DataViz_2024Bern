@@ -26,34 +26,35 @@ basel <- read_csv("1_Data/taxation.csv")
 ![](https://avatars.githubusercontent.com/u/46960540?s=200&v=4){width="200" align="center"}
 :::
 
-Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.    
+Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters from 2001 to 2017.    
 
 ### Income and wealth
 
-The data contains information on the wealth and income of the inhabitants of the `r length(unique(basel))` quarters of Basel, which was determined from tax-return documents. The data was provided by [Open Data Basel](https://www.opendata.bs.ch/). 
-
-### The Gini Coefficient
-
-It measures inequality on a scale from 0 to 1, where higher values indicate higher inequality. This can sometimes be shown as a percentage from 0 to 100%, called the “Gini Coefficient” (see @fig-gini for a causal explanation). A value of 0 indicates perfect equality: everyone has the same income.
+The data provided by [Open Data Basel](https://www.opendata.bs.ch/) contains information on the wealth and income of the inhabitants of the `r length(unique(basel$quarter))` quarters of Basel based on tax-return documents. @fig-gini presents a schematic overview of the data. 
 
 ```{mermaid}
 %%| echo: false
 %%| label: fig-gini
-%%| fig-cap: "Gini causality"
+%%| fig-cap: "Schematic overview of the data"
 flowchart LR
-  A[Income] --> B[Wealth]
-  B --> C{Distribution}
-  C --> D[Higher Gini]
-  C --> E[Lower Gini]
+  A{Basel} --> B[Altstadt Grossbasel]
+  A{Basel} --> C[...]
+  A{Basel} --> D[Wettstein]
+  B --> E[2001]
+  B --> F[...]
+  B --> G[2017]
+  E --> H[Number of tax returns]
+  E --> I[Mean income]
+  E --> J[Mean Wealth]
 ```
 
 ### Quantifying inequality
 
-The figure (see @fig-inequality) below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.    
+@fig-inequality shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.    
 
 ```{r, echo = FALSE, fig.asp=.7}
 #| label: fig-inequality
-#| fig-cap: "Inequality in Basel"
+#| fig-cap: "Inequality in Basel. The figure shows the development of income and walth from 2001 to 2017, revealing a declining development for poorer quarters (darker shades) and an inclining development for richer quarters (lighter colors). The data was kindly provided by Open Data Basel-Stadt"
 
 # create quarter factor
 basel <- basel %>%
@@ -75,7 +76,6 @@ plot_income + plot_wealth  +
   plot_layout(guides = "collect") +
   plot_annotation(title = "Inequality in Basel",
                   subtitle = "Income and wealth development from 2001 to 2017",
-                  caption = "Source: Open Data Basel",
                   tag_levels = "A") & 
   geom_point() & 
   geom_line() &
@@ -93,18 +93,18 @@ The presented analysis of income and wealth inequalities based on Basel's quarte
 
 ### Appendix
 
-We focus on St. Alban and list the income, wealth and Gini details in @tbl-gini.
+@tbl-grossbasel shows excerpt of the data for quarter *Alstadt Grossbasel*.
 
 ```{r}
-#| label: tbl-gini
-#| tbl-cap: "Gini coefficient in St. Alban"
+#| label: tbl-grossbasel
+#| tbl-cap: "Data excerpt for Altstadt Grossbasel"
 stalban <- 
 basel %>%
-  filter(quarter == 'St. Alban') %>%
-  select(year, N, income_mean, income_median, income_gini)
+  filter(quarter == 'Altstadt Grossbasel') %>%
+  select(quarter, year, N, income_mean, wealth_mean)
 
 kable(stalban,
-       col.names = c("Year", "N","Income Mean", "Income Median", "Income Gini"),
+       col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
       align = "ccccc")
 ```
 

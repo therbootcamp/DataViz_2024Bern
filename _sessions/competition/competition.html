@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="The R Bootcamp @ Bern" />
+
+
+<title>Report competition</title>
+
+<script src="competition_files/header-attrs-2.25/header-attrs.js"></script>
+<script src="competition_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="competition_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="competition_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="competition_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="competition_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="competition_files/navigation-1.1/tabsets.js"></script>
+<link href="competition_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="competition_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Report competition</h1>
+<h3 class="subtitle"><a href='https://therbootcamp.github.io/DataViz_2024Bern'>Visualizing
+and communicating data with R</a></h3>
+<h4 class="author">The R Bootcamp @ Bern</h4>
+
+</div>
+
+
+<p align="center">
+<img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1150px-IMDB_Logo_2016.svg.png?20200406194337" margin=0><br>
+<font style="font-size:10px">from <a
+href="https://commons.wikimedia.org/wiki/File:IMDB_Logo_2016.svg">commons.wikimedia.org</a></font>
+</p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Proof your visualization and communication competence using ggplot
+and quarto in a report competition. Dig deep into your skills to produce
+a report that effectively communicates your IMDb data project and the
+visualizations and insights you have generated. The best report earns
+chocolate.</p>
+<p>The competition ends in…</p>
+<font style="font-size:32px">
+<p id="demo" align="center">
+</p>
+<p></font></p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 14, 2024 17:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<p><br></p>
+</div>
+<div id="task" class="section level2">
+<h2>Task</h2>
+<p>The movie industry is in decline. Use the <code>imdb.csv</code> and
+<code>oscars.csv</code> data set to shed light on key aspects of
+successful movies. Write a report around the data visualization you have
+previously produced.</p>
+<p>The best report will receive a prize and will be identified in a
+two-stage procedure. In the first stage, you gather in small groups of 4
+or 5 to review your individual reports and identify the best report in
+your group. In the second stage, the reports identified by each group
+will be shown presented (3 min) to the entire class before the entire
+the class votes on the overall best report.</p>
+<p>Criteria for reports are the quality of the visualization, the
+clarity of the report’s content and organization, and the effective use
+of advanced quarto features.</p>
+<div id="conditions" class="section level3">
+<h3>Conditions</h3>
+<ol style="list-style-type: decimal">
+<li><p>The reports must be rendered.</p></li>
+<li><p>The reports can focus on any meaningful question concerning the
+<code>imdb.csv</code> data and can make use of the
+<code>oscars.csv</code> data.</p></li>
+<li><p>You are allowed to adapt the visualization you have previously
+produced.</p></li>
+<li><p>The report must conatin…<br />
+</p></li>
+</ol>
+<ul>
+<li>a brief description of your question and the data set(s)</li>
+<li>a brief description of your analytic approach and results</li>
+<li>a single figure (multiple panels are permitted)</li>
+<li>a brief section on limitations and conclusions</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>All features of quarto can be used.</li>
+</ol>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

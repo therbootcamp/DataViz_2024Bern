@@ -1,0 +1,99 @@
+---
+title: "Report competition"
+subtitle: "<a href='https://therbootcamp.github.io/DataViz_2024Bern'>Visualizing and communicating data with R</a>"
+author: "The R Bootcamp @ Bern"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE, 
+                      eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE)
+
+options(digits = 3)
+```
+
+<p align="center">
+<img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1150px-IMDB_Logo_2016.svg.png?20200406194337" margin=0><br>
+<font style="font-size:10px">from [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:IMDB_Logo_2016.svg)</font>
+</p>
+
+
+## Overview
+
+Proof your visualization and communication competence using ggplot and quarto in a report competition. Dig deep into your skills to produce a report that effectively communicates your IMDb data project and the visualizations and insights you have generated. The best report earns chocolate.  
+
+The competition ends in...
+
+<font style="font-size:32px"><p id="demo" align="center"></p></font>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 14, 2024 17:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<br>
+
+## Task
+
+The movie industry is in decline. Use the `imdb.csv` and `oscars.csv` data set to shed light on key aspects of successful movies. Write a report around the data visualization you have previously produced.      
+
+The best report will receive a prize and will be identified in a two-stage procedure. In the first stage, you gather in small groups of 4 or 5 to review your individual reports and identify the best report in your group. In the second stage, the reports identified by each group will be shown presented (3 min) to the entire class before the entire the class votes on the overall best report.    
+
+Criteria for reports are the quality of the visualization, the clarity of the report's content and organization, and the effective use of advanced quarto features.
+
+  
+### Conditions
+
+1. The reports must be rendered.
+
+2. The reports can focus on any meaningful question concerning the `imdb.csv` data and can make use of the `oscars.csv` data. 
+
+3. You are allowed to adapt the visualization you have previously produced. 
+
+4. The report must conatin...   
+  - a brief description of your question and the data set(s)
+  - a brief description of your analytic approach and results
+  - a single figure (multiple panels are permitted)
+  - a brief section on limitations and conclusions
+  
+5. All features of quarto can be used.  
+
+
+
+
+

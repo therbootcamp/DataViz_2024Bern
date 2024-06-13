@@ -114,7 +114,7 @@ layout: true
 ![Logo Uni Bern](unibe.png)
 ````
 &lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+&lt;iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 400&gt;&lt;/iframe&gt;
 
 
 ]
@@ -337,8 +337,8 @@ Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&g
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; hard edges, &lt;mono&gt;()&lt;/mono&gt; round edges, &lt;mono&gt;{}&lt;/mono&gt; decision point&lt;/span&gt;&lt;/li&gt;
-        &lt;li class="m4"&gt;&lt;span&gt;connect nodes with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -365,13 +365,13 @@ Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&g
 
 # Diagrams
 
-Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&gt;
+Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams.&lt;/high&gt;
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; hard edges, &lt;mono&gt;()&lt;/mono&gt; round edges, &lt;mono&gt;{}&lt;/mono&gt; decision point&lt;/span&gt;&lt;/li&gt;
-        &lt;li class="m4"&gt;&lt;span&gt;connect nodes with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -420,10 +420,44 @@ Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
 | 123     | 123  |   123 |  123   |
 | 1       | 1    |     1 |   1    |
 
-: Simple pipe table syntax
 ````
 &lt;/div&gt;
 &lt;iframe class="slide-deck" src="example_table/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom &lt;high&gt;markdown table&lt;/high&gt; output.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;---&lt;/mono&gt; indicate the &lt;high&gt;relative width&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;:&lt;/mono&gt; the &lt;high&gt;alignment&lt;/high&gt; of a column.&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;{tbl-colwidths='[W,X,Y,Z]'}&lt;/mono&gt; sets explicit &lt;high&gt;column width.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Complex &lt;high&gt;sub-table&lt;/high&gt; designs are possible.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;div style="width:100%"&gt;
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: {tbl-colwidths="[15,15,30,40]"}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_table_calc/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
 
 
 ]
@@ -521,7 +555,6 @@ Within tables &lt;high&gt;adding chunks&lt;/high&gt; allows execution of R-code.
 ````markdown
 {r}
 #| tbl-cap: "Basel data"
-library(tidyverse)
 library(knitr)
 basel &lt;- read_csv('../1_Data/taxation.csv')
 kable(head(basel))
@@ -589,7 +622,8 @@ Cross references  &lt;high&gt;ease navigation &lt;/high&gt; of documents.
 
 &lt;div style="width:100%"&gt;
 ````markdown
-![Logo Uni Bern](unibe.png){width='30%' fig-align='left' #fig-logo} 
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left' #fig-logo} 
 
 As can been seen in @fig-logo.
 ````
@@ -601,10 +635,27 @@ As can been seen in @fig-logo.
 
 ---
 
-# Themes - show themes
+# Margin content
 
-https://quarto.org/docs/output-formats/html-themes.html
+.pull-left4[
 
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Place content within the right &lt;high&gt;margin&lt;/high&gt; of your document. &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Among others, &lt;high&gt;images, figures or tables&lt;/high&gt; are possible content. &lt;high&gt;&lt;high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+
+
+
+&lt;iframe class="slide-deck" src="https://bootswatch.com" width = "100%" height = 500&gt;&lt;/iframe&gt;
+
+
+]
 ---
 
 # Layout tricks - Margins

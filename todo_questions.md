@@ -1,36 +1,20 @@
-# general stuff
-
-- Project work in practicals
-- check June 2024 / UniBE 
-
-
-
 # Principles
-
-- check slides
-- practical missing?!
-
 
 # Intro2R
 
-- check slides
-- Slide 29
-
-tidyR abbildung statt wide-long
-https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf
-- practical is hands on demo?!
-
 # ggplot
-- date checked ok
-
-- Slide 3
-facets jetzt als Punkt 4 - Reihenfolgen hinten?
 
 # Styling
 
 # Viz Problem
 
+line 49: - Are movies that receive more positive ratings?
+
 # Maps & Nets
+
+- practical: Maps&Nets in notebooks - 
+line 139: typo stricly
+line 19: 2. Load the `sf`, `ggraph` and `tidygraph` packages. 
 
 # Animation
 

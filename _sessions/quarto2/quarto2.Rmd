@@ -140,7 +140,7 @@ basel <- read_csv("1_data/taxation.csv")
 ![Logo Uni Bern](unibe.png)
 ````
 </div>
-<iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 300></iframe>
+<iframe class="slide-deck" src="example_image/image.html" width = "100%" height = 400></iframe>
 
 
 ]
@@ -363,8 +363,8 @@ Quarto has native support for embedding <high>Mermaid  diagrams</high>.
 <ul>
   <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
   <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
-    <li class="m3"><span><mono>[]</mono> hard edges, <mono>()</mono> round edges, <mono>{}</mono> decision point</span></li>
-        <li class="m4"><span>connect nodes with <mono>--></mono></span></li>
+    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
+        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
 </ul>
 
 
@@ -391,13 +391,13 @@ Quarto has native support for embedding <high>Mermaid  diagrams</high>.
 
 # Diagrams
 
-Quarto has native support for embedding <high>Mermaid  diagrams</high>
+Quarto has native support for embedding <high>Mermaid  diagrams.</high>
 
 <ul>
   <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
   <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
-    <li class="m3"><span><mono>[]</mono> hard edges, <mono>()</mono> round edges, <mono>{}</mono> decision point</span></li>
-        <li class="m4"><span>connect nodes with <mono>--></mono></span></li>
+    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
+        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
 </ul>
 
 
@@ -446,10 +446,44 @@ Quarto supports custom <high>markdown table</high> output.
 | 123     | 123  |   123 |  123   |
 | 1       | 1    |     1 |   1    |
 
-: Simple pipe table syntax
 ````
 </div>
 <iframe class="slide-deck" src="example_table/table.html" width = "100%" height = 300></iframe>
+
+
+]
+
+---
+
+# Tables
+
+.pull-left4[
+
+Quarto supports custom <high>markdown table</high> output.
+
+<ul>
+  <li class="m1"><span><mono>---</mono> indicate the <high>relative width</high> of a column.</li>
+  <li class="m2"><span><mono>:</mono> the <high>alignment</high> of a column.</li>
+  <li class="m3"><span><mono>{tbl-colwidths='[W,X,Y,Z]'}</mono> sets explicit <high>column width.</high></span></li> 
+  <li class="m4"><span>Complex <high>sub-table</high> designs are possible.</high></span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+<div style="width:100%">
+````markdown
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: {tbl-colwidths="[15,15,30,40]"}
+````
+</div>
+<iframe class="slide-deck" src="example_table_calc/table.html" width = "100%" height = 300></iframe>
 
 
 ]
@@ -547,7 +581,6 @@ Within tables <high>adding chunks</high> allows execution of R-code.
 ````markdown
 {r}
 #| tbl-cap: "Basel data"
-library(tidyverse)
 library(knitr)
 basel <- read_csv('../1_Data/taxation.csv')
 kable(head(basel))
@@ -615,7 +648,8 @@ Cross references  <high>ease navigation </high> of documents.
 
 <div style="width:100%">
 ````markdown
-![Logo Uni Bern](unibe.png){width='30%' fig-align='left' #fig-logo} 
+![Logo Uni Bern](unibe.png)
+{width='30%' fig-align='left' #fig-logo} 
 
 As can been seen in @fig-logo.
 ````
@@ -627,10 +661,27 @@ As can been seen in @fig-logo.
 
 ---
 
-# Themes - show themes
+# Margin content
 
-https://quarto.org/docs/output-formats/html-themes.html
+.pull-left4[
 
+
+<ul>
+  <li class="m1"><span>Place content within the right <high>margin</high> of your document. </span></li>
+  <li class="m2"><span>Among others, <high>images, figures or tables</high> are possible content. <high><high>.</span></li>
+</ul>
+
+
+]
+
+.pull-right5[
+
+
+
+<iframe class="slide-deck" src="https://bootswatch.com" width = "100%" height = 500></iframe>
+
+
+]
 ---
 
 # Layout tricks - Margins

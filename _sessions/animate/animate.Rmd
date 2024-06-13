@@ -1192,7 +1192,7 @@ p
 
 class: middle, center
 
-<h1><font style="font-size:12px">click to download</font><br><a href="https://www.dropbox.com/s/eoabrgz52rj87cu/Animate.Rmd?dl=1">Practical</a></h1>
+<h1>Practical</h1>
 
 
 

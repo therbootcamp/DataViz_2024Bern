@@ -353,71 +353,6 @@ basel <- read_csv("1_data/taxation.csv")
 
 ]
 
----
-.pull-left4[
-
-# Diagrams
-
-Quarto has native support for embedding <high>Mermaid  diagrams</high>.
-
-<ul>
-  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
-  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
-    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
-        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
-</ul>
-
-
-]
-
-.pull-right5[
-<br><br>
-<div style="width:100%">
-````markdown
-{mermaid}
-  A[Hard edge]
-  B(Round edge)
-  C{Decision}
-````
-</div>
-<iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350></iframe>
-
-]
-
----
-
-
-.pull-left4[
-
-# Diagrams
-
-Quarto has native support for embedding <high>Mermaid  diagrams.</high>
-
-<ul>
-  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
-  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
-    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
-        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
-</ul>
-
-
-]
-
-.pull-right5[
-<br><br>
-<div style="width:100%">
-````markdown
-{mermaid}
-flowchart LR
-  A[Hard edge] --> B(Round edge)
-  B --> C{Decision}
-  C --> D[Result one]
-  C --> E[Result two]
-````
-</div>
-<iframe class="slide-deck" src="example_dia/dia.html" width = "100%"></iframe>
-
-]
 
 ---
 
@@ -587,7 +522,7 @@ kable(head(basel))
 
 ````
 </div>
-<iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300></iframe>
+<iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 350></iframe>
 
 
 ]
@@ -661,15 +596,129 @@ As can been seen in @fig-logo.
 
 ---
 
-# Margin content
+.pull-left4[
+
+# Diagrams
+
+Quarto has native support for embedding <high>Mermaid  diagrams</high>.
+
+<ul>
+  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
+  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
+    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
+        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
+</ul>
+
+
+]
+
+.pull-right5[
+<br><br>
+<div style="width:100%">
+````markdown
+{mermaid}
+  A[Hard edge]
+  B(Round edge)
+  C{Decision}
+````
+</div>
+<iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350></iframe>
+
+]
+
+---
+
 
 .pull-left4[
 
+# Diagrams
+
+Quarto has native support for embedding <high>Mermaid  diagrams.</high>
 
 <ul>
-  <li class="m1"><span>Place content within the right <high>margin</high> of your document. </span></li>
-  <li class="m2"><span>Among others, <high>images, figures or tables</high> are possible content. <high><high>.</span></li>
+  <li class="m1"><span>This allows you to create flowcharts or sequence diagrams with <high>plain text syntax</high> similar to Markdown.</span></li>
+  <li class="m2"><span>initialize with <mono>{mermaid}</mono></span></li>
+    <li class="m3"><span><mono>[]</mono> <high>hard</high> edges, <mono>()</mono> <high>round</high> edges, <mono>{}</mono> <high>decision point</high></span></li>
+        <li class="m4"><span><high>connect nodes</high> with <mono>--></mono></span></li>
 </ul>
+
+
+]
+
+.pull-right5[
+<br><br>
+<div style="width:100%">
+````markdown
+{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+````
+</div>
+<iframe class="slide-deck" src="example_dia/dia.html" width = "100%"></iframe>
+
+]
+
+---
+
+# Placement of content
+
+.pull-left4[
+
+Quarto support various options to modify the <high>standard page layout</high>.
+<ul>
+  <li class="m1"><span>Let content <high>overflow</high> the standard layout. </span></li>
+  
+  <li class="m2"><span>Place content in the <high>right margin</high>. </span></li>
+  <li class="m3"><span>Among others, <high>images, figures or tables</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Description</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>column-body</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Standard</high> text body.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>column-body-outset</mono>
+  </td>
+  <td bgcolor="white">
+   Extend <high>outside</high> text body.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>column-page</mono>
+  </td>
+  <td bgcolor="white">
+   <high>Wide</high> content.    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>column-margin</mono>
+  </td>
+  <td bgcolor="white">
+   Place content <high>in the margin</high>.    
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -677,18 +726,11 @@ As can been seen in @fig-logo.
 .pull-right5[
 
 
-
-<iframe class="slide-deck" src="https://bootswatch.com" width = "100%" height = 500></iframe>
-
+<p align = "center">
+  <img src="image/margin.png" width=500><br>
+</p>
 
 ]
----
-
-# Layout tricks - Margins
-
-https://quarto.org/docs/authoring/article-layout.html
-
-
 
 
 ---

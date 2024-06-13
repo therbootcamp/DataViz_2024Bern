@@ -15,7 +15,7 @@ In this practical, you will [**update and adapt your  report**](Report2.html).
 
 ### 1 - Add a Table of Contents
 
-2. Add the following code to show a Table of Contents
+2. Add the following code to show a Table of Contents and change the Title to `Contents`
 
 ```{}
 format: 
@@ -36,43 +36,44 @@ toc-location: left
 
 2. Add the following text:
 
-```{}
-It measures inequality on a scale from 0 to 1, where higher
-values indicate higher inequality. This can sometimes be shown
-as a percentage from 0 to 100%, called the “Gini Coefficient”.
-A value of 0 indicates perfect equality: everyone has the same
-income.
-```
 
-### 3 - Add a diagram for the Gini coefficient
+
+### 3 - Add a diagram to describe the data structure
 
 1. Copy the following Mermaid code into a new chunk. 
 
 ```{}
 
 ```{mermaid}
+%%| echo: false
+%%| label: fig-gini
+%%| fig-cap: "Schematic overview of the data"
 flowchart LR
-  A[X] --> B[X]
-  B --> C{X}
-  C --> D[X]
-  C --> E[X]
+  A{Basel} --> B[Altstadt Grossbasel]
+  A{Basel} --> C[...]
+  A{Basel} --> D[Wettstein]
+  B --> E[2001]
+  B --> F[...]
+  B --> G[2017]
+  E --> H[Number of tax returns]
+  E --> I[Mean income]
+  E --> J[Mean Wealth]
 ```
 
 ```
 
-2. Fill in the missing words in the Mermaid code to generate the diagram explaining the Gini coefficient.
-
-### 4 - Add a table in the Appendix showing data for St. Alban
+### 4 - Add a table in the Appendix showing data for Altstadt Grossbasel
 
 1. TEXT data prep
 
 ```{}
-#| label: tbl-gini
-#| tbl-cap: "Gini coefficient in St. Alban"
-stalban <- 
+#| label: tbl-grossbasel
+#| tbl-cap: "Data excerpt for Altstadt Grossbasel"
+AltGross <- 
 basel %>%
-  filter(quarter == 'St. Alban') %>%
-  select(year, N, income_mean, income_median, income_gini)
+  filter(quarter == 'Altstadt Grossbasel') %>%
+  select(quarter, year, N, income_mean, wealth_mean)
+
 ```
 
 2. Add the knitr package to the initial chunk in your document with:
@@ -81,11 +82,11 @@ basel %>%
 load(knitr)
 ```
 
-3. add kable(stalban)
+3. add kable(AltGross)
 
 ```{}
-kable(stalban,
-       col.names = c("Year", "N","Income Mean", "Income Median", "Income Gini"),
+kable(AltGross,
+       col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
       align = "ccccc")
 ```
 

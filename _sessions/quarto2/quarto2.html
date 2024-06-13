@@ -327,71 +327,6 @@ layout: true
 
 ]
 
----
-.pull-left4[
-
-# Diagrams
-
-Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&gt;.
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;div style="width:100%"&gt;
-````markdown
-{mermaid}
-  A[Hard edge]
-  B(Round edge)
-  C{Decision}
-````
-&lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350&gt;&lt;/iframe&gt;
-
-]
-
----
-
-
-.pull-left4[
-
-# Diagrams
-
-Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams.&lt;/high&gt;
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;div style="width:100%"&gt;
-````markdown
-{mermaid}
-flowchart LR
-  A[Hard edge] --&gt; B(Round edge)
-  B --&gt; C{Decision}
-  C --&gt; D[Result one]
-  C --&gt; E[Result two]
-````
-&lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_dia/dia.html" width = "100%"&gt;&lt;/iframe&gt;
-
-]
 
 ---
 
@@ -561,7 +496,7 @@ kable(head(basel))
 
 ````
 &lt;/div&gt;
-&lt;iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 300&gt;&lt;/iframe&gt;
+&lt;iframe class="slide-deck" src="example_table_col/table.html" width = "100%" height = 350&gt;&lt;/iframe&gt;
 
 
 ]
@@ -635,15 +570,129 @@ As can been seen in @fig-logo.
 
 ---
 
-# Margin content
+.pull-left4[
+
+# Diagrams
+
+Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams&lt;/high&gt;.
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+{mermaid}
+  A[Hard edge]
+  B(Round edge)
+  C{Decision}
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_dia/dia_small.html" width = "100%", height = 350&gt;&lt;/iframe&gt;
+
+]
+
+---
+
 
 .pull-left4[
 
+# Diagrams
+
+Quarto has native support for embedding &lt;high&gt;Mermaid  diagrams.&lt;/high&gt;
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Place content within the right &lt;high&gt;margin&lt;/high&gt; of your document. &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Among others, &lt;high&gt;images, figures or tables&lt;/high&gt; are possible content. &lt;high&gt;&lt;high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;This allows you to create flowcharts or sequence diagrams with &lt;high&gt;plain text syntax&lt;/high&gt; similar to Markdown.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;initialize with &lt;mono&gt;{mermaid}&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;[]&lt;/mono&gt; &lt;high&gt;hard&lt;/high&gt; edges, &lt;mono&gt;()&lt;/mono&gt; &lt;high&gt;round&lt;/high&gt; edges, &lt;mono&gt;{}&lt;/mono&gt; &lt;high&gt;decision point&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;connect nodes&lt;/high&gt; with &lt;mono&gt;--&gt;&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;div style="width:100%"&gt;
+````markdown
+{mermaid}
+flowchart LR
+  A[Hard edge] --&gt; B(Round edge)
+  B --&gt; C{Decision}
+  C --&gt; D[Result one]
+  C --&gt; E[Result two]
+````
+&lt;/div&gt;
+&lt;iframe class="slide-deck" src="example_dia/dia.html" width = "100%"&gt;&lt;/iframe&gt;
+
+]
+
+---
+
+# Placement of content
+
+.pull-left4[
+
+Quarto support various options to modify the &lt;high&gt;standard page layout&lt;/high&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Let content &lt;high&gt;overflow&lt;/high&gt; the standard layout. &lt;/span&gt;&lt;/li&gt;
+  
+  &lt;li class="m2"&gt;&lt;span&gt;Place content in the &lt;high&gt;right margin&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Among others, &lt;high&gt;images, figures or tables&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Description&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column-body&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Standard&lt;/high&gt; text body.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column-body-outset&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Extend &lt;high&gt;outside&lt;/high&gt; text body.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column-page&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Wide&lt;/high&gt; content.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column-margin&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Place content &lt;high&gt;in the margin&lt;/high&gt;.    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 
 
 ]
@@ -651,18 +700,11 @@ As can been seen in @fig-logo.
 .pull-right5[
 
 
-
-&lt;iframe class="slide-deck" src="https://bootswatch.com" width = "100%" height = 500&gt;&lt;/iframe&gt;
-
+&lt;p align = "center"&gt;
+  &lt;img src="image/margin.png" width=500&gt;&lt;br&gt;
+&lt;/p&gt;
 
 ]
----
-
-# Layout tricks - Margins
-
-https://quarto.org/docs/authoring/article-layout.html
-
-
 
 
 ---

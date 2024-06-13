@@ -98,12 +98,12 @@ The presented analysis of income and wealth inequalities based on Basel's quarte
 ```{r}
 #| label: tbl-grossbasel
 #| tbl-cap: "Data excerpt for Altstadt Grossbasel"
-stalban <- 
+AltGross <- 
 basel %>%
   filter(quarter == 'Altstadt Grossbasel') %>%
   select(quarter, year, N, income_mean, wealth_mean)
 
-kable(stalban,
+kable(AltGross,
        col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
       align = "ccccc")
 ```

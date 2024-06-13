@@ -15,6 +15,8 @@ line 49: - Are movies that receive more positive ratings?
 - practical: Maps&Nets in notebooks - 
 line 139: typo stricly
 line 19: 2. Load the `sf`, `ggraph` and `tidygraph` packages. 
+line 212: `scale_fill_manual(values=viridis::viridis(3)[1:2])` and ad them at the end.
+
 
 # Animation
 

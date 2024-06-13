@@ -30,15 +30,14 @@ format:
 toc-location: left
 ```
 
-### 3 - Add a new paragraph
-
-1. Create a header at the third level (`###`) with the title `The Gini Coefficient`. 
-
-2. Add the following text:
+### 2 Add the Open Data Basel-Stadt logo to the right margin
 
 
+::: {.column-margin}
+![](https://avatars.githubusercontent.com/u/46960540?s=200&v=4){width="200" align="center"}
+:::
 
-### 3 - Add a diagram to describe the data structure
+### 2 - Add a diagram to describe the data structure
 
 1. Copy the following Mermaid code into a new chunk. 
 
@@ -64,7 +63,9 @@ flowchart LR
 
 ### 4 - Add a table in the Appendix showing data for Altstadt Grossbasel
 
-1. TEXT data prep
+1. Add a new section at the end of your file with a third level heading `Appendix`.
+
+2. Add the following code in a new R-chunk.
 
 ```{}
 #| label: tbl-grossbasel
@@ -82,14 +83,13 @@ basel %>%
 load(knitr)
 ```
 
-3. add kable(AltGross)
+3. Add the following code to print your table using the `kable()` function.
 
 ```{}
 kable(AltGross,
        col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
       align = "ccccc")
 ```
-
 
 4. Render the document and observe whether the new contents are accurately displayed. 
 

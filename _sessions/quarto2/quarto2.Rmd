@@ -1173,8 +1173,8 @@ Some text after the image.
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
-  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for <high>text</high></span></li> 
+  <li class="m2"><span><mono>background-color</mono> for <high>slides</high></span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
 
@@ -1204,8 +1204,8 @@ important!
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
-  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for <high>text</high></span></li> 
+  <li class="m2"><span><mono>background-color</mono> for <high>slides</high></span></li> 
   <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
 
@@ -1234,9 +1234,9 @@ important!
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
-  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
-  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for <high>text</high></span></li> 
+  <li class="m2"><span><mono>background-color</mono> for <high>slides</high></span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
 
 ]
@@ -1263,9 +1263,9 @@ title-slide-attributes:
 Emphasizing with <high>colors</high>.
 
 <ul>
-  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for text</span></li> 
-  <li class="m2"><span><mono>background-color</mono> for slide</span></li> 
-  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li>  
+  <li class="m1"><span><mono>[word]{style="color:red"}</mono> for <high>text</high></span></li> 
+  <li class="m2"><span><mono>background-color</mono> for <high>slides</high></span></li> 
+  <li class="m3"><span><mono>data-background-X</mono> to update <high>title slide</high></span></li> 
 </ul>
 
 ]

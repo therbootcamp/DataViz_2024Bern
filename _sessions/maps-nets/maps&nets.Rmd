@@ -1182,7 +1182,7 @@ network %>%
 
 class: middle, center
 
-<h1><a href="https://www.dropbox.com/s/mx2x5bak5gie7sb/Maps%26Nets.Rmd?dl=1">Practical</a></h1>
+<h1>Practical</h1>
 
 
 

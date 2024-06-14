@@ -109,7 +109,7 @@ plot_income + plot_wealth  +
 
 5. Render the document and observe that there it now includes a visualization.
 
-6. Add the following to the chunk settings: `|# fig-asp: .7` to improve the use more of the width of the document, and `|# out-width: 100%`.
+6. Add the following to the chunk settings: `#| fig-asp: .7` to improve the use more of the width of the document, and `#| out-width: 100%`.
 
 5. Render the document and observe that the aspect ratio of the plot has changed.
 

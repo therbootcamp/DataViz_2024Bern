@@ -4,8 +4,9 @@ format:
     logo: unibe.png
     footer: "University of Bern"
 ---
-## {.center}
+## {background-color="lightblue"}
 
 ::: {.r-fit-text}
-Even more important!
+Even [more]{style="color:red;"} important!
+
 :::

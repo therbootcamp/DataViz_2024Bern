@@ -1,6 +1,4 @@
 ---
-title: "Habits"
-author: "John Doe"
 format:
   revealjs:
     logo: unibe.png

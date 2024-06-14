@@ -926,7 +926,7 @@ format:
   <mono>::: {.column width="XX%"}</mono>
   </td>
   <td bgcolor="white">
-  Set column <high>width</high>
+  Set individual column <high>width</high>
   </td> 
 </tr>
 
@@ -1015,7 +1015,7 @@ Add information on <high> each slide</high>.
 ---
 format:
   revealjs:
-    logo: logo.png
+    logo: unibe.png
     footer: "University of Bern"
 ---
 
@@ -1046,11 +1046,10 @@ Add information on <high> each slide</high>.
 
 <div style="width:70%">
 ````markdown
-
 ---
 format:
   revealjs:
-    logo: logo.png
+    logo: unibe.png
     footer: "University of Bern"
 ---
 ...
@@ -1220,7 +1219,7 @@ Even [more]{style="color:red"}
 important!
 ````
 </div>
-<iframe class="slide-deck" src="example_presentations/color.html" width = "70%" height = "300" ></iframe>
+<iframe class="slide-deck" src="example_presentations/blue.html" width = "70%" height = "300" ></iframe>
 
 ]
 

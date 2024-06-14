@@ -7,74 +7,74 @@ execute:
   warning: false
 ---
 
-In this practical, you will [**recreate this html report**](Report.html).   
+In this practical, you will [**recreate this html report**](Report.html).
 
 ### 0 - Preliminaries
 
-1. Go to the File - New File menu and select the file type <mono>Quarto Document</mono>, enter the title `Do the rich get richer in Basel?` and your name, leave the file type as HTML and then hit <mono>Create</mono>. 
+1.  Go to the File - New File menu and select the file type <mono>Quarto Document</mono>, enter the title `Do the rich get richer in Basel?` and your name, leave the file type as HTML and then hit <mono>Create</mono>.
 
-2. Click the `Render` button and observe whether the template content currently included in the file is correctly rendered and displayed in the Viewer Pane. When you render for the first time, you will be asked to choose a file name. Call the document `basel_report`
+2.  Click the `Render` button and observe whether the template content currently included in the file is correctly rendered and displayed in the Viewer Pane. When you render for the first time, you will be asked to choose a file name. Call the document `basel_report`
 
-3. Clear everything in the document except for the YAML header.  
+3.  Clear everything in the document except for the YAML header.
 
-4. Add an initial R chunk accessing the Menu with `Code - Insert Chunk`. 
+4.  Add an initial R chunk accessing the Menu with `Code - Insert Chunk`.
 
-5. Within the chunk add `#| include: false` in the first line to suppress  messages, e.g., from the tidyverse. Load the `tidyverse` and `patchwork` packages. Read in the `taxation.csv` data as a new object called `basel`. Note that when running the Quarto file it will use its own location as the working directory. Consequently, use `1_data/taxation.csv` as the file path. 
+5.  Within the chunk add `#| include: false` in the first line to suppress messages, e.g., from the tidyverse. Load the `tidyverse` and `patchwork` packages. Read in the `taxation.csv` data as a new object called `basel`. Note that when running the Quarto file it will use its own location as the working directory. Consequently, use `1_data/taxation.csv` as the file path.
 
-6. Render the document and check whether the data and packages are loaded correctly, i.e., you don't see an error message.
+6.  Render the document and check whether the data and packages are loaded correctly, i.e., you don't see an error message.
 
-7. Include `echo: false` in your YAML header to remove code display for all chunks in the document. Be careful to follow the indentation as shown below!
+7.  Include `echo: false` in your YAML header to remove code display for all chunks in the document. Be careful to follow the indentation as shown below!
 
-````markdown
+``` markdown
 format: 
   html
 execute:
   echo: false
-````
+```
 
 ### 2 - Intro
 
-1. Copy the following text below the initial chunk. 
+1.  Copy the following text below the initial chunk.
 
-```markdown
+``` markdown
 Inequalities in income and wealth are a growing social issue FOOTNOTE. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.   
 ```
 
-2. Next replace the text `FOOTNOTE` with the actual footnote `^[See https://www.un.org/en/un75/inequality-bridging-divide.]`.
+2.  Next replace the text `FOOTNOTE` with the actual footnote `^[See https://www.un.org/en/un75/inequality-bridging-divide.]`.
 
-3. Render the document (i.e., hit the `Render` button) and observe whether the new contents are accurately displayed. 
+3.  Render the document (i.e., hit the `Render` button) and observe whether the new contents are accurately displayed.
 
 ### 3 - Data
 
-1. Create a header at the third level (`###`) with the title `Income and wealth`. 
+1.  Create a header at the third level (`###`) with the title `Income and wealth`.
 
-2. Below the header add the following text. 
+2.  Below the header add the following text.
 
-```markdown
+``` markdown
 The data provided by LINK contains information on the wealth and income of the inhabitants of the INLINE quarters of Basel based on tax-return documents. 
 ```
 
-3. Replace the text `LINK` with `[Open Data Basel](https://www.opendata.bs.ch/)` to link to the Basel Open Data webpage. 
+3.  Replace the text `LINK` with `[Open Data Basel](https://www.opendata.bs.ch/)` to link to the Basel Open Data webpage.
 
-4. Replace the text `INLINE` with a piece of inline R code determining the number of quarters in Basel, namely with 'r length(unique(basel))'. Make sure to put accents before and after the inline code (not apostrophes as used here). 
+4.  Replace the text `INLINE` with a piece of inline R code determining the number of quarters in Basel, namely with 'r length(unique(basel))'. Make sure to put accents before and after the inline code (not apostrophes as used here).
 
-5. Render the document and observe whether the new contents are displayed. 
+5.  Render the document and observe whether the new contents are displayed.
 
 ### 4 - Visualization
 
-1. Create a header at the third level (`###`) with the title `Quantifying inequality`. 
+1.  Create a header at the third level (`###`) with the title `Quantifying inequality`.
 
-2. Below the header, add the following text:
+2.  Below the header, add the following text:
 
-```markdown
+``` markdown
 The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel. 
 ```
 
-3. Next, move the cursor below the text you just added and add a new R chunk (`Code - Insert Chunk`).
+3.  Next, move the cursor below the text you just added and add a new R chunk (`Code - Insert Chunk`).
 
-4. Now, copy the following code into the newly-created, empty chunk. 
+4.  Now, copy the following code into the newly-created, empty chunk.
 
-```markdown
+``` markdown
 # create quarter factor
 basel <- basel %>%
   arrange(year, income_mean) %>% 
@@ -107,42 +107,42 @@ plot_income + plot_wealth  +
   
 ```
 
-5. Render the document and observe that there it now includes a visualization.
+5.  Render the document and observe that there it now includes a visualization.
 
-6. Add the following to the chunk settings: `#| fig-asp: .7` to improve the use more of the width of the document, and `#| out-width: 100%`.
+6.  Add the following to the chunk settings: `#| fig-asp: .7` to improve the use more of the width of the document, and `#| out-width: 100%`.
 
-5. Render the document and observe that the aspect ratio of the plot has changed.
+7.  Render the document and observe that the aspect ratio of the plot has changed.
 
 ### 5 - Conclusion
 
-1. Create a header at the third level (`###`) with the title `Limitations and outlook`. 
+1.  Create a header at the third level (`###`) with the title `Limitations and outlook`.
 
-2. Below the header, add the following text:
+2.  Below the header, add the following text:
 
-```markdown
+``` markdown
 The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel. 
 ```
 
-3. Render the document and observe that all of the report's contents are now included.
+3.  Render the document and observe that all of the report's contents are now included.
 
 ### 6 - Theme
 
-1. Finally, change the YAML header so that a different styling theme (`flatly`) is used. 
+1.  Finally, change the YAML header so that a different styling theme (`flatly`) is used.
 
-````markdown
+``` markdown
 format: 
   html
 execute:
   echo: false
 theme: flatly
-````
+```
 
-2. Render the document and observe that the report is complete.
+2.  Render the document and observe that the report is complete.
 
 ### 7 - Further tasks
 
-1. After the figure add a new paragraph entitled: `Top and bottom quarters`.
+1.  After the figure add a new paragraph entitled: `Top and bottom quarters`.
 
-2. Within a new R-chunk produce a vector `high` with the five quarters with the highest income, and a vector `low` with the five quarters with the lowest income.  
+2.  Within a new R-chunk produce a vector `high` with the five quarters with the highest income, and a vector `low` with the five quarters with the lowest income.
 
-3. Include the names of these ten quarters in the new paragraph as inline code.
+3.  Include the names of these ten quarters in the new paragraph as inline code.

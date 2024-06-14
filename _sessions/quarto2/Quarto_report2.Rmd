@@ -1,5 +1,5 @@
 ---
-title: "Quarto Report"
+title: "Quarto Report 2"
 format: html
 execute: 
   echo: false
@@ -7,7 +7,7 @@ execute:
   warning: false
 ---
 
-In this practical, you will [**update and adapt your  report**](Report2.html).
+In this practical, you will update and adapt your report, so that is ultimately will   [**look like this**](Report2.html).
 
 ### 0 - Preliminaries
 
@@ -15,34 +15,43 @@ In this practical, you will [**update and adapt your  report**](Report2.html).
 
 ### 1 - Add a Table of Contents
 
-2. Add the following code to show a Table of Contents and change the Title to `Contents`
+2. Add the following code to show a Table of Contents and change the Title to `Contents`. The `self-contained` option makes sure that all the relevant information is written directly into the html file.
 
-```{}
+```markdown
 format: 
   html: 
+    self-contained: true
     toc: true
     toc-title: Contents
 ```
 
 3. Move Table of Contents to the left
 
-```{}
+```markdown
 toc-location: left
 ```
 
 ### 2 Add the Open Data Basel-Stadt logo to the right margin
 
+1. Add the Open Data logo from the city of Basel with the following code:
 
+```markdown
 ::: {.column-margin}
-![](https://avatars.githubusercontent.com/u/46960540?s=200&v=4){width="200" align="center"}
+![](https://avatars.githubusercontent.com/u/46960540?s=800&v=4)
 :::
+```
 
-### 2 - Add a diagram to describe the data structure
+2. Directly after the link information of the logo add the following code and adjust the width of the logo to an appropriate size.
+
+```markdown
+![](https://avatars.githubusercontent.com/u/46960540?s=800&v=4){width="X"}
+```
+
+### 3 - Add a diagram to describe the data structure
 
 1. Copy the following Mermaid code into a new chunk. 
 
-```{}
-
+````markdown
 ```{mermaid}
 %%| echo: false
 %%| label: fig-gini
@@ -58,45 +67,41 @@ flowchart LR
   E --> I[Mean income]
   E --> J[Mean Wealth]
 ```
+````
 
+### 5 - Add a table in the Appendix showing data for Altstadt Grossbasel
+
+1. Add the knitr package to the initial chunk in your document with:
+
+```markdown
+library(knitr)
 ```
 
-### 4 - Add a table in the Appendix showing data for Altstadt Grossbasel
+2. Add a new section at the end of your file with a third level heading `Appendix`.
 
-1. Add a new section at the end of your file with a third level heading `Appendix`.
+3. Add the following code in a new R-chunk.
 
-2. Add the following code in a new R-chunk.
-
-```{}
+`````markdown
 #| label: tbl-grossbasel
 #| tbl-cap: "Data excerpt for Altstadt Grossbasel"
 AltGross <- 
 basel %>%
   filter(quarter == 'Altstadt Grossbasel') %>%
   select(quarter, year, N, income_mean, wealth_mean)
+`````
 
-```
+4. Add the following code to print your table using the `kable()` function.
 
-2. Add the knitr package to the initial chunk in your document with:
-
-```{}
-load(knitr)
-```
-
-3. Add the following code to print your table using the `kable()` function.
-
-```{}
+```markdown
 kable(AltGross,
-       col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
+      col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),
       align = "ccccc")
 ```
 
-4. Render the document and observe whether the new contents are accurately displayed. 
+5. Render the document and observe whether the new contents are accurately displayed. 
 
 
-
-
-### 3 - Cross references
+### 6 - Cross references
 
 1. Add a label to the figure 
 
@@ -109,13 +114,13 @@ kable(AltGross,
 
 4. Render the document and observe whether the new contents are displayed. 
 
-### 4 - Visualization
+### 7 - Visualization
 
 1. Create a header at the third level (`###`) with the title `Quantifying inequality`. 
 
 2. Below the header, add the following text:
 
-```{}
+```markdown
 The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.
 ```
 
@@ -123,7 +128,7 @@ The figure below shows the development of income (panel A) and wealth (panel B) 
 
 4. Now, copy the following code into the newly-created, empty chunk. 
 
-```{}
+```markdown
 # create quarter factor
 basel <- basel %>%
   arrange(year, income_mean) %>% 
@@ -162,19 +167,19 @@ plot_income + plot_wealth  +
 
 5. Render the document and observe that the aspect ratio of the plot has changed.
 
-### 5 - Conclusion
+### 8 - Conclusion
 
 1. Create a header at the third level (`###`) with the title `Income and wealth`. 
 
 2. Below the header, add the following text:
 
-```{}
+```markdown
 The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.
 ```
 
 3. Render the document and observe that all of the report's contents are now included.
 
-### 6 - Theme
+### 9- Theme
 
 1. Finally, change the YAML header so that a different styling theme (`flatly`) is used. 
 
@@ -187,10 +192,6 @@ theme: flatly
 ````
 
 2. Render the document and observe that the report is complete.
-
-
-
-
 
 ### Further Tasks
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quarto Report</title>
+<title>Quarto Report 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Report</h1>
+<h1 class="title">Quarto Report 2</h1>
 </div>
 
 
@@ -96,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this practical, you will <a href="Report2.html"><strong>update and adapt your report</strong></a>.</p>
+<p>In this practical, you will update and adapt your report, so that is ultimately will <a href="Report2.html"><strong>look like this</strong></a>.</p>
 <section id="preliminaries" class="level3">
 <h3 class="anchored" data-anchor-id="preliminaries">0 - Preliminaries</h3>
 <ol type="1">
@@ -106,71 +106,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="add-a-table-of-contents" class="level3">
 <h3 class="anchored" data-anchor-id="add-a-table-of-contents">1 - Add a Table of Contents</h3>
 <ol start="2" type="1">
-<li>Add the following code to show a Table of Contents</li>
+<li>Add the following code to show a Table of Contents and change the Title to <code>Contents</code>. The <code>self-contained</code> option makes sure that all the relevant information is written directly into the html file.</li>
 </ol>
-<pre><code>format: 
-  html: 
-    toc: true
-    toc-title: Contents</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  html: </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    self-contained: true</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    toc: true</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    toc-title: Contents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Move Table of Contents to the left</li>
 </ol>
-<pre><code>toc-location: left</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">toc-location:</span><span class="co"> left</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="add-a-new-paragraph" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-new-paragraph">3 - Add a new paragraph</h3>
+<section id="add-the-open-data-basel-stadt-logo-to-the-right-margin" class="level3">
+<h3 class="anchored" data-anchor-id="add-the-open-data-basel-stadt-logo-to-the-right-margin">2 Add the Open Data Basel-Stadt logo to the right margin</h3>
 <ol type="1">
-<li><p>Create a header at the third level (<code>###</code>) with the title <code>The Gini Coefficient</code>.</p></li>
-<li><p>Add the following text:</p></li>
+<li>Add the Open Data logo from the city of Basel with the following code:</li>
 </ol>
-<pre><code>It measures inequality on a scale from 0 to 1, where higher
-values indicate higher inequality. This can sometimes be shown
-as a percentage from 0 to 100%, called the “Gini Coefficient”.
-A value of 0 indicates perfect equality: everyone has the same
-income.</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://avatars.githubusercontent.com/u/46960540?s=800&amp;v=4)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Directly after the link information of the logo add the following code and adjust the width of the logo to an appropriate size.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://avatars.githubusercontent.com/u/46960540?s=800&amp;v=4)</span>{width="X"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="add-a-diagram-for-the-gini-coefficient" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-diagram-for-the-gini-coefficient">3 - Add a diagram for the Gini coefficient</h3>
+<section id="add-a-diagram-to-describe-the-data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-diagram-to-describe-the-data-structure">3 - Add a diagram to describe the data structure</h3>
 <ol type="1">
 <li>Copy the following Mermaid code into a new chunk.</li>
 </ol>
-<pre><code>
-```{mermaid}
-flowchart LR
-  A[X] --&gt; B[X]
-  B --&gt; C{X}
-  C --&gt; D[X]
-  C --&gt; E[X]</code></pre>
-<pre><code>
-2. Fill in the missing words in the Mermaid code to generate the diagram explaining the Gini coefficient.
-
-### 4 - Add a table in the Appendix showing data for St. Alban
-
-1. TEXT data prep
-
-```{}
-#| label: tbl-gini
-#| tbl-cap: "Gini coefficient in St. Alban"
-stalban &lt;- 
-basel %&gt;%
-  filter(quarter == 'St. Alban') %&gt;%
-  select(year, N, income_mean, income_median, income_gini)</code></pre>
-<ol start="2" type="1">
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">%%| echo: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">%%| label: fig-gini</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-cap: "Schematic overview of the data"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in">  A{Basel} --&gt; B[Altstadt Grossbasel]</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">  A{Basel} --&gt; C[...]</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">  A{Basel} --&gt; D[Wettstein]</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; E[2001]</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; F[...]</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; G[2017]</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">  E --&gt; H[Number of tax returns]</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="in">  E --&gt; I[Mean income]</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">  E --&gt; J[Mean Wealth]</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="add-a-table-in-the-appendix-showing-data-for-altstadt-grossbasel" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-table-in-the-appendix-showing-data-for-altstadt-grossbasel">5 - Add a table in the Appendix showing data for Altstadt Grossbasel</h3>
+<ol type="1">
 <li>Add the knitr package to the initial chunk in your document with:</li>
 </ol>
-<pre><code>load(knitr)</code></pre>
-<ol start="3" type="1">
-<li>add kable(stalban)</li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>library(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p>Add a new section at the end of your file with a third level heading <code>Appendix</code>.</p></li>
+<li><p>Add the following code in a new R-chunk.</p></li>
 </ol>
-<pre><code>kable(stalban,
-       col.names = c("Year", "N","Income Mean", "Income Median", "Income Gini"),
-      align = "ccccc")</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>#| label: tbl-grossbasel</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: "Data excerpt for Altstadt Grossbasel"</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>AltGross &lt;- </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>basel %&gt;%</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  filter(quarter == 'Altstadt Grossbasel') %&gt;%</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  select(quarter, year, N, income_mean, wealth_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
+<li>Add the following code to print your table using the <code>kable()</code> function.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>kable(AltGross,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>      col.names = c("Quarter", "Year", "N","Mean income", "Mean Wealth"),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      align = "ccccc")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
 <li>Render the document and observe whether the new contents are accurately displayed.</li>
 </ol>
 </section>
 <section id="cross-references" class="level3">
-<h3 class="anchored" data-anchor-id="cross-references">3 - Cross references</h3>
+<h3 class="anchored" data-anchor-id="cross-references">6 - Cross references</h3>
 <ol type="1">
 <li><p>Add a label to the figure</p></li>
 <li><p>Cross-reference the figure from wihtin the text ..</p></li>
@@ -180,46 +189,46 @@ basel %&gt;%
 </ol>
 </section>
 <section id="visualization" class="level3">
-<h3 class="anchored" data-anchor-id="visualization">4 - Visualization</h3>
+<h3 class="anchored" data-anchor-id="visualization">7 - Visualization</h3>
 <ol type="1">
 <li><p>Create a header at the third level (<code>###</code>) with the title <code>Quantifying inequality</code>.</p></li>
 <li><p>Below the header, add the following text:</p></li>
 </ol>
-<pre><code>The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li><p>Next, move the cursor below the text you just added and add a new R chunk (<code>Code - Insert Chunk</code>).</p></li>
 <li><p>Now, copy the following code into the newly-created, empty chunk.</p></li>
 </ol>
-<pre><code># create quarter factor
-basel &lt;- basel %&gt;%
-  arrange(year, income_mean) %&gt;% 
-  mutate(quarter = as_factor(quarter)) 
-  
-# create income plot
-plot_income &lt;- basel %&gt;% 
-  ggplot(aes(x = year, y = income_mean, col = quarter)) +
-  labs(x = "Year", y = "Income")
-
-# create income plot
-plot_wealth &lt;- basel %&gt;%
-  ggplot(aes(x = year, y = wealth_median, col = quarter)) +
-  labs(x = "Year", y = "Wealth")
-
-# create joint plot
-plot_income + plot_wealth  + 
-  plot_layout(guides = "collect") +
-  plot_annotation(title = "Inequality in Basel",
-                  subtitle = "Income and wealth development from 2001 to 2017",
-                  caption = "Source: Open Data Basel",
-                  tag_levels = "A") &amp; 
-  geom_point() &amp; 
-  geom_line() &amp;
-  scale_color_viridis_d() &amp;
-  theme_minimal() &amp;
-  theme(legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.height = unit(.01,"in"))
-  </code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># create quarter factor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>basel &lt;- basel %&gt;%</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  arrange(year, income_mean) %&gt;% </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  mutate(quarter = as_factor(quarter)) </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># create income plot</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plot_income &lt;- basel %&gt;% </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x = year, y = income_mean, col = quarter)) +</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  labs(x = "Year", y = "Income")</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># create income plot</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plot_wealth &lt;- basel %&gt;%</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  ggplot(aes(x = year, y = wealth_median, col = quarter)) +</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  labs(x = "Year", y = "Wealth")</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu"># create joint plot</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>plot_income + plot_wealth  + </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  plot_layout(guides = "collect") +</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  plot_annotation(title = "Inequality in Basel",</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                  subtitle = "Income and wealth development from 2001 to 2017",</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                  caption = "Source: Open Data Basel",</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                  tag_levels = "A") &amp; </span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  geom_point() &amp; </span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  geom_line() &amp;</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  scale_color_viridis_d() &amp;</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  theme_minimal() &amp;</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  theme(legend.position = "bottom",</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        legend.title = element_blank(),</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        legend.key.height = unit(.01,"in"))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li><p>Render the document and observe that there it now includes a visualization.</p></li>
 <li><p>Add the following to the chunk settings: <code>|# fig-asp: .7</code> to improve the use more of the width of the document, and <code>|# out-width: 100%</code>.</p></li>
@@ -227,26 +236,26 @@ plot_income + plot_wealth  +
 </ol>
 </section>
 <section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">5 - Conclusion</h3>
+<h3 class="anchored" data-anchor-id="conclusion">8 - Conclusion</h3>
 <ol type="1">
 <li><p>Create a header at the third level (<code>###</code>) with the title <code>Income and wealth</code>.</p></li>
 <li><p>Below the header, add the following text:</p></li>
 </ol>
-<pre><code>The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Render the document and observe that all of the report’s contents are now included.</li>
 </ol>
 </section>
 <section id="theme" class="level3">
-<h3 class="anchored" data-anchor-id="theme">6 - Theme</h3>
+<h3 class="anchored" data-anchor-id="theme">9- Theme</h3>
 <ol type="1">
 <li>Finally, change the YAML header so that a different styling theme (<code>flatly</code>) is used.</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  html</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>execute:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  echo: false</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>theme: flatly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  html</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>execute:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  echo: false</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>theme: flatly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Render the document and observe that the report is complete.</li>
 </ol>

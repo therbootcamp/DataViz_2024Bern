@@ -1,6 +1,6 @@
 ---
 title: "Do the rich get richer in Basel?"
-date: '2022-06-23'
+date: 2024/06/14
 author: "The R Bootcamp"
 output: 
   html_document: 
@@ -17,15 +17,16 @@ basel = read_csv("1_Data/taxation.csv")
 ```
 
 
-Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.    
+Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.   
+   
 
 ### Income and wealth
 
-The data contains information on the wealth and income of the inhabitants of the `r length(unique(basel))` quarters of Basel, which was determined from tax-return documents. The data was provided by [Open Data Basel](https://www.opendata.bs.ch/). 
+The data provided by [Open Data Basel](https://www.opendata.bs.ch/) contains information on the wealth and income of the inhabitants of the `r length(unique(basel$quarter))` quarters of Basel based on tax-return documents. @fig-gini presents a schematic overview of the data. 
 
 ### Quantifying inequality
 
-The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.    
+The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.     
 
 ```{r, echo = FALSE, fig.asp=.7}
 # create quarter factor
@@ -62,7 +63,7 @@ plot_income + plot_wealth  +
 
 ### Limitations and outlook
 
-The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel. 
+The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.
 
 
 

@@ -8,6 +8,7 @@ format:
     toc-title: Contents
     toc-location: left
     theme: flatly
+    self-contained: true
 execute: 
   echo: false
   message: false
@@ -23,10 +24,10 @@ basel <- read_csv("1_Data/taxation.csv")
 ```
 
 ::: {.column-margin}
-![](https://avatars.githubusercontent.com/u/46960540?s=200&v=4){width="200" align="center"}
+![](https://avatars.githubusercontent.com/u/46960540?s=800&v=4){width="200"}
 :::
 
-Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters from 2001 to 2017.    
+Inequalities in income and wealth are a growing social issue ^[See https://www.un.org/en/un75/inequality-bridging-divide.]. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.   
 
 ### Income and wealth
 

@@ -29,15 +29,15 @@ options(digits = 3)
 
 ## Overview
 
-Proof your visualization and communication competence using ggplot and quarto in a report competition. Dig deep into your skills to produce a report that effectively communicates your IMDb data project and the visualizations and insights you have generated. The best report earns chocolate.  
+Proof your visualization and communication competence using ggplot and quarto in a report competition. Dig deep into your skills to produce a report that effectively communicates your IMDB data project and the visualizations and insights you have generated. The best report earns chocolate.  
 
-The competition ends in...
+The competition ends in ...
 
 <font style="font-size:32px"><p id="demo" align="center"></p></font>
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jun 14, 2024 17:00:00").getTime();
+var countDownDate = new Date("Jun 14, 2024 16:30:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -72,7 +72,7 @@ var x = setInterval(function() {
 
 The movie industry is in decline. Use the `imdb.csv` and `oscars.csv` data set to shed light on key aspects of successful movies. Write a report around the data visualization you have previously produced.      
 
-The best report will receive a prize and will be identified in a two-stage procedure. In the first stage, you gather in small groups of 4 or 5 to review your individual reports and identify the best report in your group. In the second stage, the reports identified by each group will be shown presented (3 min) to the entire class before the entire the class votes on the overall best report.    
+The best report will receive a prize and will be identified in a two-stage procedure. In the first stage, you gather in small groups of 4 or 5 to review your individual reports and identify the best report in your group (see below for upload information). In the second stage, the reports identified by each group will be presented (3 min) to the entire class. The entire class then votes on the overall best report.    
 
 Criteria for reports are the quality of the visualization, the clarity of the report's content and organization, and the effective use of advanced quarto features.
 
@@ -85,13 +85,19 @@ Criteria for reports are the quality of the visualization, the clarity of the re
 
 3. You are allowed to adapt the visualization you have previously produced. 
 
-4. The report must conatin...   
+4. The report must contain ...   
   - a brief description of your question and the data set(s)
   - a brief description of your analytic approach and results
   - a single figure (multiple panels are permitted)
   - a brief section on limitations and conclusions
   
-5. All features of quarto can be used.  
+5. All features of Quarto can be used.
+
+### Upload 
+
+1. Once the group decided on 'their' report, please upload it using this <a href = "https://www.dropbox.com/request/pt5e5UOxb1BK0miJt1Oz">dropbox link</a>.
+
+
 
 
 

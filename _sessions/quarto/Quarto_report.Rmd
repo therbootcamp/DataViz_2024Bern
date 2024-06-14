@@ -36,8 +36,8 @@ execute:
 
 1. Copy the following text below the initial chunk. 
 
-```{}
-Inequalities in income and wealth are a growing social issue FOOTNOTE. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city’s quarters.
+```markdown
+Inequalities in income and wealth are a growing social issue FOOTNOTE. This analysis seeks to quantify inequality in Basel, Switzerland, by analyzing the widening of wealth and income gaps between the city's quarters.   
 ```
 
 2. Next replace the text `FOOTNOTE` with the actual footnote `^[See https://www.un.org/en/un75/inequality-bridging-divide.]`.
@@ -50,13 +50,13 @@ Inequalities in income and wealth are a growing social issue FOOTNOTE. This anal
 
 2. Below the header add the following text. 
 
-```{}
-The data contains information on the wealth and income of the inhabitants of the INLINE quarters of Basel, which was determined from tax-return documents. The data was provided by LINK. 
+```markdown
+The data provided by LINK contains information on the wealth and income of the inhabitants of the INLINE quarters of Basel based on tax-return documents. 
 ```
 
-3. Replace the text `INLINE` with a piece of inline R code determining the number of quarters in Basel, namely with 'r length(unique(basel))'. Make sure to put accents before and after the inline code (not apostrophes as used here). 
+3. Replace the text `LINK` with `[Open Data Basel](https://www.opendata.bs.ch/)` to link to the Basel Open Data webpage. 
 
-4. Replace the text `LINK` with `[Open Data Basel](https://www.opendata.bs.ch/)` to link to the Basel Open Data webpage. 
+4. Replace the text `INLINE` with a piece of inline R code determining the number of quarters in Basel, namely with 'r length(unique(basel))'. Make sure to put accents before and after the inline code (not apostrophes as used here). 
 
 5. Render the document and observe whether the new contents are displayed. 
 
@@ -66,15 +66,15 @@ The data contains information on the wealth and income of the inhabitants of the
 
 2. Below the header, add the following text:
 
-```{}
-The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel.
+```markdown
+The figure below shows the development of income (panel A) and wealth (panel B) in Basel's quarters in the years 2001 to 2017. It can be observed that the incomes in poorer quarters in 2001 declined with time, whereas those of richer quarters rose. Similarly, wealth in poorer quarters rose less strongly than wealth in quarters that started out wealthier. These results suggest a widening of income and wealth inequality in Basel. 
 ```
 
 3. Next, move the cursor below the text you just added and add a new R chunk (`Code - Insert Chunk`).
 
 4. Now, copy the following code into the newly-created, empty chunk. 
 
-```{}
+```markdown
 # create quarter factor
 basel <- basel %>%
   arrange(year, income_mean) %>% 
@@ -115,12 +115,12 @@ plot_income + plot_wealth  +
 
 ### 5 - Conclusion
 
-1. Create a header at the third level (`###`) with the title `Income and wealth`. 
+1. Create a header at the third level (`###`) with the title `Limitations and outlook`. 
 
 2. Below the header, add the following text:
 
-```{}
-The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel.
+```markdown
+The presented analysis of income and wealth inequalities based on Basel's quarters comes with several limitations. Most importantly, the analysis does not account for mobility, implying that some of the temporal differences could driven by changes in the quarters' inhabitants. More detailed analyses which track inhabited across time will be needed to  demonstrate conclusively a widening of inequality in Basel. 
 ```
 
 3. Render the document and observe that all of the report's contents are now included.

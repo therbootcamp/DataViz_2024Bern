@@ -171,10 +171,9 @@ layout: true
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;Setup chunk&lt;/mono&gt;
+  &lt;mono&gt;Initial chunk&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  control &lt;high&gt;chunks&lt;/high&gt; settings&lt;br&gt;
   load &lt;high&gt;packages&lt;/high&gt;&lt;br&gt;
   load &lt;high&gt;data&lt;/high&gt;
   &lt;/td&gt; 
@@ -216,7 +215,7 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown can be translated (rendered) into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Quarto (.qmd) files are translated (rendered) into different &lt;high&gt;document types&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
     &lt;ul&gt;
     &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
     &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;
@@ -720,6 +719,8 @@ layout: true
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;A &lt;high&gt;code chunk&lt;/high&gt; can contain any R code.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;The behavior of code chunks can be controlled using &lt;high&gt;chunk arguments&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Add a new chunk with: &lt;mono&gt;Cmd+Shift+I (Mac) Strg+Shift+I (Windows)&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  
 &lt;/ul&gt;
 
 ]
@@ -1362,8 +1363,8 @@ format:
 .pull-left35[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;When rendered, markdown documents do not use the current &lt;high&gt;working directory&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Paths need to be defined &lt;high&gt;relative to the position of the .Rmd file&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;When rendered, Quarto documents do not use the current &lt;high&gt;working directory&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Paths need to be defined &lt;high&gt;relative to the position of the .qmd file&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;br&gt;
@@ -1378,7 +1379,7 @@ read_csv("../1_data/data.csv")
 .pull-right55[
 &lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/folder.png" height=280px&gt;
+  &lt;img src="image/folder.png" width=50%&gt;
 &lt;/p&gt;
 
 
@@ -1743,63 +1744,6 @@ read_csv("../1_data/data.csv")
 &lt;/p&gt;
 
 ]
-
----
-
-.pull-left4[
-
-# Quotes
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Quotes&lt;/high&gt; are generated directly in Markdown.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Markdown&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Description&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&gt; block quote&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  Text will be displayed as a &lt;high&gt;Quote&lt;/high&gt;.&lt;high&gt;&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
-
-]
-
-.pull-right5[
-&lt;br&gt;&lt;br&gt;
-&lt;p align = "center"&gt;
-  &lt;img src="image/quote.png" height = 540px&gt;
-&lt;/p&gt;
-
-
-]
-
 
 ---
 

@@ -514,7 +514,6 @@ Within tables <high>adding chunks</high> allows execution of R-code.
 
 <div style="width:100%">
 ````markdown
-{r}
 #| tbl-cap: "Basel data"
 library(knitr)
 basel <- read_csv('../1_Data/taxation.csv')
@@ -558,7 +557,7 @@ Cross references  <high>ease navigation </high> of documents.
 And then references in text - see @tbl-pipe.
 ````
 </div>
-<iframe class="slide-deck" src="example_ref/ref.html" width = "100%" height = 300></iframe>
+<iframe class="slide-deck" src="example_ref/ref.html" width = "100%" height = 290></iframe>
 
 
 ]
@@ -1521,7 +1520,7 @@ format: pptx
 
 </div>
 <p align = "center">
-  <img src="image/powerpoint.png" height=400px>
+  <img src="image/powerpoint.png" >
 </p>
 
 ]
@@ -1531,6 +1530,6 @@ format: pptx
 
 class: middle, center
 
-<h1><a href="">Practical</a></h1>
+<h1><a href="Quarto_report2.html">Practical</a></h1>
 
 

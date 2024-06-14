@@ -81,7 +81,7 @@ Criteria for reports are the quality of the visualization, the clarity of the re
 
 1. The reports must be rendered to html.
 
-2. The YAML header must contain <mono>self_contained: yes</mono>
+2. The YAML header must contain `self_contained: yes`
 
 3. The reports can focus on any meaningful question concerning the `imdb.csv` data and can make use of the `oscars.csv` data. 
 

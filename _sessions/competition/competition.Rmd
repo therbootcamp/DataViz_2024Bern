@@ -79,19 +79,21 @@ Criteria for reports are the quality of the visualization, the clarity of the re
   
 ### Conditions
 
-1. The reports must be rendered.
+1. The reports must be rendered to html.
 
-2. The reports can focus on any meaningful question concerning the `imdb.csv` data and can make use of the `oscars.csv` data. 
+2. The YAML header must contain <mono>self_contained: yes</mono>
 
-3. You are allowed to adapt the visualization you have previously produced. 
+3. The reports can focus on any meaningful question concerning the `imdb.csv` data and can make use of the `oscars.csv` data. 
 
-4. The report must contain ...   
+4. You are allowed to adapt the visualization you have previously produced. 
+
+5. The report must contain ...   
   - a brief description of your question and the data set(s)
   - a brief description of your analytic approach and results
   - a single figure (multiple panels are permitted)
   - a brief section on limitations and conclusions
   
-5. All features of Quarto can be used.
+6. All features of Quarto can be used.
 
 ### Upload 
 

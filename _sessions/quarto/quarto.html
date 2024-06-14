@@ -696,7 +696,7 @@ layout: true
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Numbers or labels&lt;/high&gt; in text can be parameterized using inline code.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Inline code can include &lt;high&gt;any&lt;/high&gt; type/length of code.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Inline code can include &lt;high&gt;any&lt;/high&gt; type/length of R code.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -1393,7 +1393,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings or globally in the &lt;mono&gt;YAML header&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
@@ -1450,7 +1450,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings or globally in the &lt;mono&gt;YAML header&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
@@ -1508,7 +1508,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings or globally in the &lt;mono&gt;YAML header&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
@@ -1565,7 +1565,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings or globally in the &lt;mono&gt;YAML header&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
@@ -1622,7 +1622,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;The general &lt;high&gt;appearance&lt;/high&gt; of graphs can be modified in the &lt;mono&gt;chunk&lt;/mono&gt;-settings or globally in the &lt;mono&gt;YAML header&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;The arguments (normally) start with  &lt;highm&gt;fig-*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
@@ -1680,8 +1680,8 @@ read_csv("../1_data/data.csv")
 # Captions
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Captions can be added with  &lt;highm&gt;fig-cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;The caption text can be defined  &lt;high&gt;within the chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Add captions with &lt;highm&gt;fig-cap&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Define captions &lt;high&gt;within each chunk&lt;/high&gt; starting with &lt;mono&gt;#|&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 

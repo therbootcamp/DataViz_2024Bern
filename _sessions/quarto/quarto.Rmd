@@ -722,7 +722,7 @@ basel <- read_csv("1_data/taxation.csv")
 
 <ul>
   <li class="m1"><span><high>Numbers or labels</high> in text can be parameterized using inline code.</span></li>
-  <li class="m2"><span>Inline code can include <high>any</high> type/length of code.</span></li>
+  <li class="m2"><span>Inline code can include <high>any</high> type/length of R code.</span></li>
 </ul>
 
 ]
@@ -1419,7 +1419,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 <ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
+  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings or globally in the <mono>YAML header</mono>.</span></li> 
   <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
@@ -1476,7 +1476,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 <ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
+  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings or globally in the <mono>YAML header</mono>.</span></li> 
   <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
@@ -1534,7 +1534,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 <ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
+  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings or globally in the <mono>YAML header</mono>.</span></li> 
   <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
@@ -1591,7 +1591,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 <ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
+  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings or globally in the <mono>YAML header</mono>.</span></li> 
   <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
@@ -1648,7 +1648,7 @@ read_csv("../1_data/data.csv")
 # Scale graphs
 
 <ul>
-  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings.</span></li> 
+  <li class="m1"><span>The general <high>appearance</high> of graphs can be modified in the <mono>chunk</mono>-settings or globally in the <mono>YAML header</mono>.</span></li> 
   <li class="m2"><span>The arguments (normally) start with  <highm>fig-*</highm>.</span></li> 
 </ul>
 
@@ -1706,8 +1706,8 @@ read_csv("../1_data/data.csv")
 # Captions
 
 <ul>
-  <li class="m1"><span>Captions can be added with  <highm>fig-cap</highm>.</span></li> 
-  <li class="m2"><span>The caption text can be defined  <high>within the chunks</high>.</span></li> 
+  <li class="m1"><span>Add captions with <highm>fig-cap</highm>.</span></li> 
+  <li class="m2"><span>Define captions <high>within each chunk</high> starting with <mono>#|</mono>.</span></li> 
 </ul>
 
 

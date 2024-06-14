@@ -671,10 +671,10 @@ Quarto support various options to modify the <high>standard page layout</high>.
   <li class="m1"><span>Let content <high>overflow</high> the standard layout. </span></li>
   
   <li class="m2"><span>Place content in the <high>right margin</high>. </span></li>
-  <li class="m3"><span>Among others, <high>images, figures or tables</high>.</span></li>
+  <li class="m3"><span>Among others: <high>images, figures or tables</high>.</span></li>
 </ul>
 
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:5px" width=100%>
   <col width="50%">
   <col width="50%">
 <tr>

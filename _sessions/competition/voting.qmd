@@ -1,0 +1,67 @@
+---
+title: "Visualizing and Communicating Data with R"
+subtitle: The R-Bootcamp @UniBE
+format: 
+  revealjs:
+    logo: unibe.png
+    footer: "University of Bern"
+title-slide-attributes:
+    data-background-image: unibe.png
+    data-background-size: 150px
+    data-background-position: 10px 10px
+---
+
+```{r}
+library(googlesheets4)
+library(tidyverse)
+
+votes <- read_sheet("https://docs.google.com/spreadsheets/d/19EtOP_-2kuPFNIndi1IiVvj7dPKWuyfKJiULMGudXL0/edit?usp=sharing") %>%
+  rename(Group = `Choose the group you want to rate (not your own!)`,
+         Mark = `Please give the report an overall mark`)
+           
+```
+
+## Competition results
+
+```{r}
+votes %>%
+  group_by(Group) %>%
+  summarise(m_mark = mean(Mark),
+            sd_mark = sd(Mark)) %>%
+  ggplot(aes(x = Group, y = m_mark)) +
+
+  theme_minimal(base_size = 20) +
+  labs(title = 'Average marks for each group',
+       y = 'Average',
+       x = "",
+       caption = "Errorbars represent standard deviations") +
+  scale_y_continuous(limits = c(1, 6), n.breaks = 6)
+ 
+```
+
+## Competition results
+
+```{r}
+votes %>%
+  group_by(Group) %>%
+  summarise(m_mark = mean(Mark),
+            sd_mark = sd(Mark)) %>%
+  ggplot(aes(x = Group, y = m_mark)) +
+  
+  geom_errorbar(aes(ymin = m_mark-sd_mark, ymax = m_mark+sd_mark), width = .2, color = 'darkgrey') +
+  geom_point(size = 3) +
+  theme_minimal(base_size = 20) +
+  labs(title = 'Average marks for each group',
+       y = 'Average',
+       x = "",
+       caption = "Errorbars represent standard deviations") +
+  scale_y_continuous(limits = c(1, 6), n.breaks = 6)
+ 
+```
+
+## {.center}
+::: {.r-fit-text}
+THANKS!
+:::
+
+

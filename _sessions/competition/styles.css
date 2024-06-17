@@ -1,0 +1,5 @@
+.reveal .slide {
+  border-top: 5px solid red;
+  padding-top: 10px;
+  max-width: 500;
+}

@@ -17,7 +17,8 @@ library(tidyverse)
 
 votes <- read_sheet("https://docs.google.com/spreadsheets/d/19EtOP_-2kuPFNIndi1IiVvj7dPKWuyfKJiULMGudXL0/edit?usp=sharing") %>%
   rename(Group = `Choose the group you want to rate (not your own!)`,
-         Mark = `Please give the report an overall mark`)
+         Mark = `Please give the report an overall mark`) %>%
+  na.omit()
            
 ```
 

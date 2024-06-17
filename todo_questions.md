@@ -1,3 +1,9 @@
+- add reference + scientific papers 
+- paper schreiben mit templates
+- interactive plot
+- plotting zeit anpassen in competition ... 
+- new problem in den nachmittag 2. tag ... feedback runde ... 
+
 # Principles
 
 # Intro2R
